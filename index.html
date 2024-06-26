@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форматирование HTML кода онлайн бесплатно | html formatter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content="Онлайн форматирование HTML кода онлайн и валидатор для проверки и улучшения минифицированного хтмл, выравнивание и нормализация кода для придания красивого вида."/>
+    <meta name="og:title" content="Форматирование HTML кода онлайн бесплатно | html formatter">
+    <meta name="og:description" content="Онлайн форматирование HTML кода онлайн и валидатор для проверки и улучшения минифицированного хтмл, выравнивание и нормализация кода для придания красивого вида.">
+    <meta name="og:image" content="https://htmlformatter.github.io/image/favicon.png">
+    <meta name="og:type" content="website">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="image/favicon.png">
+    <link rel="icon" type="image/png" href="image/favicon.png">
+    <link rel="preload" href="css/site1.css" as="style">
+    <link rel="stylesheet" href="css/site1.css">
+
+    <link rel="canonical" href="https://htmlformatter.github.io/">
+</head>
+<body>
+
+
+<div class="container">
+  <h1 class="header2-title">Форматирование html и структурирование</h1>
+  <p class="header2-subtitle">Наш инструмент преобразует нечитабельный или минифицированный HTML-код в удобный и красивый для чтения формат. Он также автоматически форматирует CSS и JavaScript между соответствующими тегами, обеспечивая структурирование и выравнивание.</p>
+</div>
+
+<main class="container form">
+    <div id="globalHints"></div>
+    <div class="form-body shadow">
+        <div id="code" class="editor"></div>
+        <i class="form__btn_cross" data-dismiss="modal" aria-label="Close" style="outline: none"></i>
+        <div class="form-body__resizer"><div><div></div><div></div><div></div><div></div></div></div>
+        <div class="form-body__drag_zone">Вставьте или загрузите HTML-код.</div>
+    </div>
+
+
+    <div class="form-buttons">
+        <div class="form-buttons__section">
+            <div class="form__btn primary">
+                <span>Форматировать</span>
+                <div class="spinner" style="display: none"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>
+            </div>
+
+            <div class="form__hints" style="display: none;">
+                <span>Подсказки:</span><span class="warning"></span><span>,</span><span class="error"></span>
+
+                <div class="form__btn secondary sm ml-12">
+                    <i class="icon i-left"></i>
+                </div>
+                <div class="form__btn secondary sm ml-6">
+                    <i class="icon i-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-buttons__section right">
+
+            <div id="btnDownload" class="form__btn secondary hidden" >
+                <i class="icon i-download"></i><span class="text">Скачать</span>
+            </div>
+            <div class="form__btn secondary hidden" id="btn_copy" >
+                <i class="icon i-copy"></i><span class="text">Копировать</span>
+            </div>
+            <input type="file" style="display: none;" accept=".htm,.html,.txt" />
+            <div class="form__btn secondary">
+                <i class="icon i-browse"></i><span class="text">Загрузить</span>
+            </div>
+        </div>
+    </div>
+    <div class="form-options shadow">
+        <div class="form__btn light">
+            <i class="line"></i>
+            <i class="icon i-expand"></i><span>Опции</span>
+            <i class="line"></i>
+        </div>
+
+        <div class="form-options__body">
+            <div class="form-options__header">Опции форматирования:</div>
+            <div class="form-options__content">
+                <div class="form-options__row">
+                    <div class="form__input sm">
+                        <span>Размер табуляции: </span>
+                        <input id="tabSize" class="input" value="4" maxlength="1" />
+                    </div>
+                </div>
+                <div class="form-options__row">
+                    <div class="form-options__mode">
+                        <span>Табуляция: </span>
+                        <div class="form-options__mode-checkbox">
+                            <div class="form__checkbox">
+                                <input id="mode_tab" type="radio" name="tabMode" checked >
+                                <label for="mode_tab">табуляции</label>
+                            </div>
+
+                            <div class="form__checkbox">
+                                <input id="mode_space" type="radio" name="tabMode" >
+                                <label for="mode_space">пробелы</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-options__row">
+                    <div class="form__input md">
+                        <span>Длина строки: </span>
+                        <input id="printWidth" class="input" value="240" maxlength="3" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-options__header">
+                <div>Подсказки HTML:
+                    <div class="form__checkbox">
+                        <input id="allHtmlOptions" type="checkbox" name="outputOptions" >
+                        <label for="allHtmlOptions">Все опции</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-options__content">
+                    <div class="form__checkbox">
+                        <input id="alt-require" type="checkbox" name="outputOptions" checked >
+                        <label for="alt-require">Атрибут alt тега img должен присутствовать, а атрибуты alt для area[href] и input[type=image] должны быть установлены со значением.</label>
+                    </div>
+                    <div class="form__checkbox">
+                        <input id="attr-lowercase" type="checkbox" name="outputOptions" checked >
+                        <label for="attr-lowercase">Имя атрибута должно быть в нижнем регистре.</label>
+                    </div>
+                    <div class="form__checkbox">
+                        <input id="attr-no-duplication" type="checkbox" name="outputOptions" checked >
+                        <label for="attr-no-duplication">Один и тот же атрибут не может быть указан дважды.</label>
+                    </div>
+                    <div class="form__checkbox">
+                        <input id="attr-unsafe-chars" type="checkbox" name="outputOptions" checked >
+                        <label for="attr-unsafe-chars">Значение атрибута не может содержать небезопасные символы.</label>
+                    </div>
+                    <div class="form__checkbox">
+                        <input id="attr-value-double-quotes" type="checkbox" name="outputOptions" checked >
+                        <label for="attr-value-double-quotes">Значение атрибута должно быть закрыто двойными кавычками.</label>
+                    </div>
+                    <div class="form__checkbox">
+                        <input id="attr-value-not-empty" type="checkbox" name="outputOptions"  >
+                        <label for="attr-value-not-empty">Атрибут должен иметь значение.</label>
+                    </div>
+                    <div class="form__checkbox">
+                        <input id="doctype-first" type="checkbox" name="outputOptions" checked >
+                        <label for="doctype-first">Doctype должен быть первым.</label>
+                    </div>
+                    <div class="form__checkbox">
+                        <input id="head-script-disabled" type="checkbox" name="outputOptions"  >
+                        <label for="head-script-disabled">Тег script не может использоваться в head.</label>
+                    </div>
+                    
+                    <div class="form__checkbox">
+    <input id="id-class-ad-disabled" type="checkbox" name="outputOptions" checked >
+    <label for="id-class-ad-disabled">Id и class не могут использовать ключевое слово ad, это будет блокировано программным обеспечением Adblock.</label>
+</div>
+<div class="form__checkbox">
+    <input id="id-unique" type="checkbox" name="outputOptions" checked >
+    <label for="id-unique">Атрибуты ID должны быть уникальными в документе.</label>
+</div>
+<div class="form__checkbox">
+    <input id="inline-script-disabled" type="checkbox" name="outputOptions"  >
+    <label for="inline-script-disabled">Inline-скрипт не может быть использован.</label>
+</div>
+<div class="form__checkbox">
+    <input id="inline-style-disabled" type="checkbox" name="outputOptions"  >
+    <label for="inline-style-disabled">Inline-стиль не может быть использован.</label>
+</div>
+<div class="form__checkbox">
+    <input id="spec-char-escape" type="checkbox" name="outputOptions" checked >
+    <label for="spec-char-escape">Специальные символы должны быть экранированы.</label>
+</div>
+<div class="form__checkbox">
+    <input id="src-not-empty" type="checkbox" name="outputOptions" checked >
+    <label for="src-not-empty">Атрибут src для img (script, link) должен быть установлен.</label>
+</div>
+<div class="form__checkbox">
+    <input id="style-disabled" type="checkbox" name="outputOptions"  >
+    <label for="style-disabled">Тег style не может быть использован.</label>
+</div>
+<div class="form__checkbox">
+    <input id="tag-pair" type="checkbox" name="outputOptions" checked >
+    <label for="tag-pair">Теги должны быть парными.</label>
+</div>
+<div class="form__checkbox">
+    <input id="tagname-lowercase" type="checkbox" name="outputOptions" checked >
+    <label for="tagname-lowercase">Имена тегов должны быть в нижнем регистре.</label>
+</div>
+<div class="form__checkbox">
+    <input id="title-require" type="checkbox" name="outputOptions" checked >
+    <label for="title-require">Тег &lt;title&gt; должен присутствовать в теге &lt;head&gt;.</label>
+</div>
+</div>
+
+<div class="form-options__header">Подсказки JavaScript:</div>
+<div class="form-options__content">
+    <div class="form__checkbox">
+        <input id="jsHint" type="checkbox" name="outputOptions" checked>
+        <label for="jsHint">Включить режим подсказок JavaScript</label>
+    </div>
+</div>
+<div class="form-options__header">Подсказки CSS:</div>
+<div class="form-options__content">
+    <div class="form__checkbox">
+        <input id="cssLint" type="checkbox" name="outputOptions" checked>
+        <label for="cssLint">Включить режим подсказок CSS</label>
+    </div>
+</div>
+
+</div>
+</div>
+</main>
+<div class="container info">
+    <p>Наш сервис делает HTML-код красивым и легким для чтения. Он также улучшает CSS и JavaScript внутри HTML.</p>
+<h2>Зачем нужен форматтер html кода?</h2>
+<p>Сервис помогает быстро найти ошибки в HTML и исправить запутанный код и привести в удобный и читаемый вид.</p>
+<h2>Основные преимущества нашего форматировщика:</h2>
+<ol>
+<li>Мгновенное форматирование любого HTML-кода</li>
+<li>Автоматическое улучшение CSS и JavaScript внутри HTML</li>
+<li>Расширенные настройки для персонализации форматирования</li>
+<li>Встроенный валидатор для проверки кода</li>
+<li>Возможность загрузки или вставки кода</li>
+<li>Опции скачивания или копирования отформатированного кода</li>
+</ol>
+<h2>Как пользоваться:</h2>
+<ol>
+<li>Загрузите файл или вставьте код</li>
+<li>Настройте форматирование</li>
+<li>Нажмите "Форматировать"</li>
+<li>Скачайте результат или скопируйте код</li>
+</ol>
+<p>Наш инструмент идеально подходит для веб-разработчиков, дизайнеров и всех, кто работает с HTML. Он поможет вам быстро обнаружить ошибки в структуре, исправить их и сделать ваш код профессиональным и легким для понимания.</p></div>
+
+<div class="modal" role="dialog" aria-hidden="true" tabindex="0">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>Введите имя файла</div>
+                <i class="form__btn_cross" data-dismiss="modal" aria-label="Закрыть" style="outline: none"></i>
+            </div>
+            <div class="modal-body">
+                <div class="form__input">
+                    <input autocomplete="off"  autocapitalize="off" spellcheck="false"/>
+                </div>
+                <span class="form__input-error">Имя файла содержит недопустимый символ: \*?:&lt;&gt;&quot;|/\</span>
+                <div class="modal-body__checkboxes">
+                    <span>Формат файла:</span>
+                    <div class="form__checkbox">
+                        <input id="formatHtml" name="fileFormat" type="radio" value="html" checked>
+                        <label for="formatHtml">.html</label>
+                    </div>
+                    <div class="form__checkbox">
+                        <input id="formatHtm" name="fileFormat" type="radio" value="htm">
+                        <label for="formatHtm">.htm</label>
+                    </div>
+                    <div class="form__checkbox">
+                        <input id="formatTxt" name="fileFormat" type="radio" value="txt">
+                        <label for="formatTxt">.txt</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form__btn secondary" >
+                    <i class="icon i-download"></i><span class="text">Скачать файл</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    loadScript = function (urls, callback) {
+
+        var loadedUrls = 0;
+
+        for(var i = 0; i < urls.length; i++) {
+            var url = urls[i];
+            var script = document.createElement('script');
+            script.async = false;
+            script.onload = function () {
+
+                loadedUrls++;
+                if (loadedUrls === urls.length) {
+                    callback();
+                }
+            };
+            script.src = url;
+            document.head.appendChild(script);
+        }
+    }
+
+    loadScript([
+        'js/lib/jquery.min.js',
+        'js/lib/polyfill.min.js',
+        'js/lib/tippy/popper.min.js',
+        'js/lib/tippy/tippy.min.js',
+        'js/lib/filesaver.min.js',
+        'js/lib/clipboard.min.js',
+        'js/lib/notify.min.js',
+        'js/lib/ace/ace.min.js',
+        'js/lib/htmlhint.min.js?v1',
+        'js/lib/jshint.min.js',
+        'js/lib/csslint.min.js',
+        'js/lib/js.cookie.min.js',
+        '/js/html-formatter.js?v25'
+    ], function () {
+        
+        $(document).ready(function () {
+            new HtmlFormatter(
+                {
+                    htmlHints: JSON.parse('[{"enabled":1,"key":"alt-require"},{"enabled":1,"key":"attr-lowercase"},{"enabled":1,"key":"attr-no-duplication"},{"enabled":1,"key":"attr-unsafe-chars"},{"enabled":1,"key":"attr-value-double-quotes"},{"key":"attr-value-not-empty"},{"enabled":1,"key":"doctype-first"},{"key":"head-script-disabled"},{"enabled":1,"key":"id-class-ad-disabled"},{"enabled":1,"key":"id-unique"},{"key":"inline-script-disabled"},{"key":"inline-style-disabled"},{"enabled":1,"key":"spec-char-escape"},{"enabled":1,"key":"src-not-empty"},{"key":"style-disabled"},{"enabled":1,"key":"tag-pair"},{"enabled":1,"key":"tagname-lowercase"},{"enabled":1,"key":"title-require"}]'),
+                    jsHints: JSON.parse('1'),
+                    cssHints: JSON.parse('1'),
+                    translate: {
+                        tooltip: {
+                            btnLeftHint: "Перейти к предыдущей подсказке",
+                            btnRightHint: "Перейти к следующей подсказке",
+                            btnUpload: "tooltip.btnUpload",
+                            btnCopy: "tooltip.btnCopy",
+                            btnDownload: "tooltip.btnDownload",
+                            btnOptions: "tooltip.btnOptions",
+                            hintWarning: "Всего предупреждений",
+                            hintError: "Всего ошибок"
+                        },
+                        notify: {
+                            critical: {
+                                title: "Критическая ошибка форматирования"
+                            },
+                            btn: {
+                                copy: "Скопировано в буфер обмена"
+                            },
+                            format: {
+                                empty: "Введите HTML-код в редактор",
+                                error: "Формат файла не поддерживается",
+                                error_tabs_empty: "Значение отступа не заполнено"
+                            },
+                        },
+                        drag: {
+                            default: "Вставьте или загрузите HTML-код.",
+                            over: "Перетащите файл в любое место страницы."
+                        }
+                    }
+                });
+        });
+    });
+</script>
+
+</body>
+</html>
