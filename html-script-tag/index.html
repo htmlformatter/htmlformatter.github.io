@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;script&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;script&gt; в HTML: добавление или подключение JavaScript для интерактивности и динамического изменения страницы." />
+<meta name="keywords" content="базовый синтаксис html-тега script, пример встроенного javascript, пример внешнего javascript, атрибуты html-тега script, разница между асинхронностью и отсрочкой, стилизация и размещение тега script, практическое применение тега script" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-script-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;script&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;script&gt; в HTML: добавление или подключение JavaScript для интерактивности и динамического изменения страницы." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-script-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;script&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;script&gt;
+       </code>
+       используется для встраивания исполняемого кода JavaScript в HTML-документ или ссылки на него. Он позволяет добавлять интерактивность, управлять поведением страницы и динамически обновлять контент. Скрипты можно включать как встроенные, так и ссылаться на них извне с помощью атрибута
+       <code>
+        src
+       </code>
+       .
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;script&gt;
+       </code>
+       — это универсальный элемент, необходимый для добавления динамических функций на веб-страницы, таких как проверка форм, анимация и обработка событий.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-ltscriptgt">
+          Базовый синтаксис HTML-тега &lt;script&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-vstroennogo-javascript">
+          Пример встроенного JavaScript
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-vneshnego-javascript">
+          Пример внешнего JavaScript
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-ltscriptgt">
+          Атрибуты HTML-тега &lt;script&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#raznitsa-mezhdu-asinhronnostyu-i-otsrochkoy">
+          Разница между асинхронностью и отсрочкой
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-i-razmeschenie-tega-ltscriptgt">
+          Стилизация и размещение тега &lt;script&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-ltscriptgt">
+          Практическое применение тега &lt;script&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-ltscriptgt">
+       Базовый синтаксис HTML-тега &lt;script&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура тега
+       <code>
+        &lt;script&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;script&gt;
+// JavaScript code goes here
+&lt;/script&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Чтобы сослаться на внешний файл скрипта:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        src
+       </code>
+       указывает URL внешнего файла JavaScript.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-vstroennogo-javascript">
+       Пример встроенного JavaScript
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример встраивания JavaScript непосредственно в тег
+       <code>
+        &lt;script&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Hello World Example&lt;/h2&gt;
+        &lt;p id="demo"&gt;&lt;/p&gt;
+
+        &lt;script&gt;
+            document.getElementById("demo").textContent = "Hello, World!";
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Пример встроенного JavaScript с использованием тега script" height="259" src="https://htmlformatter.github.io/images2/html-tag-8bc32b0.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       Скрипт динамически обновляет содержимое абзаца с идентификатором «demo» для отображения «Hello, World!»
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-vneshnego-javascript">
+       Пример внешнего JavaScript
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример ссылки на внешний файл JavaScript:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;External Script Example&lt;/h2&gt;
+        &lt;p id="demo"&gt;&lt;/p&gt;
+
+        &lt;script src="script.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        скрипт.js
+       </strong>
+</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>document.getElementById("demo").textContent = "Hello from an external file!";</code> </pre>
+<img alt="Пример внешнего JavaScript с использованием тега script" height="259" src="https://htmlformatter.github.io/images2/html-tag-d558147.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Внешний файл «script.js» обновляет содержимое абзаца с идентификатором «demo» на «Привет из внешнего файла!»
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-ltscriptgt">
+       Атрибуты HTML-тега &lt;script&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         src:
+        </strong>
+        Указывает URL внешнего файла JavaScript.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Тип:
+        </strong>
+        определяет тип MIME скрипта. Значение по умолчанию —
+        <code>
+         text/javascript
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         async:
+        </strong>
+        Указывает, что скрипт должен выполняться асинхронно(только для внешних скриптов).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         defer:
+        </strong>
+        указывает, что скрипт должен быть выполнен после анализа документа(только для внешних скриптов).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         crossorigin:
+        </strong>
+        указывает, как следует обрабатывать скрипт для запросов между источниками(например,
+        <code>
+         anonymous
+        </code>
+        или
+        <code>
+         use-credentials
+        </code>
+        ).
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="raznitsa-mezhdu-asinhronnostyu-i-otsrochkoy">
+       Разница между асинхронностью и отсрочкой
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         асинхронно:
+        </strong>
+        скрипт загружается и выполняется как можно скорее, не блокируя парсинг HTML.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         defer:
+        </strong>
+        скрипт загружается во время анализа HTML, но выполняется только после полного анализа документа.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Оба атрибута применимы только к внешним скриптам.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-i-razmeschenie-tega-ltscriptgt">
+       Стилизация и размещение тега &lt;script&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Скрипты можно размещать в разных частях HTML-документа:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         В &lt;head&gt;:
+        </strong>
+        используется для скриптов, которые должны загружаться до полной отрисовки страницы.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Внизу &lt;body&gt;:
+        </strong>
+        предпочтительно для скриптов, которые повышают интерактивность после загрузки страницы.
+       </li>
+</ul>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;script&gt;
+// Example of inline script in the head
+&lt;/script&gt;
+
+&lt;script src="example.js" defer&gt;&lt;/script&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Лучшая практика:
+       </strong>
+       используйте
+       <code>
+        defer
+       </code>
+       для внешних скриптов и размещайте встроенные скрипты в нижней части
+       <code>
+        &lt;body&gt;
+       </code>
+       для повышения производительности загрузки страницы.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-ltscriptgt">
+       Практическое применение тега &lt;script&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Проверка форм:
+        </strong>
+        динамическая проверка введенных пользователем данных без обновления страницы.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Интерактивный контент:
+        </strong>
+        добавьте интерактивность, например анимацию, раскрывающиеся меню или ползунки.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Динамический контент:
+        </strong>
+        извлечение и отображение данных с помощью API(например, через AJAX или Fetch API).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Обработка событий:
+        </strong>
+        реагирование на действия пользователя, такие как щелчки, наведения курсора или нажатия клавиш.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Аналитика:
+        </strong>
+        отслеживайте поведение пользователей с помощью таких инструментов, как Google Analytics.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;script&gt;
+       </code>
+       имеет основополагающее значение для добавления динамических, интерактивных и функциональных возможностей в современные веб-приложения.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

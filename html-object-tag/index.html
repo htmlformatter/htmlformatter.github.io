@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;object&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;object&gt; в HTML: встраивание мультимедиа и внешних ресурсов, таких как видео, изображения, PDF или HTML-документы." />
+<meta name="keywords" content="базовый синтаксис тега html object, атрибуты html-тега object, встраивание изображения с помощью тега object, встраивание pdf-файла, встраивание внешнего html-файла, стилизация тега object с помощью css, практическое применение тега object" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-object-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;объект&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;object&gt; в HTML: встраивание мультимедиа и внешних ресурсов, таких как видео, изображения, PDF или HTML-документы." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-object-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;объект&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;object&gt;
+       </code>
+       используется для встраивания мультимедийных элементов или внешних ресурсов, таких как видео, изображения, PDF-файлы и даже другие HTML-файлы, в веб-страницу. Этот тег позволяет отображать интерактивный контент или внешние объекты без необходимости установки специальных плагинов. Тег
+       <code>
+        &lt;object&gt;
+       </code>
+       отличается высокой универсальностью и поддерживает резервный контент для пользователей, чьи браузеры не поддерживают встроенный контент.
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;object&gt;
+       </code>
+       указывает местоположение и тип внешнего ресурса, который должен быть внедрен.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-tega-html-ltobjectgt">
+          Базовый синтаксис тега HTML &lt;object&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-ltobjectgt">
+          Атрибуты HTML-тега &lt;object&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#vstraivanie-izobrazheniya-s-pomoschyu-tega-ltobjectgt">
+          Встраивание изображения с помощью тега &lt;object&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#vstraivanie-pdf-fayla">
+          Встраивание PDF-файла
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#vstraivanie-vneshnego-html-fayla">
+          Встраивание внешнего HTML-файла
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-tega-ltobjectgt-s-pomoschyu-css">
+          Стилизация тега &lt;object&gt; с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-ltobjectgt">
+          Практическое применение тега &lt;object&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-tega-html-ltobjectgt">
+       Базовый синтаксис тега HTML &lt;object&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура тега
+       <code>
+        &lt;object&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;object data="url-of-resource" type="mime-type"&gt;
+    Fallback content goes here.
+&lt;/object&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        data
+       </code>
+       указывает URL-адрес встроенного ресурса, а атрибут
+       <code>
+        type
+       </code>
+       указывает тип MIME.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-ltobjectgt">
+       Атрибуты HTML-тега &lt;object&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         данные:
+        </strong>
+        Указывает URL-адрес встроенного ресурса.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         тип:
+        </strong>
+        указывает тип MIME ресурса(например,
+        <code>
+         application/pdf
+        </code>
+        ,
+        <code>
+         image/jpeg
+        </code>
+        ).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         width:
+        </strong>
+        Устанавливает ширину встроенного ресурса.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         высота:
+        </strong>
+        устанавливает высоту встроенного ресурса.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Имя:
+        </strong>
+        присваивает имя встроенному объекту, что позволяет использовать его в качестве цели или ссылаться на него.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         форма:
+        </strong>
+        указывает
+        <code>
+         id
+        </code>
+        элемента формы, с которым связан объект.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Глобальные атрибуты:
+        </strong>
+        поддерживает все глобальные атрибуты, такие как
+        <code>
+         id
+        </code>
+        ,
+        <code>
+         class
+        </code>
+        и
+        <code>
+         style
+        </code>
+        .
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="vstraivanie-izobrazheniya-s-pomoschyu-tega-ltobjectgt">
+       Встраивание изображения с помощью тега &lt;object&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример использования тега
+       <code>
+        &lt;object&gt;
+       </code>
+       для встраивания изображения:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Embedded Image&lt;/h2&gt;
+        &lt;object data="example.jpg" type="image/jpeg" width="400" height="300"&gt;
+            Your browser does not support embedded images.
+        &lt;/object&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="492" src="https://htmlformatter.github.io/images2/html-tag-eb5021a.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Будет отображено изображение, указанное
+       <code>
+        data="example.jpg"
+       </code>
+       , и появится сообщение об откате, если браузер не поддерживает тег
+       <code>
+        &lt;object&gt;
+       </code>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="vstraivanie-pdf-fayla">
+       Встраивание PDF-файла
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;object&gt;
+       </code>
+       также может встраивать PDF-файлы непосредственно в браузер:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Embedded PDF&lt;/h2&gt;
+        &lt;object data="sample.pdf" type="application/pdf" width="600" height="400"&gt;
+            &lt;p&gt;Your browser does not support PDF viewing. Please download the PDF: &lt;a href="sample.pdf"&gt;Download PDF&lt;/a&gt;.&lt;/p&gt;
+        &lt;/object&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       PDF-файл, указанный в атрибуте
+       <code>
+        data
+       </code>
+       будет отображен в браузере, а резервное сообщение предоставит ссылку для загрузки для неподдерживаемых браузеров.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="vstraivanie-vneshnego-html-fayla">
+       Встраивание внешнего HTML-файла
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете использовать тег
+       <code>
+        &lt;object&gt;
+       </code>
+       для встраивания другого HTML-файла на вашу веб-страницу:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Embedded HTML File&lt;/h2&gt;
+        &lt;object data="external-page.html" type="text/html" width="800" height="600"&gt;
+            &lt;p&gt;Your browser does not support embedded HTML files.&lt;/p&gt;
+        &lt;/object&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Указанный внешний HTML-файл отображается в границах тега
+       <code>
+        &lt;object&gt;
+       </code>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-tega-ltobjectgt-s-pomoschyu-css">
+       Стилизация тега &lt;object&gt; с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете стилизовать тег
+       <code>
+        &lt;object&gt;
+       </code>
+       чтобы настроить его внешний вид с помощью CSS:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            object {
+                border: 10px solid #000;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Styled Embedded Object&lt;/h2&gt;
+        &lt;object data="example.jpg" type="image/jpeg" width="400" height="300"&gt;
+            Your browser does not support this object.
+        &lt;/object&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="492" src="https://htmlformatter.github.io/images2/html-tag-8eb2337.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       Встроенный объект отображается со стилизованной рамкой, закругленными углами и легкой тенью.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-ltobjectgt">
+       Практическое применение тега &lt;object&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Отображение мультимедиа:
+        </strong>
+        встраивайте видео, изображения или другие медиафайлы непосредственно в веб-страницу.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Интерактивные документы:
+        </strong>
+        отображение PDF-файлов и других документов без установки плагинов.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Встраивание внешних страниц:
+        </strong>
+        интеграция контента из других HTML-файлов или веб-приложений.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Резервный контент:
+        </strong>
+        предоставление альтернативного контента для неподдерживаемых браузеров.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

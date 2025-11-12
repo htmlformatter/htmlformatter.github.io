@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Коды языка HTML - ХТМЛ справочник</title>
+<meta name="description" content="Коды языка в HTML: использование атрибутов для локализации контента, улучшение SEO и поддержка экранных читалок." />
+<meta name="keywords" content="назначение языковых кодов, структура языковых кодов, синтаксис использования кода языка в html-документе, коды часто используемых языков, преимущества использования языкового кода, ресурсы, таблица с полным списком языков и их соответствующих кодов iso" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-language-codes/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Коды языка HTML - ХТМЛ справочник" />
+<meta property="og:description" content="Коды языка в HTML: использование атрибутов для локализации контента, улучшение SEO и поддержка экранных читалок." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-language-codes/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      Коды языка HTML
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       Коды языка HTML используются для указания языка содержимого HTML-документа. Они помогают улучшить доступность, обеспечить правильное произношение для программ чтения с экрана, а также обеспечить корректную индексацию поисковыми системами и отображение с учётом языка.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#naznachenie-yazykovyh-kodov">
+          Назначение языковых кодов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#struktura-yazykovyh-kodov">
+          Структура языковых кодов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#sintaksis-ispolzovaniya-koda-yazyka-v-html-dokumente">
+          Синтаксис использования кода языка в HTML-документе
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#kody-chasto-ispolzuemyh-yazykov">
+          Коды часто используемых языков
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#preimuschestva-ispolzovaniya-yazykovogo-koda">
+          Преимущества использования языкового кода
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#resursy">
+          Ресурсы
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#tablitsa-s-polnym-spiskom-yazykov-i-ih-sootvetstvuyuschih-kodov-iso">
+          Таблица с полным списком языков и их соответствующих кодов ISO
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="naznachenie-yazykovyh-kodov">
+       Назначение языковых кодов
+      </h2>
+<p class="text-gray-700 mb-4">
+       Код языка в HTML-документе используется для:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Укажите естественный язык текста.
+       </li>
+<li class="ml-4">
+        Помощь веб-браузерам и вспомогательным технологиям в интерпретации контента.
+       </li>
+<li class="ml-4">
+        Помогите поисковым системам индексировать контент на основе языка.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="struktura-yazykovyh-kodov">
+       Структура языковых кодов
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Коды языков соответствуют стандарту
+        <strong class="font-bold text-gray-900">
+         IETF BCP 47
+        </strong>
+        .
+       </li>
+<li class="ml-4">
+        Включает основные языковые подтеги(например,
+        <code>
+         en
+        </code>
+        для английского языка,
+        <code>
+         fr
+        </code>
+        для французского языка).
+       </li>
+<li class="ml-4">
+        При необходимости можно включить региональные подтеги(например,
+        <code>
+         en-US
+        </code>
+        для американского английского,
+        <code>
+         fr-CA
+        </code>
+        для канадского французского).
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="sintaksis-ispolzovaniya-koda-yazyka-v-html-dokumente">
+       Синтаксис использования кода языка в HTML-документе
+      </h2>
+<p class="text-gray-700 mb-4">
+       Ниже представлен синтаксис использования языкового кода в HTML-документе с использованием атрибута
+       <strong class="font-bold text-gray-900">
+        lang
+       </strong>
+<a href="https://htmlformatter.github.io/html-html-tag/">
+        тега html
+       </a>
+       .
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;html lang="en-US"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Example&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p lang="es"&gt;Hola, mundo!&lt;/p&gt;
+    &lt;p lang="fr"&gt;Bonjour, le monde!&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<code>
+        en-US
+       </code>
+       указывает, что документ написан на
+       <strong class="font-bold text-gray-900">
+        американском английском
+       </strong>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="kody-chasto-ispolzuemyh-yazykov">
+       Коды часто используемых языков
+      </h2>
+<p class="text-gray-700 mb-4">
+       Ниже приведены некоторые из наиболее часто используемых в Интернете языков с указанием их языкового кода, региона и полного кода.
+      </p>
+<table>
+<tr>
+<th>
+         Язык
+        </th>
+<th>
+         Код
+        </th>
+<th>
+         Область
+        </th>
+<th>
+         Полный пример кода
+        </th>
+</tr>
+<tbody>
+<tr>
+<td>
+          Английский
+         </td>
+<td>
+          ru
+         </td>
+<td>
+          Соединенные Штаты
+         </td>
+<td>
+          en-US
+         </td>
+</tr>
+<tr>
+<td>
+          испанский
+         </td>
+<td>
+          эс
+         </td>
+<td>
+          Испания
+         </td>
+<td>
+          es-ES
+         </td>
+</tr>
+<tr>
+<td>
+          Французский
+         </td>
+<td>
+          фр
+         </td>
+<td>
+          Канада
+         </td>
+<td>
+          fr-CA
+         </td>
+</tr>
+<tr>
+<td>
+          Китайский(упрощенный)
+         </td>
+<td>
+          ж
+         </td>
+<td>
+          Китай
+         </td>
+<td>
+          zh-CN
+         </td>
+</tr>
+<tr>
+<td>
+          арабский
+         </td>
+<td>
+          ар
+         </td>
+<td>
+          Египет
+         </td>
+<td>
+          ар-ЭГ
+         </td>
+</tr>
+</tbody>
+</table>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="preimuschestva-ispolzovaniya-yazykovogo-koda">
+       Преимущества использования языкового кода
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Улучшает
+        <strong class="font-bold text-gray-900">
+         SEO
+        </strong>
+        , информируя поисковые системы о языке контента.
+       </li>
+<li class="ml-4">
+        Улучшает работу
+        <strong class="font-bold text-gray-900">
+         программ экранного доступа
+        </strong>
+        и
+        <strong class="font-bold text-gray-900">
+         систем преобразования текста в речь
+        </strong>
+        .
+       </li>
+<li class="ml-4">
+        Помогает в правильной визуализации шрифтов для языков, требующих специфической письменности(например, арабский, хинди).
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="resursy">
+       Ресурсы
+      </h2>
+<p class="text-gray-700 mb-4">
+       Более подробную информацию о языковых кодах можно найти в следующих ресурсах:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<a href="https://www.w3.org/International/articles/language-tags/" rel="noreferrer noopener nofollow" target="_blank">
+         Теги языка HTML W3C
+        </a>
+</li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="tablitsa-s-polnym-spiskom-yazykov-i-ih-sootvetstvuyuschih-kodov-iso">
+       Таблица с полным списком языков и их соответствующих кодов ISO
+      </h2>
+<table class="has-fixed-layout">
+<tr>
+<th>
+         Язык
+        </th>
+<th>
+         Код ИСО
+        </th>
+</tr>
+<tbody>
+<tr>
+<td>
+          абхазский
+         </td>
+<td>
+          аб
+         </td>
+</tr>
+<tr>
+<td>
+          Афар
+         </td>
+<td>
+          аа
+         </td>
+</tr>
+<tr>
+<td>
+          африкаанс
+         </td>
+<td>
+          аф
+         </td>
+</tr>
+<tr>
+<td>
+          Акан
+         </td>
+<td>
+          ак
+         </td>
+</tr>
+<tr>
+<td>
+          албанский
+         </td>
+<td>
+          кв.
+         </td>
+</tr>
+<tr>
+<td>
+          амхарский
+         </td>
+<td>
+          являюсь
+         </td>
+</tr>
+<tr>
+<td>
+          арабский
+         </td>
+<td>
+          ар
+         </td>
+</tr>
+<tr>
+<td>
+          Арагонский
+         </td>
+<td>
+          ан
+         </td>
+</tr>
+<tr>
+<td>
+          армянский
+         </td>
+<td>
+          хай
+         </td>
+</tr>
+<tr>
+<td>
+          ассамский
+         </td>
+<td>
+          как
+         </td>
+</tr>
+<tr>
+<td>
+          Аварский
+         </td>
+<td>
+          средний
+         </td>
+</tr>
+<tr>
+<td>
+          авестийский
+         </td>
+<td>
+          ае
+         </td>
+</tr>
+<tr>
+<td>
+          аймара
+         </td>
+<td>
+          ай
+         </td>
+</tr>
+<tr>
+<td>
+          азербайджанский
+         </td>
+<td>
+          аз
+         </td>
+</tr>
+<tr>
+<td>
+          Бамбара
+         </td>
+<td>
+          бм
+         </td>
+</tr>
+<tr>
+<td>
+          башкирский
+         </td>
+<td>
+          ба
+         </td>
+</tr>
+<tr>
+<td>
+          баскский
+         </td>
+<td>
+          Евросоюз
+         </td>
+</tr>
+<tr>
+<td>
+          белорусский
+         </td>
+<td>
+          быть
+         </td>
+</tr>
+<tr>
+<td>
+          Бенгальский(Бангла)
+         </td>
+<td>
+          млрд
+         </td>
+</tr>
+<tr>
+<td>
+          Бихари
+         </td>
+<td>
+          бх
+         </td>
+</tr>
+<tr>
+<td>
+          Бислама
+         </td>
+<td>
+          би
+         </td>
+</tr>
+<tr>
+<td>
+          боснийский
+         </td>
+<td>
+          бс
+         </td>
+</tr>
+<tr>
+<td>
+          бретонский
+         </td>
+<td>
+          бр
+         </td>
+</tr>
+<tr>
+<td>
+          болгарский
+         </td>
+<td>
+          бг
+         </td>
+</tr>
+<tr>
+<td>
+          бирманский
+         </td>
+<td>
+          мой
+         </td>
+</tr>
+<tr>
+<td>
+          каталонский
+         </td>
+<td>
+          ca
+         </td>
+</tr>
+<tr>
+<td>
+          Чаморро
+         </td>
+<td>
+          ч
+         </td>
+</tr>
+<tr>
+<td>
+          чеченский
+         </td>
+<td>
+          ce
+         </td>
+</tr>
+<tr>
+<td>
+          Чичева, Чева, Ньянджа
+         </td>
+<td>
+          Нью-Йорк
+         </td>
+</tr>
+<tr>
+<td>
+          китайский
+         </td>
+<td>
+          ж
+         </td>
+</tr>
+<tr>
+<td>
+          Китайский(упрощенный)
+         </td>
+<td>
+          zh-Hans
+         </td>
+</tr>
+<tr>
+<td>
+          Китайский(традиционный)
+         </td>
+<td>
+          zh-Hant
+         </td>
+</tr>
+<tr>
+<td>
+          чувашский
+         </td>
+<td>
+          резюме
+         </td>
+</tr>
+<tr>
+<td>
+          Корнуолл
+         </td>
+<td>
+          кВт
+         </td>
+</tr>
+<tr>
+<td>
+          корсиканский
+         </td>
+<td>
+          ко
+         </td>
+</tr>
+<tr>
+<td>
+          Кри
+         </td>
+<td>
+          кр
+         </td>
+</tr>
+<tr>
+<td>
+          хорватский
+         </td>
+<td>
+          час
+         </td>
+</tr>
+<tr>
+<td>
+          чешский
+         </td>
+<td>
+          cs
+         </td>
+</tr>
+<tr>
+<td>
+          датский
+         </td>
+<td>
+          да
+         </td>
+</tr>
+<tr>
+<td>
+          Дивехи, Дхивехи, Мальдивский
+         </td>
+<td>
+          дв
+         </td>
+</tr>
+<tr>
+<td>
+          Голландский
+         </td>
+<td>
+          нл
+         </td>
+</tr>
+<tr>
+<td>
+          Дзонг-кэ
+         </td>
+<td>
+          дз
+         </td>
+</tr>
+<tr>
+<td>
+          Английский
+         </td>
+<td>
+          ru
+         </td>
+</tr>
+<tr>
+<td>
+          эсперанто
+         </td>
+<td>
+          эо
+         </td>
+</tr>
+<tr>
+<td>
+          эстонский
+         </td>
+<td>
+          эт
+         </td>
+</tr>
+<tr>
+<td>
+          Овца
+         </td>
+<td>
+          ее
+         </td>
+</tr>
+<tr>
+<td>
+          Фарерский
+         </td>
+<td>
+          фо
+         </td>
+</tr>
+<tr>
+<td>
+          фиджийский
+         </td>
+<td>
+          ФДж
+         </td>
+</tr>
+<tr>
+<td>
+          финский
+         </td>
+<td>
+          фи
+         </td>
+</tr>
+<tr>
+<td>
+          Французский
+         </td>
+<td>
+          фр
+         </td>
+</tr>
+<tr>
+<td>
+          Fula, Fulah, Pulaar, Pular
+         </td>
+<td>
+          фф
+         </td>
+</tr>
+<tr>
+<td>
+          галисийский
+         </td>
+<td>
+          гл
+         </td>
+</tr>
+<tr>
+<td>
+          Гэльский(шотландский)
+         </td>
+<td>
+          Б-г
+         </td>
+</tr>
+<tr>
+<td>
+          Гэльский(мэнский)
+         </td>
+<td>
+          гв
+         </td>
+</tr>
+<tr>
+<td>
+          грузинский
+         </td>
+<td>
+          ка
+         </td>
+</tr>
+<tr>
+<td>
+          немецкий
+         </td>
+<td>
+          де
+         </td>
+</tr>
+<tr>
+<td>
+          греческий
+         </td>
+<td>
+          эл
+         </td>
+</tr>
+<tr>
+<td>
+          гренландский
+         </td>
+<td>
+          кл
+         </td>
+</tr>
+<tr>
+<td>
+          Гуарани
+         </td>
+<td>
+          gn
+         </td>
+</tr>
+<tr>
+<td>
+          гуджарати
+         </td>
+<td>
+          гу
+         </td>
+</tr>
+<tr>
+<td>
+          гаитянский креольский
+         </td>
+<td>
+          ht
+         </td>
+</tr>
+<tr>
+<td>
+          хауса
+         </td>
+<td>
+          ха
+         </td>
+</tr>
+<tr>
+<td>
+          иврит
+         </td>
+<td>
+          он
+         </td>
+</tr>
+<tr>
+<td>
+          Гереро
+         </td>
+<td>
+          Гц
+         </td>
+</tr>
+<tr>
+<td>
+          хинди
+         </td>
+<td>
+          привет
+         </td>
+</tr>
+<tr>
+<td>
+          Хири Моту
+         </td>
+<td>
+          хо
+         </td>
+</tr>
+<tr>
+<td>
+          венгерский
+         </td>
+<td>
+          ху
+         </td>
+</tr>
+<tr>
+<td>
+          исландский
+         </td>
+<td>
+          является
+         </td>
+</tr>
+<tr>
+<td>
+          Я делаю
+         </td>
+<td>
+          io
+         </td>
+</tr>
+<tr>
+<td>
+          Игбо
+         </td>
+<td>
+          иг
+         </td>
+</tr>
+<tr>
+<td>
+          индонезийский
+         </td>
+<td>
+          идентификатор, в
+         </td>
+</tr>
+<tr>
+<td>
+          Интерлингва
+         </td>
+<td>
+          я
+         </td>
+</tr>
+<tr>
+<td>
+          Интерлингва
+         </td>
+<td>
+          то есть
+         </td>
+</tr>
+<tr>
+<td>
+          Инуктитут
+         </td>
+<td>
+          ию
+         </td>
+</tr>
+<tr>
+<td>
+          Инупиак
+         </td>
+<td>
+          ик
+         </td>
+</tr>
+<tr>
+<td>
+          ирландский
+         </td>
+<td>
+          га
+         </td>
+</tr>
+<tr>
+<td>
+          итальянский
+         </td>
+<td>
+          это
+         </td>
+</tr>
+<tr>
+<td>
+          японский
+         </td>
+<td>
+          джа
+         </td>
+</tr>
+<tr>
+<td>
+          яванский
+         </td>
+<td>
+          СП
+         </td>
+</tr>
+<tr>
+<td>
+          Калааллисут, гренландский
+         </td>
+<td>
+          кл
+         </td>
+</tr>
+<tr>
+<td>
+          каннада
+         </td>
+<td>
+          кн
+         </td>
+</tr>
+<tr>
+<td>
+          Канури
+         </td>
+<td>
+          кр
+         </td>
+</tr>
+<tr>
+<td>
+          кашмирский
+         </td>
+<td>
+          кс
+         </td>
+</tr>
+<tr>
+<td>
+          казахский
+         </td>
+<td>
+          кк
+         </td>
+</tr>
+<tr>
+<td>
+          кхмерский
+         </td>
+<td>
+          км
+         </td>
+</tr>
+<tr>
+<td>
+          Кикую
+         </td>
+<td>
+          ки
+         </td>
+</tr>
+<tr>
+<td>
+          Киньяруанда(Руанда)
+         </td>
+<td>
+          rw
+         </td>
+</tr>
+<tr>
+<td>
+          Кирунди
+         </td>
+<td>
+          рн
+         </td>
+</tr>
+<tr>
+<td>
+          кыргызский
+         </td>
+<td>
+          ки
+         </td>
+</tr>
+<tr>
+<td>
+          Коми
+         </td>
+<td>
+          кв
+         </td>
+</tr>
+<tr>
+<td>
+          Конго
+         </td>
+<td>
+          кг
+         </td>
+</tr>
+<tr>
+<td>
+          корейский
+         </td>
+<td>
+          ко
+         </td>
+</tr>
+<tr>
+<td>
+          курдский
+         </td>
+<td>
+          ку
+         </td>
+</tr>
+<tr>
+<td>
+          Кваньяма
+         </td>
+<td>
+          кДж
+         </td>
+</tr>
+<tr>
+<td>
+          Лаосский
+         </td>
+<td>
+          вот
+         </td>
+</tr>
+<tr>
+<td>
+          латинский
+         </td>
+<td>
+          ла
+         </td>
+</tr>
+<tr>
+<td>
+          Латышский(латышский)
+         </td>
+<td>
+          лв
+         </td>
+</tr>
+<tr>
+<td>
+          Лимбургский(Limburger)
+         </td>
+<td>
+          ли
+         </td>
+</tr>
+<tr>
+<td>
+          лингала
+         </td>
+<td>
+          пер
+         </td>
+</tr>
+<tr>
+<td>
+          литовский
+         </td>
+<td>
+          лт
+         </td>
+</tr>
+<tr>
+<td>
+          Луга-Катанга
+         </td>
+<td>
+          лу
+         </td>
+</tr>
+<tr>
+<td>
+          Луганда, Ганда
+         </td>
+<td>
+          lg
+         </td>
+</tr>
+<tr>
+<td>
+          люксембургский
+         </td>
+<td>
+          фунт
+         </td>
+</tr>
+<tr>
+<td>
+          Мэнкс
+         </td>
+<td>
+          гв
+         </td>
+</tr>
+<tr>
+<td>
+          македонский
+         </td>
+<td>
+          тк
+         </td>
+</tr>
+<tr>
+<td>
+          малагасийский
+         </td>
+<td>
+          мг
+         </td>
+</tr>
+<tr>
+<td>
+          малайский
+         </td>
+<td>
+          РС
+         </td>
+</tr>
+<tr>
+<td>
+          малаялам
+         </td>
+<td>
+          мл
+         </td>
+</tr>
+<tr>
+<td>
+          мальтийский
+         </td>
+<td>
+          мт
+         </td>
+</tr>
+<tr>
+<td>
+          маори
+         </td>
+<td>
+          ми
+         </td>
+</tr>
+<tr>
+<td>
+          маратхи
+         </td>
+<td>
+          Мистер
+         </td>
+</tr>
+<tr>
+<td>
+          Маршалловы острова
+         </td>
+<td>
+          мх
+         </td>
+</tr>
+<tr>
+<td>
+          молдавский
+         </td>
+<td>
+          мо
+         </td>
+</tr>
+<tr>
+<td>
+          монгольский
+         </td>
+<td>
+          мин
+         </td>
+</tr>
+<tr>
+<td>
+          Науру
+         </td>
+<td>
+          на
+         </td>
+</tr>
+<tr>
+<td>
+          Навахо
+         </td>
+<td>
+          НВ
+         </td>
+</tr>
+<tr>
+<td>
+          Ндонга
+         </td>
+<td>
+          нг
+         </td>
+</tr>
+<tr>
+<td>
+          Северный ндебеле
+         </td>
+<td>
+          й
+         </td>
+</tr>
+<tr>
+<td>
+          непальский
+         </td>
+<td>
+          не
+         </td>
+</tr>
+<tr>
+<td>
+          норвежский
+         </td>
+<td>
+          нет
+         </td>
+</tr>
+<tr>
+<td>
+          норвежский букмол
+         </td>
+<td>
+          нб
+         </td>
+</tr>
+<tr>
+<td>
+          норвежский нюнорск
+         </td>
+<td>
+          нн
+         </td>
+</tr>
+<tr>
+<td>
+          Нуосу
+         </td>
+<td>
+          ii
+         </td>
+</tr>
+<tr>
+<td>
+          окситанский
+         </td>
+<td>
+          ок
+         </td>
+</tr>
+<tr>
+<td>
+          Оджибве
+         </td>
+<td>
+          ой
+         </td>
+</tr>
+<tr>
+<td>
+          Старославянский, староболгарский
+         </td>
+<td>
+          куб. дюйм
+         </td>
+</tr>
+<tr>
+<td>
+          Ория
+         </td>
+<td>
+          или
+         </td>
+</tr>
+<tr>
+<td>
+          Оромо(Afaan Oromo)
+         </td>
+<td>
+          ом
+         </td>
+</tr>
+<tr>
+<td>
+          осетинский
+         </td>
+<td>
+          ОС
+         </td>
+</tr>
+<tr>
+<td>
+          Пали
+         </td>
+<td>
+          пи
+         </td>
+</tr>
+<tr>
+<td>
+          Пушту, пушту
+         </td>
+<td>
+          пс
+         </td>
+</tr>
+<tr>
+<td>
+          Персидский(фарси)
+         </td>
+<td>
+          фа
+         </td>
+</tr>
+<tr>
+<td>
+          польский
+         </td>
+<td>
+          pl
+         </td>
+</tr>
+<tr>
+<td>
+          португальский
+         </td>
+<td>
+          пт
+         </td>
+</tr>
+<tr>
+<td>
+          Пенджаби(восточный)
+         </td>
+<td>
+          па
+         </td>
+</tr>
+<tr>
+<td>
+          кечуа
+         </td>
+<td>
+          цюй
+         </td>
+</tr>
+<tr>
+<td>
+          ретороманский
+         </td>
+<td>
+          рм
+         </td>
+</tr>
+<tr>
+<td>
+          румынский
+         </td>
+<td>
+          ро
+         </td>
+</tr>
+<tr>
+<td>
+          Русский
+         </td>
+<td>
+          ру
+         </td>
+</tr>
+<tr>
+<td>
+          саамский
+         </td>
+<td>
+          се
+         </td>
+</tr>
+<tr>
+<td>
+          самоанский
+         </td>
+<td>
+          см
+         </td>
+</tr>
+<tr>
+<td>
+          Санго
+         </td>
+<td>
+          сг
+         </td>
+</tr>
+<tr>
+<td>
+          санскрит
+         </td>
+<td>
+          са
+         </td>
+</tr>
+<tr>
+<td>
+          сербский
+         </td>
+<td>
+          старший
+         </td>
+</tr>
+<tr>
+<td>
+          сербско-хорватский
+         </td>
+<td>
+          ш
+         </td>
+</tr>
+<tr>
+<td>
+          сесото
+         </td>
+<td>
+          ул.
+         </td>
+</tr>
+<tr>
+<td>
+          Сетсвана
+         </td>
+<td>
+          Теннесси
+         </td>
+</tr>
+<tr>
+<td>
+          Шона
+         </td>
+<td>
+          сн
+         </td>
+</tr>
+<tr>
+<td>
+          Сычуань И
+         </td>
+<td>
+          ii
+         </td>
+</tr>
+<tr>
+<td>
+          Синдхи
+         </td>
+<td>
+          сд
+         </td>
+</tr>
+<tr>
+<td>
+          сингальский
+         </td>
+<td>
+          си
+         </td>
+</tr>
+<tr>
+<td>
+          Сисвати
+         </td>
+<td>
+          SS
+         </td>
+</tr>
+<tr>
+<td>
+          словацкий
+         </td>
+<td>
+          ск
+         </td>
+</tr>
+<tr>
+<td>
+          словенский
+         </td>
+<td>
+          сл
+         </td>
+</tr>
+<tr>
+<td>
+          сомалийский
+         </td>
+<td>
+          так
+         </td>
+</tr>
+<tr>
+<td>
+          Южный Ндебеле
+         </td>
+<td>
+          №
+         </td>
+</tr>
+<tr>
+<td>
+          испанский
+         </td>
+<td>
+          эс
+         </td>
+</tr>
+<tr>
+<td>
+          Суданский
+         </td>
+<td>
+          су
+         </td>
+</tr>
+<tr>
+<td>
+          Суахили(кисуахили)
+         </td>
+<td>
+          sw
+         </td>
+</tr>
+<tr>
+<td>
+          Свати
+         </td>
+<td>
+          SS
+         </td>
+</tr>
+<tr>
+<td>
+          шведский
+         </td>
+<td>
+          св
+         </td>
+</tr>
+<tr>
+<td>
+          Тагальский
+         </td>
+<td>
+          тл
+         </td>
+</tr>
+<tr>
+<td>
+          таитянский
+         </td>
+<td>
+          ты
+         </td>
+</tr>
+<tr>
+<td>
+          таджикский
+         </td>
+<td>
+          тг
+         </td>
+</tr>
+<tr>
+<td>
+          тамильский
+         </td>
+<td>
+          та
+         </td>
+</tr>
+<tr>
+<td>
+          татарский
+         </td>
+<td>
+          тт
+         </td>
+</tr>
+<tr>
+<td>
+          телугу
+         </td>
+<td>
+          те
+         </td>
+</tr>
+<tr>
+<td>
+          тайский
+         </td>
+<td>
+          й
+         </td>
+</tr>
+<tr>
+<td>
+          тибетский
+         </td>
+<td>
+          бо
+         </td>
+</tr>
+<tr>
+<td>
+          Тигринья
+         </td>
+<td>
+          ти
+         </td>
+</tr>
+<tr>
+<td>
+          Тонга
+         </td>
+<td>
+          к
+         </td>
+</tr>
+<tr>
+<td>
+          Тсонга
+         </td>
+<td>
+          тс
+         </td>
+</tr>
+<tr>
+<td>
+          турецкий
+         </td>
+<td>
+          тр
+         </td>
+</tr>
+<tr>
+<td>
+          туркменский
+         </td>
+<td>
+          тк
+         </td>
+</tr>
+<tr>
+<td>
+          Тви
+         </td>
+<td>
+          тв
+         </td>
+</tr>
+<tr>
+<td>
+          уйгурский
+         </td>
+<td>
+          угу
+         </td>
+</tr>
+<tr>
+<td>
+          украинский
+         </td>
+<td>
+          Великобритания
+         </td>
+</tr>
+<tr>
+<td>
+          урду
+         </td>
+<td>
+          ур
+         </td>
+</tr>
+<tr>
+<td>
+          узбекский
+         </td>
+<td>
+          уз
+         </td>
+</tr>
+<tr>
+<td>
+          Венда
+         </td>
+<td>
+          ве
+         </td>
+</tr>
+<tr>
+<td>
+          вьетнамский
+         </td>
+<td>
+          ви
+         </td>
+</tr>
+<tr>
+<td>
+          Волапюк
+         </td>
+<td>
+          во
+         </td>
+</tr>
+<tr>
+<td>
+          Валлон
+         </td>
+<td>
+          ва
+         </td>
+</tr>
+<tr>
+<td>
+          валлийский
+         </td>
+<td>
+          ци
+         </td>
+</tr>
+<tr>
+<td>
+          Волоф
+         </td>
+<td>
+          во
+         </td>
+</tr>
+<tr>
+<td>
+          Западно-фризский
+         </td>
+<td>
+          год
+         </td>
+</tr>
+<tr>
+<td>
+          Коса
+         </td>
+<td>
+          кс
+         </td>
+</tr>
+<tr>
+<td>
+          идиш
+         </td>
+<td>
+          йи, джи
+         </td>
+</tr>
+<tr>
+<td>
+          йоруба
+         </td>
+<td>
+          йоу
+         </td>
+</tr>
+<tr>
+<td>
+          Чжуан, Чуан
+         </td>
+<td>
+          за
+         </td>
+</tr>
+<tr>
+<td>
+          Зулу
+         </td>
+<td>
+          зу
+         </td>
+</tr>
+</tbody>
+</table>
+      Справочная таблица кодов языка HTML
+     </section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Кнопка ввода в HTML (&lt;input type="button"&gt;) — Полное руководство</title>
+<meta content='Все о кнопках в HTML: создание &lt;input type="button"&gt;, настройка внешнего вида, стилизация, обработка событий и примеры практического применения.' name="description" />
+<meta 6.="" 7="" 8="" 9="" button"="" button,="" content="1 синтаксис для кнопки ввода html, 2 создание простой кнопки, 3. добавление кнопок в формы, 3.1 использование javascript для отправки формы, 4. стилизация кнопок с помощью css, 5 различий между input type=" name="keywords" вариантов="" ввода,="" вопросы="" доступности="" заключение"="" и="" использования="" кнопки="" лучших="" практик="" реальных="" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-input-button/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta content='Кнопка ввода в HTML (&lt;input type="button"&gt;) — Полное руководство' property="og:title" />
+<meta content='Все о кнопках в HTML: создание &lt;input type="button"&gt;, настройка внешнего вида, стилизация, обработка событий и примеры практического применения.' property="og:description" />
+<meta property="og:url" content="https://htmlformatter.github.io/html-input-button/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      Кнопка ввода HTML
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       Элемент HTML
+       <code>
+        &lt;input&gt;
+       </code>
+       с
+       <code>
+        type="button"
+       </code>
+       используется для создания нажимаемой кнопки, которая может выполнять пользовательские действия, определенные с помощью JavaScript.
+      </p>
+<p class="text-gray-700 mb-4">
+       В отличие от других типов ввода, таких как
+       <code>
+        submit
+       </code>
+       или
+       <code>
+        reset
+       </code>
+       , которые имеют предопределенное поведение,
+       <code>
+        &lt;input type="button"&gt;
+       </code>
+       отличается высокой универсальностью и полностью зависит от JavaScript в своей функциональности.
+      </p>
+<p class="text-gray-700 mb-4">
+       В этом руководстве мы рассмотрим все, что вам нужно знать о
+       <code>
+        &lt;input type="button"&gt;
+       </code>
+       , включая синтаксис, стили и практические варианты использования.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-sintaksis-dlya-knopki-vvoda-html">
+          1 Синтаксис для кнопки ввода HTML
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-sozdanie-prostoy-knopki">
+          2 Создание простой кнопки
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#3-dobavlenie-knopok-v-formy">
+          3. Добавление кнопок в формы
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#31-ispolzovanie-javascript-dlya-otpravki-formy">
+          3.1 Использование JavaScript для отправки формы
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#4-stilizatsiya-knopok-s-pomoschyu-css">
+          4. Стилизация кнопок с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#5-razlichiy-mezhdu-ltinput-typequotbuttonquotgt-i-ltbuttongt">
+          5 различий между &lt;input type="button"&gt; и &lt;button&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#6-voprosy-dostupnosti-knopki-vvoda">
+          6. Вопросы доступности кнопки ввода
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#7-luchshih-praktik-ispolzovaniya-knopki-vvoda">
+          7 лучших практик использования кнопки ввода
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#8-realnyh-variantov-ispolzovaniya-knopki-vvoda">
+          8 реальных вариантов использования кнопки ввода
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#9-zaklyuchenie">
+          9 Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-sintaksis-dlya-knopki-vvoda-html">
+<span class="hn">
+        1
+       </span>
+       Синтаксис для кнопки ввода HTML
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовый синтаксис кнопки ввода прост:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="button" value="Button Text" onclick="javascriptFunction()"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Здесь:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         type="button"
+        </code>
+        : Указывает, что элемент ввода — кнопка.
+       </li>
+<li class="ml-4">
+<code>
+         value
+        </code>
+        : Задает текст, который отображается на кнопке.
+       </li>
+<li class="ml-4">
+<code>
+         onclick
+        </code>
+        : Указывает функцию JavaScript, которая будет выполнена при нажатии кнопки.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Скриншот
+       </strong>
+</p>
+<img alt="Пример кнопки ввода HTML" height="262" src="https://htmlformatter.github.io/images/html-input-button-b4b274f.png" width="512" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-sozdanie-prostoy-knopki">
+<span class="hn">
+        2
+       </span>
+       Создание простой кнопки
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы создать кнопку, при нажатии на которую отображается сообщение, используйте следующий пример:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="button" value="Click Me" onclick="showAlert()"&gt;
+
+&lt;script&gt;
+  function showAlert() {
+    alert('Button clicked!');
+  }
+&lt;/script&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       При нажатии кнопки выполняется функция `showAlert()`, которая выводит на экран окно оповещения с сообщением «Кнопка нажата!».
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Видео
+       </strong>
+</p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="3-dobavlenie-knopok-v-formy">
+<span class="hn">
+        3.
+       </span>
+       Добавление кнопок в формы
+      </h2>
+<p class="text-gray-700 mb-4">
+       Элемент
+       <code>
+        &lt;input type="button"&gt;
+       </code>
+       часто используется в формах для выполнения пользовательских действий, таких как проверка или программная отправка данных формы.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="31-ispolzovanie-javascript-dlya-otpravki-formy">
+       3.1 Использование JavaScript для отправки формы
+      </h2>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;form id="myForm" action="/next-page" method="post"&gt;
+  &lt;label for="username"&gt;Username:&lt;/label&gt;
+  &lt;input type="text" id="username" name="username"&gt;
+  &lt;input type="button" value="Submit" onclick="submitForm()"&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  function submitForm() {
+    alert('submitting form..');
+    document.getElementById('myForm').submit();
+  }
+&lt;/script&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Здесь нажатие кнопки «Отправить» запускает функцию `submitForm()`, которая программно отправляет форму с помощью метода `submit()`.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="4-stilizatsiya-knopok-s-pomoschyu-css">
+<span class="hn">
+        4.
+       </span>
+       Стилизация кнопок с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Кнопки ввода HTML можно стилизовать с помощью CSS, чтобы улучшить их внешний вид. Вот пример:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+  .custom-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+
+  .custom-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+&lt;/style&gt;
+
+&lt;input type="button" value="Styled Button" class="custom-button" onclick="doSomething()"&gt;
+
+&lt;script&gt;
+  function doSomething() {
+    alert('Styled button clicked!');
+  }
+&lt;/script&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В этом примере создается кнопка с зеленым фоном, белым текстом и скругленными углами. Цвет фона меняется при наведении курсора на кнопку.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="5-razlichiy-mezhdu-ltinput-typequotbuttonquotgt-i-ltbuttongt">
+<span class="hn">
+        5
+       </span>
+       различий между &lt;input type="button"&gt; и &lt;button&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Хотя элементы
+       <code>
+        &lt;input type="button"&gt;
+       </code>
+       и
+       <code>
+        &lt;button&gt;
+       </code>
+       создают интерактивные кнопки, у них есть некоторые ключевые различия:
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Содержимое:
+       </strong>
+       элемент
+       <code>
+        input
+       </code>
+       может отображать только текст, тогда как элемент
+       <code>
+        button
+       </code>
+       может включать любой HTML-контент, такой как текст, изображения или значки.
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Гибкость:
+       </strong>
+       элемент
+       <code>
+        &lt;button&gt;
+       </code>
+       более гибкий и предпочтителен для сложных кнопок.
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Поведение по умолчанию:
+       </strong>
+       внутри форм
+       <code>
+        &lt;button&gt;
+       </code>
+       по умолчанию отправляет форму, если не указано иное, тогда как
+       <code>
+        &lt;input type="button"&gt;
+       </code>
+       не имеет поведения по умолчанию.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="6-voprosy-dostupnosti-knopki-vvoda">
+<span class="hn">
+        6.
+       </span>
+       Вопросы доступности кнопки ввода
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы обеспечить доступность кнопок, примите во внимание следующее:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Используйте понятный и описательный текст для подписи кнопки(через атрибут `value`).
+       </li>
+<li class="ml-4">
+        Обеспечьте доступность клавиатуры, обеспечив возможность фокусировки кнопок и управления ими с помощью клавиатуры.
+       </li>
+<li class="ml-4">
+        При необходимости используйте атрибуты ARIA, такие как `aria-label` или `aria-labelledby`, для получения дополнительного контекста.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="7-luchshih-praktik-ispolzovaniya-knopki-vvoda">
+<span class="hn">
+        7
+       </span>
+       лучших практик использования кнопки ввода
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Используйте
+        <code>
+         &lt;input type="button"&gt;
+        </code>
+        для простых кнопок, функциональность которых основана на JavaScript.
+       </li>
+<li class="ml-4">
+        Используйте
+        <code>
+         &lt;button&gt;
+        </code>
+        для более сложных кнопок, которые включают HTML-контент или требуют расширенного стиля.
+       </li>
+<li class="ml-4">
+        Всегда добавляйте описательную подпись, чтобы пользователи понимали назначение кнопки.
+       </li>
+<li class="ml-4">
+        Убедитесь, что кнопки на всем сайте имеют одинаковый стиль, обеспечивая единый внешний вид.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="8-realnyh-variantov-ispolzovaniya-knopki-vvoda">
+<span class="hn">
+        8
+       </span>
+       реальных вариантов использования кнопки ввода
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот несколько практических примеров использования
+       <code>
+        &lt;input type="button"&gt;
+       </code>
+       :
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Интерактивные формы:
+        </strong>
+        выполняйте проверки, сбрасывайте поля или отправляйте формы программным способом.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Динамическое содержимое:
+        </strong>
+        активируйте функции JavaScript для динамического обновления содержимого страницы.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Пользовательские действия:
+        </strong>
+        используйте кнопки для выполнения таких задач, как загрузка файлов, переключение элементов пользовательского интерфейса или открытие модальных окон.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="9-zaklyuchenie">
+<span class="hn">
+        9
+       </span>
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       Элемент
+       <code>
+        &lt;input type="button"&gt;
+       </code>
+       — это простой, но универсальный инструмент для создания кликабельных кнопок в HTML. В сочетании с JavaScript и CSS он становится мощным компонентом для интерактивных веб-приложений. Понимая его свойства, отличия от других типов кнопок и применяя передовой опыт, вы сможете эффективно использовать его для создания функциональных и удобных интерфейсов.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

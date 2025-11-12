@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;section&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;section&gt; в HTML: определение тематических блоков контента с собственным заголовком, структурирование страницы." />
+<meta name="keywords" content="базовый синтаксис html-тега section, пример использования тега section, стилизация тега section с помощью css, атрибуты html-тега section, разница между section и похожими тегами, практическое применение тега section" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-section-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;section&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;section&gt; в HTML: определение тематических блоков контента с собственным заголовком, структурирование страницы." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-section-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;section&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;section&gt;
+       </code>
+       определяет тематическую группировку контента на веб-странице. Каждый раздел обычно имеет собственный заголовок и представляет собой отдельную часть документа, например главу, вкладку или сегмент. Тег
+       <code>
+        &lt;section&gt;
+       </code>
+       — это семантический элемент, появившийся в HTML5, который делает контент более структурированным и доступным.
+      </p>
+<p class="text-gray-700 mb-4">
+       Разделы используются для разбиения контента на логические части, что улучшает читаемость и помогает поисковым системам и программам чтения с экрана понимать иерархию контента.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-ltsectiongt">
+          Базовый синтаксис HTML-тега &lt;section&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-ispolzovaniya-tega-ltsectiongt">
+          Пример использования тега &lt;section&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-tega-ltsectiongt-s-pomoschyu-css">
+          Стилизация тега &lt;section&gt; с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-ltsectiongt">
+          Атрибуты HTML-тега &lt;section&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#raznitsa-mezhdu-ltsectiongt-i-pohozhimi-tegami">
+          Разница между &lt;section&gt; и похожими тегами
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-ltsectiongt">
+          Практическое применение тега &lt;section&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-ltsectiongt">
+       Базовый синтаксис HTML-тега &lt;section&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура тега
+       <code>
+        &lt;section&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;section&gt;
+    &lt;h2&gt;Section Heading&lt;/h2&gt;
+    &lt;p&gt;Content goes here...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Теги заголовков
+       <code>
+        &lt;h2&gt;
+       </code>
+       или другие соответствующие теги заголовков обеспечивают контекст для содержимого раздела.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-ispolzovaniya-tega-ltsectiongt">
+       Пример использования тега &lt;section&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример организации веб-страницы в несколько разделов:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Web Development Topics&lt;/h1&gt;
+
+        &lt;section&gt;
+            &lt;h2&gt;HTML&lt;/h2&gt;
+            &lt;p&gt;HTML is the standard markup language for creating web pages.&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;
+            &lt;h2&gt;CSS&lt;/h2&gt;
+            &lt;p&gt;CSS is used for styling and designing web pages.&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;
+            &lt;h2&gt;JavaScript&lt;/h2&gt;
+            &lt;p&gt;JavaScript adds interactivity and dynamic features to websites.&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Пример использования раздела Тег" height="463" src="https://htmlformatter.github.io/images2/html-tag-dee2d73.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Каждая тема заключена в собственный
+       <code>
+        &lt;section&gt;
+       </code>
+       с заголовком и соответствующим содержанием, что создает логичную и структурированную структуру.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-tega-ltsectiongt-s-pomoschyu-css">
+       Стилизация тега &lt;section&gt; с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете стилизовать тег
+       <code>
+        &lt;section&gt;
+       </code>
+       , чтобы визуально различать разделы на вашей веб-странице:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            section {
+                margin: 20px 0;
+                padding: 10px;
+                border: 1px solid #ddd;
+                background-color: #f9f9f9;
+                border-radius: 5px;
+            }
+            section h2 {
+                color: #007BFF;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Styled Sections&lt;/h1&gt;
+
+        &lt;section&gt;
+            &lt;h2&gt;HTML&lt;/h2&gt;
+            &lt;p&gt;HTML is the standard markup language for creating web pages.&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;
+            &lt;h2&gt;CSS&lt;/h2&gt;
+            &lt;p&gt;CSS is used for styling and designing web pages.&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;
+            &lt;h2&gt;JavaScript&lt;/h2&gt;
+            &lt;p&gt;JavaScript adds interactivity and dynamic features to websites.&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Оформление раздела  Тегирование с помощью CSS" height="638" src="https://htmlformatter.github.io/images2/html-tag-f0edd1c.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       каждый раздел отображается в визуально различимом блоке с фоновым цветом, отступами и скруглёнными углами. Заголовки оформлены синим цветом.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-ltsectiongt">
+       Атрибуты HTML-тега &lt;section&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Глобальные атрибуты:
+        </strong>
+        тег
+        <code>
+         &lt;section&gt;
+        </code>
+        поддерживает все глобальные атрибуты, такие как
+        <code>
+         id
+        </code>
+        ,
+        <code>
+         class
+        </code>
+        и
+        <code>
+         style
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Роли ARIA:
+        </strong>
+        вы можете добавить роли ARIA, например
+        <code>
+         region
+        </code>
+        для обеспечения доступности.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Например, назначение атрибута
+       <code>
+        id
+       </code>
+       каждому разделу может помочь в создании якорных ссылок для навигации.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;section id="html"&gt;
+    &lt;h2&gt;HTML&lt;/h2&gt;
+    &lt;p&gt;Content about HTML...&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id="css"&gt;
+    &lt;h2&gt;CSS&lt;/h2&gt;
+    &lt;p&gt;Content about CSS...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       Теперь на разделы можно ссылаться напрямую, используя якоря
+       <code>
+        #html
+       </code>
+       или
+       <code>
+        #css
+       </code>
+       в гиперссылках.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="raznitsa-mezhdu-ltsectiongt-i-pohozhimi-tegami">
+       Разница между &lt;section&gt; и похожими тегами
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         &lt;section&gt;:
+        </strong>
+        представляет собой отдельную тематическую группу контента.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         &lt;статья&gt;:
+        </strong>
+        используется для автономного контента, который может распространяться независимо, например, записи в блогах или новостные статьи.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         &lt;div&gt;:
+        </strong>
+        общий контейнер для группировки контента, не имеющий семантического значения.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Используйте тег
+       <code>
+        &lt;section&gt;
+       </code>
+       , когда контент имеет тематическую цель, и рассмотрите
+       <code>
+        &lt;article&gt;
+       </code>
+       для автономных, повторно используемых компонентов.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-ltsectiongt">
+       Практическое применение тега &lt;section&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Макеты веб-сайта:
+        </strong>
+        организуйте основные разделы, такие как «О нас», «Услуги» и «Связаться с нами».
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Документация:
+        </strong>
+        структурируйте техническую документацию по логическим частям.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Интерактивные страницы:
+        </strong>
+        группируйте связанный интерактивный контент, такой как формы и инструкции к ним.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Доступность:
+        </strong>
+        используйте роли ARIA для улучшения навигации для программ чтения с экрана.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;section&gt;
+       </code>
+       помогает создавать чистые, организованные и доступные макеты, улучшая как пользовательский опыт, так и удобство обслуживания.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

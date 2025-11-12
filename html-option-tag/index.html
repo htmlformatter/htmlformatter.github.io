@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;option&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;option&gt; в HTML: создание отдельных опций в выпадающем списке &lt;select&gt;, установка значения, метки и состояния выбора." />
+<meta name="keywords" content="базовый синтаксис тега html option, пример раскрывающегося списка с использованием тега option, атрибуты html-тега option, стилизация тега option с помощью css, использование множественного выбора, практическое применение тега option" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-option-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;option&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;option&gt; в HTML: создание отдельных опций в выпадающем списке &lt;select&gt;, установка значения, метки и состояния выбора." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-option-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;option&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;option&gt;
+       </code>
+       используется для определения пунктов в раскрывающемся списке, созданном с помощью элемента
+       <code>
+        &lt;select&gt;
+       </code>
+       . Каждый
+       <code>
+        &lt;option&gt;
+       </code>
+       представляет один доступный для выбора пункт. Пользователи могут выбрать один или несколько пунктов в зависимости от конфигурации элемента
+       <code>
+        &lt;select&gt;
+       </code>
+       (например, выбор одного или нескольких пунктов).
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;option&gt;
+       </code>
+       универсален и поддерживает ряд атрибутов для настройки его поведения и удобства использования.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-tega-html-ltoptiongt">
+          Базовый синтаксис тега HTML &lt;option&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-raskryvayuschegosya-spiska-s-ispolzovaniem-tega-option">
+          Пример раскрывающегося списка с использованием тега option
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-ltoptiongt">
+          Атрибуты HTML-тега &lt;option&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-tega-ltoptiongt-s-pomoschyu-css">
+          Стилизация тега &lt;option&gt; с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#ispolzovanie-mnozhestvennogo-vybora">
+          Использование множественного выбора
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-ltoptiongt">
+          Практическое применение тега &lt;option&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-tega-html-ltoptiongt">
+       Базовый синтаксис тега HTML &lt;option&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура элемента выбора внутри раскрывающегося списка:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;select&gt;
+    &lt;option value="value1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="value2"&gt;Option 2&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        value
+       </code>
+       определяет данные, отправляемые на сервер при отправке формы, а содержимое внутри
+       <code>
+        &lt;option&gt;
+       </code>
+       — это то, что пользователи видят в раскрывающемся списке.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-raskryvayuschegosya-spiska-s-ispolzovaniem-tega-option">
+       Пример раскрывающегося списка с использованием тега option
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример раскрывающегося меню с использованием тега
+       <code>
+        &lt;option&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Choose a Fruit&lt;/h2&gt;
+        &lt;select&gt;
+            &lt;option value="apple"&gt;Apple&lt;/option&gt;
+            &lt;option value="banana"&gt;Banana&lt;/option&gt;
+            &lt;option value="cherry"&gt;Cherry&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Пример раскрывающегося списка с использованием тега option" height="306" src="https://htmlformatter.github.io/images2/html-tag-c9f9866.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Раскрывающийся список содержит три варианта: «Яблоко», «Банан» и «Вишня». Когда пользователь выбирает элемент, на сервер отправляется соответствующий атрибут
+       <code>
+        value
+       </code>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-ltoptiongt">
+       Атрибуты HTML-тега &lt;option&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         значение:
+        </strong>
+        указывает значение, связанное с параметром, которое отправляется на сервер при отправке.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         выбрано:
+        </strong>
+        отмечает параметр как выбранный по умолчанию элемент при загрузке страницы.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         отключено:
+        </strong>
+        отключает опцию, делая ее недоступной для выбора пользователем.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         метка:
+        </strong>
+        содержит краткое описание параметра, часто используется в целях доступности.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Глобальные атрибуты:
+        </strong>
+        поддерживает глобальные атрибуты, такие как
+        <code>
+         id
+        </code>
+        ,
+        <code>
+         class
+        </code>
+        и
+        <code>
+         style
+        </code>
+        .
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Например, вы можете сделать опцию выбранной или отключенной:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;select&gt;
+    &lt;option value="apple" selected&gt;Apple&lt;/option&gt;
+    &lt;option value="banana" disabled&gt;Banana(Unavailable)&lt;/option&gt;
+    &lt;option value="cherry"&gt;Cherry&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       «Яблоко» предварительно выбрано, а «Банан» неактивен и не может быть выбран.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-tega-ltoptiongt-s-pomoschyu-css">
+       Стилизация тега &lt;option&gt; с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;option&gt;
+       </code>
+       можно стилизовать с помощью CSS, хотя его внешний вид внутри раскрывающихся меню может быть ограничен стилями браузера по умолчанию. Вы можете оформить раскрывающиеся списки следующим образом:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            select {
+                width: 200px;
+                padding: 5px;
+                font-size: 16px;
+            }
+            option {
+                color: #007BFF;
+                font-weight: bold;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Styled Dropdown&lt;/h2&gt;
+        &lt;select&gt;
+            &lt;option value="red"&gt;Red&lt;/option&gt;
+            &lt;option value="green"&gt;Green&lt;/option&gt;
+            &lt;option value="blue"&gt;Blue&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="306" src="https://htmlformatter.github.io/images2/html-tag-af1d9f9.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       раскрывающееся меню и параметры оформлены с использованием пользовательских шрифтов и цветов.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="ispolzovanie-mnozhestvennogo-vybora">
+       Использование множественного выбора
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы разрешить пользователям выбирать несколько вариантов, добавьте атрибут
+       <code>
+        multiple
+       </code>
+       к элементу
+       <code>
+        &lt;select&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;select multiple&gt;
+    &lt;option value="cat"&gt;Cat&lt;/option&gt;
+    &lt;option value="dog"&gt;Dog&lt;/option&gt;
+    &lt;option value="bird"&gt;Bird&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       Атрибут
+       <code>
+        multiple
+       </code>
+       позволяет пользователям выбирать более одного варианта с помощью
+       <code>
+        Ctrl
+       </code>
+       (Windows) или
+       <code>
+        Cmd
+       </code>
+       (Mac).
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-ltoptiongt">
+       Практическое применение тега &lt;option&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Формы:
+        </strong>
+        создавайте раскрывающиеся меню в формах для выбора таких параметров, как страны, штаты или категории.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Фильтры поиска:
+        </strong>
+        предоставьте пользователям раскрывающийся список для фильтрации или сортировки результатов по определенным критериям.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Динамический контент:
+        </strong>
+        динамическое заполнение раскрывающихся списков с помощью JavaScript для создания интерактивного контента для пользователя.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Доступность:
+        </strong>
+        Объедините атрибуты
+        <code>
+         label
+        </code>
+        и
+        <code>
+         disabled
+        </code>
+        для создания понятных и доступных раскрывающихся списков.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

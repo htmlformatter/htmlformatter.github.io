@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;hr&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;hr&gt; обозначает тематический разрыв или разделение контента и обычно отображается как горизонтальная линия." />
+<meta name="keywords" content="базовый синтаксис html-тега hr, атрибуты html-тега hr, базовый пример html-тега hr, стилизация тега hr с помощью css, создание пунктирных или точечных линий с помощью hr, практическое применение тега hr" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-hr-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;hr&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;hr&gt; обозначает тематический разрыв или разделение контента и обычно отображается как горизонтальная линия." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-hr-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;hr&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;hr&gt;
+       </code>
+       представляет собой тематический разрыв или разделение контента, часто используемый для визуального разделения разделов текста или другого контента. Это самозакрывающийся тег, который браузеры обычно отображают как горизонтальную линию.
+      </p>
+<p class="text-gray-700 mb-4">
+       Хотя тег
+       <code>
+        &lt;hr&gt;
+       </code>
+       имеет стандартный вид, вы можете стилизовать его с помощью CSS в соответствии с дизайном вашей веб-страницы. Он также имеет семантическое значение, поскольку указывает на изменение или сдвиг в содержимом.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-lthrgt">
+          Базовый синтаксис HTML-тега &lt;hr&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-lthrgt">
+          Атрибуты HTML-тега &lt;hr&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-primer-html-tega-lthrgt">
+          Базовый пример HTML-тега &lt;hr&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-tega-lthrgt-s-pomoschyu-css">
+          Стилизация тега &lt;hr&gt; с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#sozdanie-punktirnyh-ili-tochechnyh-liniy-s-pomoschyu-lthrgt">
+          Создание пунктирных или точечных линий с помощью &lt;hr&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-lthrgt">
+          Практическое применение тега &lt;hr&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-lthrgt">
+       Базовый синтаксис HTML-тега &lt;hr&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Основной синтаксис тега
+       <code>
+        &lt;hr&gt;
+       </code>
+       следующий:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;hr&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;hr&gt;
+       </code>
+       не требует закрывающего тега, поскольку это пустой элемент.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-lthrgt">
+       Атрибуты HTML-тега &lt;hr&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Глобальные атрибуты:
+        </strong>
+        Тег
+        <code>
+         &lt;hr&gt;
+        </code>
+        поддерживает все глобальные атрибуты, такие как
+        <code>
+         id
+        </code>
+        ,
+        <code>
+         class
+        </code>
+        ,
+        <code>
+         style
+        </code>
+        и
+        <code>
+         title
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Атрибуты событий:
+        </strong>
+        Тег
+        <code>
+         &lt;hr&gt;
+        </code>
+        поддерживает такие атрибуты событий, как
+        <code>
+         onclick
+        </code>
+        ,
+        <code>
+         onmouseover
+        </code>
+        и
+        <code>
+         onfocus
+        </code>
+        .
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-primer-html-tega-lthrgt">
+       Базовый пример HTML-тега &lt;hr&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот простой пример использования тега
+       <code>
+        &lt;hr&gt;
+       </code>
+       для разделения разделов текста:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Welcome to My Blog&lt;/h1&gt;
+        &lt;p&gt;This is the first section of the content.&lt;/p&gt;
+        &lt;hr&gt;
+        &lt;p&gt;This is the second section of the content, separated by a horizontal rule.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Базовый пример HTML-тега hr" height="355" src="https://htmlformatter.github.io/images1/html-tag-2579985.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+<code>
+        &lt;hr&gt;
+       </code>
+       создает видимую горизонтальную линию между двумя абзацами, визуально разделяя содержимое.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-tega-lthrgt-s-pomoschyu-css">
+       Стилизация тега &lt;hr&gt; с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете настроить внешний вид тега
+       <code>
+        &lt;hr&gt;
+       </code>
+       с помощью CSS. Вот пример:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            hr {
+                border: none;
+                height: 2px;
+                background-color: #007BFF;
+                margin: 20px 0;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Styled Horizontal Rule&lt;/h1&gt;
+        &lt;p&gt;This is the first section of content.&lt;/p&gt;
+        &lt;hr&gt;
+        &lt;p&gt;This is the second section of content.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Оформление тега hr с помощью CSS" height="355" src="https://htmlformatter.github.io/images1/html-tag-845038c.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       Горизонтальная линия оформлена в индивидуальном стиле, имеет индивидуальный цвет и высоту, что повышает ее визуальную привлекательность.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="sozdanie-punktirnyh-ili-tochechnyh-liniy-s-pomoschyu-lthrgt">
+       Создание пунктирных или точечных линий с помощью &lt;hr&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       CSS позволяет создавать пунктирные или точечные горизонтальные линии с помощью тега
+       <code>
+        &lt;hr&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            hr.dashed {
+                border: none;
+                border-top: 2px dashed #FF5733;
+                margin: 20px 0;
+            }
+
+            hr.dotted {
+                border: none;
+                border-top: 2px dotted #28A745;
+                margin: 20px 0;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Custom Horizontal Rules&lt;/h1&gt;
+        &lt;p&gt;This is the first section of content.&lt;/p&gt;
+        &lt;hr class="dashed"&gt;
+        &lt;p&gt;This section is separated by a dashed line.&lt;/p&gt;
+        &lt;hr class="dotted"&gt;
+        &lt;p&gt;This section is separated by a dotted line.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Создание пунктирных или точечных линий с помощью hr" height="355" src="https://htmlformatter.github.io/images1/html-tag-1468b6e.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       горизонтальные линии отображаются в виде пунктирных или точечных линий в зависимости от примененного класса CSS.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-lthrgt">
+       Практическое применение тега &lt;hr&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Разделители разделов:
+        </strong>
+        разделяют контент на отдельные разделы, улучшая его читаемость.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Визуальные разрывы:
+        </strong>
+        добавляйте тематические разрывы между несвязанным контентом на одной странице.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Элементы стиля:
+        </strong>
+        используйте пользовательские стили, чтобы
+        <code>
+         &lt;hr&gt;
+        </code>
+        соответствовал дизайну вашей веб-страницы.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

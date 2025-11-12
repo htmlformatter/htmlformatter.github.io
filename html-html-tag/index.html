@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;html&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;html&gt; является корневым элементом HTML-документа, содержащим все остальные элементы, включая &lt;head&gt; и &lt;body&gt;." />
+<meta name="keywords" content="базовый синтаксис html-тега html, атрибуты html-тега html, базовый пример html-тега html, использование атрибута lang, использование атрибута dir в теге html, оформление html-документа в теге html, практическое применение тега html" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-html-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;html&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;html&gt; является корневым элементом HTML-документа, содержащим все остальные элементы, включая &lt;head&gt; и &lt;body&gt;." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-html-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;html&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;html&gt;
+       </code>
+       является корневым элементом HTML-документа. Он определяет начало и конец HTML-документа и служит контейнером для всех остальных элементов, включая теги
+       <code>
+        &lt;head&gt;
+       </code>
+       и
+       <code>
+        &lt;body&gt;
+       </code>
+       . Каждый HTML-документ начинается с тега
+       <code>
+        &lt;html&gt;
+       </code>
+       и заканчивается тегом
+       <code>
+        &lt;/html&gt;
+       </code>
+       .
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;html&gt;
+       </code>
+       предоставляет важную информацию о документе, например, язык содержимого посредством атрибутов, и закладывает основу для структуры веб-страницы.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-lthtmlgt">
+          Базовый синтаксис HTML-тега &lt;html&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-lthtmlgt">
+          Атрибуты HTML-тега &lt;html&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-primer-html-tega-lthtmlgt">
+          Базовый пример HTML-тега &lt;html&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#ispolzovanie-atributa-lang">
+          Использование атрибута lang
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#ispolzovanie-atributa-dir-v-tege-lthtmlgt">
+          Использование атрибута dir в теге &lt;html&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#oformlenie-html-dokumenta-v-tege-lthtmlgt">
+          Оформление HTML-документа в теге &lt;html&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-lthtmlgt">
+          Практическое применение тега &lt;html&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-lthtmlgt">
+       Базовый синтаксис HTML-тега &lt;html&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура HTML-документа с тегом
+       <code>
+        &lt;html&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        Document metadata goes here.
+    &lt;/head&gt;
+    &lt;body&gt;
+        Visible content goes here.
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Элемент
+       <code>
+        &lt;html&gt;
+       </code>
+       содержит две основные секции:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         &lt;head&gt;:
+        </strong>
+        Включает метаданные о документе, такие как заголовок, кодировка символов, стили и сценарии.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         &lt;body&gt;:
+        </strong>
+        Содержит видимое содержимое веб-страницы, такое как текст, изображения и интерактивные элементы.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-lthtmlgt">
+       Атрибуты HTML-тега &lt;html&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         lang:
+        </strong>
+        определяет язык содержимого документа. Например,
+        <code>
+         lang="en"
+        </code>
+        для английского.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         dir:
+        </strong>
+        определяет направление текста для содержимого. Возможные значения:
+&lt;ul class="wp-block-list"&gt;
+        <li class="ml-4">
+<code>
+          ltr
+         </code>
+         : слева направо(по умолчанию, используется для таких языков, как английский).
+        </li>
+<li class="ml-4">
+<code>
+          rtl
+         </code>
+         : справа налево(используется для таких языков, как арабский или иврит).
+        </li>
+</li>
+</ul>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+        Глобальные атрибуты:
+       </strong>
+       поддерживает все глобальные атрибуты, такие как
+       <code>
+        id
+       </code>
+       ,
+       <code>
+        class
+       </code>
+       и
+       <code>
+        style
+       </code>
+       .
+      </li>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-primer-html-tega-lthtmlgt">
+       Базовый пример HTML-тега &lt;html&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот простой пример полного HTML-документа:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;My First HTML Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+        &lt;p&gt;This is a sample HTML document.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Базовый пример HTML-тега html" height="331" src="https://htmlformatter.github.io/images1/html-tag-a0a333e.png" width="608" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       В этом примере определяется базовый HTML-документ с заголовком, языком и видимым содержимым в теле.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="ispolzovanie-atributa-lang">
+       Использование атрибута lang
+      </h2>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        lang
+       </code>
+       определяет язык содержимого документа. Это помогает поисковым системам и программам чтения с экрана корректно обрабатывать содержимое:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Bienvenue&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Bienvenue sur mon site Web&lt;/h1&gt;
+        &lt;p&gt;Ceci est un exemple de document HTML en français.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       Атрибут
+       <code>
+        lang="fr"
+       </code>
+       указывает, что контент на французском языке, что улучшает доступность для франкоговорящих пользователей.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="ispolzovanie-atributa-dir-v-tege-lthtmlgt">
+       Использование атрибута dir в теге &lt;html&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        dir
+       </code>
+       определяет направление текста в содержимом. Вот пример с направлением текста справа налево:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ar" dir="rtl"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;مرحبا بكم&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;مرحبا بكم في موقعي&lt;/h1&gt;
+        &lt;p&gt;هذا مثال على مستند HTML باللغة العربية.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Использование атрибута dir в теге html" height="353" src="https://htmlformatter.github.io/images1/html-tag-2202907.png" width="608" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Атрибут
+       <code>
+        dir="rtl"
+       </code>
+       заставляет текст располагаться справа налево, что подходит для таких языков, как арабский и иврит.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="oformlenie-html-dokumenta-v-tege-lthtmlgt">
+       Оформление HTML-документа в теге &lt;html&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете применить CSS ко всему документу, стилизовав тег
+       <code>
+        &lt;html&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en" style="background-color: #f0f000; color: #333;"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Styled Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+        &lt;p&gt;This document has a light gray background and dark text color.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Оформление HTML-документа" height="353" src="https://htmlformatter.github.io/images1/html-tag-8c425b3.png" width="608" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       фон документа выглядит светло-серым, а цвет текста — темным, как определено во встроенном стиле тега
+       <code>
+        &lt;html&gt;
+       </code>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-lthtmlgt">
+       Практическое применение тега &lt;html&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Корневой элемент:
+        </strong>
+        действует как корневой контейнер для всего HTML-содержимого документа.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Язык и направление:
+        </strong>
+        задает язык документа и направление текста с помощью атрибутов
+        <code>
+         lang
+        </code>
+        и
+        <code>
+         dir
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Стилизация:
+        </strong>
+        обеспечивает основу для применения глобальных стилей ко всей веб-странице.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Структура:
+        </strong>
+        обеспечивает хорошую структуру документа и его соответствие стандартам HTML.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

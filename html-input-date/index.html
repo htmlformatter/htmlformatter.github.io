@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-ввод даты (&lt;input type="date"&gt;) — Полное руководство</title>
+<meta content='Все о выборе даты в HTML: использование &lt;input type="date"&gt;, поддержка браузеров, настройка формата, стилизация и обработка данных.' name="description" />
+<meta name="keywords" content="1. базовый синтаксис, 2. добавление метки для доступности, 3. установка значений по умолчанию, 4. установка минимальных и максимальных дат, 5. проверка с обязательным атрибутом, 6. оформление поля ввода даты, 7 использование javascript с вводом даты, 8 вопросов доступности при вводе даты, 9 реальных вариантов использования ввода даты, заключение" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-input-date/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta content='HTML-ввод даты (&lt;input type="date"&gt;) — Полное руководство' property="og:title" />
+<meta content='Все о выборе даты в HTML: использование &lt;input type="date"&gt;, поддержка браузеров, настройка формата, стилизация и обработка данных.' property="og:description" />
+<meta property="og:url" content="https://htmlformatter.github.io/html-input-date/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-ввод даты
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-элемент
+       <code>
+        &lt;input&gt;
+       </code>
+       с
+       <code>
+        type="date"
+       </code>
+       используется для создания поля выбора даты, позволяющего пользователям выбирать дату из интерфейса календаря. Эта функция упрощает процесс ввода даты и обеспечивает единообразие формата, делая его незаменимым инструментом для ввода данных в формах, требующих ввода даты.
+      </p>
+<img alt="Пример ввода даты в HTML" height="497" src="https://htmlformatter.github.io/images/html-input-date-024f0ed.png" width="512" />
+<p class="text-gray-700 mb-4">
+       В отличие от обычного текстового ввода,
+       <code>
+        &lt;input type="date"&gt;
+       </code>
+       оптимизирован для выбора даты и предоставляет удобный интерфейс. Он поддерживает атрибуты для проверки и настройки, обеспечивая точный и содержательный ввод данных.
+      </p>
+<p class="text-gray-700 mb-4">
+       В этом уроке мы изучим синтаксис, атрибуты, стили и практическое применение Input Date.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-bazovyy-sintaksis">
+          1. Базовый синтаксис
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-dobavlenie-metki-dlya-dostupnosti">
+          2. Добавление метки для доступности
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#3-ustanovka-znacheniy-po-umolchaniyu">
+          3. Установка значений по умолчанию
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#4-ustanovka-minimalnyh-i-maksimalnyh-dat">
+          4. Установка минимальных и максимальных дат
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#5-proverka-s-obyazatelnym-atributom">
+          5. Проверка с обязательным атрибутом
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#6-oformlenie-polya-vvoda-daty">
+          6. Оформление поля ввода даты
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#7-ispolzovanie-javascript-s-vvodom-daty">
+          7 Использование JavaScript с вводом даты
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#8-voprosov-dostupnosti-pri-vvode-daty">
+          8 вопросов доступности при вводе даты
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#9-realnyh-variantov-ispolzovaniya-vvoda-daty">
+          9 реальных вариантов использования ввода даты
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zaklyuchenie">
+          Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-bazovyy-sintaksis">
+<span class="hn">
+        1.
+       </span>
+       Базовый синтаксис
+      </h2>
+<p class="text-gray-700 mb-4">
+       Основной синтаксис для ввода даты HTML:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="date" name="birthday"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Здесь:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         type="date"
+        </code>
+        : Указывает, что входные данные представляют собой средство выбора даты.
+       </li>
+<li class="ml-4">
+<code>
+         name
+        </code>
+        : Связывает входные данные с определенным именем для отправки данных формы.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-dobavlenie-metki-dlya-dostupnosti">
+<span class="hn">
+        2.
+       </span>
+       Добавление метки для доступности
+      </h2>
+<p class="text-gray-700 mb-4">
+       Для улучшения доступности рекомендуется добавлять описательную метку к полю ввода даты:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;label for="birthday"&gt;Select your birthday:&lt;/label&gt;
+&lt;input type="date" id="birthday" name="birthday"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Нажатие на метку фокусирует ввод данных, делая форму более удобной для пользователя.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="3-ustanovka-znacheniy-po-umolchaniyu">
+<span class="hn">
+        3.
+       </span>
+       Установка значений по умолчанию
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете задать дату по умолчанию для входных данных с помощью атрибута
+       <code>
+        value
+       </code>
+       . Значение должно быть в формате
+       <code>
+        YYYY-MM-DD
+       </code>
+       .
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="date" id="startdate" name="startdate" value="2024-01-01"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В этом примере значение по умолчанию — 1 января 2024 года. При загрузке страницы эта дата будет выбрана предварительно.
+      </p>
+<img alt="Установка значений по умолчанию для ввода даты" height="258" src="https://htmlformatter.github.io/images/html-input-date-7a6829c.png" width="512" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="4-ustanovka-minimalnyh-i-maksimalnyh-dat">
+<span class="hn">
+        4.
+       </span>
+       Установка минимальных и максимальных дат
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы ограничить диапазон дат, который могут выбирать пользователи, используйте атрибуты
+       <code>
+        min
+       </code>
+       и
+       <code>
+        max
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="date" id="appointment" name="appointment" min="2024-01-01" max="2024-12-31"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В этом примере пользователи могут выбирать только даты между 1 января 2024 года и 31 декабря 2024 года.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="5-proverka-s-obyazatelnym-atributom">
+<span class="hn">
+        5.
+       </span>
+       Проверка с обязательным атрибутом
+      </h2>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        required
+       </code>
+       гарантирует, что пользователи не смогут отправить форму, не выбрав дату:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="date" id="duedate" name="duedate" required&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Когда пользователь пытается отправить форму, не выбрав дату, браузер выводит сообщение об ошибке.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;form&gt;
+  &lt;label for="duedate"&gt;Due date:&lt;/label&gt;
+  &lt;input type="date" id="duedate" name="duedate" required&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Видео
+       </strong>
+</p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="6-oformlenie-polya-vvoda-daty">
+<span class="hn">
+        6.
+       </span>
+       Оформление поля ввода даты
+      </h2>
+<p class="text-gray-700 mb-4">
+       Хотя внешний вид самого окна выбора даты контролируется браузером, вы можете стилизовать поле ввода с помощью CSS:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+  input[type="date"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  input[type="date"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px #4CAF50;
+  }
+&lt;/style&gt;
+
+&lt;label for="datefield"&gt;Pick a date:&lt;/label&gt;
+&lt;input type="date" id="datefield"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В этом примере поле ввода оформляется так, чтобы при фокусировке на нем появлялись скругленные углы и зеленая рамка.
+      </p>
+<img alt="Оформление поля даты в HTML с помощью CSS" height="281" src="https://htmlformatter.github.io/images/html-input-date-4af79fa.png" width="518" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="7-ispolzovanie-javascript-s-vvodom-daty">
+<span class="hn">
+        7
+       </span>
+       Использование JavaScript с вводом даты
+      </h2>
+<p class="text-gray-700 mb-4">
+       JavaScript можно использовать для динамического взаимодействия с полем даты. Например, можно установить минимальную дату на основе текущей:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="date" id="dynamicDate" name="dynamicDate"&gt;
+
+&lt;script&gt;
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('dynamicDate').setAttribute('min', today);
+&lt;/script&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Этот скрипт устанавливает минимальную доступную для выбора дату на текущую дату, не позволяя пользователям выбирать прошедшие даты.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="8-voprosov-dostupnosti-pri-vvode-daty">
+<span class="hn">
+        8
+       </span>
+       вопросов доступности при вводе даты
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы обеспечить доступность введенных вами дат:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Создавайте понятные и описательные метки, используя элемент
+        <code>
+         &lt;label&gt;
+        </code>
+        .
+       </li>
+<li class="ml-4">
+        При необходимости используйте атрибуты
+        <code>
+         aria-label
+        </code>
+        или
+        <code>
+         aria-describedby
+        </code>
+        для дополнительных инструкций.
+       </li>
+<li class="ml-4">
+        Обеспечьте достаточный цветовой контраст текста и границ.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="9-realnyh-variantov-ispolzovaniya-vvoda-daty">
+<span class="hn">
+        9
+       </span>
+       реальных вариантов использования ввода даты
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Системы бронирования:
+        </strong>
+        позволяют пользователям выбирать даты для бронирования или записи на прием.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Регистрация на мероприятие:
+        </strong>
+        соберите даты мероприятий для планирования.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Управление сроками:
+        </strong>
+        используйте вводимые даты для задач или сроков выполнения проектов.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zaklyuchenie">
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-элемент
+       <code>
+        &lt;input type="date"&gt;
+       </code>
+       — мощный инструмент для создания удобных и доступных форм. Используя его атрибуты и интегрируя с JavaScript, вы можете создавать интерактивные и эффективные поля ввода даты для различных приложений.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

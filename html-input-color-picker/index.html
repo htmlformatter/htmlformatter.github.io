@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Выбор цвета в HTML (&lt;input type="color"&gt;) — Справочник по использованию</title>
+<meta content='Подробное объяснение работы с &lt;input type="color"&gt;: настройка цветового выбора, установка значений по умолчанию, стилизация и примеры использования в веб-проектах.' name="description" />
+<meta name="keywords" content="1 синтаксис для ввода цвета, 2. добавление метки для доступности, 3. установка цвета по умолчанию, 4. обработка ввода цвета с помощью javascript, 5. оформление палитры цветов, 6. вопросы доступности, 7 поддержка браузеров, 8 реальных приложений, заключение" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-input-color-picker/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta content='Выбор цвета в HTML (&lt;input type="color"&gt;) — Справочник по использованию' property="og:title" />
+<meta content='Подробное объяснение работы с &lt;input type="color"&gt;: настройка цветового выбора, установка значений по умолчанию, стилизация и примеры использования в веб-проектах.' property="og:description" />
+<meta property="og:url" content="https://htmlformatter.github.io/html-input-color-picker/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      Выбор цвета для HTML-ввода
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-элемент &lt;input&gt; с
+       <code>
+        type="color"
+       </code>
+       позволяет пользователям выбирать цвет из интерфейса палитры цветов браузера. Эта функция упрощает процесс выбора цветов для различных приложений, например, для настройки тем, выбора фоновых цветов или персонализации контента.
+      </p>
+<p class="text-gray-700 mb-4">
+       В этом уроке мы изучим HTML Input Color Picker, как определить его в HTML-файле, как обеспечить доступность, задать значение цвета по умолчанию, обрабатывать вводимые пользователем цветовые данные, стили ввода цвета и другие его аспекты.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-sintaksis-dlya-vvoda-tsveta">
+          1 Синтаксис для ввода цвета
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-dobavlenie-metki-dlya-dostupnosti">
+          2. Добавление метки для доступности
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#3-ustanovka-tsveta-po-umolchaniyu">
+          3. Установка цвета по умолчанию
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#4-obrabotka-vvoda-tsveta-s-pomoschyu-javascript">
+          4. Обработка ввода цвета с помощью JavaScript
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#5-oformlenie-palitry-tsvetov">
+          5. Оформление палитры цветов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#6-voprosy-dostupnosti">
+          6. Вопросы доступности
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#7-podderzhka-brauzerov">
+          7 Поддержка браузеров
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#8-realnyh-prilozheniy">
+          8 реальных приложений
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zaklyuchenie">
+          Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-sintaksis-dlya-vvoda-tsveta">
+<span class="hn">
+        1
+       </span>
+       Синтаксис для ввода цвета
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовый синтаксис для создания палитры цветов:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="color" name="favcolor" id="favcolor"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       При отображении этого элемента в браузерах, поддерживающих эту функцию, отображается элемент управления выбором цвета.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-dobavlenie-metki-dlya-dostupnosti">
+<span class="hn">
+        2.
+       </span>
+       Добавление метки для доступности
+      </h2>
+<p class="text-gray-700 mb-4">
+       Хорошей практикой является включение элемента `` для связывания описательного текста с палитрой цветов:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;label for="favcolor"&gt;Choose your favorite color:&lt;/label&gt;
+&lt;input type="color" name="favcolor" id="favcolor"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       При щелчке по тексту метки активируется элемент управления выбором цвета, что повышает доступность.
+      </p>
+<img alt="Выбор цвета для HTML-ввода — добавление метки для обеспечения доступности" height="262" src="https://htmlformatter.github.io/images/html-input-color-picker-26ad466.png" width="512" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="3-ustanovka-tsveta-po-umolchaniyu">
+<span class="hn">
+        3.
+       </span>
+       Установка цвета по умолчанию
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете задать цвет по умолчанию с помощью атрибута `value`. Значение должно быть в шестнадцатеричном формате:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;label for="bgcolor"&gt;Pick a background color:&lt;/label&gt;
+&lt;input type="color" id="bgcolor" name="bgcolor" value="#ff5733"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В этом примере цвет по умолчанию — оттенок оранжевого(
+       <code>
+        #ff5733
+       </code>
+       ).
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="4-obrabotka-vvoda-tsveta-s-pomoschyu-javascript">
+<span class="hn">
+        4.
+       </span>
+       Обработка ввода цвета с помощью JavaScript
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы динамически использовать выбранный цвет в вашем приложении, вы можете захватить входное значение с помощью JavaScript:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;label for="colorPicker"&gt;Pick a color:&lt;/label&gt;
+&lt;input type="color" id="colorPicker" name="colorPicker"&gt;
+
+&lt;script&gt;
+  const colorInput = document.getElementById('colorPicker');
+  colorInput.addEventListener('input',(event) =&gt; {
+    document.body.style.backgroundColor = event.target.value;
+  });
+&lt;/script&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Этот скрипт меняет цвет фона страницы на выбранный цвет в режиме реального времени.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="5-oformlenie-palitry-tsvetov">
+<span class="hn">
+        5.
+       </span>
+       Оформление палитры цветов
+      </h2>
+<p class="text-gray-700 mb-4">
+       Внешний вид палитры цветов зависит от браузера и не может быть стилизован напрямую. Однако вы можете поместить поле ввода в контейнер и стилизовать его:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;div style="padding: 10px; border: 1px solid #ccc; display: inline-block;"&gt;
+  &lt;label for="customColor"&gt;Choose color:&lt;/label&gt;
+  &lt;input type="color" id="customColor" name="customColor"&gt;
+&lt;/div&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Это добавляет отступы и границы, делая палитру цветов визуально различимой.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="6-voprosy-dostupnosti">
+<span class="hn">
+        6.
+       </span>
+       Вопросы доступности
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы обеспечить доступность палитры цветов:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Используйте описательные надписи, чтобы объяснить назначение палитры цветов.
+       </li>
+<li class="ml-4">
+        Обеспечьте достаточный цветовой контраст между подборщиком и его окружением.
+       </li>
+<li class="ml-4">
+        При необходимости укажите значения по умолчанию для контекста.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="7-podderzhka-brauzerov">
+<span class="hn">
+        7
+       </span>
+       Поддержка браузеров
+      </h2>
+<p class="text-gray-700 mb-4">
+       Цветовой тип ввода поддерживается большинством современных браузеров, включая Chrome, Edge, Firefox, Safari и Opera. Для старых браузеров, которые не поддерживают этот тип ввода, можно предоставить резервный механизм, например, обычный текстовый ввод:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;label for="colorFallback"&gt;Enter a color:&lt;/label&gt;
+&lt;input type="color" id="colorFallback" name="colorFallback" oninvalid="this.type='text'"&gt;</code></pre>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="8-realnyh-prilozheniy">
+<span class="hn">
+        8
+       </span>
+       реальных приложений
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Настройка темы:
+        </strong>
+        разрешите пользователям выбирать цвета для тем или макетов.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Графические приложения:
+        </strong>
+        Реализуйте палитры цветов для инструментов дизайна.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Визуализация данных:
+        </strong>
+        выберите цвета для диаграмм и графиков.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zaklyuchenie">
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-палитра цветов — это простой, но мощный инструмент для улучшения взаимодействия с пользователем в веб-приложениях. Сочетая его с JavaScript и стилизацией, вы можете создавать привлекательные и функциональные интерфейсы. Широкая поддержка браузеров и доступность делают его незаменимым инструментом для современной веб-разработки.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

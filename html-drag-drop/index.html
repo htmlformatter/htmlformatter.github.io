@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Перетаскивание HTML-кода - ХТМЛ справочник</title>
+<meta name="description" content="В этом руководстве мы объясним основы функционала drag-and-drop (перетаскивания) в HTML, рассмотрим связанные события и атрибуты, а также приведём практические примеры для реализации в ваших проектах." />
+<meta name="keywords" content="что такое перетаскивание html?, базовый синтаксис перетаскивания, события перетаскивания, 1 dragstart, 2 dragover, 3 drop, 4 dragend, стилизация элементов drag-and-drop, реальные примеры использования функции перетаскивания, вопросы доступности при перетаскивании" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-drag-drop/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Перетаскивание HTML-кода - ХТМЛ справочник" />
+<meta property="og:description" content="В этом руководстве мы объясним основы функционала drag-and-drop (перетаскивания) в HTML, рассмотрим связанные события и атрибуты, а также приведём практические примеры для реализации в ваших проектах." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-drag-drop/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      Перетаскивание HTML-кода
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       API HTML Drag and Drop позволяет пользователям щёлкнуть по элементу, перетащить его на новое место и оставить. Эта интерактивная функция обычно используется для таких задач, как перегруппировка элементов, загрузка файлов или создание визуальных интерфейсов, таких как канбан-доски.
+      </p>
+<p class="text-gray-700 mb-4">
+       В этом уроке по HTML мы объясним основы функциональности перетаскивания, связанные с этим события и атрибуты, а также практические примеры, которые помогут вам реализовать их в своих проектах.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#chto-takoe-peretaskivanie-html">
+          Что такое перетаскивание HTML?
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-peretaskivaniya">
+          Базовый синтаксис перетаскивания
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#sobytiya-peretaskivaniya">
+          События перетаскивания
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-dragstart">
+          1 dragstart
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-dragover">
+          2 dragover
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#3-drop">
+          3 drop
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#4-dragend">
+          4 dragend
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-elementov-drag-and-drop">
+          Стилизация элементов Drag-and-Drop
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#realnye-primery-ispolzovaniya-funktsii-peretaskivaniya">
+          Реальные примеры использования функции перетаскивания
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#voprosy-dostupnosti-pri-peretaskivanii">
+          Вопросы доступности при перетаскивании
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#luchshie-praktiki-ispolzovaniya-peretaskivaniya">
+          Лучшие практики использования перетаскивания
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zaklyuchenie">
+          Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="chto-takoe-peretaskivanie-html">
+       Что такое перетаскивание HTML?
+      </h2>
+<p class="text-gray-700 mb-4">
+       Функция перетаскивания позволяет пользователям интуитивно перемещать элементы по интерфейсу. Эта функция использует сочетание HTML-атрибутов, событий JavaScript и API перетаскивания.
+      </p>
+<p class="text-gray-700 mb-4">
+       Вот простой обзор процесса:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Перетаскиваемые элементы:
+        </strong>
+        HTML-элементы можно сделать перетаскиваемыми, добавив атрибут
+        <code>
+         draggable="true"
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         События перетаскивания:
+        </strong>
+        JavaScript используется для обработки событий перетаскивания, таких как
+        <code>
+         dragstart
+        </code>
+        ,
+        <code>
+         dragover
+        </code>
+        и
+        <code>
+         drop
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Цели перетаскивания:
+        </strong>
+        определите, куда можно перетаскивать перетаскиваемые элементы, используя прослушиватели событий.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-peretaskivaniya">
+       Базовый синтаксис перетаскивания
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот базовая реализация функции перетаскивания:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;div id="draggable" draggable="true"&gt;Drag me!&lt;/div&gt;
+&lt;div id="dropzone"&gt;Drop here&lt;/div&gt;
+
+&lt;script&gt;
+  const draggable = document.getElementById('draggable');
+  const dropzone = document.getElementById('dropzone');
+
+  draggable.addEventListener('dragstart',(event) =&gt; {
+    event.dataTransfer.setData('text/plain', event.target.id);
+  });
+
+  dropzone.addEventListener('dragover',(event) =&gt; {
+    event.preventDefault(); // Allows the drop event
+  });
+
+  dropzone.addEventListener('drop',(event) =&gt; {
+    event.preventDefault();
+    const data = event.dataTransfer.getData('text');
+    const element = document.getElementById(data);
+    dropzone.appendChild(element);
+  });
+&lt;/script&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В этом примере:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Атрибут
+        <code>
+         draggable="true"
+        </code>
+        делает элемент перетаскиваемым.
+       </li>
+<li class="ml-4">
+        Событие
+        <code>
+         dragstart
+        </code>
+        инициирует операцию перетаскивания.
+       </li>
+<li class="ml-4">
+        Событие
+        <code>
+         dragover
+        </code>
+        разрешает операцию сброса, предотвращая поведение по умолчанию.
+       </li>
+<li class="ml-4">
+        Событие
+        <code>
+         drop
+        </code>
+        обрабатывает фактическое действие перетаскивания.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="sobytiya-peretaskivaniya">
+       События перетаскивания
+      </h2>
+<p class="text-gray-700 mb-4">
+       API Drag and Drop включает несколько ключевых событий:
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-dragstart">
+<span class="hn">
+        1
+       </span>
+<code>
+        dragstart
+       </code>
+</h2>
+<p class="text-gray-700 mb-4">
+       Срабатывает при начале операции перетаскивания. Используйте
+       <code>
+        event.dataTransfer
+       </code>
+       для хранения данных о перетаскиваемом элементе.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>element.addEventListener('dragstart',(event) =&gt; {
+  event.dataTransfer.setData('text', event.target.id);
+});</code></pre>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-dragover">
+<span class="hn">
+        2
+       </span>
+<code>
+        dragover
+       </code>
+</h2>
+<p class="text-gray-700 mb-4">
+       Срабатывает при перетаскивании элемента через допустимую цель перетаскивания. Используйте
+       <code>
+        event.preventDefault()
+       </code>
+       чтобы разрешить перетаскивание.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>dropzone.addEventListener('dragover',(event) =&gt; {
+  event.preventDefault();
+});</code></pre>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="3-drop">
+<span class="hn">
+        3
+       </span>
+<code>
+        drop
+       </code>
+</h2>
+<p class="text-gray-700 mb-4">
+       Срабатывает при отпускании перетаскиваемого элемента на допустимой цели. Извлеките сохранённые данные с помощью
+       <code>
+        event.dataTransfer.getData()
+       </code>
+       .
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>dropzone.addEventListener('drop',(event) =&gt; {
+  const data = event.dataTransfer.getData('text');
+  const element = document.getElementById(data);
+  dropzone.appendChild(element);
+});</code></pre>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="4-dragend">
+<span class="hn">
+        4
+       </span>
+<code>
+        dragend
+       </code>
+</h2>
+<p class="text-gray-700 mb-4">
+       Срабатывает по завершении операции перетаскивания. Используйте это для сброса стилей или очистки после операции.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>element.addEventListener('dragend',() =&gt; {
+  console.log('Drag operation ended');
+});</code></pre>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-elementov-drag-and-drop">
+       Стилизация элементов Drag-and-Drop
+      </h2>
+<p class="text-gray-700 mb-4">
+       CSS можно использовать для стилизации перетаскиваемых элементов и целей сбрасывания для улучшения пользовательского опыта.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+  #draggable {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 100px;
+    cursor: grab;
+  }
+
+  #dropzone {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #dropzone:hover {
+    border-color: #66cc66;
+  }
+&lt;/style&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Видео
+       </strong>
+</p>
+<p class="text-gray-700 mb-4">
+       В этом примере:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Перетаскиваемый элемент имеет курсор «захвата», указывающий на интерактивность.
+       </li>
+<li class="ml-4">
+        Зона перетаскивания имеет пунктирную границу, которая меняет цвет при наведении курсора.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="realnye-primery-ispolzovaniya-funktsii-peretaskivaniya">
+       Реальные примеры использования функции перетаскивания
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Изменение порядка элементов:
+        </strong>
+        перетаскивайте элементы в списке, чтобы изменить их порядок.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Загрузка файлов:
+        </strong>
+        перетащите файлы в указанную область загрузки.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Доски Канбан:
+        </strong>
+        перемещайте задачи между столбцами(например, «Сделать», «В процессе», «Готово»).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Разработка игр:
+        </strong>
+        создание интерактивных игр с перетаскиваемыми компонентами.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="voprosy-dostupnosti-pri-peretaskivanii">
+       Вопросы доступности при перетаскивании
+      </h2>
+<p class="text-gray-700 mb-4">
+       Обеспечьте доступность функции перетаскивания для всех пользователей, следуя этим рекомендациям:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Предоставьте альтернативу клавиатуре для перетаскивания элементов.
+       </li>
+<li class="ml-4">
+        Используйте атрибуты
+        <code>
+         aria-grabbed
+        </code>
+        и
+        <code>
+         aria-dropeffect
+        </code>
+        для информирования о вспомогательных технологиях.
+       </li>
+<li class="ml-4">
+        Предоставляйте четкую визуальную обратную связь, когда элемент можно перетаскивать или бросать.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="luchshie-praktiki-ispolzovaniya-peretaskivaniya">
+       Лучшие практики использования перетаскивания
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Сделайте интерфейс интуитивно понятным, используя четкие визуальные подсказки для перетаскиваемых элементов и зон размещения.
+       </li>
+<li class="ml-4">
+        Проверьте функциональность в разных браузерах, чтобы убедиться в совместимости.
+       </li>
+<li class="ml-4">
+        Объедините перетаскивание с сенсорными событиями для лучшей поддержки мобильных устройств.
+       </li>
+<li class="ml-4">
+        Предоставьте резервные варианты для устройств, которые не поддерживают функцию перетаскивания.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zaklyuchenie">
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       Функциональность перетаскивания HTML-элементов — мощный способ улучшить взаимодействие с пользователем на вашем сайте. Понимая события, атрибуты и методы стилизации, вы сможете реализовать динамические функции, которые повысят удобство использования и обеспечат увлекательный пользовательский опыт. Всегда учитывайте доступность и совместимость, чтобы гарантировать инклюзивность и надежность ваших функций перетаскивания.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

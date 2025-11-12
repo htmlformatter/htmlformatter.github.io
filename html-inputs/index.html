@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Элементы ввода inputs в HTML - ХТМЛ справочник</title>
+<meta name="description" content="Полный справочник по элементам ввода в HTML: все виды &lt;input&gt;, их атрибуты, использование и практические примеры для веб-форм." />
+<meta name="keywords" content="1 введение в элемент input, 2 распространенных типа ввода, 3 входных атрибута, 4 группировка входных данных с помощью fieldset и legend, 5. связывание меток с входными данными, 6 расширенных типов ввода, 7 загрузок файлов, 8. проверка с входными атрибутами, 8.1 пример: требуемые входные данные, 8.2 пример: входной шаблон" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-inputs/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Элементы ввода inputs в HTML - ХТМЛ справочник" />
+<meta property="og:description" content="Полный справочник по элементам ввода в HTML: все виды &lt;input&gt;, их атрибуты, использование и практические примеры для веб-форм." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-inputs/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      Элементы ввода HTML
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       Элементы ввода HTML являются основополагающими компонентами веб-форм, обеспечивая взаимодействие с пользователем и сбор данных. В этом руководстве рассматриваются различные типы ввода, атрибуты и рекомендации по улучшению ваших навыков веб-разработки.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-vvedenie-v-element-ltinputgt">
+          1 Введение в элемент &lt;input&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-rasprostranennyh-tipa-vvoda">
+          2 распространенных типа ввода
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#3-vhodnyh-atributa">
+          3 входных атрибута
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#4-gruppirovka-vhodnyh-dannyh-s-pomoschyu-ltfieldsetgt-i-ltlegendgt">
+          4 Группировка входных данных с помощью &lt;fieldset&gt; и &lt;legend&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#5-svyazyvanie-metok-s-vhodnymi-dannymi">
+          5. Связывание меток с входными данными
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#6-rasshirennyh-tipov-vvoda">
+          6 расширенных типов ввода
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#7-zagruzok-faylov">
+          7 загрузок файлов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#8-proverka-s-vhodnymi-atributami">
+          8. Проверка с входными атрибутами
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#81-primer-trebuemye-vhodnye-dannye">
+          8.1 Пример: Требуемые входные данные
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#82-primer-vhodnoy-shablon">
+          8.2 Пример: Входной шаблон
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#9-stiley-elementov-vvoda">
+          9 стилей элементов ввода
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#91-bazovyy-stil">
+          9.1 Базовый стиль
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#92-stili-fokusirovki">
+          9.2 Стили фокусировки
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#10-dostupnyh-form">
+          10 доступных форм
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#101-ispolzovanie-atributov-aria">
+          10.1 Использование атрибутов ARIA
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#11-zaklyuchenie">
+          11 Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-vvedenie-v-element-ltinputgt">
+<span class="hn">
+        1
+       </span>
+       Введение в элемент &lt;input&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Элемент
+       <code>
+        &lt;input&gt;
+       </code>
+       — это универсальный HTML-тег, используемый для создания интерактивных элементов управления в веб-формах. Он поддерживает различные типы, каждый из которых служит определенной цели при сборе данных.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-rasprostranennyh-tipa-vvoda">
+<span class="hn">
+        2
+       </span>
+       распространенных типа ввода
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML предлагает ряд типов входных данных для удовлетворения различных потребностей в сборе данных:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         text
+        </code>
+        : Однострочный ввод текста.
+       </li>
+<li class="ml-4">
+<code>
+         password
+        </code>
+        : Ввод текста, который скрывает введенные символы.
+       </li>
+<li class="ml-4">
+<code>
+         email
+        </code>
+        : Ввод адресов электронной почты с проверкой.
+       </li>
+<li class="ml-4">
+<code>
+         number
+        </code>
+        : Ввод числовых значений.
+       </li>
+<li class="ml-4">
+<code>
+         checkbox
+        </code>
+        : Переключение между двумя состояниями.
+       </li>
+<li class="ml-4">
+<code>
+         radio
+        </code>
+        : Выберите один вариант из группы.
+       </li>
+<li class="ml-4">
+<code>
+         date
+        </code>
+        : Ввод для выбора даты.
+       </li>
+<li class="ml-4">
+<code>
+         file
+        </code>
+        : Позволяет загружать файлы.
+       </li>
+<li class="ml-4">
+<code>
+         submit
+        </code>
+        : отправляет данные формы.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Каждый тип ввода выполняет уникальную функцию, повышая удобство использования формы и целостность данных.
+      </p>
+<p class="text-gray-700 mb-4">
+       Давайте рассмотрим пример, охватывающий все эти типы входных данных.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;HTML Input Examples&lt;/title&gt;
+  &lt;style&gt;
+    form {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="checkbox"], input[type="radio"] {
+      width: auto;
+      margin-right: 10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;form action="/submit" method="post"&gt;
+    &lt;!-- Text Input --&gt;
+    &lt;label for="text-input"&gt;Text Input:&lt;/label&gt;
+    &lt;input type="text" id="text-input" name="text-input" placeholder="Enter your text"&gt;
+
+    &lt;!-- Password Input --&gt;
+    &lt;label for="password-input"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password-input" name="password-input" placeholder="Enter your password"&gt;
+
+    &lt;!-- Email Input --&gt;
+    &lt;label for="email-input"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email-input" name="email-input" placeholder="Enter your email" required&gt;
+
+    &lt;!-- Number Input --&gt;
+    &lt;label for="number-input"&gt;Number:&lt;/label&gt;
+    &lt;input type="number" id="number-input" name="number-input" min="1" max="100" placeholder="Enter a number"&gt;
+
+    &lt;!-- Checkbox --&gt;
+    &lt;label&gt;
+      &lt;input type="checkbox" id="checkbox-input" name="checkbox-input"&gt;
+      I agree to the terms and conditions
+    &lt;/label&gt;
+
+    &lt;!-- Radio Buttons --&gt;
+    &lt;label&gt;Gender:&lt;/label&gt;
+    &lt;label&gt;
+      &lt;input type="radio" name="gender" value="male"&gt;
+      Male
+    &lt;/label&gt;
+    &lt;label&gt;
+      &lt;input type="radio" name="gender" value="female"&gt;
+      Female
+    &lt;/label&gt;
+    &lt;label&gt;
+      &lt;input type="radio" name="gender" value="other"&gt;
+      Other
+    &lt;/label&gt;
+
+    &lt;!-- Date Input --&gt;
+    &lt;label for="date-input"&gt;Date:&lt;/label&gt;
+    &lt;input type="date" id="date-input" name="date-input"&gt;
+
+    &lt;!-- File Upload --&gt;
+    &lt;label for="file-input"&gt;Upload File:&lt;/label&gt;
+    &lt;input type="file" id="file-input" name="file-input" accept=".jpg,.png,.pdf"&gt;
+
+    &lt;!-- Submit Button --&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Выход
+       </strong>
+</p>
+<img alt="" height="1024" src="https://htmlformatter.github.io/images/html-inputs-4a20540.png" width="653" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="3-vhodnyh-atributa">
+<span class="hn">
+        3
+       </span>
+       входных атрибута
+      </h2>
+<p class="text-gray-700 mb-4">
+       Атрибуты изменяют поведение и внешний вид элементов ввода:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         name
+        </code>
+        : Определяет входные данные при отправке данных формы.
+       </li>
+<li class="ml-4">
+<code>
+         value
+        </code>
+        : Устанавливает значение по умолчанию.
+       </li>
+<li class="ml-4">
+<code>
+         placeholder
+        </code>
+        : Предоставляет подсказку пользователю.
+       </li>
+<li class="ml-4">
+<code>
+         required
+        </code>
+        : Указывает, что входные данные должны быть заполнены перед отправкой.
+       </li>
+<li class="ml-4">
+<code>
+         readonly
+        </code>
+        : Делает ввод нередактируемым.
+       </li>
+<li class="ml-4">
+<code>
+         disabled
+        </code>
+        : Отключает ввод.
+       </li>
+<li class="ml-4">
+<code>
+         maxlength
+        </code>
+        : Ограничивает количество символов.
+       </li>
+<li class="ml-4">
+<code>
+         min
+        </code>
+        и
+        <code>
+         max
+        </code>
+        : определяют диапазон приемлемых значений(для таких типов, как
+        <code>
+         number
+        </code>
+        и
+        <code>
+         date
+        </code>
+        ).
+       </li>
+<li class="ml-4">
+<code>
+         pattern
+        </code>
+        : Задает регулярное выражение для проверки входных данных.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Использование этих атрибутов гарантирует точность собранных данных и их соответствие желаемым критериям.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="4-gruppirovka-vhodnyh-dannyh-s-pomoschyu-ltfieldsetgt-i-ltlegendgt">
+<span class="hn">
+        4
+       </span>
+       Группировка входных данных с помощью &lt;fieldset&gt; и &lt;legend&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Элемент
+       <code>
+        &lt;fieldset&gt;
+       </code>
+       группирует связанные входные данные, а элемент
+       <code>
+        &lt;legend&gt;
+       </code>
+       предоставляет заголовок для группы:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;fieldset&gt;
+  &lt;legend&gt;Personal Information&lt;/legend&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required&gt;
+  
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+&lt;/fieldset&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Такая структура улучшает организацию формы и доступность.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="5-svyazyvanie-metok-s-vhodnymi-dannymi">
+<span class="hn">
+        5.
+       </span>
+       Связывание меток с входными данными
+      </h2>
+<p class="text-gray-700 mb-4">
+       Использование элемента
+       <code>
+        &lt;label&gt;
+       </code>
+       повышает удобство использования формы за счет связывания текстовых меток с элементами ввода:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" name="username"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Нажатие на метку фокусирует соответствующий ввод, улучшая пользовательский опыт.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="6-rasshirennyh-tipov-vvoda">
+<span class="hn">
+        6
+       </span>
+       расширенных типов ввода
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML5 представил новые типы ввода для улучшения функциональности форм:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         color
+        </code>
+        : Открывает палитру цветов.
+       </li>
+<li class="ml-4">
+<code>
+         range
+        </code>
+        : Ползунок для выбора значения.
+       </li>
+<li class="ml-4">
+<code>
+         tel
+        </code>
+        : Ввод телефонных номеров.
+       </li>
+<li class="ml-4">
+<code>
+         url
+        </code>
+        : Ввод веб-адресов.
+       </li>
+<li class="ml-4">
+<code>
+         search
+        </code>
+        : Входные данные для поисковых запросов.
+       </li>
+<li class="ml-4">
+<code>
+         datetime-local
+        </code>
+        : Ввод даты и времени без часового пояса.
+       </li>
+<li class="ml-4">
+<code>
+         month
+        </code>
+        : Ввод для выбора месяца и года.
+       </li>
+<li class="ml-4">
+<code>
+         week
+        </code>
+        : Вход для выбора недели и года.
+       </li>
+<li class="ml-4">
+<code>
+         time
+        </code>
+        : Вход для выбора времени.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Эти типы ввода предоставляют собственные элементы управления, улучшая взаимодействие с пользователем и проверку данных.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="7-zagruzok-faylov">
+<span class="hn">
+        7
+       </span>
+       загрузок файлов
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тип ввода
+       <code>
+        file
+       </code>
+       позволяет пользователям загружать файлы:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;label for="resume"&gt;Upload your resume:&lt;/label&gt;
+&lt;input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        accept
+       </code>
+       ограничивает типы загружаемых файлов. В примере выше разрешены только документы PDF и Word. Это полезная функция, позволяющая гарантировать соответствие отправляемых файлов определённым требованиям.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="8-proverka-s-vhodnymi-atributami">
+<span class="hn">
+        8.
+       </span>
+       Проверка с входными атрибутами
+      </h2>
+<p class="text-gray-700 mb-4">
+       Входные атрибуты, такие как
+       <code>
+        required
+       </code>
+       ,
+       <code>
+        pattern
+       </code>
+       ,
+       <code>
+        min
+       </code>
+       ,
+       <code>
+        max
+       </code>
+       и
+       <code>
+        maxlength
+       </code>
+       , обеспечивают встроенную проверку данных, вводимых в формы. Эти атрибуты помогают гарантировать корректность собранных данных и их соответствие заданным критериям.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="81-primer-trebuemye-vhodnye-dannye">
+       8.1 Пример: Требуемые входные данные
+      </h2>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email" required&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        required
+       </code>
+       гарантирует, что пользователь не сможет отправить форму, не заполнив поле адреса электронной почты.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="82-primer-vhodnoy-shablon">
+       8.2 Пример: Входной шаблон
+      </h2>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;label for="phone"&gt;Phone Number:&lt;/label&gt;
+&lt;input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        pattern
+       </code>
+       гарантирует, что номер телефона соответствует указанному формату.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="9-stiley-elementov-vvoda">
+<span class="hn">
+        9
+       </span>
+       стилей элементов ввода
+      </h2>
+<p class="text-gray-700 mb-4">
+       CSS обеспечивает расширенную настройку элементов ввода для улучшения пользовательского интерфейса.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="91-bazovyy-stil">
+       9.1 Базовый стиль
+      </h2>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}</code></pre>
+<p class="text-gray-700 mb-4">
+       Этот CSS применяет единый стиль ко всем полям ввода, обеспечивая чистый и современный вид.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="92-stili-fokusirovki">
+       9.2 Стили фокусировки
+      </h2>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>input:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 5px #007BFF;
+}</code></pre>
+<p class="text-gray-700 mb-4">
+       Стили фокуса улучшают доступность и визуально направляют пользователя при взаимодействии с полями формы.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="10-dostupnyh-form">
+<span class="hn">
+        10
+       </span>
+       доступных форм
+      </h2>
+<p class="text-gray-700 mb-4">
+       Доступность играет решающую роль в разработке форм. Используйте метки, атрибуты ARIA и семантический HTML, чтобы формы были удобны для всех пользователей, включая тех, кто использует программы чтения с экрана.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="101-ispolzovanie-atributov-aria">
+       10.1 Использование атрибутов ARIA
+      </h2>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="text" id="name" name="name" aria-label="Full Name"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        aria-label
+       </code>
+       предоставляет доступное имя для программ чтения с экрана.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="11-zaklyuchenie">
+<span class="hn">
+        11
+       </span>
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-элементы ввода универсальны и незаменимы для сбора пользовательских данных. Понимая различные типы, атрибуты и рекомендации, вы сможете создавать интерактивные, удобные и доступные веб-формы. Экспериментируйте с представленными примерами, чтобы создавать более привлекательные и эффективные формы для своих проектов.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-цвета - ХТМЛ справочник</title>
+<meta name="description" content="Цвета играют ключевую роль в веб-дизайне, влияя на эстетику и пользовательский опыт. В HTML и CSS цвета можно задавать различными способами." />
+<meta name="keywords" content="1 именованные цвета, 2 шестнадцатеричных цветовых кода, 3 цвета rgb и rgba, 4 цвета hsl и hsla, 5 применение цветов в css, 6 цветов градиента, 6.1 линейные градиенты, 6.2 радиальные градиенты, 7 прозрачность и непрозрачность, 7.1 использование rgba и hsla" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-colors/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-цвета - ХТМЛ справочник" />
+<meta property="og:description" content="Цвета играют ключевую роль в веб-дизайне, влияя на эстетику и пользовательский опыт. В HTML и CSS цвета можно задавать различными способами." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-colors/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-цвета
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       Цвета играют ключевую роль в веб-дизайне, влияя на эстетику и пользовательский опыт. В HTML и CSS цвета можно задавать различными способами, каждый из которых обладает уникальными преимуществами. В этом руководстве подробно рассматриваются различные способы задания цветов в веб-разработке, а также приводятся рекомендации и примеры для улучшения ваших дизайнов.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-imenovannye-tsveta">
+          1 Именованные цвета
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-shestnadtsaterichnyh-tsvetovyh-koda">
+          2 шестнадцатеричных цветовых кода
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#3-tsveta-rgb-i-rgba">
+          3 цвета RGB и RGBA
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#4-tsveta-hsl-i-hsla">
+          4 цвета HSL и HSLA
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#5-primenenie-tsvetov-v-css">
+          5 Применение цветов в CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#6-tsvetov-gradienta">
+          6 цветов градиента
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#61-lineynye-gradienty">
+          6.1 Линейные градиенты
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#62-radialnye-gradienty">
+          6.2 Радиальные градиенты
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#7-prozrachnost-i-neprozrachnost">
+          7 Прозрачность и непрозрачность
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#71-ispolzovanie-rgba-i-hsla">
+          7.1 Использование RGBA и HSLA
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#72-ispolzovanie-svoystva-opacity">
+          7.2 Использование свойства opacity
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#8-luchshih-praktik-ispolzovaniya-tsvetov">
+          8 лучших практик использования цветов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zaklyuchenie">
+          Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-imenovannye-tsveta">
+<span class="hn">
+        1
+       </span>
+       Именованные цвета
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML поддерживает 140 предопределённых названий цветов, что позволяет разработчикам использовать описательные названия вместо числовых кодов. Например, такие цвета, как «красный», «синий» и «коралловый», можно применять напрямую.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;p style="color: coral;"&gt;This text is coral.&lt;/p&gt;</code></pre>
+<img alt="HTML Colors — пример именованных цветов" height="407" src="https://htmlformatter.github.io/images/html-colors-4fa8e5a.png" width="599" />
+<p class="text-gray-700 mb-4">
+       Эти именованные цвета широко поддерживаются во всех современных браузерах, что обеспечивает единообразие дизайна.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-shestnadtsaterichnyh-tsvetovyh-koda">
+<span class="hn">
+        2
+       </span>
+       шестнадцатеричных цветовых кода
+      </h2>
+<p class="text-gray-700 mb-4">
+       Шестнадцатеричные(hex) цветовые коды — это шестизначные коды, представляющие интенсивность красного, зелёного и синего компонентов. Каждая пара цифр соответствует компоненту цвета, диапазон значений — от 00 до FF в шестнадцатеричной системе счисления.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;p style="color: #FF5733;"&gt;This text is a shade of orange.&lt;/p&gt;</code></pre>
+<img alt="HTML Colors — пример шестнадцатеричных кодов цветов" height="407" src="https://htmlformatter.github.io/images/html-colors-1dadb66.png" width="599" />
+<p class="text-gray-700 mb-4">
+       В этом примере
+       <code>
+        #FF5733
+       </code>
+       разбивается следующим образом:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         ФФ
+        </strong>
+        – Красный
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         57
+        </strong>
+        – Зеленый
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         33
+        </strong>
+        – Синий
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Шестнадцатеричные коды обеспечивают точный контроль над выбором цвета, что делает их основным элементом веб-дизайна.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="3-tsveta-rgb-i-rgba">
+<span class="hn">
+        3
+       </span>
+       цвета RGB и RGBA
+      </h2>
+<p class="text-gray-700 mb-4">
+       Цветовая модель RGB определяет цвета через их красный, зеленый и синий компоненты, каждый из которых находится в диапазоне от 0 до 255. Синтаксис следующий:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>rgb(red, green, blue)</code></pre>
+<p class="text-gray-700 mb-4">
+       Например:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;p style="color: rgb(255, 87, 51);"&gt;This text is a shade of orange.&lt;/p&gt;</code></pre>
+<img alt="HTML Colors — пример цветов RGB" height="407" src="https://htmlformatter.github.io/images/html-colors-5d38330.png" width="599" />
+<p class="text-gray-700 mb-4">
+       RGBA расширяет RGB, добавляя альфа-канал для управления непрозрачностью со значениями от 0(полностью прозрачный) до 1(полностью непрозрачный):
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>rgba(red, green, blue, alpha)</code></pre>
+<p class="text-gray-700 mb-4">
+       Пример:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;p style="color: rgba(255, 87, 51, 0.5);"&gt;This text is a semi-transparent shade of orange.&lt;/p&gt;</code></pre>
+<img alt="Цвета HTML — пример цветов RGBA" height="407" loading="lazy" src="https://htmlformatter.github.io/images/html-colors-e8edbb5.png" width="599" />
+<p class="text-gray-700 mb-4">
+       Использование RGBA позволяет создавать многослойные проекты с различными уровнями прозрачности.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="4-tsveta-hsl-i-hsla">
+<span class="hn">
+        4
+       </span>
+       цвета HSL и HSLA
+      </h2>
+<p class="text-gray-700 mb-4">
+       Модель HSL представляет цвета через оттенок, насыщенность и яркость:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Оттенок
+        </strong>
+        : градус на цветовом круге(от 0 до 360)
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Насыщенность
+        </strong>
+        : интенсивность цвета(от 0% до 100%).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Яркость
+        </strong>
+        : яркость цвета(от 0% до 100%).
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Синтаксис:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>hsl(hue, saturation%, lightness%)</code></pre>
+<p class="text-gray-700 mb-4">
+       Пример:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;p style="color: hsl(9, 100%, 64%);"&gt;This text is a shade of red.&lt;/p&gt;</code></pre>
+<img alt="Цвета HTML — пример: цвета HSL и HSLA" height="407" loading="lazy" src="https://htmlformatter.github.io/images/html-colors-940e5b2.png" width="599" />
+<p class="text-gray-700 mb-4">
+       HSLA добавляет альфа-канал для непрозрачности:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>hsla(hue, saturation%, lightness%, alpha)</code></pre>
+<p class="text-gray-700 mb-4">
+       Пример:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;p style="color: hsla(9, 100%, 64%, 0.5);"&gt;This text is a semi-transparent shade of red.&lt;/p&gt;</code></pre>
+<img alt="Цвета HTML — пример: цвета HSL и HSLA с альфа-каналом" height="407" loading="lazy" src="https://htmlformatter.github.io/images/html-colors-5eac6ea.png" width="599" />
+<p class="text-gray-700 mb-4">
+       HSL и HSLA обеспечивают интуитивный подход к определению цветов, основанный на человеческом восприятии.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="5-primenenie-tsvetov-v-css">
+<span class="hn">
+        5
+       </span>
+       Применение цветов в CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Цвета можно применять к различным свойствам CSS:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         color
+        </code>
+        : Устанавливает цвет текста.
+       </li>
+<li class="ml-4">
+<code>
+         background-color
+        </code>
+        : Устанавливает цвет фона элемента.
+       </li>
+<li class="ml-4">
+<code>
+         border-color
+        </code>
+        : Устанавливает цвет границы элемента.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Пример:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>p {
+  color: #FF5733; /* Text color */
+  background-color: #f0f0f0; /* Background color */
+  border: 2px solid #FF5733; /* Border color */
+  padding: 10px; /* Padding for better spacing */
+}</code></pre>
+<img alt="Цвета HTML — пример: применение цветов в CSS" height="491" loading="lazy" src="https://htmlformatter.github.io/images/html-colors-70fa478.png" width="599" />
+<p class="text-gray-700 mb-4">
+       Этот код CSS применяет следующие стили ко всем элементам абзаца:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Цвет текста:
+        </strong>
+        яркий оттенок оранжевого с использованием шестнадцатеричного кода
+        <code>
+         #FF5733
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Цвет фона:
+        </strong>
+        светло-серый цвет(
+        <code>
+         #f0f0f0
+        </code>
+        ), улучшающий читаемость текста.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Цвет границы:
+        </strong>
+        соответствует цвету текста для создания целостного дизайна.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Отступ:
+        </strong>
+        добавляет пространство внутри границы для сбалансированного макета.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="6-tsvetov-gradienta">
+<span class="hn">
+        6
+       </span>
+       цветов градиента
+      </h2>
+<p class="text-gray-700 mb-4">
+       Градиенты позволяют смешивать несколько цветов для создания эффекта плавного перехода. CSS предлагает два основных типа градиентов:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Линейный градиент:
+        </strong>
+        градиент, переходящий по прямой линии.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Радиальный градиент:
+        </strong>
+        градиент, исходящий из центра элемента.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="61-lineynye-gradienty">
+       6.1 Линейные градиенты
+      </h2>
+<p class="text-gray-700 mb-4">
+       Используйте функцию
+       <code>
+        linear-gradient()
+       </code>
+       для создания линейных градиентов:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>p {
+  background: linear-gradient(to right, red, blue);
+  color: white;
+  padding: 10px;
+}</code></pre>
+<img alt="HTML Colors — пример линейных градиентов" height="491" loading="lazy" src="https://htmlformatter.github.io/images/html-colors-bbabc84.png" width="599" />
+<p class="text-gray-700 mb-4">
+       В этом примере фон переходит от красного к синему по горизонтали, а цвет текста остается белым.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="62-radialnye-gradienty">
+       6.2 Радиальные градиенты
+      </h2>
+<p class="text-gray-700 mb-4">
+       Радиальные градиенты определяются с помощью
+       <code>
+        radial-gradient()
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>p {
+  background: radial-gradient(circle, yellow, green);
+  color: black;
+  padding: 10px;
+}</code></pre>
+<img alt="HTML Colors — пример радиальных градиентов" height="491" loading="lazy" src="https://htmlformatter.github.io/images/html-colors-337d622.png" width="599" />
+<p class="text-gray-700 mb-4">
+       Это создает градиент, начинающийся с желтого в центре и переходящий в зеленый по краям.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="7-prozrachnost-i-neprozrachnost">
+<span class="hn">
+        7
+       </span>
+       Прозрачность и непрозрачность
+      </h2>
+<p class="text-gray-700 mb-4">
+       Прозрачность достигается с помощью альфа-канала в цветах RGBA или HSLA или с помощью свойства
+       <code>
+        opacity
+       </code>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="71-ispolzovanie-rgba-i-hsla">
+       7.1 Использование RGBA и HSLA
+      </h2>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>p {
+  background-color: rgba(255, 87, 51, 0.5); /* 50% transparent orange */
+}</code></pre>
+<img alt="Цвета HTML — пример" height="491" loading="lazy" src="https://htmlformatter.github.io/images/html-colors-c664108.png" width="599" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="72-ispolzovanie-svoystva-opacity">
+       7.2 Использование свойства
+       <code>
+        opacity
+       </code>
+</h2>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>p {
+  opacity: 0.7; /* 70% opaque */
+}</code></pre>
+<img alt="Цвета HTML — пример использования свойства непрозрачности" height="491" loading="lazy" src="https://htmlformatter.github.io/images/html-colors-b95391f.png" width="599" />
+<p class="text-gray-700 mb-4">
+       Использование
+       <code>
+        opacity
+       </code>
+       влияет на весь элемент, включая его текст и дочерние элементы, тогда как RGBA и HSLA допускают определенную прозрачность цвета.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="8-luchshih-praktik-ispolzovaniya-tsvetov">
+<span class="hn">
+        8
+       </span>
+       лучших практик использования цветов
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Обеспечьте читабельность:
+        </strong>
+        выбирайте цвета текста и фона с достаточной контрастностью.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Придерживайтесь палитры:
+        </strong>
+        используйте единую цветовую палитру для создания профессионального образа.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Используйте инструменты обеспечения доступности:
+        </strong>
+        используйте такие инструменты, как средства проверки контрастности WCAG, чтобы гарантировать, что ваш дизайн доступен всем пользователям.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Избегайте перегрузки:
+        </strong>
+        ограничьте количество цветов, чтобы не перегружать пользователей.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zaklyuchenie">
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       В этом уроке по HTML мы узнали о цветах в HTML и о том, как их использовать для HTML-элементов. Понимание различных цветовых форматов и вариантов их использования позволит вам эффективно применять цвета в своих веб-проектах.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

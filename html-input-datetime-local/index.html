@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Ввод даты и времени в HTML (&lt;input type="datetime-local"&gt;) — Настройка и примеры</title>
+<meta content='Подробное руководство по &lt;input type="datetime-local"&gt;: синтаксис, атрибуты, обработка локального времени, стилизация и практическое использование в формах.' name="description" />
+<meta name="keywords" content="1. базовый синтаксис, 2. добавление метки для доступности, 3. установка значений по умолчанию, 4 установка минимальных и максимальных значений, 5. проверка с обязательным атрибутом, 6. стилизация ввода даты и времени в локальной среде, 7 использование javascript с локальным вводом даты и времени, 8. вопросы доступности, 9 реальных вариантов использования, заключение" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-input-datetime-local/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta content='Ввод даты и времени в HTML (&lt;input type="datetime-local"&gt;) — Настройка и примеры' property="og:title" />
+<meta content='Подробное руководство по &lt;input type="datetime-local"&gt;: синтаксис, атрибуты, обработка локального времени, стилизация и практическое использование в формах.' property="og:description" />
+<meta property="og:url" content="https://htmlformatter.github.io/html-input-datetime-local/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-ввод Дата и время - Локальный
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-элемент
+       <code>
+        &lt;input&gt;
+       </code>
+       с
+       <code>
+        type="datetime-local"
+       </code>
+       позволяет пользователям выбирать дату и время без указания часового пояса. Этот тип ввода полезен для приложений, которым требуется ввод конкретной локальной даты и времени, например, для планирования мероприятий или настройки напоминаний.
+      </p>
+<p class="text-gray-700 mb-4">
+       В отличие от
+       <code>
+        &lt;input type="date"&gt;
+       </code>
+       , который позволяет выбирать только дату, и
+       <code>
+        &lt;input type="time"&gt;
+       </code>
+       , который позволяет выбирать только время,
+       <code>
+        &lt;input type="datetime-local"&gt;
+       </code>
+       объединяет дату и время в одном элементе управления.
+      </p>
+<p class="text-gray-700 mb-4">
+       В этом уроке по HTML мы изучим Input Datetime-Local, его синтаксис, атрибуты, стили и практическое применение с подробными примерами.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-bazovyy-sintaksis">
+          1. Базовый синтаксис
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-dobavlenie-metki-dlya-dostupnosti">
+          2. Добавление метки для доступности
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#3-ustanovka-znacheniy-po-umolchaniyu">
+          3. Установка значений по умолчанию
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#4-ustanovka-minimalnyh-i-maksimalnyh-znacheniy">
+          4 Установка минимальных и максимальных значений
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#5-proverka-s-obyazatelnym-atributom">
+          5. Проверка с обязательным атрибутом
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#6-stilizatsiya-vvoda-daty-i-vremeni-v-lokalnoy-srede">
+          6. Стилизация ввода даты и времени в локальной среде
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#7-ispolzovanie-javascript-s-lokalnym-vvodom-daty-i-vremeni">
+          7 Использование JavaScript с локальным вводом даты и времени
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#8-voprosy-dostupnosti">
+          8. Вопросы доступности
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#9-realnyh-variantov-ispolzovaniya">
+          9 реальных вариантов использования
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zaklyuchenie">
+          Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-bazovyy-sintaksis">
+<span class="hn">
+        1.
+       </span>
+       Базовый синтаксис
+      </h2>
+<p class="text-gray-700 mb-4">
+       Основной синтаксис для ввода datetime-local:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="datetime-local" name="appointment"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Здесь:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         type="datetime-local"
+        </code>
+        : Указывает, что входные данные предназначены для выбора как даты, так и времени.
+       </li>
+<li class="ml-4">
+<code>
+         name
+        </code>
+        : Определяет имя поля ввода для отправки формы.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-dobavlenie-metki-dlya-dostupnosti">
+<span class="hn">
+        2.
+       </span>
+       Добавление метки для доступности
+      </h2>
+<p class="text-gray-700 mb-4">
+       Использование элемента
+       <code>
+        &lt;label&gt;
+       </code>
+       улучшает доступность и предоставляет контекст для ввода:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;label for="meeting"&gt;Schedule a meeting:&lt;/label&gt;
+&lt;input type="datetime-local" id="meeting" name="meeting"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Нажатие на метку фокусирует поле ввода, улучшая пользовательский опыт.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="3-ustanovka-znacheniy-po-umolchaniyu">
+<span class="hn">
+        3.
+       </span>
+       Установка значений по умолчанию
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете задать значение по умолчанию с помощью атрибута
+       <code>
+        value
+       </code>
+       . Значение должно иметь формат
+       <code>
+        YYYY-MM-DDTHH:MM
+       </code>
+       .
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="datetime-local" id="start" name="start" value="2024-12-10T14:30"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В этом примере дата по умолчанию — 10 декабря 2024 года, а время по умолчанию — 14:30.
+      </p>
+<img alt="" height="248" src="https://htmlformatter.github.io/images/html-input-datetime-local-c839e15.png" width="480" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="4-ustanovka-minimalnyh-i-maksimalnyh-znacheniy">
+<span class="hn">
+        4
+       </span>
+       Установка минимальных и максимальных значений
+      </h2>
+<p class="text-gray-700 mb-4">
+       Используйте атрибуты
+       <code>
+        min
+       </code>
+       и
+       <code>
+        max
+       </code>
+       для ограничения диапазона выбираемых дат и времени:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="datetime-local" id="event" name="event"
+  min="2024-05-01T09:00"
+  max="2024-12-31T18:00"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В этом примере выбор ограничивается датами и временем между 9:00 утра 1 января 2024 года и 18:00 вечера 31 декабря 2024 года.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="5-proverka-s-obyazatelnym-atributom">
+<span class="hn">
+        5.
+       </span>
+       Проверка с обязательным атрибутом
+      </h2>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        required
+       </code>
+       гарантирует, что пользователь не сможет отправить форму, не выбрав дату и время:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="datetime-local" id="deadline" name="deadline" required&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Если пользователь попытается отправить форму, не выбрав значение, браузер выдаст ошибку проверки.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="6-stilizatsiya-vvoda-daty-i-vremeni-v-lokalnoy-srede">
+<span class="hn">
+        6.
+       </span>
+       Стилизация ввода даты и времени в локальной среде
+      </h2>
+<p class="text-gray-700 mb-4">
+       Стиль поля datetime-local можно задать с помощью CSS, но внешний вид селектора календаря и времени контролируется браузером и не может быть задан напрямую:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+  input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  input[type="datetime-local"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px #4CAF50;
+  }
+&lt;/style&gt;
+
+&lt;label for="appointment"&gt;Set appointment date and time:&lt;/label&gt;
+&lt;input type="datetime-local" id="appointment" name="appointment"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В этом примере поле ввода оформляется так, чтобы сделать его визуально привлекательным, а фокус обозначается зеленой рамкой.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="7-ispolzovanie-javascript-s-lokalnym-vvodom-daty-i-vremeni">
+<span class="hn">
+        7
+       </span>
+       Использование JavaScript с локальным вводом даты и времени
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете динамически взаимодействовать с локальными полями datetime с помощью JavaScript. Например, можно установить минимальное значение текущей даты и времени:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="datetime-local" id="now" name="now"&gt;
+
+&lt;script&gt;
+  const currentDate = new Date();
+  const formattedDate = currentDate.toISOString().slice(0, 16);
+  document.getElementById('now').setAttribute('min', formattedDate);
+&lt;/script&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Этот скрипт гарантирует, что пользователи не смогут выбирать прошедшие даты и время.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="8-voprosy-dostupnosti">
+<span class="hn">
+        8.
+       </span>
+       Вопросы доступности
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы сделать входные данные datetime-local доступными:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Используйте описательные метки, чтобы четко обозначить цель ввода.
+       </li>
+<li class="ml-4">
+        При необходимости укажите дополнительные инструкции, используя
+        <code>
+         aria-describedby
+        </code>
+        или текст-заполнитель.
+       </li>
+<li class="ml-4">
+        Убедитесь, что поле ввода можно фокусировать и использовать с помощью навигации с помощью клавиатуры.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="9-realnyh-variantov-ispolzovaniya">
+<span class="hn">
+        9
+       </span>
+       реальных вариантов использования
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Планирование событий:
+        </strong>
+        позвольте пользователям устанавливать даты и время событий, не беспокоясь о часовых поясах.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Запись на прием:
+        </strong>
+        дайте пользователям возможность выбирать местные даты и время для записи на прием.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Сроки выполнения задач:
+        </strong>
+        соберите информацию о сроках выполнения проектов или задач.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zaklyuchenie">
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-элемент
+       <code>
+        &lt;input type="datetime-local"&gt;
+       </code>
+       используется для сбора данных даты и времени в одном поле. Разбираясь в его атрибутах и комбинируя их с JavaScript и CSS, вы сможете создавать эффективные и удобные формы для различных приложений.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

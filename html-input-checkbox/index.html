@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML флажок (&lt;input type="checkbox"&gt;) — Создание и настройка</title>
+<meta content='Руководство по чекбоксам в HTML: создание &lt;input type="checkbox"&gt;, работа с группами, метками, стилизация и обработка пользовательского выбора.' name="description" />
+<meta name="keywords" content="1. базовый синтаксис, 2 создание нескольких флажков, 3. предварительная установка флажка, 4. связывание меток с флажками, 5 флажков стилизации, 5.1 скрытие флажка по умолчанию, 6 javascript и флажки, 7 практических примеров использования флажков, 8. вопросы доступности флажков, 9 заключение" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-input-checkbox/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta content='HTML флажок (&lt;input type="checkbox"&gt;) — Создание и настройка' property="og:title" />
+<meta content='Руководство по чекбоксам в HTML: создание &lt;input type="checkbox"&gt;, работа с группами, метками, стилизация и обработка пользовательского выбора.' property="og:description" />
+<meta property="og:url" content="https://htmlformatter.github.io/html-input-checkbox/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      Флажок ввода HTML
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-элемент
+       <code>
+        &lt;input&gt;
+       </code>
+       с
+       <code>
+        type="checkbox"
+       </code>
+       создаёт переключаемый блок, позволяющий пользователю выбрать или отменить выбор варианта. Флажки обычно используются в формах, чтобы позволить пользователям выбрать несколько вариантов или согласиться с условиями.
+      </p>
+<img alt="Пример флажка ввода HTML" height="277" src="https://htmlformatter.github.io/images/html-input-checkbox-aa4cf43.png" width="512" />
+<p class="text-gray-700 mb-4">
+       В отличие от переключателей, которые ограничивают пользователя выбором одного элемента в группе, флажки позволяют выбирать несколько элементов.
+      </p>
+<p class="text-gray-700 mb-4">
+       В этом уроке мы изучим синтаксис, атрибуты, стили и практическое применение флажка ввода
+       <code>
+        &lt;input type="checkbox"&gt;
+       </code>
+       .
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-bazovyy-sintaksis">
+          1. Базовый синтаксис
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-sozdanie-neskolkih-flazhkov">
+          2 Создание нескольких флажков
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#3-predvaritelnaya-ustanovka-flazhka">
+          3. Предварительная установка флажка
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#4-svyazyvanie-metok-s-flazhkami">
+          4. Связывание меток с флажками
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#5-flazhkov-stilizatsii">
+          5 флажков стилизации
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#51-skrytie-flazhka-po-umolchaniyu">
+          5.1 Скрытие флажка по умолчанию
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#6-javascript-i-flazhki">
+          6 JavaScript и флажки
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#7-prakticheskih-primerov-ispolzovaniya-flazhkov">
+          7 практических примеров использования флажков
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#8-voprosy-dostupnosti-flazhkov">
+          8. Вопросы доступности флажков
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#9-zaklyuchenie">
+          9 Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-bazovyy-sintaksis">
+<span class="hn">
+        1.
+       </span>
+       Базовый синтаксис
+      </h2>
+<p class="text-gray-700 mb-4">
+       Основной синтаксис для ввода флажка:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="checkbox" name="option1" value="Option1"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Здесь:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         type="checkbox"
+        </code>
+        : Указывает, что входные данные представляют собой флажок.
+       </li>
+<li class="ml-4">
+<code>
+         name
+        </code>
+        : Группирует флажки для отправки данных формы.
+       </li>
+<li class="ml-4">
+<code>
+         value
+        </code>
+        : определяет значение, отправляемое на сервер, если установлен флажок.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-sozdanie-neskolkih-flazhkov">
+<span class="hn">
+        2
+       </span>
+       Создание нескольких флажков
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы создать список флажков, просто используйте несколько элементов
+       <code>
+        &lt;input type="checkbox"&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;form&gt;
+  &lt;label&gt;
+    &lt;input type="checkbox" name="hobby" value="Reading"&gt; Reading
+  &lt;/label&gt;
+  
+
+  &lt;label&gt;
+    &lt;input type="checkbox" name="hobby" value="Traveling"&gt; Traveling
+  &lt;/label&gt;
+  
+
+  &lt;label&gt;
+    &lt;input type="checkbox" name="hobby" value="Cooking"&gt; Cooking
+  &lt;/label&gt;
+&lt;/form&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Когда пользователь выбирает несколько флажков, все их значения отправляются как часть данных формы под тем же
+       <code>
+        name
+       </code>
+       .
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Видео
+       </strong>
+</p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="3-predvaritelnaya-ustanovka-flazhka">
+<span class="hn">
+        3.
+       </span>
+       Предварительная установка флажка
+      </h2>
+<p class="text-gray-700 mb-4">
+       Используйте атрибут
+       <code>
+        checked
+       </code>
+       для предварительного выбора флажка:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="checkbox" name="subscribe" value="Yes" checked&gt; Subscribe to newsletter</code></pre>
+<p class="text-gray-700 mb-4">
+       В этом примере флажок будет предварительно установлен при загрузке страницы.
+      </p>
+<img alt="" height="277" src="https://htmlformatter.github.io/images/html-input-checkbox-a6e6901.png" width="512" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="4-svyazyvanie-metok-s-flazhkami">
+<span class="hn">
+        4.
+       </span>
+       Связывание меток с флажками
+      </h2>
+<p class="text-gray-700 mb-4">
+       Для повышения удобства использования и доступности свяжите метку с каждым флажком с помощью элемента
+       <code>
+        &lt;label&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;label for="accept"&gt;
+  &lt;input type="checkbox" id="accept" name="terms"&gt; I accept the terms and conditions
+&lt;/label&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Нажатие на метку переключит флажок, что улучшит пользовательский опыт.
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Видео
+       </strong>
+</p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="5-flazhkov-stilizatsii">
+<span class="hn">
+        5
+       </span>
+       флажков стилизации
+      </h2>
+<p class="text-gray-700 mb-4">
+       Внешний вид флажков по умолчанию определяется браузером, но вы можете стилизовать их с помощью CSS.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="51-skrytie-flazhka-po-umolchaniyu">
+       5.1 Скрытие флажка по умолчанию
+      </h2>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+  .custom-checkbox {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .custom-checkbox input {
+    opacity: 0;
+    position: absolute;
+  }
+
+  .custom-checkbox span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 5px;
+  }
+
+  .custom-checkbox input:checked + span {
+    background-color: #4CAF50;
+  }
+&lt;/style&gt;
+
+&lt;label class="custom-checkbox"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span&gt;&lt;/span&gt; Custom Checkbox
+&lt;/label&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Этот код скрывает флажок по умолчанию и заменяет его стилизованным элементом. Селектор
+       <code>
+        :checked
+       </code>
+       применяет стили к пользовательскому флажку при его выборе.
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Видео
+       </strong>
+</p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="6-javascript-i-flazhki">
+<span class="hn">
+        6
+       </span>
+       JavaScript и флажки
+      </h2>
+<p class="text-gray-700 mb-4">
+       Используйте JavaScript для динамического взаимодействия с флажками. Например, вы можете проверить, установлен ли флажок:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;label for="confirm"&gt;&lt;input type="checkbox" id="confirm" name="confirm"&gt; Confirm&lt;/label&gt;
+
+&lt;script&gt;
+  const checkbox = document.getElementById('confirm');
+  checkbox.addEventListener('change',() =&gt; {
+    if(checkbox.checked) {
+      alert('Checkbox is checked!');
+    } else {
+      alert('Checkbox is unchecked!');
+    }
+  });
+&lt;/script&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Этот скрипт отслеживает изменения флажка и выводит оповещение в зависимости от его состояния.
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Видео
+       </strong>
+</p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="7-prakticheskih-primerov-ispolzovaniya-flazhkov">
+<span class="hn">
+        7
+       </span>
+       практических примеров использования флажков
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Настройки:
+        </strong>
+        разрешите пользователям выбирать несколько настроек, например, хобби или темы подписки.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Соглашения:
+        </strong>
+        Подтвердите согласие пользователя с условиями.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Фильтры:
+        </strong>
+        Реализуйте фильтры в приложениях, таких как сайты электронной коммерции, где пользователи могут выбирать категории или функции.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="8-voprosy-dostupnosti-flazhkov">
+<span class="hn">
+        8.
+       </span>
+       Вопросы доступности флажков
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы сделать флажки доступными:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Всегда связывайте флажки с метками для поддержки программ чтения с экрана.
+       </li>
+<li class="ml-4">
+        Обеспечьте достаточный контраст между флажком и фоном.
+       </li>
+<li class="ml-4">
+        Используйте атрибуты ARIA, такие как
+        <code>
+         aria-checked
+        </code>
+        , для расширенных потребностей в доступности.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="9-zaklyuchenie">
+<span class="hn">
+        9
+       </span>
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-элемент
+       <code>
+        &lt;input type="checkbox"&gt;
+       </code>
+       используется для создания переключаемых опций в веб-формах. Сочетая его с метками, стилями и JavaScript, вы можете создавать удобные и доступные интерфейсы.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

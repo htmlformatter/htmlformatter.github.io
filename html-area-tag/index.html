@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;area&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег HTML &lt;area&gt; используется для создания кликабельной области в карте изображения. Карты изображений позволяют связывать разные части изображения с разными ссылками и страницами." />
+<meta name="keywords" content="пример html-тега area, атрибуты html-тега area, стилизация html-тега area, доступность html-тега area" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-area-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;area&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег HTML &lt;area&gt; используется для создания кликабельной области в карте изображения. Карты изображений позволяют связывать разные части изображения с разными ссылками и страницами." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-area-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;area&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;area&gt;
+       </code>
+       используется для определения кликабельной области на карте изображения. Карты изображения позволяют связывать различные части изображения с различными целевыми объектами.
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;area&gt;
+       </code>
+       всегда вложен в элемент
+       <code>
+        &lt;map&gt;
+       </code>
+       , который связан с изображением с помощью атрибута
+       <code>
+        usemap
+       </code>
+       .
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-html-tega-ltareagt">
+          Пример HTML-тега &lt;area&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-ltareagt">
+          Атрибуты HTML-тега &lt;area&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-html-tega-ltareagt">
+          Стилизация HTML-тега &lt;area&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#dostupnost-html-tega-ltareagt">
+          Доступность HTML-тега &lt;area&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-html-tega-ltareagt">
+       Пример HTML-тега &lt;area&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Ниже показан простой пример карты изображения с использованием тега
+       <code>
+        &lt;area&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Image Map Example&lt;/h2&gt;
+        &lt;img src="example.jpg" alt="Example Image" usemap="#example-map"&gt;
+
+        &lt;map name="example-map"&gt;
+            &lt;area shape="rect" coords="34,44,270,350" alt="Rectangle" href="https://example.com/rectangle"&gt;
+            &lt;area shape="circle" coords="150,150,75" alt="Circle" href="https://example.com/circle"&gt;
+            &lt;area shape="poly" coords="25,25,100,25,100,100,25,100" alt="Polygon" href="https://example.com/polygon"&gt;
+        &lt;/map&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Примечание:
+       </strong>
+       Атрибут
+       <code>
+        coords
+       </code>
+       определяет координаты области, доступной для нажатия. Область может быть прямоугольником(
+       <code>
+        rect
+       </code>
+       ), кругом(
+       <code>
+        circle
+       </code>
+       ) или многоугольником(
+       <code>
+        poly
+       </code>
+       ).
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-ltareagt">
+       Атрибуты HTML-тега &lt;area&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;area&gt;
+       </code>
+       поддерживает следующие атрибуты:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         форма:
+        </strong>
+        определяет форму области(
+        <code>
+         rect
+        </code>
+        ,
+        <code>
+         circle
+        </code>
+        ,
+        <code>
+         poly
+        </code>
+        или
+        <code>
+         default
+        </code>
+        ).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         coords:
+        </strong>
+        Определяет координаты области в зависимости от формы.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         href:
+        </strong>
+        URL-адрес связанного ресурса.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         alt:
+        </strong>
+        Альтернативный текст для области, используемый для обеспечения доступности.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         цель:
+        </strong>
+        указывает, где открыть связанный документ(
+        <code>
+         _blank
+        </code>
+        ,
+        <code>
+         _self
+        </code>
+        и т. д.).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         nohref:
+        </strong>
+        Указывает, что область не является кликабельной(устарело).
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-html-tega-ltareagt">
+       Стилизация HTML-тега &lt;area&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Сам тег
+       <code>
+        &lt;area&gt;
+       </code>
+       не имеет прямого стиля, поскольку он не является видимым элементом. Однако связанные с ним элементы
+       <code>
+        &lt;map&gt;
+       </code>
+       и image можно стилизовать для улучшения внешнего вида карты изображений.
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пример с CSS:
+       </strong>
+</p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            img {
+                border: 2px solid black;
+            }
+            area {
+                cursor: pointer;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Styled Image Map Example&lt;/h2&gt;
+        &lt;img src="example.jpg" alt="Styled Example" usemap="#styled-map"&gt;
+
+        &lt;map name="styled-map"&gt;
+            &lt;area shape="rect" coords="50,50,200,200" alt="Styled Rectangle" href="https://example.com/styled-rectangle"&gt;
+        &lt;/map&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="dostupnost-html-tega-ltareagt">
+       Доступность HTML-тега &lt;area&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       При использовании тега
+       <code>
+        &lt;area&gt;
+       </code>
+       обязательно включите содержательные атрибуты
+       <code>
+        alt
+       </code>
+       для описания кликабельных областей для программ чтения с экрана. Это улучшит доступность вашей карты изображений.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

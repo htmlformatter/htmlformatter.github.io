@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-ссылки тег a - ХТМЛ справочник</title>
+<meta name="description" content="HTML-ссылки — это самые распространенные теги HTML, с которыми мы взаимодействуем на веб-странице. В HTML ссылки создаются с помощью тега &lt;a&gt;, а атрибут href указывает адрес новой веб-страницы." />
+<meta name="keywords" content="пример, открыть html-ссылку в новой вкладке, css по умолчанию для html-ссылки – тег привязки, оформите html-ссылку a так, чтобы она выглядела как кнопка, заключение" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-a/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-ссылки тег a - ХТМЛ справочник" />
+<meta property="og:description" content="HTML-ссылки — это самые распространенные теги HTML, с которыми мы взаимодействуем на веб-странице. В HTML ссылки создаются с помощью тега &lt;a&gt;, а атрибут href указывает адрес новой веб-страницы." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-a/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-ссылки
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-ссылки — наиболее распространённые HTML-теги, с которыми мы взаимодействуем на веб-странице. В HTML ссылки определяются с помощью тега-якоря
+       <code>
+        &lt;a&gt;
+       </code>
+       . Атрибут
+       <code>
+        href
+       </code>
+       используется для указания местоположения новой веб-страницы.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer">
+          Пример
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#otkryt-html-ssylku-v-novoy-vkladke">
+          Открыть HTML-ссылку в новой вкладке
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#css-po-umolchaniyu-dlya-html-ssylki-teg-privyazki">
+          CSS по умолчанию для HTML-ссылки – тег привязки
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#oformite-html-ssylku-ltagt-tak-chtoby-ona-vyglyadela-kak-knopka">
+          Оформите HTML-ссылку &lt;a&gt; так, чтобы она выглядела как кнопка
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zaklyuchenie">
+          Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer">
+       Пример
+      </h2>
+<p class="text-gray-700 mb-4">
+       Ниже приведен простой пример, в котором ссылка ведет на новую веб-страницу.
+      </p>
+<p class="text-gray-700 mb-4">
+       индекс
+       <strong class="font-bold text-gray-900">
+        .html
+       </strong>
+</p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+  &lt;a href="https://htmlformatter.github.io"&gt;htmlformatter.github.io&lt;/a&gt;
+  
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В приведенном выше примере значение
+       <code>
+        href
+       </code>
+       , то есть
+       <code>
+        https://htmlformatter.github.io
+       </code>
+       — это местоположение веб-страницы, на которую мы перейдём(URL), если нажмём на ссылку.
+       <code>
+        htmlformatter.github.io
+       </code>
+       — это якорный текст, который отображается как ссылка на веб-странице.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="otkryt-html-ssylku-v-novoy-vkladke">
+       Открыть HTML-ссылку в новой вкладке
+      </h2>
+<p class="text-gray-700 mb-4">
+       При нажатии на ссылку новый URL загружается на ту же страницу. Если вы хотите открыть ссылку на новой веб-странице, используйте атрибут target, как показано ниже.
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        пример.html
+       </strong>
+</p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+  &lt;a href="https://htmlformatter.github.io" target="_blank"&gt;htmlformatter.github.io&lt;/a&gt;
+  
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<code>
+        target="_blank"
+       </code>
+       сообщает браузеру о необходимости загрузить URL-адрес в новой вкладке.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="css-po-umolchaniyu-dlya-html-ssylki-teg-privyazki">
+       CSS по умолчанию для HTML-ссылки – тег привязки
+      </h2>
+<p class="text-gray-700 mb-4">
+       Ниже приведен CSS по умолчанию для элемента HTML &lt;a&gt;.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}</code></pre>
+<p class="text-gray-700 mb-4">
+<code>
+        color: -webkit-link
+       </code>
+       Обычно цвет HTML &lt;a&gt; — синий.
+      </p>
+<p class="text-gray-700 mb-4">
+<code>
+        cursor:pointer
+       </code>
+       отображает указатель при наведении мыши на ссылку.
+      </p>
+<p class="text-gray-700 mb-4">
+<code>
+        text-decoration:underline
+       </code>
+       рисует подчеркивание для текста ссылки.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="oformite-html-ssylku-ltagt-tak-chtoby-ona-vyglyadela-kak-knopka">
+       Оформите HTML-ссылку &lt;a&gt; так, чтобы она выглядела как кнопка
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете оформить HTML-ссылку так, чтобы она выглядела как кнопка или, скажем, поле.
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        пример.html
+       </strong>
+</p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    a {
+      background: green;
+      color: white;
+      text-decoration:none;
+      padding:10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+  &lt;a href="https://htmlformatter.github.io"&gt;htmlformatter.github.io&lt;/a&gt;
+  
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zaklyuchenie">
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       В этом уроке по HTML мы изучили тег
+       <a>
+        в HTML.
+       </a>
+</p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

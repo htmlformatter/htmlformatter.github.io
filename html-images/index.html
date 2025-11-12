@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-изображения images- ХТМЛ справочник</title>
+<meta name="description" content="Полное руководство по тегу &lt;img&gt; в HTML: добавление изображений на веб-страницы, настройка атрибутов, размеров, альтернативного текста и оптимизация для SEO." />
+<meta name="keywords" content="введение в тег img, атрибуты тега img, указание путей к изображениям, распространенные форматы изображений, адаптивные изображения, использование css для адаптивности, использование атрибута srcset, ленивая загрузка изображений, доступность изображения, рекомендации по работе с html-изображениями" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-images/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-изображения images- ХТМЛ справочник" />
+<meta property="og:description" content="Полное руководство по тегу &lt;img&gt; в HTML: добавление изображений на веб-страницы, настройка атрибутов, размеров, альтернативного текста и оптимизация для SEO." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-images/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-изображения
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       Изображения являются неотъемлемой частью веб-дизайна, улучшая пользовательский опыт, предоставляя визуальный контекст, разбивая текст и делая контент более интересным.
+      </p>
+<p class="text-gray-700 mb-4">
+       HTML предоставляет простой и гибкий способ встраивания изображений в веб-страницу с помощью тега
+       <code>
+        &lt;img&gt;
+       </code>
+       .
+      </p>
+<p class="text-gray-700 mb-4">
+       В этом руководстве мы рассмотрим все аспекты HTML-изображений, включая их атрибуты, свойства, параметры форматирования, методы адаптивного дизайна и лучшие практики веб-оптимизации.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#vvedenie-v-teg-ltimggt">
+          Введение в тег &lt;img&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-tega-ltimggt">
+          Атрибуты тега &lt;img&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#ukazanie-putey-k-izobrazheniyam">
+          Указание путей к изображениям
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#rasprostranennye-formaty-izobrazheniy">
+          Распространенные форматы изображений
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#adaptivnye-izobrazheniya">
+          Адаптивные изображения
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#ispolzovanie-css-dlya-adaptivnosti">
+          Использование CSS для адаптивности
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#ispolzovanie-atributa-srcset">
+          Использование атрибута srcset
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#lenivaya-zagruzka-izobrazheniy">
+          Ленивая загрузка изображений
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#dostupnost-izobrazheniya">
+          Доступность изображения
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#rekomendatsii-po-rabote-s-html-izobrazheniyami">
+          Рекомендации по работе с HTML-изображениями
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zaklyuchenie">
+          Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="vvedenie-v-teg-ltimggt">
+       Введение в тег
+       <code>
+        &lt;img&gt;
+       </code>
+</h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;img&gt;
+       </code>
+       — это самозакрывающийся тег, используемый для встраивания изображений в HTML-документы. В отличие от других элементов, он не требует закрывающего тега. Тег
+       <code>
+        &lt;img&gt;
+       </code>
+       требует как минимум двух атрибутов:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+<code>
+          src
+         </code>
+         :
+        </strong>
+        Указывает путь к файлу изображения.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+<code>
+          alt
+         </code>
+         :
+        </strong>
+        Предоставляет альтернативный текст, описывающий изображение для обеспечения доступности и ситуаций, когда изображение не загружается.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Вот пример базового синтаксиса:
+      </p>
+      Копировать
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;img src="image.jpg" alt="A descriptive text of the image"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Скриншот
+       </strong>
+</p>
+<img alt="Пример HTML-изображения" height="703" src="https://htmlformatter.github.io/images/html-images-aa758d3.png" width="599" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-tega-ltimggt">
+       Атрибуты тега
+       <code>
+        &lt;img&gt;
+       </code>
+</h2>
+<p class="text-gray-700 mb-4">
+       Для обеспечения дополнительного контроля и функциональности тег
+       <code>
+        &lt;img&gt;
+       </code>
+       поддерживает несколько атрибутов:
+      </p>
+<table>
+<tr>
+<th>
+         Атрибут
+        </th>
+<th>
+         Описание
+        </th>
+</tr>
+<tbody>
+<tr>
+<td>
+<code>
+           src
+          </code>
+</td>
+<td>
+          Указывает URL или путь к файлу изображения.
+         </td>
+</tr>
+<tr>
+<td>
+<code>
+           alt
+          </code>
+</td>
+<td>
+          Предоставляет альтернативный текст, описывающий изображение для обеспечения доступности.
+         </td>
+</tr>
+<tr>
+<td>
+<code>
+           width
+          </code>
+</td>
+<td>
+          Задает ширину изображения в пикселях или процентах.
+         </td>
+</tr>
+<tr>
+<td>
+<code>
+           height
+          </code>
+</td>
+<td>
+          Задает высоту изображения в пикселях или процентах.
+         </td>
+</tr>
+<tr>
+<td>
+<code>
+           title
+          </code>
+</td>
+<td>
+          Отображает подсказку при наведении курсора на изображение.
+         </td>
+</tr>
+<tr>
+<td>
+<code>
+           loading
+          </code>
+</td>
+<td>
+          Задает поведение загрузки изображения(
+          <code>
+           lazy
+          </code>
+          или
+          <code>
+           eager
+          </code>
+          ).
+         </td>
+</tr>
+</tbody>
+</table>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="ukazanie-putey-k-izobrazheniyam">
+       Указание путей к изображениям
+      </h2>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        src
+       </code>
+       может использовать как абсолютный, так и относительный путь для указания местоположения изображения:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Абсолютный путь:
+        </strong>
+        полный URL-адрес, указывающий на изображение на внешнем сервере.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Относительный путь:
+        </strong>
+        путь относительно расположения HTML-файла, идеально подходит для локально размещенных изображений.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Пример абсолютного пути:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;img src="https://htmlformatter.github.io/image.jpg" alt="Пример"&gt;</code></pre>
+<img alt="HTML-изображение — указание путей к изображениям" height="703" src="https://htmlformatter.github.io/images/html-images-d0bc970.png" width="599" />
+<p class="text-gray-700 mb-4">
+       Пример относительного пути:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;img src="/image.jpg" alt="Example Image"&gt;</code></pre>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="rasprostranennye-formaty-izobrazheniy">
+       Распространенные форматы изображений
+      </h2>
+<p class="text-gray-700 mb-4">
+       Наиболее часто используемые форматы изображений в Интернете:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         JPEG:
+        </strong>
+        идеально подходит для фотографий благодаря своей способности сжимать изображения без значительной потери качества.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         PNG:
+        </strong>
+        поддерживает прозрачность и лучше всего подходит для логотипов, значков и детальной графики.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         GIF:
+        </strong>
+        полезен для простых анимаций, но ограничен 256 цветами.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         SVG:
+        </strong>
+        масштабируемая векторная графика не зависит от разрешения, что делает ее идеальным вариантом для значков и графики.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         WebP:
+        </strong>
+        современный формат изображения, обеспечивающий превосходное сжатие и качество.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="adaptivnye-izobrazheniya">
+       Адаптивные изображения
+      </h2>
+<p class="text-gray-700 mb-4">
+       Адаптивные изображения адаптируются к различным размерам и разрешениям экранов, обеспечивая бесперебойную работу на всех устройствах.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="ispolzovanie-css-dlya-adaptivnosti">
+       Использование CSS для адаптивности
+      </h2>
+<p class="text-gray-700 mb-4">
+       Примените правила CSS, чтобы изображения масштабировались вместе с экраном:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>img {
+  max-width: 100%;
+  height: auto;
+}</code></pre>
+<p class="text-gray-700 mb-4">
+       Это обеспечивает правильное уменьшение масштаба изображения на экранах меньшего размера с сохранением его пропорций.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="ispolzovanie-atributa-srcset">
+       Использование атрибута
+       <code>
+        srcset
+       </code>
+</h2>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        srcset
+       </code>
+       позволяет браузеру выбирать подходящее изображение в зависимости от размера экрана и разрешения устройства:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;img src="image-800.jpg"
+     srcset="image-400.jpg 400w,
+             image-800.jpg 800w,
+             image-1200.jpg 1200w"
+     sizes="(max-width: 600px) 400px,
+           (max-width: 1200px) 800px,
+            1200px"
+     alt="Responsive Image"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Этот метод повышает производительность, обеспечивая оптимальный размер изображения для каждого устройства.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="lenivaya-zagruzka-izobrazheniy">
+       Ленивая загрузка изображений
+      </h2>
+<p class="text-gray-700 mb-4">
+       Ленивая загрузка откладывает загрузку изображений до тех пор, пока они не появятся на экране, сокращая время начальной загрузки страницы. Это можно сделать с помощью атрибута
+       <code>
+        loading
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;img src="image.jpg" alt="Lazy Loaded Image" loading="lazy"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Этот атрибут указывает браузеру загружать изображение только тогда, когда оно собирается попасть в область просмотра.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="dostupnost-izobrazheniya">
+       Доступность изображения
+      </h2>
+<p class="text-gray-700 mb-4">
+       Обеспечьте доступность изображений, добавив содержательный альтернативный текст с помощью атрибута
+       <code>
+        alt
+       </code>
+       . Это поможет программам чтения с экрана донести назначение изображения до пользователей с нарушениями зрения.
+      </p>
+<p class="text-gray-700 mb-4">
+       Примеры хорошего и плохого текста
+       <code>
+        alt
+       </code>
+       :
+      </p>
+<table>
+<tr>
+<th>
+         Хороший
+        </th>
+<th>
+         Плохой
+        </th>
+</tr>
+<tbody>
+<tr>
+<td>
+          «Улыбающийся человек держит собаку».
+         </td>
+<td>
+          «Изображение1.jpg»
+         </td>
+</tr>
+<tr>
+<td>
+          «Эйфелева башня на закате».
+         </td>
+<td>
+          «Фото башни»
+         </td>
+</tr>
+</tbody>
+</table>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="rekomendatsii-po-rabote-s-html-izobrazheniyami">
+       Рекомендации по работе с HTML-изображениями
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Оптимизация изображений:
+        </strong>
+        сжимайте файлы изображений, чтобы сократить время загрузки без ущерба для качества.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Используйте описательный альтернативный текст:
+        </strong>
+        убедитесь, что альтернативный текст четко описывает назначение изображения.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Используйте современные форматы:
+        </strong>
+        отдавайте предпочтение таким форматам, как WebP, для лучшего сжатия и качества.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Тестирование адаптивности:
+        </strong>
+        убедитесь, что изображения хорошо выглядят на всех устройствах.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zaklyuchenie">
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-изображения — основополагающий элемент веб-разработки, обеспечивающий визуальное улучшение и более эффективное взаимодействие с пользователями. Понимая и применяя свойства и рекомендации, описанные в этом руководстве, вы сможете создавать визуально привлекательные, доступные и оптимизированные для производительности изображения.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

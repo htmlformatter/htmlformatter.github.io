@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-файл: элемент &lt;input type="file"&gt; — Загрузка файлов через форму</title>
+<meta content='Полное руководство по &lt;input type="file"&gt;: загрузка одного или нескольких файлов, настройка формы, обработка файлов и советы по безопасности и удобству пользователей.' name="description" />
+<meta name="keywords" content="1. базовый синтаксис ввода файла, 2. добавление метки для обеспечения доступности при вводе файлов, 3. разрешение загрузки нескольких файлов, 4. ограничение типов файлов, 5. установка обязательного ввода файла, 6. оформление входных данных файла, 7 использование javascript с вводом файла, 8. вопросы доступности при вводе файлов, 9 реальных вариантов использования ввода файлов, заключение" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-input-file/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta content='HTML-файл: элемент &lt;input type="file"&gt; — Загрузка файлов через форму' property="og:title" />
+<meta content='Полное руководство по &lt;input type="file"&gt;: загрузка одного или нескольких файлов, настройка формы, обработка файлов и советы по безопасности и удобству пользователей.' property="og:description" />
+<meta property="og:url" content="https://htmlformatter.github.io/html-input-file/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      Входной HTML-файл
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-элемент
+       <code>
+        &lt;input&gt;
+       </code>
+       с
+       <code>
+        type="file"
+       </code>
+       позволяет пользователям выбрать один или несколько файлов на локальном устройстве и загрузить их на сервер. Этот тип поля обычно используется в формах для загрузки файлов, таких как изображения, документы или видео.
+      </p>
+<p class="text-gray-700 mb-4">
+       Ввод файлов упрощает процесс выбора файлов и обеспечивает совместимость с веб-приложениями, требующими загрузки файлов.
+      </p>
+<p class="text-gray-700 mb-4">
+       В этом уроке мы изучим синтаксис и то, как использовать элемент
+       <strong class="font-bold text-gray-900">
+        ввода
+       </strong>
+       с типом
+       <strong class="font-bold text-gray-900">
+        файла
+       </strong>
+       , обрабатывать специальные возможности, разрешать загрузку нескольких файлов и т. д. с помощью подробных примеров.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-bazovyy-sintaksis-vvoda-fayla">
+          1. Базовый синтаксис ввода файла
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-dobavlenie-metki-dlya-obespecheniya-dostupnosti-pri-vvode-faylov">
+          2. Добавление метки для обеспечения доступности при вводе файлов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#3-razreshenie-zagruzki-neskolkih-faylov">
+          3. Разрешение загрузки нескольких файлов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#4-ogranichenie-tipov-faylov">
+          4. Ограничение типов файлов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#5-ustanovka-obyazatelnogo-vvoda-fayla">
+          5. Установка обязательного ввода файла
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#6-oformlenie-vhodnyh-dannyh-fayla">
+          6. Оформление входных данных файла
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#7-ispolzovanie-javascript-s-vvodom-fayla">
+          7 Использование JavaScript с вводом файла
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#8-voprosy-dostupnosti-pri-vvode-faylov">
+          8. Вопросы доступности при вводе файлов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#9-realnyh-variantov-ispolzovaniya-vvoda-faylov">
+          9 реальных вариантов использования ввода файлов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zaklyuchenie">
+          Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-bazovyy-sintaksis-vvoda-fayla">
+<span class="hn">
+        1.
+       </span>
+       Базовый синтаксис ввода файла
+      </h2>
+<p class="text-gray-700 mb-4">
+       Основной синтаксис для поля ввода файла:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="file" name="upload"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Здесь:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         type="file"
+        </code>
+        : Указывает, что входные данные предназначены для выбора файла.
+       </li>
+<li class="ml-4">
+<code>
+         name
+        </code>
+        : Определяет имя поля ввода для отправки формы.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-dobavlenie-metki-dlya-obespecheniya-dostupnosti-pri-vvode-faylov">
+<span class="hn">
+        2.
+       </span>
+       Добавление метки для обеспечения доступности при вводе файлов
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы сделать поле ввода файла более доступным, используйте элемент
+       <code>
+        &lt;label&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;label for="file-upload"&gt;Choose a file:&lt;/label&gt;
+&lt;input type="file" id="file-upload" name="file-upload"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Нажатие на метку фокусирует ввод файла, что повышает удобство использования для пользователей.
+      </p>
+<img alt="Добавление метки для обеспечения доступности при вводе файлов" height="286" src="https://htmlformatter.github.io/images/html-input-file-51e5990.png" width="480" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="3-razreshenie-zagruzki-neskolkih-faylov">
+<span class="hn">
+        3.
+       </span>
+       Разрешение загрузки нескольких файлов
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы пользователи могли выбирать несколько файлов одновременно, используйте атрибут
+       <code>
+        multiple
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="file" name="files" id="multi-upload" multiple&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       При наличии этого атрибута пользователи могут выбрать несколько файлов в диалоговом окне выбора файлов.
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пример: index.html
+       </strong>
+</p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+
+  &lt;form id="sampleForm"&gt;
+    &lt;label for="multi-upload"&gt;Choose files:&lt;/label&gt;
+    &lt;input type="file" name="files" id="multi-upload" multiple&gt;
+  &lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Видео
+       </strong>
+</p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="4-ogranichenie-tipov-faylov">
+<span class="hn">
+        4.
+       </span>
+       Ограничение типов файлов
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы ограничить типы файлов, которые могут выбирать пользователи, используйте атрибут
+       <code>
+        accept
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="file" name="image" id="image-upload" accept="image/*"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В этом примере разрешены только файлы изображений.
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пример: index.html
+       </strong>
+</p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+
+  &lt;form id="sampleForm"&gt;
+    &lt;label for="image-upload"&gt;Choose files:&lt;/label&gt;
+    &lt;input type="file" name="image" id="image-upload" accept="image/*"&gt;
+  &lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Видео
+       </strong>
+</p>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        accept
+       </code>
+       также может указывать определенные расширения файлов:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="file" name="document" accept=".pdf, .doc, .docx"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В этом примере типы файлов ограничиваются документами PDF и Word.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="5-ustanovka-obyazatelnogo-vvoda-fayla">
+<span class="hn">
+        5.
+       </span>
+       Установка обязательного ввода файла
+      </h2>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        required
+       </code>
+       гарантирует, что пользователи не смогут отправить форму, не выбрав файл:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;input type="file" name="file" id="required-file" required&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Если файл не выбран, браузер выведет сообщение об ошибке при попытке пользователя отправить форму.
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пример: index.html
+       </strong>
+</p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+
+  &lt;form id="sampleForm"&gt;
+    &lt;label for="required-file"&gt;Choose file:&lt;/label&gt;
+    &lt;input type="file" name="file" id="required-file" required&gt;
+    &lt;input type="submit" value="Upload"&gt;
+  &lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Видео
+       </strong>
+</p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="6-oformlenie-vhodnyh-dannyh-fayla">
+<span class="hn">
+        6.
+       </span>
+       Оформление входных данных файла
+      </h2>
+<p class="text-gray-700 mb-4">
+       Внешний вид поля ввода файла по умолчанию определяется браузером, но вы можете стилизовать его с помощью CSS и пользовательских меток:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+  .file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .file-label:hover {
+    background-color: #45a049;
+  }
+
+  #file-hidden {
+    display: none;
+  }
+&lt;/style&gt;
+
+&lt;label for="file-hidden" class="file-label"&gt;Choose File&lt;/label&gt;
+&lt;input type="file" id="file-hidden" name="hidden-file"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В этом примере скрыто поле ввода файла по умолчанию и используется стилизованная метка для вызова диалогового окна выбора файла.
+      </p>
+<img alt="Стилизация входных данных файла" height="286" src="https://htmlformatter.github.io/images/html-input-file-b6a3228.png" width="480" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="7-ispolzovanie-javascript-s-vvodom-fayla">
+<span class="hn">
+        7
+       </span>
+       Использование JavaScript с вводом файла
+      </h2>
+<p class="text-gray-700 mb-4">
+       JavaScript может динамически взаимодействовать с входными данными файла. Например, отображая имя выбранного файла:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;label for="file-js"&gt;Upload a file:&lt;/label&gt;
+&lt;input type="file" id="file-js" name="file-js"&gt;
+&lt;p id="file-name"&gt;No file selected&lt;/p&gt;
+
+&lt;script&gt;
+  const fileInput = document.getElementById('file-js');
+  const fileName = document.getElementById('file-name');
+
+  fileInput.addEventListener('change',() =&gt; {
+    if(fileInput.files.length &gt; 0) {
+      fileName.textContent = `Selected file: ${fileInput.files[0].name}`;
+    } else {
+      fileName.textContent = 'No file selected';
+    }
+  });
+&lt;/script&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Этот скрипт обновляет текст абзаца именем выбранного файла, предоставляя пользователю немедленную обратную связь.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="8-voprosy-dostupnosti-pri-vvode-faylov">
+<span class="hn">
+        8.
+       </span>
+       Вопросы доступности при вводе файлов
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы обеспечить доступность входного файла:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Используйте описательный элемент
+        <code>
+         &lt;label&gt;
+        </code>
+        для предоставления контекста.
+       </li>
+<li class="ml-4">
+        Обеспечьте достаточный цветовой контраст для всех стилизованных элементов.
+       </li>
+<li class="ml-4">
+        Включите дополнительные инструкции или отзывы для пользователей программ чтения с экрана, использующих
+        <code>
+         aria-describedby
+        </code>
+        .
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="9-realnyh-variantov-ispolzovaniya-vvoda-faylov">
+<span class="hn">
+        9
+       </span>
+       реальных вариантов использования ввода файлов
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Загрузка изображения профиля:
+        </strong>
+        разрешить пользователям загружать изображения для своего профиля.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Отправка документов:
+        </strong>
+        разрешите пользователям отправлять резюме, формы или контракты.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Загрузка медиафайлов:
+        </strong>
+        сбор фотографий, видео или аудиофайлов для контент-платформ.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zaklyuchenie">
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-элемент
+       <code>
+        &lt;input type="file"&gt;
+       </code>
+       используется для загрузки файлов. Используя атрибуты, стили и JavaScript, вы можете создавать интуитивно понятные и удобные интерфейсы загрузки файлов, адаптированные к потребностям вашего приложения.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

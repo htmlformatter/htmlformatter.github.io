@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-заголовки - ХТМЛ справочник</title>
+<meta name="description" content="Заголовки в HTML важны для структурирования контента, улучшения доступности и SEO." />
+<meta name="keywords" content="что такое заголовки html?, чем визуально отличаются заголовки html?, html-теги для заголовков, примеры, пример 1: все 6 типов заголовков в html, пример 2: использование заголовков в статье, почему заголовки важны?, оформление заголовков с помощью css, рекомендации по использованию заголовков, учебники по заголовкам html" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-headings/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-заголовки - ХТМЛ справочник" />
+<meta property="og:description" content="Заголовки в HTML важны для структурирования контента, улучшения доступности и SEO." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-headings/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-заголовки
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       Заголовки играют важнейшую роль в HTML для структурирования контента, улучшения доступности и оптимизации для поисковых систем(SEO). В этом руководстве вы найдете всю необходимую информацию о заголовках HTML, включая их синтаксис, использование и рекомендации.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#chto-takoe-zagolovki-html">
+          Что такое заголовки HTML?
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#chem-vizualno-otlichayutsya-zagolovki-html">
+          Чем визуально отличаются заголовки HTML?
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#html-tegi-dlya-zagolovkov">
+          HTML-теги для заголовков
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primery">
+          Примеры
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-1-vse-6-tipov-zagolovkov-v-html">
+          Пример 1: все 6 типов заголовков в HTML
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-2-ispolzovanie-zagolovkov-v-state">
+          Пример 2: Использование заголовков в статье
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#pochemu-zagolovki-vazhny">
+          Почему заголовки важны?
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#oformlenie-zagolovkov-s-pomoschyu-css">
+          Оформление заголовков с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#rekomendatsii-po-ispolzovaniyu-zagolovkov">
+          Рекомендации по использованию заголовков
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#uchebniki-po-zagolovkam-html">
+          Учебники по заголовкам HTML
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zaklyuchenie">
+          Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="chto-takoe-zagolovki-html">
+       Что такое заголовки HTML?
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-заголовки определяют заголовки или подзаголовки веб-страницы. Они варьируются от
+       <code>
+        &lt;h1&gt;
+       </code>
+       (самая высокая важность) до
+       <code>
+        &lt;h6&gt;
+       </code>
+       (самая низкая важность). Они помогают организовать контент и создать визуальную иерархию, упрощая чтение страницы.
+      </p>
+<p class="text-gray-700 mb-4">
+       Всего в HTML существует шесть типов заголовков.
+      </p>
+<p class="text-gray-700 mb-4">
+       Они есть:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Заголовок 1
+       </li>
+<li class="ml-4">
+        Заголовок 2
+       </li>
+<li class="ml-4">
+        Заголовок 3
+       </li>
+<li class="ml-4">
+        Заголовок 4
+       </li>
+<li class="ml-4">
+        Заголовок 5
+       </li>
+<li class="ml-4">
+        Заголовок 6
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="chem-vizualno-otlichayutsya-zagolovki-html">
+       Чем визуально отличаются заголовки HTML?
+      </h2>
+<p class="text-gray-700 mb-4">
+       Размер шрифта заголовка 1 больше, чем у заголовка 2.
+      </p>
+<img alt="" height="108" src="https://htmlformatter.github.io/images/html-headings-ddd7de7.png" width="259" />
+<p class="text-gray-700 mb-4">
+<a href="https://htmlformatter.github.io/css/css-font-size/">
+        Размер шрифта
+       </a>
+       заголовка 2 больше, чем у заголовка 3.
+      </p>
+<img alt="" height="92" src="https://htmlformatter.github.io/images/html-headings-6c88fbb.png" width="205" />
+<p class="text-gray-700 mb-4">
+       По мере увеличения номера заголовка размер шрифта по умолчанию уменьшается.
+      </p>
+<img alt="" height="262" src="https://htmlformatter.github.io/images/html-headings-7b3d5d9.png" width="266" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="html-tegi-dlya-zagolovkov">
+       HTML-теги для заголовков
+      </h2>
+<p class="text-gray-700 mb-4">
+       В следующей таблице приведены теги, используемые для различных типов заголовков в HTML.
+      </p>
+<table>
+<tr>
+<th>
+         Заголовок &lt;Уровень&gt;
+        </th>
+<th>
+         HTML-тег
+        </th>
+</tr>
+<tbody>
+<tr>
+<td>
+          Заголовок 1
+         </td>
+<td>
+<code>
+           &lt;h1&gt;
+          </code>
+</td>
+</tr>
+<tr>
+<td>
+          Заголовок 2
+         </td>
+<td>
+<code>
+           &lt;h2&gt;
+          </code>
+</td>
+</tr>
+<tr>
+<td>
+          Заголовок 3
+         </td>
+<td>
+<code>
+           &lt;h3&gt;
+          </code>
+</td>
+</tr>
+<tr>
+<td>
+          Заголовок 4
+         </td>
+<td>
+<code>
+           &lt;h4&gt;
+          </code>
+</td>
+</tr>
+<tr>
+<td>
+          Заголовок 5
+         </td>
+<td>
+<code>
+           &lt;h5&gt;
+          </code>
+</td>
+</tr>
+<tr>
+<td>
+          Заголовок 6
+         </td>
+<td>
+<code>
+           &lt;h6&gt;
+          </code>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primery">
+       Примеры
+      </h2>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-1-vse-6-tipov-zagolovkov-v-html">
+       Пример 1: все 6 типов заголовков в HTML
+      </h2>
+<p class="text-gray-700 mb-4">
+       В следующем примере мы отображаем шесть заголовков в HTML-файле.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;h1&gt;This is Heading 1&lt;/h1&gt;
+&lt;h2&gt;This is Heading 2&lt;/h2&gt;
+&lt;h3&gt;This is Heading 3&lt;/h3&gt;
+&lt;h4&gt;This is Heading 4&lt;/h4&gt;
+&lt;h5&gt;This is Heading 5&lt;/h5&gt;
+&lt;h6&gt;This is Heading 6&lt;/h6&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Скриншот в браузере
+       </strong>
+</p>
+<img alt="" height="410" loading="lazy" src="https://htmlformatter.github.io/images/html-headings-f6bd63e.png" width="513" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-2-ispolzovanie-zagolovkov-v-state">
+       Пример 2: Использование заголовков в статье
+      </h2>
+<p class="text-gray-700 mb-4">
+       Ниже приведен пример статьи, демонстрирующий использование различных заголовков на веб-странице HTML.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;h1&gt;Programming Languages&lt;/h1&gt;
+&lt;p&gt;Many programming languages have been developed over time to address specific challenges.&lt;/p&gt;
+&lt;h2&gt;Server Side Programming Languages&lt;/h2&gt;
+&lt;p&gt;Some of the server side programming lanagues are Java, PHP, etc.&lt;/p&gt;
+&lt;h3&gt;Java&lt;/h3&gt;
+&lt;p&gt;Java is the most used programming language on Server side.&lt;/p&gt;
+&lt;h2&gt;Client Side Programming Languages&lt;/h2&gt;
+&lt;p&gt;Some of the client side programming lanagues are JavaScript, etc.&lt;/p&gt;
+&lt;h3&gt;JavaScript&lt;/h3&gt;
+&lt;p&gt;JavaScript is a scripting language used to make dynamic pages.&lt;/p&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Скриншот в браузере
+       </strong>
+</p>
+<img alt="" height="636" loading="lazy" src="https://htmlformatter.github.io/images/html-headings-6a3ecae.png" width="513" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="pochemu-zagolovki-vazhny">
+       Почему заголовки важны?
+      </h2>
+<p class="text-gray-700 mb-4">
+       Заголовки HTML важны в следующих аспектах.
+      </p>
+<ol class="wp-block-list">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Структура
+        </strong>
+        : Заголовки логически организуют содержание.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Доступность
+        </strong>
+        : программы чтения с экрана используют заголовки, чтобы помочь пользователям с нарушениями зрения перемещаться по странице.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Преимущества SEO
+        </strong>
+        : Поисковые системы отдают больший приоритет содержанию заголовков.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Пользовательский опыт
+        </strong>
+        : правильные заголовки улучшают читаемость и навигацию.
+       </li>
+</ol>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="oformlenie-zagolovkov-s-pomoschyu-css">
+       Оформление заголовков с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       По умолчанию браузеры применяют к заголовкам базовые стили. Вы можете настроить их с помощью CSS.
+      </p>
+<p class="text-gray-700 mb-4">
+       В следующем HTML-коде мы установили CSS для заголовка 1 с размером шрифта 2,5em и тёмно-синим цветом. Для заголовка 2 мы установили размер шрифта 2em и бирюзовый цвет. Аналогично, для заголовка 3 мы установили размер шрифта 1,5em и курсив.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+  h1 {
+    font-size: 2.5em;
+    color: navy;
+  }
+  h2 {
+    font-size: 2em;
+    color: teal;
+  }
+  h3 {
+    font-size: 1.5em;
+    font-style: italic;
+  }
+&lt;/style&gt;
+
+&lt;h1&gt;Custom Styled Heading&lt;/h1&gt;
+&lt;h2&gt;Secondary Heading&lt;/h2&gt;
+&lt;h3&gt;Styled Subheading&lt;/h3&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Скриншот
+       </strong>
+</p>
+<img alt="" height="377" loading="lazy" src="https://htmlformatter.github.io/images/html-headings-26fa0d0.png" width="567" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="rekomendatsii-po-ispolzovaniyu-zagolovkov">
+<strong class="font-bold text-gray-900">
+        Рекомендации по использованию заголовков
+       </strong>
+</h2>
+<ol class="wp-block-list">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Используйте
+         <code>
+          &lt;h1&gt;
+         </code>
+         Один раз
+        </strong>
+        : убедитесь, что основной заголовок уникален и точно описывает содержимое страницы.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Соблюдайте иерархию
+        </strong>
+        : используйте
+        <code>
+         &lt;h2&gt;
+        </code>
+        для основных разделов и
+        <code>
+         &lt;h3&gt;
+        </code>
+        для подразделов. Избегайте пропуска уровней.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Будьте описательными
+        </strong>
+        : заголовки должны четко указывать, о чем идет речь в разделе.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Избегайте перегрузки ключевыми словами
+        </strong>
+        : в целях SEO включайте ключевые слова в заголовки естественным образом, не перегружая их.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Объединение с ролями ARIA
+        </strong>
+        : для обеспечения доступности убедитесь, что структура заголовка соответствует ролям ARIA.
+       </li>
+</ol>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="uchebniki-po-zagolovkam-html">
+       Учебники по заголовкам HTML
+      </h2>
+<p class="text-gray-700 mb-4">
+       В следующих уроках каждый HTML-заголовок подробно объясняется с примерами. Мы также изучим стили по умолчанию для этих заголовков и научимся применять особые стили с помощью CSS.
+      </p>
+<ol class="wp-block-list">
+<li class="ml-4">
+<a href="https://htmlformatter.github.io/html-h1/">
+         HTML h1
+        </a>
+</li>
+<li class="ml-4">
+<a href="https://htmlformatter.github.io/html-h2/">
+         HTML h2
+        </a>
+</li>
+<li class="ml-4">
+<a href="https://htmlformatter.github.io/html-h3/">
+         HTML h3
+        </a>
+</li>
+<li class="ml-4">
+<a href="https://htmlformatter.github.io/html-h4/">
+         HTML h4
+        </a>
+</li>
+<li class="ml-4">
+<a href="https://htmlformatter.github.io/html-h5/">
+         HTML h5
+        </a>
+</li>
+<li class="ml-4">
+<a href="https://htmlformatter.github.io/html-h6/">
+         HTML h6
+        </a>
+</li>
+</ol>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zaklyuchenie">
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       В этом уроке по HTML мы познакомились с заголовками HTML и тегами, используемыми для этих заголовков, с примерами. Заголовки HTML — это не просто инструменты форматирования: они структурируют веб-страницу, улучшают доступность и улучшают SEO. Следуя лучшим практикам и поддерживая чёткую иерархию, вы сможете создавать контент, который будет легко читать, просматривать и индексировать.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;data&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег HTML &lt;data&gt; связывает машиночитаемые данные с текстом, удобен для добавления контекста к контенту." />
+<meta name="keywords" content="базовый синтаксис тега data, атрибуты html-тега data, базовый пример html-тега data, когда следует использовать тег data?, расширенные примеры html-тега data, стилизация тега data, заметки о теге data" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-data-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;data&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег HTML &lt;data&gt; связывает машиночитаемые данные с текстом, удобен для добавления контекста к контенту." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-data-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;data&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;data&gt;
+       </code>
+       используется для связывания машиночитаемых данных с контентом, понятным человеку. Он особенно полезен для встраивания дополнительного контекста или метаданных в текстовые элементы, например, чисел, идентификаторов продуктов или других данных, которые программное обеспечение может интерпретировать иначе, чем человек.
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;data&gt;
+       </code>
+       состоит из двух частей:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Человекочитаемый контент, отображаемый на странице.
+       </li>
+<li class="ml-4">
+        Машиночитаемое содержимое, указанное в атрибуте
+        <code>
+         value
+        </code>
+        .
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Этот тег полезен в таких приложениях, как поисковая оптимизация(SEO), анализ данных или при работе с JavaScript для извлечения или обработки структурированных данных.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-tega-ltdatagt">
+          Базовый синтаксис тега &lt;data&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-ltdatagt">
+          Атрибуты HTML-тега &lt;data&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-primer-html-tega-ltdatagt">
+          Базовый пример HTML-тега &lt;data&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#kogda-sleduet-ispolzovat-teg-ltdatagt">
+          Когда следует использовать тег &lt;data&gt;?
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#rasshirennye-primery-html-tega-ltdatagt">
+          Расширенные примеры HTML-тега &lt;data&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-tega-ltdatagt">
+          Стилизация тега &lt;data&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zametki-o-tege-ltdatagt">
+          Заметки о теге &lt;data&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-tega-ltdatagt">
+       Базовый синтаксис тега &lt;data&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;data&gt;
+       </code>
+       записывается как:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;data value="machine-readable-data"&gt;Human-readable content&lt;/data&gt;</code></pre>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-ltdatagt">
+       Атрибуты HTML-тега &lt;data&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         значение:
+        </strong>
+        обязательный атрибут, содержащий машиночитаемое содержимое, связанное с текстом, понятным человеку.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-primer-html-tega-ltdatagt">
+       Базовый пример HTML-тега &lt;data&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример, демонстрирующий использование тега
+       <code>
+        &lt;data&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Basic Example&lt;/h2&gt;
+        &lt;p&gt;The price of the product is &lt;data value="1000"&gt;$1,000&lt;/data&gt;.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="249" src="https://htmlformatter.github.io/images1/html-tag-0d2ab74.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       В этом примере понятный человеку текст
+       <code>
+        $1,000
+       </code>
+       связан с машиночитаемыми данными
+       <code>
+        1000
+       </code>
+       . Программа или скрипт могут извлечь числовое значение для дальнейшей обработки.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="kogda-sleduet-ispolzovat-teg-ltdatagt">
+       Когда следует использовать тег &lt;data&gt;?
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Ассоциация метаданных:
+        </strong>
+        когда вы хотите связать определенные метаданные с видимым контентом, например идентификаторы продуктов, даты или справочные номера.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         SEO и доступность:
+        </strong>
+        поисковые системы и вспомогательные технологии могут лучше интерпретировать контент, если предоставлены машиночитаемые данные.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Приложения JavaScript:
+        </strong>
+        для хранения и обработки структурированных данных для динамической генерации контента или вычислений.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="rasshirennye-primery-html-tega-ltdatagt">
+       Расширенные примеры HTML-тега &lt;data&gt;
+      </h2>
+<h3 class="text-lg font-semibold text-gray-800 mt-4 mb-3">
+       1. Пример с идентификаторами продуктов
+      </h3>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;data&gt;
+       </code>
+       может связать название продукта с уникальным идентификатором:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Product Example&lt;/h2&gt;
+        &lt;p&gt;Product: &lt;data value="SKU12345"&gt;Wireless Mouse&lt;/data&gt;&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="249" src="https://htmlformatter.github.io/images1/html-tag-66a4d3c.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       понятное человеку название продукта
+       <code>
+        Wireless Mouse
+       </code>
+       связано с машиночитаемым SKU
+       <code>
+        SKU12345
+       </code>
+       , которое можно использовать для отслеживания или поиска в базе данных.
+      </p>
+<h3 class="text-lg font-semibold text-gray-800 mt-4 mb-3">
+       2. Использование JavaScript для извлечения данных
+      </h3>
+<p class="text-gray-700 mb-4">
+       Вы можете использовать JavaScript для извлечения машиночитаемых данных из тега
+       <code>
+        &lt;data&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;JavaScript Example&lt;/h2&gt;
+        &lt;p&gt;The discount is &lt;data id="discount" value="10"&gt;10%&lt;/data&gt;&lt;/p&gt;
+
+        &lt;script&gt;
+            const discountData = document.getElementById('discount');
+            console.log('Machine-readable value:', discountData.value);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="456" src="https://htmlformatter.github.io/images1/html-tag-c4ce561.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       В этом примере JavaScript извлекает значение
+       <code>
+        10
+       </code>
+       из тега
+       <code>
+        &lt;data&gt;
+       </code>
+       и выводит его в консоль. Это полезно для динамических вычислений или взаимодействия с API.
+      </p>
+<h3 class="text-lg font-semibold text-gray-800 mt-4 mb-3">
+       3. Отображение дат в машиночитаемых форматах
+      </h3>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;data&gt;
+       </code>
+       можно использовать для предоставления форматов даты ISO 8601 наряду с датами, удобными для чтения человеком:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Date Example&lt;/h2&gt;
+        &lt;p&gt;Event Date: &lt;data value="2024-12-31"&gt;December 31, 2024&lt;/data&gt;&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="243" loading="lazy" src="https://htmlformatter.github.io/images1/html-tag-723e7dc.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Машиночитаемая дата
+       <code>
+        2024-12-31
+       </code>
+       (формат ISO 8601) сочетается с человекочитаемой датой
+       <code>
+        December 31, 2024
+       </code>
+       , что улучшает совместимость со скриптами и системами, обрабатывающими даты.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-tega-ltdatagt">
+       Стилизация тега &lt;data&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Как и другие встроенные элементы, тег
+       <code>
+        &lt;data&gt;
+       </code>
+       можно стилизовать с помощью CSS:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            data {
+                font-weight: bold;
+                color: #007BFF;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Styled Data Tag&lt;/h2&gt;
+        &lt;p&gt;The temperature is &lt;data value="25"&gt;25°C&lt;/data&gt;.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="243" loading="lazy" src="https://htmlformatter.github.io/images1/html-tag-5b18191.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       текст внутри тега
+       <code>
+        &lt;data&gt;
+       </code>
+       отображается жирным шрифтом и синим цветом, что подчеркивает его значимость.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zametki-o-tege-ltdatagt">
+       Заметки о теге &lt;data&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Убедитесь, что атрибут
+        <code>
+         value
+        </code>
+        всегда содержит допустимое машиночитаемое содержимое, поскольку его основное предназначение — программное использование.
+       </li>
+<li class="ml-4">
+        Тег
+        <code>
+         &lt;data&gt;
+        </code>
+        по умолчанию является встроенным элементом, поэтому с точки зрения макета он ведет себя как
+        <code>
+         &lt;span&gt;
+        </code>
+        .
+       </li>
+<li class="ml-4">
+        Несмотря на свою полезность, тег
+        <code>
+         &lt;data&gt;
+        </code>
+        используется не так часто, как другие семантические теги, поэтому его применение может быть узкоспециализированным в зависимости от проекта.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

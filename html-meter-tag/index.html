@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;meter&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;meter&gt; в HTML: отображение шкалы или прогресса в заданном диапазоне, например, уровня загрузки или батареи." />
+<meta name="keywords" content="базовый синтаксис html-тега meter, атрибуты html-тега meter, базовый пример html-тега meter, пример с низким, высоким и оптимальным значениями, оформление тега meter с помощью css, практическое применение тега meter" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-meter-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;meter&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;meter&gt; в HTML: отображение шкалы или прогресса в заданном диапазоне, например, уровня загрузки или батареи." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-meter-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;meter&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;meter&gt;
+       </code>
+       используется для представления скалярного измерения в известном диапазоне или дробного значения. Он обычно применяется для отображения таких значений, как использование диска, уровень заряда батареи или ход выполнения задачи, диапазон значений которых предопределен.
+      </p>
+<img alt="HTML-счетчик Тег" height="56" src="https://htmlformatter.github.io/images1/html-tag-29fbfb6.png" width="606" />
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;meter&gt;
+       </code>
+       обеспечивает визуальное представление значения и может включать дополнительную информацию, такую как минимальный, максимальный и оптимальный диапазон измерения.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-ltmetergt">
+          Базовый синтаксис HTML-тега &lt;meter&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-ltmetergt">
+          Атрибуты HTML-тега &lt;meter&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-primer-html-tega-ltmetergt">
+          Базовый пример HTML-тега &lt;meter&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-s-nizkim-vysokim-i-optimalnym-znacheniyami">
+          Пример с низким, высоким и оптимальным значениями
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#oformlenie-tega-ltmetergt-s-pomoschyu-css">
+          Оформление тега &lt;meter&gt; с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-ltmetergt">
+          Практическое применение тега &lt;meter&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-ltmetergt">
+       Базовый синтаксис HTML-тега &lt;meter&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура тега
+       <code>
+        &lt;meter&gt;
+       </code>
+       следующая:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;meter value="current" min="minimum" max="maximum"&gt;Fallback Text&lt;/meter&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        value
+       </code>
+       указывает текущее измерение, а атрибуты
+       <code>
+        min
+       </code>
+       и
+       <code>
+        max
+       </code>
+       определяют диапазон.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-ltmetergt">
+       Атрибуты HTML-тега &lt;meter&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         значение:
+        </strong>
+        указывает текущее значение измерения.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         мин:
+        </strong>
+        определяет минимальное значение диапазона(по умолчанию 0).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         макс.:
+        </strong>
+        определяет максимальное значение диапазона(по умолчанию 1).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         низкий:
+        </strong>
+        указывает нижнюю границу «низкого» диапазона, где значение считается ниже среднего.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         высокий:
+        </strong>
+        указывает верхнюю границу «высокого» диапазона, где значение считается выше среднего.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         оптимум:
+        </strong>
+        определяет оптимальное значение или диапазон для измерения.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Глобальные атрибуты:
+        </strong>
+        поддерживает все глобальные атрибуты, такие как
+        <code>
+         id
+        </code>
+        ,
+        <code>
+         class
+        </code>
+        и
+        <code>
+         style
+        </code>
+        .
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-primer-html-tega-ltmetergt">
+       Базовый пример HTML-тега &lt;meter&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот простой пример счетчика, отображающего использование диска:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Disk Usage&lt;/h2&gt;
+        &lt;p&gt;Disk space used: &lt;meter value="70" min="0" max="100"&gt;70%&lt;/meter&gt;&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Базовый пример HTML-счетчика Тег" height="275" src="https://htmlformatter.github.io/images1/html-tag-c76395a.png" width="608" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       счетчик показывает, что использовано 70% дискового пространства в диапазоне от 0 до 100.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-s-nizkim-vysokim-i-optimalnym-znacheniyami">
+       Пример с низким, высоким и оптимальным значениями
+      </h2>
+<p class="text-gray-700 mb-4">
+       Атрибуты
+       <code>
+        low
+       </code>
+       ,
+       <code>
+        high
+       </code>
+       и
+       <code>
+        optimum
+       </code>
+       могут предоставить дополнительный контекст для значения:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Battery Level&lt;/h2&gt;
+        &lt;p&gt;Battery status: &lt;meter value="50" min="0" max="100" low="20" high="80" optimum="100"&gt;50%&lt;/meter&gt;&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Пример с низким, высоким и оптимальным значениями" height="275" src="https://htmlformatter.github.io/images1/html-tag-ad65f03.png" width="608" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Текущий уровень заряда батареи составляет 50%. Значения ниже 20% считаются низкими, значения выше 80% — высокими, а 100% — оптимальными.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="oformlenie-tega-ltmetergt-s-pomoschyu-css">
+       Оформление тега &lt;meter&gt; с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете настроить внешний вид счетчика с помощью CSS:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            meter {
+                width: 100%;
+                height: 20px;
+                border: 1px solid #ccc;
+                background: #f9f9f9;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Progress Status&lt;/h2&gt;
+        &lt;p&gt;Task progress: &lt;meter value="45" min="0" max="100"&gt;45%&lt;/meter&gt;&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Стилизация счетчика  Тег с помощью CSS" height="275" loading="lazy" src="https://htmlformatter.github.io/images1/html-tag-85d64f6.png" width="608" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       счетчик отображается в измененном стиле с индивидуальным размером, границей и цветом фона, что улучшает его визуальную привлекательность.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-ltmetergt">
+       Практическое применение тега &lt;meter&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Отслеживание прогресса:
+        </strong>
+        отображение прогресса выполнения задач, загрузок или достижений в рамках заранее определенного диапазона.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Мониторинг ресурсов:
+        </strong>
+        отображение использования диска, потребления памяти или скорости сети.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Показатели производительности:
+        </strong>
+        визуальное представление контрольных показателей или оценок.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Индикаторы заряда батареи:
+        </strong>
+        отображают уровень заряда батареи устройств или приложений.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

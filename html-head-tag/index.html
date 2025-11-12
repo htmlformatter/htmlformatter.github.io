@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;head&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;head&gt; содержит метаданные и другую информацию о HTML-документе. Он размещается в начале файла HTML внутри тега &lt;html&gt;, но вне тега &lt;body&gt;." />
+<meta name="keywords" content="базовый синтаксис html-тега head, общие элементы внутри тега head, базовый пример html-тега head, использование style внутри head, использование script внутри head, практическое применение тега head" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-head-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;head&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;head&gt; содержит метаданные и другую информацию о HTML-документе. Он размещается в начале файла HTML внутри тега &lt;html&gt;, но вне тега &lt;body&gt;." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-head-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;head&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;head&gt;
+       </code>
+       — это контейнер для метаданных и другой информации о HTML-документе. Он размещается в начале HTML-файла, внутри тега
+       <code>
+        &lt;html&gt;
+       </code>
+       , но за пределами тега
+       <code>
+        &lt;body&gt;
+       </code>
+       . Содержимое тега
+       <code>
+        &lt;head&gt;
+       </code>
+       не отображается непосредственно на веб-странице, а используется для определения заголовка документа, ссылок на таблицы стилей, скрипты и других настроек.
+      </p>
+<p class="text-gray-700 mb-4">
+       Он играет решающую роль в определении структуры, стиля и поведения веб-страницы.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-ltheadgt">
+          Базовый синтаксис HTML-тега &lt;head&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#obschie-elementy-vnutri-tega-ltheadgt">
+          Общие элементы внутри тега &lt;head&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-primer-html-tega-ltheadgt">
+          Базовый пример HTML-тега &lt;head&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#ispolzovanie-ltstylegt-vnutri-ltheadgt">
+          Использование &lt;style&gt; внутри &lt;head&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#ispolzovanie-ltscriptgt-vnutri-ltheadgt">
+          Использование &lt;script&gt; внутри &lt;head&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-ltheadgt">
+          Практическое применение тега &lt;head&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-ltheadgt">
+       Базовый синтаксис HTML-тега &lt;head&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура тега
+       <code>
+        &lt;head&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        Metadata and links go here.
+    &lt;/head&gt;
+    &lt;body&gt;
+        Visible content goes here.
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;head&gt;
+       </code>
+       обычно включает несколько вложенных элементов, таких как
+       <code>
+        &lt;title&gt;
+       </code>
+       ,
+       <code>
+        &lt;meta&gt;
+       </code>
+       ,
+       <code>
+        &lt;link&gt;
+       </code>
+       ,
+       <code>
+        &lt;style&gt;
+       </code>
+       и
+       <code>
+        &lt;script&gt;
+       </code>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="obschie-elementy-vnutri-tega-ltheadgt">
+       Общие элементы внутри тега &lt;head&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+<code>
+          &lt;title&gt;
+         </code>
+         :
+        </strong>
+        Указывает заголовок веб-страницы, отображаемый на вкладке браузера или в результатах поисковой системы.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+<code>
+          &lt;meta&gt;
+         </code>
+         :
+        </strong>
+        Предоставляет метаданные, такие как набор символов, настройки области просмотра или описание страницы для SEO.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+<code>
+          &lt;link&gt;
+         </code>
+         :
+        </strong>
+        Ссылается на внешние ресурсы, такие как таблицы стилей или значки.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+<code>
+          &lt;style&gt;
+         </code>
+         :
+        </strong>
+        Содержит внутренние стили CSS для страницы.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+<code>
+          &lt;script&gt;
+         </code>
+         :
+        </strong>
+        Включает или ссылается на файлы JavaScript для обеспечения функциональности.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+<code>
+          &lt;base&gt;
+         </code>
+         :
+        </strong>
+        Указывает базовый URL для относительных URL на странице.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-primer-html-tega-ltheadgt">
+       Базовый пример HTML-тега &lt;head&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот простой пример, демонстрирующий общие элементы внутри тега
+       <code>
+        &lt;head&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My First Website&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;link rel="stylesheet" href="styles.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+        &lt;p&gt;This is a sample page.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+<code>
+        &lt;head&gt;
+       </code>
+       включает заголовок страницы, кодировку символов, настройки области просмотра для адаптивности и ссылку на внешнюю таблицу стилей.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="ispolzovanie-ltstylegt-vnutri-ltheadgt">
+       Использование &lt;style&gt; внутри &lt;head&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете включить внутренние стили CSS непосредственно внутри тега
+       <code>
+        &lt;head&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Styled Page - htmlformatter.github.io.com&lt;/title&gt;
+        &lt;style&gt;
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                color: #333;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Welcome&lt;/h1&gt;
+        &lt;p&gt;This page has inline styles defined in the &lt;head&gt; tag.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Использование стиля Внутри заголовка" height="354" src="https://htmlformatter.github.io/images1/html-tag-ea25bc9.png" width="506" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       Элемент
+       <code>
+        &lt;style&gt;
+       </code>
+       внутри тега
+       <code>
+        &lt;head&gt;
+       </code>
+       содержит правила CSS, которые задают стиль всей страницы.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="ispolzovanie-ltscriptgt-vnutri-ltheadgt">
+       Использование &lt;script&gt; внутри &lt;head&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете включить JavaScript в тег
+       <code>
+        &lt;head&gt;
+       </code>
+       чтобы добавить интерактивности на свою страницу:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JavaScript Example&lt;/title&gt;
+        &lt;script&gt;
+            function greet() {
+                alert("Welcome to My Website!");
+            }
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body onload="greet()"&gt;
+        &lt;h1&gt;Hello!&lt;/h1&gt;
+        &lt;p&gt;This page greets you with an alert message on load.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Использование скрипта Внутри головы" height="354" src="https://htmlformatter.github.io/images1/html-tag-2e60bde.png" width="506" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       Функция JavaScript
+       <code>
+        greet()
+       </code>
+       определена внутри тега
+       <code>
+        &lt;script&gt;
+       </code>
+       и выполняется при загрузке страницы.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-ltheadgt">
+       Практическое применение тега &lt;head&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Заголовки страниц:
+        </strong>
+        укажите содержательные заголовки с помощью тега
+        <code>
+         &lt;title&gt;
+        </code>
+        для улучшения пользовательского опыта и SEO.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Метаданные:
+        </strong>
+        добавьте метатеги для кодировки символов, настроек области просмотра и поисковой оптимизации.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Внешние ресурсы:
+        </strong>
+        подключайте внешние таблицы стилей, скрипты и шрифты с помощью тега
+        <code>
+         &lt;link&gt;
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Внутренняя стилизация:
+        </strong>
+        включите встроенный CSS для быстрой стилизации в теге
+        <code>
+         &lt;style&gt;
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         JavaScript:
+        </strong>
+        определение или связывание функций и библиотек JavaScript для обеспечения интерактивности.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;ruby&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;ruby&gt; в HTML: добавление аннотаций к тексту, использование для китайских, японских и корейских символов." />
+<meta name="keywords" content="базовый синтаксис html-тега ruby, пример аннотаций ruby, использование rp для резервной поддержки, стилизация текста ruby с помощью css, преимущества доступности тега ruby, практическое применение тега ruby" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-ruby-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;ruby&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;ruby&gt; в HTML: добавление аннотаций к тексту, использование для китайских, японских и корейских символов." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-ruby-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;ruby&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;ruby&gt;
+       </code>
+       используется для отображения руби-аннотаций — небольших текстовых фрагментов, обычно используемых для указания произношения или предоставления дополнительной информации об исходном тексте. Этот тег особенно полезен для восточноазиатских языков, таких как японский, китайский и корейский, где часто требуются руководства по произношению(также известные как «фуригана» или «пиньинь»).
+      </p>
+<p class="text-gray-700 mb-4">
+       Элемент
+       <code>
+        &lt;ruby&gt;
+       </code>
+       работает в сочетании с тегами
+       <code>
+        &lt;rt&gt;
+       </code>
+       (текст Ruby) и, опционально, с тегами
+       <code>
+        &lt;rp&gt;
+       </code>
+       (скобки Ruby) для определения аннотации и резервного содержимого для неподдерживаемых браузеров.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-ltrubygt">
+          Базовый синтаксис HTML-тега &lt;ruby&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-annotatsiy-ruby">
+          Пример аннотаций Ruby
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#ispolzovanie-ltrpgt-dlya-rezervnoy-podderzhki">
+          Использование &lt;rp&gt; для резервной поддержки
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-teksta-ruby-s-pomoschyu-css">
+          Стилизация текста Ruby с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#preimuschestva-dostupnosti-tega-ltrubygt">
+          Преимущества доступности тега &lt;ruby&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-ltrubygt">
+          Практическое применение тега &lt;ruby&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-ltrubygt">
+       Базовый синтаксис HTML-тега &lt;ruby&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура тега
+       <code>
+        &lt;ruby&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;ruby&gt;
+    Base Text
+    &lt;rt&gt;Ruby Text&lt;/rt&gt;
+&lt;/ruby&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<code>
+        Base Text
+       </code>
+       — это основное содержимое, а тег
+       <code>
+        &lt;rt&gt;
+       </code>
+       содержит текст аннотации или произношения.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-annotatsiy-ruby">
+       Пример аннотаций Ruby
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример использования тега
+       <code>
+        &lt;ruby&gt;
+       </code>
+       для предоставления произношения китайских иероглифов:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Ruby Annotation Example&lt;/h2&gt;
+        &lt;p&gt;
+            &lt;ruby&gt;
+                漢字
+                &lt;rt&gt;kanji&lt;/rt&gt;
+            &lt;/ruby&gt;
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Пример аннотаций Ruby" height="320" src="https://htmlformatter.github.io/images2/html-tag-137d377.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Базовый текст «漢字» отображается с рубиновым текстом «kanji», расположенным над ним(или рядом) в зависимости от рендеринга браузера.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="ispolzovanie-ltrpgt-dlya-rezervnoy-podderzhki">
+       Использование &lt;rp&gt; для резервной поддержки
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;rp&gt;
+       </code>
+       предоставляет резервный контент для браузеров, не поддерживающих элемент
+       <code>
+        &lt;ruby&gt;
+       </code>
+       . Обычно используются скобки:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;ruby&gt;
+    漢字
+    &lt;rp&gt;(&lt;/rp&gt;
+    &lt;rt&gt;kanji&lt;/rt&gt;
+    &lt;rp&gt;)&lt;/rp&gt;
+&lt;/ruby&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       В поддерживаемых браузерах отображается текст «kanji» на языке Ruby. В неподдерживаемых браузерах текст отображается как «漢字(kanji)».
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-teksta-ruby-s-pomoschyu-css">
+       Стилизация текста Ruby с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете стилизовать текст Ruby с помощью CSS, чтобы настроить его внешний вид, например размер шрифта, цвет или позиционирование:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            ruby {
+                font-size: 1.2em;
+            }
+            rt {
+                font-size: 0.8em;
+                color: #007BFF;
+                font-style: italic;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Styled Ruby Example&lt;/h2&gt;
+        &lt;p&gt;
+            &lt;ruby&gt;
+                漢字
+                &lt;rt&gt;kanji&lt;/rt&gt;
+            &lt;/ruby&gt;
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Стилизация текста Ruby с помощью CSS" height="320" src="https://htmlformatter.github.io/images2/html-tag-4d67770.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       базовый текст(«漢字») отображается шрифтом большего размера, а рубиновый текст(«кандзи») отображается шрифтом меньшего размера и курсивом синего цвета.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="preimuschestva-dostupnosti-tega-ltrubygt">
+       Преимущества доступности тега &lt;ruby&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;ruby&gt;
+       </code>
+       улучшает доступность, предоставляя дополнительный контекст или подсказки по произношению текста. Программы чтения с экрана могут распознавать и озвучивать текст, написанный на языке Ruby, что делает его полезным для пользователей со слабым зрением или тех, кто не знаком с некоторыми символами.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-ltrubygt">
+       Практическое применение тега &lt;ruby&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Изучение языка:
+        </strong>
+        предоставление руководств по произношению для изучающих восточноазиатские языки.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Доступность:
+        </strong>
+        добавляйте контекстный или пояснительный текст к символам, которые могут быть незнакомы пользователям.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Типографское оформление:
+        </strong>
+        Улучшите представление сложных текстов с помощью дополнительных аннотаций.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Кросс-культурная поддержка:
+        </strong>
+        отображение переводов или фонетических представлений текста в многоязычном контенте.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

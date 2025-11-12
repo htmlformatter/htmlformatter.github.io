@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;ins&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;ins&gt; в HTML: как обозначать вставленный текст, применение в совместном редактировании и версии документов." />
+<meta name="keywords" content="базовый синтаксис html-тега ins, атрибуты html-тега ins, базовый пример html-тега ins, использование атрибутов с тегом ins, стилизация тега ins с помощью css, совместное использование ins и del, практическое применение тега ins" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-ins-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;ins&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;ins&gt; в HTML: как обозначать вставленный текст, применение в совместном редактировании и версии документов." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-ins-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;ins&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;ins&gt;
+       </code>
+       используется для представления текста, вставленного в документ. Обычно он используется в паре с тегом
+       <code>
+        &lt;del&gt;
+       </code>
+       , представляющим удалённый текст. Тег
+       <code>
+        &lt;ins&gt;
+       </code>
+       по умолчанию визуально выделяет вставленный текст, обычно подчёркивая его, и может также включать метаданные о вставке с помощью атрибутов.
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;ins&gt;
+       </code>
+       часто используется при совместном редактировании, управлении версиями документов или других сценариях, где необходимо отслеживание изменений.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-ltinsgt">
+          Базовый синтаксис HTML-тега &lt;ins&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-ltinsgt">
+          Атрибуты HTML-тега &lt;ins&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-primer-html-tega-ltinsgt">
+          Базовый пример HTML-тега &lt;ins&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#ispolzovanie-atributov-s-tegom-ltinsgt">
+          Использование атрибутов с тегом &lt;ins&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-tega-ltinsgt-s-pomoschyu-css">
+          Стилизация тега &lt;ins&gt; с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#sovmestnoe-ispolzovanie-ltinsgt-i-ltdelgt">
+          Совместное использование &lt;ins&gt; и &lt;del&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-ltinsgt">
+          Практическое применение тега &lt;ins&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-ltinsgt">
+       Базовый синтаксис HTML-тега &lt;ins&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура тега
+       <code>
+        &lt;ins&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;ins&gt;Inserted text&lt;/ins&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Текст, заключенный в тег
+       <code>
+        &lt;ins&gt;
+       </code>
+       , по умолчанию будет отображаться с подчеркиванием, что указывает на то, что он был добавлен.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-ltinsgt">
+       Атрибуты HTML-тега &lt;ins&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         cite:
+        </strong>
+        Указывает источник вставки, обычно URL или справочный документ.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         datetime:
+        </strong>
+        Указывает дату и время вставки текста в формате
+        <code>
+         YYYY-MM-DDThh:mm:ss
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Глобальные атрибуты:
+        </strong>
+        поддерживает все глобальные атрибуты, такие как
+        <code>
+         id
+        </code>
+        ,
+        <code>
+         class
+        </code>
+        ,
+        <code>
+         style
+        </code>
+        и
+        <code>
+         title
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Атрибуты событий:
+        </strong>
+        поддерживает такие атрибуты событий, как
+        <code>
+         onclick
+        </code>
+        ,
+        <code>
+         onmouseover
+        </code>
+        и
+        <code>
+         onfocus
+        </code>
+        .
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-primer-html-tega-ltinsgt">
+       Базовый пример HTML-тега &lt;ins&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример использования тега
+       <code>
+        &lt;ins&gt;
+       </code>
+       для обозначения добавленного текста:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;The updated document states: &lt;ins&gt;This policy is now effective immediately.&lt;/ins&gt;&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Текст внутри тега
+       <code>
+        &lt;ins&gt;
+       </code>
+       визуально отмечен как недавно добавленный контент и обычно подчеркнут.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="ispolzovanie-atributov-s-tegom-ltinsgt">
+       Использование атрибутов с тегом &lt;ins&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете включить дополнительные метаданные, используя атрибуты
+       <code>
+        cite
+       </code>
+       и
+       <code>
+        datetime
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;The updated terms include: 
+            &lt;ins cite="https://www.example.com/terms" datetime="2024-12-10T10:30:00"&gt;
+                Additional clauses about data usage.
+            &lt;/ins&gt;
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Атрибут
+       <code>
+        cite
+       </code>
+       указывает на источник вставки, а атрибут
+       <code>
+        datetime
+       </code>
+       указывает, когда текст был добавлен.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-tega-ltinsgt-s-pomoschyu-css">
+       Стилизация тега &lt;ins&gt; с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете настроить внешний вид тега
+       <code>
+        &lt;ins&gt;
+       </code>
+       с помощью CSS:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            ins {
+                color: green;
+                text-decoration: none;
+                font-weight: bold;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;The updated statement includes: 
+            &lt;ins&gt;All team members are required to attend the meeting.&lt;/ins&gt;
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       вставленный текст отображается жирным зеленым шрифтом без подчеркивания по умолчанию, как определено правилами CSS.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="sovmestnoe-ispolzovanie-ltinsgt-i-ltdelgt">
+       Совместное использование &lt;ins&gt; и &lt;del&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;ins&gt;
+       </code>
+       часто используется в паре с тегом
+       <code>
+        &lt;del&gt;
+       </code>
+       для отображения изменений текста:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;The document was revised to say: 
+            &lt;del&gt;The meeting is postponed.&lt;/del&gt; 
+            &lt;ins&gt;The meeting is scheduled for tomorrow.&lt;/ins&gt;
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Тег
+       <code>
+        &lt;del&gt;
+       </code>
+       представляет удаленный текст, тогда как тег
+       <code>
+        &lt;ins&gt;
+       </code>
+       выделяет вставленный текст, обеспечивая четкое визуальное представление изменений.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-ltinsgt">
+       Практическое применение тега &lt;ins&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Редактирование документов:
+        </strong>
+        отслеживание изменений в средах совместного редактирования.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Контроль версий:
+        </strong>
+        отображение добавленного контента в обновленных версиях документа.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Юридические тексты:
+        </strong>
+        выделите изменения в контрактах, политиках или условиях.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Обновления веб-контента:
+        </strong>
+        отметьте недавно добавленный контент на веб-странице.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

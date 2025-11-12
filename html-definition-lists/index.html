@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Списки определений HTML - ХТМЛ справочник</title>
+<meta name="description" content="В этом руководстве мы изучим списки определений (Definition Lists) в HTML, разберём их структуру, атрибуты, стилизацию и примеры использования, чтобы вы могли эффективно применять их в своих веб-проектах." />
+<meta name="keywords" content="что такое список определений html?, атрибуты элементов dl , dt и dd, 1 глобальные атрибуты, 2 атрибута aria, стилизация списков определений с помощью css, 1 термины и описания стиля, 2. настройка макета, 3. добавление границ и фона, вложенные списки определений, реальные примеры использования" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-definition-lists/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Списки определений HTML - ХТМЛ справочник" />
+<meta property="og:description" content="В этом руководстве мы изучим списки определений (Definition Lists) в HTML, разберём их структуру, атрибуты, стилизацию и примеры использования, чтобы вы могли эффективно применять их в своих веб-проектах." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-definition-lists/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      Списки определений HTML
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       Список определений HTML(
+       <code>
+        &lt;dl&gt;
+       </code>
+       ) — это способ представления ряда терминов и соответствующих им определений или описаний. В отличие от неупорядоченных(
+       <code>
+        &lt;ul&gt;
+       </code>
+       ) или упорядоченных(
+       <code>
+        &lt;ol&gt;
+       </code>
+       ) списков, списки определений специально разработаны для сопоставления терминов с определениями, что делает их идеальными для глоссариев, разделов часто задаваемых вопросов и технической документации.
+      </p>
+<p class="text-gray-700 mb-4">
+       В этом уроке по HTML мы изучим списки определений в HTML, объясним структуру, атрибуты, стили и варианты использования списков определений, а также приведем примеры, которые помогут вам эффективно интегрировать их в ваши веб-проекты.
+      </p>
+<p class="text-gray-700 mb-4">
+       Обзор списков можно найти в статье
+       <a href="https://htmlformatter.github.io/html-lists/" rel="noreferrer noopener" target="_blank">
+        Списки HTML
+       </a>
+       .
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#chto-takoe-spisok-opredeleniy-html">
+          Что такое список определений HTML?
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-elementov-ltdlgt-ltdtgt-i-ltddgt">
+          Атрибуты элементов &lt;dl&gt; , &lt;dt&gt; и &lt;dd&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-globalnye-atributy">
+          1 Глобальные атрибуты
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-atributa-aria">
+          2 атрибута ARIA
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-spiskov-opredeleniy-s-pomoschyu-css">
+          Стилизация списков определений с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-terminy-i-opisaniya-stilya">
+          1 Термины и описания стиля
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-nastroyka-maketa">
+          2. Настройка макета
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#3-dobavlenie-granits-i-fona">
+          3. Добавление границ и фона
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#vlozhennye-spiski-opredeleniy">
+          Вложенные списки определений
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#realnye-primery-ispolzovaniya">
+          Реальные примеры использования
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#voprosy-dostupnosti">
+          Вопросы доступности
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#luchshie-praktiki-dlya-spiskov-opredeleniy">
+          Лучшие практики для списков определений
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zaklyuchenie">
+          Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="chto-takoe-spisok-opredeleniy-html">
+       Что такое список определений HTML?
+      </h2>
+<p class="text-gray-700 mb-4">
+       Список определений — это структурированный способ сопоставления терминов с их определениями. Он состоит из следующих элементов:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         &lt;dl&gt;
+        </code>
+        : Элемент-контейнер для списка определений.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;dt&gt;
+        </code>
+        : Представляет термин.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;dd&gt;
+        </code>
+        : Представляет описание или определение термина.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Вот базовый синтаксис списка определений:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;A markup language for creating webpages.&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;A stylesheet language for styling webpages.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Это будет выглядеть так:
+      </p>
+<img alt="Пример списка определений HTML" height="293" src="https://htmlformatter.github.io/images/html-definition-lists-9288de3.png" width="551" />
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-elementov-ltdlgt-ltdtgt-i-ltddgt">
+       Атрибуты элементов
+       <code>
+        &lt;dl&gt;
+       </code>
+       ,
+       <code>
+        &lt;dt&gt;
+       </code>
+       и
+       <code>
+        &lt;dd&gt;
+       </code>
+</h2>
+<p class="text-gray-700 mb-4">
+       Элементы
+       <code>
+        &lt;dl&gt;
+       </code>
+       ,
+       <code>
+        &lt;dt&gt;
+       </code>
+       и
+       <code>
+        &lt;dd&gt;
+       </code>
+       поддерживают общие глобальные атрибуты, такие как
+       <code>
+        id
+       </code>
+       ,
+       <code>
+        class
+       </code>
+       и
+       <code>
+        style
+       </code>
+       . Эти атрибуты позволяют настраивать и стилизовать элементы.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-globalnye-atributy">
+<span class="hn">
+        1
+       </span>
+       Глобальные атрибуты
+      </h2>
+<p class="text-gray-700 mb-4">
+       Глобальные атрибуты, такие как
+       <code>
+        class
+       </code>
+       ,
+       <code>
+        id
+       </code>
+       и
+       <code>
+        style
+       </code>
+       можно использовать для применения определенных стилей или скриптов к элементам.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;dl class="definition-list"&gt;
+  &lt;dt id="html"&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;A markup language for creating webpages.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-atributa-aria">
+<span class="hn">
+        2
+       </span>
+       атрибута ARIA
+      </h2>
+<p class="text-gray-700 mb-4">
+       Для повышения доступности можно добавить атрибуты ARIA(Accessible Rich Internet Applications). Например:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;dl aria-label="Glossary"&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;A markup language for creating webpages.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-spiskov-opredeleniy-s-pomoschyu-css">
+       Стилизация списков определений с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Списки определений можно стилизовать в соответствии с вашими требованиями к дизайну. CSS можно использовать для настройки интервалов, выравнивания и других визуальных аспектов списка.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-terminy-i-opisaniya-stilya">
+<span class="hn">
+        1
+       </span>
+       Термины и описания стиля
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете стилизовать термины(
+       <code>
+        &lt;dt&gt;
+       </code>
+       ) и описания(
+       <code>
+        &lt;dd&gt;
+       </code>
+       ) по отдельности:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+  dt {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  dd {
+    margin-left: 20px;
+  }
+&lt;/style&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;A markup language for creating webpages.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+<img alt="Списки определений HTML — пример стилизации терминов и описаний" height="293" src="https://htmlformatter.github.io/images/html-definition-lists-c062307.png" width="551" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-nastroyka-maketa">
+<span class="hn">
+        2.
+       </span>
+       Настройка макета
+      </h2>
+<p class="text-gray-700 mb-4">
+       Используйте CSS для создания пользовательских макетов, таких как размещение терминов и описаний бок о бок:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+  dl {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin: 0;
+  }
+&lt;/style&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;A markup language for creating webpages.&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;A stylesheet language for styling webpages.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+<img alt="Списки определений HTML — пример настройки макета" height="293" src="https://htmlformatter.github.io/images/html-definition-lists-11c0e79.png" width="551" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="3-dobavlenie-granits-i-fona">
+<span class="hn">
+        3.
+       </span>
+       Добавление границ и фона
+      </h2>
+<p class="text-gray-700 mb-4">
+       Сделайте свой список определений заметным, добавив границы или цвет фона:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+  dl {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+
+  dt {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+  }
+
+  dd {
+    padding: 5px 0 10px 10px;
+  }
+&lt;/style&gt;</code></pre>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="vlozhennye-spiski-opredeleniy">
+       Вложенные списки определений
+      </h2>
+<p class="text-gray-700 mb-4">
+       Списки определений могут быть вложенными, создавая сложные структуры. Например:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;dl&gt;
+  &lt;dt&gt;Frontend Development&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;HTML&lt;/dt&gt;
+      &lt;dd&gt;A markup language for creating webpages.&lt;/dd&gt;
+      &lt;dt&gt;CSS&lt;/dt&gt;
+      &lt;dd&gt;A stylesheet language for styling webpages.&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Вложенный
+       <code>
+        &lt;dl&gt;
+       </code>
+       создает иерархическую структуру для терминов и их подопределений.
+      </p>
+<img alt="Списки определений HTML — пример вложенных списков определений" height="395" loading="lazy" src="https://htmlformatter.github.io/images/html-definition-lists-2045408.png" width="551" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="realnye-primery-ispolzovaniya">
+       Реальные примеры использования
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Глоссарии:
+        </strong>
+        Дайте определение терминам и их значениям в структурированном формате.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Часто задаваемые вопросы:
+        </strong>
+        Сопоставьте вопросы с ответами на них.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Техническая документация:
+        </strong>
+        описание кода, инструментов или процессов.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Представление данных:
+        </strong>
+        отображайте пары «ключ-значение» в визуально привлекательном виде.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="voprosy-dostupnosti">
+       Вопросы доступности
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы обеспечить доступность ваших списков определений:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Используйте семантические элементы(
+        <code>
+         &lt;dl&gt;
+        </code>
+        ,
+        <code>
+         &lt;dt&gt;
+        </code>
+        ,
+        <code>
+         &lt;dd&gt;
+        </code>
+        ) для объединения терминов и определений.
+       </li>
+<li class="ml-4">
+        Укажите контекст для списка, используя заголовок или атрибуты ARIA.
+       </li>
+<li class="ml-4">
+        Обеспечьте достаточные отступы и интервалы для удобства чтения.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="luchshie-praktiki-dlya-spiskov-opredeleniy">
+       Лучшие практики для списков определений
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Соблюдайте краткость терминов:
+        </strong>
+        убедитесь, что термины(
+        <code>
+         &lt;dt&gt;
+        </code>
+        ) краткие и понятные.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Давайте понятные описания:
+        </strong>
+        делайте описания(
+        <code>
+         &lt;dd&gt;
+        </code>
+        ) информативными, но краткими.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Используйте правильную вложенность:
+        </strong>
+        для сложных данных вкладывайте списки логически.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Примените стили:
+        </strong>
+        используйте CSS, чтобы сделать список визуально привлекательным и удобным для чтения.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zaklyuchenie">
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       Списки определений HTML — мощный инструмент для наглядного и структурированного отображения парных данных. Используя их гибкость, оформляя с помощью CSS и соблюдая стандарты доступности, вы можете создавать информативные и визуально привлекательные списки для самых разных приложений.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

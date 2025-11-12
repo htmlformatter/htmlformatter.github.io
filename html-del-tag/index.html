@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;del&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег HTML &lt;del&gt; визуально отображает удалённый текст с зачеркиванием." />
+<meta name="keywords" content="базовый синтаксис html-тега del, атрибуты html-тега del, базовый пример html-тега del, использование атрибутов cite и datetime с тегом del, оформление тега del с помощью css, практическое применение тега del, особые случаи для html-тега del" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-del-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;del&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег HTML &lt;del&gt; визуально отображает удалённый текст с зачеркиванием." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-del-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;del&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;del&gt;
+       </code>
+       используется для обозначения удалённого или удалённого текста. Он визуально обозначает удалённый контент, отображая его перечёркнутым в большинстве браузеров. Кроме того, он может нести семантическое значение изменений контента, что делает его полезным для отслеживания изменений в документах или средах совместной работы.
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;del&gt;
+       </code>
+       часто используется в паре с тегом
+       <code>
+        &lt;ins&gt;
+       </code>
+       , который представляет вставленный текст, чтобы обеспечить четкий контекст изменений.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-ltdelgt">
+          Базовый синтаксис HTML-тега &lt;del&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-ltdelgt">
+          Атрибуты HTML-тега &lt;del&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-primer-html-tega-ltdelgt">
+          Базовый пример HTML-тега &lt;del&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#ispolzovanie-atributov-cite-i-datetime-s-tegom-ltdelgt">
+          Использование атрибутов cite и datetime с тегом &lt;del&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#oformlenie-tega-ltdelgt-s-pomoschyu-css">
+          Оформление тега &lt;del&gt; с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-ltdelgt">
+          Практическое применение тега &lt;del&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#osobye-sluchai-dlya-html-tega-ltdelgt">
+          Особые случаи для HTML-тега &lt;del&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-ltdelgt">
+       Базовый синтаксис HTML-тега &lt;del&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Основной синтаксис использования тега
+       <code>
+        &lt;del&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;del&gt;Deleted text&lt;/del&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Браузеры отображают текст внутри тега
+       <code>
+        &lt;del&gt;
+       </code>
+       перечеркнутым, что указывает на то, что он был удален.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-ltdelgt">
+       Атрибуты HTML-тега &lt;del&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         cite:
+        </strong>
+        Указывает URL-адрес, который объясняет причину удаления или предоставляет дополнительный контекст.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         datetime:
+        </strong>
+        Указывает дату и время удаления текста. Значение должно быть в допустимом формате datetime(например,
+        <code>
+         YYYY-MM-DDThh:mm:ss
+        </code>
+        ).
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-primer-html-tega-ltdelgt">
+       Базовый пример HTML-тега &lt;del&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример использования тега
+       <code>
+        &lt;del&gt;
+       </code>
+       для отображения удаленного текста:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Basic Example&lt;/h2&gt;
+        &lt;p&gt;The price of the product was &lt;del&gt;$100&lt;/del&gt;, but it is now &lt;ins&gt;$80&lt;/ins&gt;.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="243" src="https://htmlformatter.github.io/images1/html-tag-e8d55e7.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       В этом примере текст
+       <code>
+        $100
+       </code>
+       помечен как удаленный с помощью тега
+       <code>
+        &lt;del&gt;
+       </code>
+       , тогда как обновленная цена
+       <code>
+        $80
+       </code>
+       помечена как вставленная с помощью тега
+       <code>
+        &lt;ins&gt;
+       </code>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="ispolzovanie-atributov-cite-i-datetime-s-tegom-ltdelgt">
+       Использование атрибутов cite и datetime с тегом &lt;del&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете добавить метаданные к тегу
+       <code>
+        &lt;del&gt;
+       </code>
+       используя атрибуты
+       <code>
+        cite
+       </code>
+       и
+       <code>
+        datetime
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Example with Attributes&lt;/h2&gt;
+        &lt;p&gt;The article was updated. The previous title was: &lt;del cite="https://example.com/changes" datetime="2024-12-10T10:00:00"&gt;How to Learn HTML&lt;/del&gt;.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="243" src="https://htmlformatter.github.io/images1/html-tag-9f60ac7.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       атрибут
+       <code>
+        cite
+       </code>
+       предоставляет URL-адрес, объясняющий причину удаления текста, а атрибут
+       <code>
+        datetime
+       </code>
+       указывает, когда произошло изменение.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="oformlenie-tega-ltdelgt-s-pomoschyu-css">
+       Оформление тега &lt;del&gt; с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете настроить внешний вид тега
+       <code>
+        &lt;del&gt;
+       </code>
+       с помощью CSS:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            del {
+                color: red;
+                text-decoration: line-through;
+                font-weight: bold;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Styled &lt;del&gt; Example&lt;/h2&gt;
+        &lt;p&gt;This item was previously priced at &lt;del&gt;$150&lt;/del&gt;.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="243" src="https://htmlformatter.github.io/images1/html-tag-3cabf64.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       удаленный текст отображается красным, жирным и зачеркнутым, что делает его визуально различимым.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-ltdelgt">
+       Практическое применение тега &lt;del&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Отслеживание изменений:
+        </strong>
+        полезно в совместных документах или на веб-сайтах, где необходимо визуально отслеживать изменения контента.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Отображение обновлений:
+        </strong>
+        сайты электронной коммерции могут использовать тег
+        <code>
+         &lt;del&gt;
+        </code>
+        для отображения старых цен рядом с новыми.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Юридические или редакционные примечания:
+        </strong>
+        Юридические документы или редакционные примечания могут использовать тег
+        <code>
+         &lt;del&gt;
+        </code>
+        для обозначения удаленных разделов.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="osobye-sluchai-dlya-html-tega-ltdelgt">
+       Особые случаи для HTML-тега &lt;del&gt;
+      </h2>
+<h3 class="text-lg font-semibold text-gray-800 mt-4 mb-3">
+       1. Объединение тега &lt;del&gt; с JavaScript
+      </h3>
+<p class="text-gray-700 mb-4">
+       Вы можете динамически обновлять или изменять тег
+       <code>
+        &lt;del&gt;
+       </code>
+       с помощью JavaScript:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Dynamic Update Example&lt;/h2&gt;
+        &lt;p&gt;This item was &lt;del id="oldPrice"&gt;$200&lt;/del&gt; but is now $150.&lt;/p&gt;
+
+        &lt;script&gt;
+            const delTag = document.getElementById("oldPrice");
+            delTag.setAttribute("datetime", new Date().toISOString());
+            delTag.setAttribute("cite", "https://example.com/price-changes");
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Скрипт динамически добавляет атрибуты
+       <code>
+        datetime
+       </code>
+       и
+       <code>
+        cite
+       </code>
+       к тегу
+       <code>
+        &lt;del&gt;
+       </code>
+       , делая его более информативным.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

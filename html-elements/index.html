@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-элементы - ХТМЛ справочник</title>
+<meta name="description" content="В этом руководстве мы рассмотрим, что такое HTML-элементы, их типы, наиболее часто используемые элементы и приведём подробные примеры для эффективного изучения." />
+<meta name="keywords" content="что такое html-элементы?, типы html-элементов, 1. блочные элементы, 2 встроенных элемента, 3 пустых элемента, часто используемые элементы html, 1 текстовые элементы, 2 элемента медиа, 3 элемента формы, вложенность html-элементов" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-elements/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-элементы - ХТМЛ справочник" />
+<meta property="og:description" content="В этом руководстве мы рассмотрим, что такое HTML-элементы, их типы, наиболее часто используемые элементы и приведём подробные примеры для эффективного изучения." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-elements/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-элементы
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       Элементы HTML(язык гипертекстовой разметки) являются строительными блоками веб-страниц. Они определяют структуру и содержание веб-страницы, позволяя браузерам отображать её так, как задумано.
+      </p>
+<p class="text-gray-700 mb-4">
+       Каждый элемент HTML состоит из тегов, атрибутов и контента, и вместе они обеспечивают функциональность и дизайн Интернета.
+      </p>
+<p class="text-gray-700 mb-4">
+       В этом уроке по HTML мы изучим, что такое элементы HTML, различные типы элементов HTML, наиболее часто используемые элементы, их применение и лучшие практики, чтобы сделать ваши веб-страницы эффективными и доступными и т. д., с помощью подробных примеров.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#chto-takoe-html-elementy">
+          Что такое HTML-элементы?
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#tipy-html-elementov">
+          Типы HTML-элементов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-blochnye-elementy">
+          1. Блочные элементы
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-vstroennyh-elementa">
+          2 встроенных элемента
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#3-pustyh-elementa">
+          3 пустых элемента
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#chasto-ispolzuemye-elementy-html">
+          Часто используемые элементы HTML
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-tekstovye-elementy">
+          1 Текстовые элементы
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-elementa-media">
+          2 элемента медиа
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#3-elementa-formy">
+          3 элемента формы
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#vlozhennost-html-elementov">
+          Вложенность HTML-элементов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-elementov">
+          Атрибуты HTML-элементов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#semanticheskie-elementy-html">
+          Семантические элементы HTML
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zaklyuchenie">
+          Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="chto-takoe-html-elementy">
+       Что такое HTML-элементы?
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-элемент определяется начальным тегом, содержимым и конечным тегом. Структура выглядит следующим образом:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;tagname&gt;Content goes here&lt;/tagname&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Например, следующий элемент абзаца использует тег
+       <code>
+        &lt;p&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       На следующем снимке экрана мы показали, как этот абзац выглядит в веб-браузере, а также показали HTML-код через инспектор браузера.
+      </p>
+<img alt="Пример HTML-элементов — абзац, отображаемый на веб-странице, вместе с кодом в инспекторе страниц." height="466" src="https://htmlformatter.github.io/images/html-elements-8d90f90.png" width="480" />
+<p class="text-gray-700 mb-4">
+       HTML-элементы можно вкладывать, комбинировать и стилизовать для создания сложных веб-страниц.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="tipy-html-elementov">
+       Типы HTML-элементов
+      </h2>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-blochnye-elementy">
+<span class="hn">
+        1.
+       </span>
+       Блочные элементы
+      </h2>
+<p class="text-gray-700 mb-4">
+       Блочные элементы занимают всю доступную ширину и начинаются с новой строки. Примеры:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         &lt;div&gt;
+        </code>
+        : Универсальный контейнер для группировки других элементов.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;p&gt;
+        </code>
+        : Представляет абзац.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;h1&gt; to &lt;h6&gt;
+        </code>
+        : Заголовки, используемые для определения названий и подзаголовков.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;ul&gt;
+        </code>
+        и
+        <code>
+         &lt;ol&gt;
+        </code>
+        : используются для создания неупорядоченных и упорядоченных списков.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пример: index.html
+       </strong>
+</p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+  &lt;div&gt;A div.&lt;/div&gt;
+  &lt;p&gt;This is a paragraph.&lt;/p&gt;
+  &lt;h1&gt;Heading 1&lt;/h1&gt;
+  &lt;h6&gt;Heading 6&lt;/h6&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Unordere list item 1&lt;/li&gt;
+    &lt;li&gt;Unordere list item 2&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Видео
+       </strong>
+</p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-vstroennyh-elementa">
+<span class="hn">
+        2
+       </span>
+       встроенных элемента
+      </h2>
+<p class="text-gray-700 mb-4">
+       Строчные элементы не начинаются с новой строки и занимают ширину, равную ширине их содержимого. Вот распространённые примеры:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         &lt;span&gt;
+        </code>
+        : универсальный контейнер для встроенного содержимого.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;a&gt;
+        </code>
+        : Определяет гиперссылки.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;strong&gt;
+        </code>
+        : Обозначает сильное выделение(обычно жирным шрифтом).
+       </li>
+<li class="ml-4">
+<code>
+         &lt;em&gt;
+        </code>
+        : Обозначает выделенный текст(обычно курсив).
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="3-pustyh-elementa">
+<span class="hn">
+        3
+       </span>
+       пустых элемента
+      </h2>
+<p class="text-gray-700 mb-4">
+       Пустые элементы не имеют закрывающих тегов и являются самодостаточными. Примеры:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+</code>
+        : Вставляет перенос строки.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;img&gt;
+        </code>
+        : Встраивает изображение.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;input&gt;
+        </code>
+        : Создает поле ввода.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="chasto-ispolzuemye-elementy-html">
+       Часто используемые элементы HTML
+      </h2>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-tekstovye-elementy">
+<span class="hn">
+        1
+       </span>
+       Текстовые элементы
+      </h2>
+<p class="text-gray-700 mb-4">
+       Текстовые элементы используются для определения и оформления текста на веб-странице. Примеры:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         &lt;h1&gt; to &lt;h6&gt;
+        </code>
+        : Определить заголовки, где
+        <code>
+         &lt;h1&gt;
+        </code>
+        — наиболее важный, а
+        <code>
+         &lt;h6&gt;
+        </code>
+        наименее важный.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;p&gt;
+        </code>
+        : Создает абзацы.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;blockquote&gt;
+        </code>
+        : Представляет блок цитируемого текста.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;pre&gt;
+        </code>
+        : Отображает предварительно отформатированный текст.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-elementa-media">
+<span class="hn">
+        2
+       </span>
+       элемента медиа
+      </h2>
+<p class="text-gray-700 mb-4">
+       Медиа-элементы встраивают изображения, видео и аудио в веб-страницы:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         &lt;img&gt;
+        </code>
+        : Встраивает изображение.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;video&gt;
+        </code>
+        : Встраивает видео.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;audio&gt;
+        </code>
+        : Встраивает аудиоконтент.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;figure&gt; and &lt;figcaption&gt;
+        </code>
+        : Группировка медиа-контента с подписью.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="3-elementa-formy">
+<span class="hn">
+        3
+       </span>
+       элемента формы
+      </h2>
+<p class="text-gray-700 mb-4">
+       Элементы формы собирают вводимые пользователем данные и включают в себя:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         &lt;form&gt;
+        </code>
+        : Представляет форму.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;input&gt;
+        </code>
+        : Создает поля ввода(текст, пароль, флажок и т. д.).
+       </li>
+<li class="ml-4">
+<code>
+         &lt;textarea&gt;
+        </code>
+        : Создает многострочное поле ввода текста.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;button&gt;
+        </code>
+        : Определяет нажимаемые кнопки.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="vlozhennost-html-elementov">
+       Вложенность HTML-элементов
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-элементы можно вкладывать друг в друга, создавая сложные структуры. Например:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;div&gt;
+  &lt;h1&gt;Welcome&lt;/h1&gt;
+  &lt;p&gt;This is a sample paragraph with a &lt;strong&gt;bold&lt;/strong&gt; word.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Вложенность позволяет логически группировать и структурировать контент, что упрощает его стилизацию и управление.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-elementov">
+       Атрибуты HTML-элементов
+      </h2>
+<p class="text-gray-700 mb-4">
+       Атрибуты предоставляют дополнительную информацию об элементах HTML. Они указываются в начальном теге и обычно состоят из имени и значения:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Общие атрибуты включают в себя:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         href
+        </code>
+        : Указывает URL для ссылок.
+       </li>
+<li class="ml-4">
+<code>
+         src
+        </code>
+        : Указывает источник изображений, видео или скриптов.
+       </li>
+<li class="ml-4">
+<code>
+         alt
+        </code>
+        : Предоставляет альтернативный текст для изображений.
+       </li>
+<li class="ml-4">
+<code>
+         id
+        </code>
+        и
+        <code>
+         class
+        </code>
+        : определение уникальных идентификаторов и классов для стилизации.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="semanticheskie-elementy-html">
+       Семантические элементы HTML
+      </h2>
+<p class="text-gray-700 mb-4">
+       Семантические элементы HTML чётко описывают своё значение и назначение, улучшая доступность и SEO. Примеры:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         &lt;header&gt;
+        </code>
+        : Представляет заголовок страницы или заголовок раздела.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;nav&gt;
+        </code>
+        : Определяет навигационное меню.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;main&gt;
+        </code>
+        : Указывает основную область содержимого.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;article&gt;
+        </code>
+        : представляет собой самостоятельный контент, например записи в блогах.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;footer&gt;
+        </code>
+        : Определяет нижний колонтитул страницы или раздела.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Использование семантических элементов улучшает читаемость кода и обеспечивает совместимость со вспомогательными технологиями.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zaklyuchenie">
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-элементы — основа веб-разработки. Понимая их типы, применение и передовые практики, вы сможете создавать надёжные, доступные и визуально привлекательные веб-страницы. Независимо от того, создаёте ли вы простые текстовые страницы или сложные веб-приложения, освоение HTML-элементов — важнейший шаг на вашем пути как веб-разработчика.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

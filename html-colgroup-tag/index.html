@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;colgroup&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег HTML &lt;colgroup&gt; группирует один или несколько тегов &lt;col&gt; для применения общих стилей и атрибутов к колонкам таблицы." />
+<meta name="keywords" content="базовый синтаксис тега colgroup, атрибуты тега colgroup, пример: стилизация столбцов с помощью colgroup, использование атрибута span с colgroup, зачем использовать тег colgroup?, примечания по использованию colgroup" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-colgroup-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;colgroup&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег HTML &lt;colgroup&gt; группирует один или несколько тегов &lt;col&gt; для применения общих стилей и атрибутов к колонкам таблицы." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-colgroup-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;colgroup&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;colgroup&gt;
+       </code>
+       используется для группировки одного или нескольких элементов
+       <code>
+        &lt;col&gt;
+       </code>
+       в таблице. Он позволяет определять общие стили или атрибуты для столбцов таблицы. Группируя столбцы, тег
+       <code>
+        &lt;colgroup&gt;
+       </code>
+       обеспечивает структурированное управление представлением и макетом на уровне столбцов.
+      </p>
+<p class="text-gray-700 mb-4">
+       Хотя сам тег
+       <code>
+        &lt;colgroup&gt;
+       </code>
+       не применяет стили напрямую, он действует как контейнер для тегов
+       <code>
+        &lt;col&gt;
+       </code>
+       , которые задают стили или атрибуты, специфичные для столбцов, такие как ширина, класс или цвет фона.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-tega-ltcolgroupgt">
+          Базовый синтаксис тега &lt;colgroup&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-tega-ltcolgroupgt">
+          Атрибуты тега &lt;colgroup&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-stilizatsiya-stolbtsov-s-pomoschyu-ltcolgroupgt">
+          Пример: стилизация столбцов с помощью &lt;colgroup&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#ispolzovanie-atributa-span-s-colgroup">
+          Использование атрибута Span с colgroup
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zachem-ispolzovat-teg-ltcolgroupgt">
+          Зачем использовать тег &lt;colgroup&gt;?
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primechaniya-po-ispolzovaniyu-ltcolgroupgt">
+          Примечания по использованию &lt;colgroup&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-tega-ltcolgroupgt">
+       Базовый синтаксис тега &lt;colgroup&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;colgroup&gt;
+       </code>
+       размещается непосредственно после открывающего тега
+       <code>
+        &lt;table&gt;
+       </code>
+       и может содержать один или несколько элементов
+       <code>
+        &lt;col&gt;
+       </code>
+       . Вот базовый синтаксис:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;table&gt;
+    &lt;colgroup&gt;
+        &lt;col&gt;
+        &lt;col&gt;
+    &lt;/colgroup&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Column 1&lt;/th&gt;
+        &lt;th&gt;Column 2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Data 1&lt;/td&gt;
+        &lt;td&gt;Data 2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;colgroup&gt;
+       </code>
+       также может использовать атрибут
+       <code>
+        span
+       </code>
+       для применения настроек к нескольким столбцам без необходимости использования отдельных тегов
+       <code>
+        &lt;col&gt;
+       </code>
+       для каждого.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-tega-ltcolgroupgt">
+       Атрибуты тега &lt;colgroup&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;colgroup&gt;
+       </code>
+       поддерживает следующие атрибуты:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Диапазон:
+        </strong>
+        определяет количество столбцов, к которым применяется группировка. Значение по умолчанию — 1.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         класс:
+        </strong>
+        назначает класс CSS для стилизации группы столбцов.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         стиль:
+        </strong>
+        позволяет использовать встроенные стили CSS для сгруппированных столбцов.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-stilizatsiya-stolbtsov-s-pomoschyu-ltcolgroupgt">
+       Пример: стилизация столбцов с помощью &lt;colgroup&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример, в котором тег
+       <code>
+        &lt;colgroup&gt;
+       </code>
+       используется для стилизации определенных столбцов в таблице:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+          table {
+            width: 100%;
+          }
+            .highlight {
+                background-color: #f4f400;
+            }
+            .bold-text {
+                font-weight: bold;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Example with Styled Columns&lt;/h2&gt;
+        &lt;table border="1"&gt;
+            &lt;colgroup&gt;
+                &lt;col class="highlight"&gt;
+                &lt;col class="bold-text"&gt;
+            &lt;/colgroup&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Score&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Alice&lt;/td&gt;
+                &lt;td&gt;95&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Bob&lt;/td&gt;
+                &lt;td&gt;89&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Пример стилизации столбцов с помощью colgroup" height="329" src="https://htmlformatter.github.io/images1/html-tag-46812dd.png" width="471" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       В этом примере первый столбец имеет светло-серый фон из-за класса
+       <code>
+        .highlight
+       </code>
+       , а второй столбец имеет жирный текстовый стиль из класса
+       <code>
+        .bold-text
+       </code>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="ispolzovanie-atributa-span-s-colgroup">
+       Использование атрибута Span с colgroup
+      </h2>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        span
+       </code>
+       особенно полезен для применения одного стиля к нескольким столбцам без повторения тегов
+       <code>
+        &lt;col&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            .grouped {
+                background-color: #d9edf7;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Span Attribute Example&lt;/h2&gt;
+        &lt;table border="1"&gt;
+            &lt;colgroup span="2" class="grouped"&gt;&lt;/colgroup&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Item&lt;/th&gt;
+                &lt;th&gt;Category&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Laptop&lt;/td&gt;
+                &lt;td&gt;Electronics&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Chair&lt;/td&gt;
+                &lt;td&gt;Furniture&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<img alt="Использование атрибута Span с colgroup" height="329" src="https://htmlformatter.github.io/images1/html-tag-63ee997.png" width="471" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       Атрибут
+       <code>
+        span="2"
+       </code>
+       применяет класс
+       <code>
+        .grouped
+       </code>
+       как к первому, так и ко второму столбцам.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zachem-ispolzovat-teg-ltcolgroupgt">
+       Зачем использовать тег &lt;colgroup&gt;?
+      </h2>
+<p class="text-gray-700 mb-4">
+       Использование тега
+       <code>
+        &lt;colgroup&gt;
+       </code>
+       обеспечивает несколько преимуществ:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Централизованное управление:
+        </strong>
+        позволяет управлять стилями и атрибутами нескольких столбцов в одном месте, уменьшая избыточность.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Улучшенная читаемость:
+        </strong>
+        код организован для лучшей читаемости путем группировки определений столбцов.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Динамическое оформление:
+        </strong>
+        вы можете задать стиль или поведение целых столбцов, используя классы или JavaScript.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Совместимость:
+        </strong>
+        работает во всех основных браузерах и улучшает семантическую структуру таблиц.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primechaniya-po-ispolzovaniyu-ltcolgroupgt">
+       Примечания по использованию &lt;colgroup&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Тег
+        <code>
+         &lt;colgroup&gt;
+        </code>
+        необязателен, но он обеспечивает семантический и централизованный способ управления стилем столбцов.
+       </li>
+<li class="ml-4">
+        Если вы не включите
+        <code>
+         &lt;col&gt;
+        </code>
+        или
+        <code>
+         &lt;span&gt;
+        </code>
+        внутрь
+        <code>
+         &lt;colgroup&gt;
+        </code>
+        , группировка не будет иметь никакого эффекта.
+       </li>
+<li class="ml-4">
+        Он должен быть помещен сразу после тега
+        <code>
+         &lt;table&gt;
+        </code>
+        и перед любыми тегами
+        <code>
+         &lt;thead&gt;
+        </code>
+        ,
+        <code>
+         &lt;tbody&gt;
+        </code>
+        или
+        <code>
+         &lt;tr&gt;
+        </code>
+        .
+       </li>
+<li class="ml-4">
+        Не все браузеры одинаково поддерживают расширенную стилизацию или сложное использование тега
+        <code>
+         &lt;colgroup&gt;
+        </code>
+        , поэтому рекомендуется провести тестирование.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

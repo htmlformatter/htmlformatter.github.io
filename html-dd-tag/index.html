@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;dd&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег HTML &lt;dd&gt; определяет описание или значение термина в списке определений &lt;dl&gt; и используется вместе с тегом &lt;dt&gt;." />
+<meta name="keywords" content="базовый синтаксис html-тега dd, атрибуты html-тега dd, базовый пример html-тега dd, использование тега dd для пар ключ-значение, стилизация тега dd с помощью css, особые случаи для html-тега dd" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-dd-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;dd&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег HTML &lt;dd&gt; определяет описание или значение термина в списке определений &lt;dl&gt; и используется вместе с тегом &lt;dt&gt;." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-dd-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;dd&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;dd&gt;
+       </code>
+       используется для определения описания или определения термина в списке описаний. Он является дочерним элементом элемента
+       <code>
+        &lt;dl&gt;
+       </code>
+       (список описаний) и работает в паре с тегом
+       <code>
+        &lt;dt&gt;
+       </code>
+       , который определяет описываемый термин.
+      </p>
+<p class="text-gray-700 mb-4">
+       Комбинация тегов
+       <code>
+        &lt;dl&gt;
+       </code>
+       ,
+       <code>
+        &lt;dt&gt;
+       </code>
+       и
+       <code>
+        &lt;dd&gt;
+       </code>
+       используется для создания семантических и структурированных списков для определений, пар ключ-значение или другого описательного контента.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-ltddgt">
+          Базовый синтаксис HTML-тега &lt;dd&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-ltddgt">
+          Атрибуты HTML-тега &lt;dd&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-primer-html-tega-ltddgt">
+          Базовый пример HTML-тега &lt;dd&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#ispolzovanie-tega-ltddgt-dlya-par-klyuch-znachenie">
+          Использование тега &lt;dd&gt; для пар ключ-значение
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-tega-ltddgt-s-pomoschyu-css">
+          Стилизация тега &lt;dd&gt; с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#osobye-sluchai-dlya-html-tega-ltddgt">
+          Особые случаи для HTML-тега &lt;dd&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-ltddgt">
+       Базовый синтаксис HTML-тега &lt;dd&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура списка описаний с использованием тега
+       <code>
+        &lt;dd&gt;
+       </code>
+       следующая:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;dl&gt;
+    &lt;dt&gt;Term 1&lt;/dt&gt;
+    &lt;dd&gt;Description of Term 1&lt;/dd&gt;
+
+    &lt;dt&gt;Term 2&lt;/dt&gt;
+    &lt;dd&gt;Description of Term 2&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;dd&gt;
+       </code>
+       всегда должен располагаться внутри элемента
+       <code>
+        &lt;dl&gt;
+       </code>
+       и следовать сразу за тегом
+       <code>
+        &lt;dt&gt;
+       </code>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-ltddgt">
+       Атрибуты HTML-тега &lt;dd&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Глобальные атрибуты:
+        </strong>
+        тег
+        <code>
+         &lt;dd&gt;
+        </code>
+        поддерживает все глобальные атрибуты, такие как
+        <code>
+         class
+        </code>
+        ,
+        <code>
+         id
+        </code>
+        ,
+        <code>
+         style
+        </code>
+        и
+        <code>
+         data-*
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Атрибуты событий:
+        </strong>
+        Тег
+        <code>
+         &lt;dd&gt;
+        </code>
+        поддерживает все атрибуты событий, такие как
+        <code>
+         onclick
+        </code>
+        ,
+        <code>
+         onmouseover
+        </code>
+        и
+        <code>
+         onkeydown
+        </code>
+        .
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-primer-html-tega-ltddgt">
+       Базовый пример HTML-тега &lt;dd&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот простой пример списка описаний с использованием тега
+       <code>
+        &lt;dd&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Description List Example&lt;/h2&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;HTML&lt;/dt&gt;
+            &lt;dd&gt;A markup language used to create web pages.&lt;/dd&gt;
+
+            &lt;dt&gt;CSS&lt;/dt&gt;
+            &lt;dd&gt;A stylesheet language used to style web pages.&lt;/dd&gt;
+
+            &lt;dt&gt;JavaScript&lt;/dt&gt;
+            &lt;dd&gt;A programming language used to create interactive web pages.&lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Базовый пример HTML-тега dd" height="344" src="https://htmlformatter.github.io/images1/html-tag-ebb0649.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Теги
+       <code>
+        &lt;dt&gt;
+       </code>
+       определяют термины, а теги
+       <code>
+        &lt;dd&gt;
+       </code>
+       предоставляют соответствующие описания. Таким образом, создаётся семантический список определений.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="ispolzovanie-tega-ltddgt-dlya-par-klyuch-znachenie">
+       Использование тега &lt;dd&gt; для пар ключ-значение
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;dd&gt;
+       </code>
+       также можно использовать для представления пар ключ-значение, таких как технические спецификации:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Product Specifications&lt;/h2&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;Processor&lt;/dt&gt;
+            &lt;dd&gt;Intel Core i7&lt;/dd&gt;
+
+            &lt;dt&gt;RAM&lt;/dt&gt;
+            &lt;dd&gt;16 GB&lt;/dd&gt;
+
+            &lt;dt&gt;Storage&lt;/dt&gt;
+            &lt;dd&gt;512 GB SSD&lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Использование тега dd для пар ключ-значение" height="344" src="https://htmlformatter.github.io/images1/html-tag-3c53433.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Каждый тег
+       <code>
+        &lt;dt&gt;
+       </code>
+       представляет характеристику продукта, тогда как соответствующий тег
+       <code>
+        &lt;dd&gt;
+       </code>
+       описывает ее значение.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-tega-ltddgt-s-pomoschyu-css">
+       Стилизация тега &lt;dd&gt; с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;dd&gt;
+       </code>
+       можно стилизовать с помощью CSS для лучшего визуального представления:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            dt {
+                font-weight: bold;
+                color: #333;
+                color: green;
+            }
+            dd {
+                margin-left: 20px;
+                color: #555;
+                font-style: italic;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Styled Description List&lt;/h2&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;Sun&lt;/dt&gt;
+            &lt;dd&gt;The star at the center of our solar system.&lt;/dd&gt;
+
+            &lt;dt&gt;Earth&lt;/dt&gt;
+            &lt;dd&gt;The third planet from the Sun.&lt;/dd&gt;
+
+            &lt;dt&gt;Moon&lt;/dt&gt;
+            &lt;dd&gt;The natural satellite of Earth.&lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Оформление тега dd с помощью CSS" height="344" src="https://htmlformatter.github.io/images1/html-tag-69703e7.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       теги
+       <code>
+        &lt;dt&gt;
+       </code>
+       отображаются жирным шрифтом и зеленым цветом, а теги
+       <code>
+        &lt;dd&gt;
+       </code>
+       имеют отступ и курсив с более светлым цветом для различения.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="osobye-sluchai-dlya-html-tega-ltddgt">
+       Особые случаи для HTML-тега &lt;dd&gt;
+      </h2>
+<h3 class="text-lg font-semibold text-gray-800 mt-4 mb-3">
+       Использование нескольких описаний для одного термина
+      </h3>
+<p class="text-gray-700 mb-4">
+       Один термин(
+       <code>
+        &lt;dt&gt;
+       </code>
+       ) может иметь несколько описаний(
+       <code>
+        &lt;dd&gt;
+       </code>
+       ):
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Multiple Descriptions Example&lt;/h2&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;JavaScript&lt;/dt&gt;
+            &lt;dd&gt;A programming language for the web.&lt;/dd&gt;
+            &lt;dd&gt;Used for building dynamic and interactive web applications.&lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Использование нескольких описаний(тегов dd) для одного термина" height="344" loading="lazy" src="https://htmlformatter.github.io/images1/html-tag-20ca7c0.png" width="499" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       Термин
+       <code>
+        JavaScript
+       </code>
+       имеет два связанных описания, каждое из которых находится внутри отдельного тега
+       <code>
+        &lt;dd&gt;
+       </code>
+       .
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>
