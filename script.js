@@ -27,6 +27,9 @@ ym(97676462, "init", {
     accurateTrackBounce: true
 });
 document.addEventListener("DOMContentLoaded", () => {
+    // ------------------------------
+    // Общий CSS для плавного появления блоков
+    // ------------------------------
     const style = document.createElement("style");
     style.textContent = `
         .yandex-ad-block {
@@ -39,14 +42,19 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.head.appendChild(style);
 
+    // Проверяем, начинается ли путь с /html-
+    if (!window.location.pathname.startsWith("/html-")) return;
+
+    const article = document.querySelector("article");
+
     // ------------------------------
-    // 1. Рекламные блоки R-A-10604802-1 после абзацев
+    // 1. Рекламные блоки R-A-10604802-1 после абзацев внутри <article>
     // ------------------------------
-    if (window.location.pathname.startsWith("/html-")) {
-        const paragraphs = document.querySelectorAll("p");
+    if (article) {
+        const paragraphs = article.querySelectorAll("p");
         if (paragraphs.length > 0) {
-            let adIndex = 1;
-            let insertAfter = 2;
+            let adIndex = 1; // Нумерация блоков
+            let insertAfter = 2; // Первый блок после 2-го абзаца
 
             for (let i = insertAfter - 1; i < paragraphs.length; i += 5) {
                 const adDiv = document.createElement("div");
@@ -60,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             blockId: "R-A-10604802-1",
                             renderTo: adDiv.id
                         });
-                        // Показываем блок с плавным переходом
+                        // Плавное появление блока
                         setTimeout(() => adDiv.classList.add("visible"), 50);
                     });
                 }
@@ -71,14 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ------------------------------
-    // 2. Рекламный блок R-A-10604802-3 после </main>
+    // 2. Рекламный блок R-A-10604802-3 (feed) после </article>
     // ------------------------------
-    const main = document.querySelector("main");
-    if (main) {
+    if (article) {
         const adDivFeed = document.createElement("div");
         adDivFeed.id = "yandex_rtb_R-A-10604802-3";
         adDivFeed.classList.add("yandex-ad-block");
-        main.insertAdjacentElement("afterend", adDivFeed);
+        article.insertAdjacentElement("afterend", adDivFeed);
 
         if (window.yaContextCb && typeof window.yaContextCb.push === "function") {
             window.yaContextCb.push(() => {
@@ -87,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     renderTo: adDivFeed.id,
                     type: "feed"
                 });
+                // Плавное появление блока
                 setTimeout(() => adDivFeed.classList.add("visible"), 50);
             });
         }
