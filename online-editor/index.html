@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML редактор онлайн с визуальным просмотром страницы</title>
+<meta name="description" content="Бесплатный текстовый онлайн HTML редактор с визуальным предпросмотром. Редактируйте код и сразу видьте результат страницы в реальном времени.">
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/online-editor/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/tinymce@4.6.0/tinymce.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+#menu-toggle:checked ~ #mobile-menu { display: block; }
+code { font-weight: 600; background: #f1f5f9; padding: 2px 6px; border-radius: 3px; }
+.editor-container { min-height: 500px; }
+.code-output { background: #f8f9fa; border: 1px solid #e2e8f0; min-height: 500px; overflow: auto; }
+@media (max-width: 1023px) {
+  .editor-container, .code-output { min-height: 400px; }
+}
+pre[class*="language-"] { margin: 0; max-height: 500px; }
+</style>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between max-w-7xl mx-auto">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>HTML <span class="text-orange-500">github</span></span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">Справочник</a>
+<a class="text-orange-500 font-medium" href="/online-editor/">Онлайн редактор</a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">Справочник</a>
+<a class="block px-4 py-3 text-orange-500 bg-gray-50" href="/online-editor/">Онлайн редактор</a>
+</div>
+</nav>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 py-8">
+<div class="mb-8">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Онлайн HTML редактор</h1>
+<p class="text-gray-600 text-lg">Создавайте и редактируйте HTML-код с мгновенным предварительным просмотром. Всё работает локально в вашем браузере.</p>
+</div>
+
+<div class="grid lg:grid-cols-2 gap-4 mb-12">
+<div class="bg-white rounded-lg shadow-sm p-4">
+<div class="flex items-center justify-between mb-3">
+<h2 class="text-lg font-semibold text-gray-800">Визуальный редактор</h2>
+<button class="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition text-sm font-medium" onclick="updateCode()">Показать исходный код</button>
+</div>
+<div class="editor-container">
+<textarea id="editor"></textarea>
+</div>
+</div>
+
+<div class="bg-white rounded-lg shadow-sm p-4">
+<h2 class="text-lg font-semibold text-gray-800 mb-3">Исходный HTML</h2>
+<div class="code-output rounded">
+<pre class="!m-0"><code id="code-output" class="language-html"></code></pre>
+</div>
+</div>
+</div>
+
+<article class="bg-white rounded-lg shadow-sm p-8 prose prose-slate max-w-none">
+<h2 class="text-2xl font-bold text-gray-900 mb-4">Как пользоваться HTML-редактором</h2>
+<p class="text-gray-700 mb-4">Работа с редактором максимально проста. Верхняя панель инструментов позволяет форматировать текст так же, как в обычном текстовом редакторе. Выделяйте текст и применяйте к нему нужное оформление - жирный шрифт, курсив, заголовки разных уровней. Можете вставлять ссылки, изображения, таблицы и списки.</p>
+<p class="text-gray-700 mb-4">Справа видите результат в реальном времени. После внесения изменений нажмите кнопку «Обновить просмотр», и ваша страница отобразится именно так, как будет выглядеть в браузере. Это помогает сразу видеть, что получается, и оперативно вносить правки.</p>
+<p class="text-gray-700 mb-6">На мобильных устройствах редактор и просмотр онлайн располагаются один под другим для удобства работы на маленьких экранах. Высота полей подобрана так, чтобы комфортно редактировать даже на смартфоне.</p>
+
+<h2 class="text-2xl font-bold text-gray-900 mb-4 mt-8">Основные возможности редактора</h2>
+<p class="text-gray-700 mb-3"><strong>Форматирование текста.</strong> Применяйте заголовки H1-H6, делайте текст жирным или курсивным, подчёркивайте важные моменты, меняйте размер и цвет шрифта.</p>
+<p class="text-gray-700 mb-3"><strong>Списки и структура.</strong> Создавайте маркированные и нумерованные списки, добавляйте отступы для логической структуры документа.</p>
+<p class="text-gray-700 mb-3"><strong>Вставка элементов.</strong> Добавляйте ссылки на другие страницы, вставляйте изображения по URL, создавайте таблицы для структурированных данных.</p>
+<p class="text-gray-700 mb-3"><strong>Выравнивание.</strong> Располагайте текст и изображения по левому краю, центру или правому краю страницы.</p>
+<p class="text-gray-700 mb-6"><strong>Работа с кодом.</strong> Переключайтесь в режим просмотра исходного HTML-кода, если нужно внести точные правки или посмотреть структуру документа.</p>
+
+<h2 class="text-2xl font-bold text-gray-900 mb-4 mt-8">Полезные фишки</h2>
+<p class="text-gray-700 mb-3">Редактор запоминает ваши действия, поэтому всегда можно отменить последние изменения через <code>Ctrl+Z</code> или вернуть через <code>Ctrl+Y</code>. Работает привычная комбинация <code>Ctrl+C</code>, <code>Ctrl+V</code> для копирования и вставки.</p>
+<p class="text-gray-700 mb-3">Можете копировать отформатированный текст из Word или других редакторов - форматирование сохранится. Если нужен чистый текст без оформления, используйте специальную кнопку вставки.</p>
+<p class="text-gray-700 mb-3">Переключение между визуальным редактором и просмотром кода помогает понять, как устроена разметка, и научиться HTML на практике.</p>
+<p class="text-gray-700 mb-6">Предпросмотр показывает именно то, что увидят посетители вашей страницы. Никаких сюрпризов при публикации.</p>
+
+<h2 class="text-2xl font-bold text-gray-900 mb-4 mt-8">Почему стоит пользоваться нашим редактором</h2>
+<p class="text-gray-700 mb-3"><strong>Не нужна регистрация.</strong> Открыли страницу - сразу работаете. Никаких аккаунтов, паролей и подтверждений по почте.</p>
+<p class="text-gray-700 mb-3"><strong>Полная конфиденциальность.</strong> Весь ваш код обрабатывается исключительно в браузере на вашем компьютере. Мы не отправляем данные на сервер, не сохраняем их в базе и не имеем к ним доступа. Ваши наработки остаются только у вас.</p>
+<p class="text-gray-700 mb-3"><strong>Работает везде.</strong> Редактор функционирует в любом современном браузере на компьютере, планшете или телефоне. Не нужно ничего устанавливать.</p>
+<p class="text-gray-700 mb-3"><strong>Бесплатно.</strong> Никаких подписок, триальных периодов или назойливых баннеров. Просто инструмент для работы.</p>
+<p class="text-gray-700 mb-3"><strong>Быстрая обратная связь.</strong> Изменили текст - сразу увидели результат. Не нужно сохранять файлы и открывать их в браузере отдельно.</p>
+<p class="text-gray-700 mb-3"><strong>Подходит для обучения.</strong> Если только начинаете изучать HTML, редактор покажет, как разметка превращается в веб-страницу. Экспериментируйте без страха что-то сломать.</p>
+<p class="text-gray-700 mb-6"><strong>Удобный интерфейс.</strong> Все кнопки на своих местах, ничего лишнего. Разберётся даже тот, кто раньше не работал с визуальными редакторами.</p>
+
+<h2 class="text-2xl font-bold text-gray-900 mb-4 mt-8">Кому пригодится</h2>
+<p class="text-gray-700 mb-3">Редактор создавался для всех, кто работает с HTML. Начинающие разработчики используют его для обучения и экспериментов с кодом. Можно создать простую страницу, посмотреть, как она выглядит, внести изменения и сразу увидеть результат.</p>
+<p class="text-gray-700 mb-3">Копирайтеры и контент-менеджеры готовят материалы для сайтов. Вместо того чтобы писать текст в одной программе, а потом мучиться с форматированием в CMS, можно сразу оформить статью здесь и скопировать готовый HTML.</p>
+<p class="text-gray-700 mb-3">Email-маркетологи создают прототипы писем перед отправкой через сервисы рассылок. Визуальный редактор ускоряет работу, а просмотр кода позволяет убедиться, что всё правильно размечено для почтовых клиентов.</p>
+<p class="text-gray-700 mb-6">Дизайнеры быстро прототипируют идеи. Когда нужно показать клиенту примерную вёрстку блока или проверить, как текст смотрится с определённым оформлением, не обязательно запускать тяжёлый редактор кода.</p>
+
+<h2 class="text-2xl font-bold text-gray-900 mb-4 mt-8">Советы по работе</h2>
+<p class="text-gray-700 mb-3">Сохраняйте свою работу локально. Поскольку редактор работает в браузере без сохранения на сервере, не забывайте копировать готовый HTML к себе на компьютер. Просто переключитесь в режим просмотра кода и скопируйте всё содержимое.</p>
+<p class="text-gray-700 mb-3">Используйте заголовки для структуры. Правильная иерархия H1-H6 делает документ понятнее как для читателей, так и для поисковых систем.</p>
+<p class="text-gray-700 mb-3">Проверяйте ссылки и изображения. Когда вставляете URL картинки или ссылку на другую страницу, убедитесь, что адреса правильные. Битые ссылки испортят впечатление от вашей работы.</p>
+<p class="text-gray-700 mb-3">Периодически смотрите на код. Даже если вы не программист, базовое понимание HTML поможет лучше контролировать результат и быстрее находить ошибки.</p>
+<p class="text-gray-700 mb-6">Экспериментируйте. Редактор для того и создан, чтобы пробовать разные подходы к оформлению. Всегда можно отменить изменения и попробовать другой вариант.</p>
+<p class="text-gray-700 mb-4">Этот инструмент - часть нашего справочника по HTML. Здесь собрана документация по тегам, атрибутам и примеры кода. Редактор дополняет теоретические материалы практикой, позволяя сразу применить полученные знания.</p>
+</article>
+</main>
+
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">© 2025 htmlformatter.github.io.</p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">Контакты</a>
+<a class="text-sm hover:text-white transition" href="/about/">О нас</a>
+<a class="text-sm hover:text-white transition" href="/privacy/">Политика конфиденциальности</a>
+</nav>
+</div>
+</div>
+</footer>
+
+<script>
+tinymce.init({
+  selector: '#editor',
+  height: 500,
+  menubar: false,
+  plugins: 'advlist autolink link image lists charmap print preview hr anchor searchreplace visualblocks visualchars fullscreen insertdatetime media nonbreaking table directionality emoticons paste textcolor',
+  toolbar: "undo redo | code | removeformat | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons table",
+  content_style: 'body { font-family: Arial, sans-serif; font-size: 14px; }'
+});
+
+function updateCode() {
+  const content = tinymce.get('editor').getContent();
+  const codeOutput = document.getElementById('code-output');
+  codeOutput.textContent = content;
+  Prism.highlightElement(codeOutput);
+}
+</script>
+<script src="https://htmlformatter.github.io/script.js">  
+</body>
+</html>
