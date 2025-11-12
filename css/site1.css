@@ -1565,4 +1565,42 @@ body {
   .form-buttons__section > .secondary {
     margin-left: 12px
   }
+
 }
+.menu {
+    background-color: #f8f8f8;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .menu a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .menu a:hover {
+    color: #007BFF;
+  }
+
+  /* Стили для футера */
+  .footer {
+    background-color: #f1f1f1;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+  }
+
+  .footer nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #555;
+  }
+
+  .footer nav a:hover {
+    color: #007BFF;
+  }
