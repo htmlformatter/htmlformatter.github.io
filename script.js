@@ -45,11 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Проверяем, начинается ли путь с /html-
     if (!window.location.pathname.startsWith("/html-")) return;
 
-    const article = document.querySelector("article");
-
     // ------------------------------
     // 1. Рекламные блоки R-A-10604802-1 после абзацев внутри <article>
     // ------------------------------
+    const article = document.querySelector("article");
     if (article) {
         const paragraphs = article.querySelectorAll("p");
         if (paragraphs.length > 0) {
@@ -79,13 +78,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ------------------------------
-    // 2. Рекламный блок R-A-10604802-3 (feed) после </article>
+    // 2. Рекламный блок R-A-10604802-3 (feed) после </main>
     // ------------------------------
-    if (article) {
+    const main = document.querySelector("main");
+    if (main) {
         const adDivFeed = document.createElement("div");
         adDivFeed.id = "yandex_rtb_R-A-10604802-3";
         adDivFeed.classList.add("yandex-ad-block");
-        article.insertAdjacentElement("afterend", adDivFeed);
+        main.insertAdjacentElement("afterend", adDivFeed);
 
         if (window.yaContextCb && typeof window.yaContextCb.push === "function") {
             window.yaContextCb.push(() => {
