@@ -26,3 +26,69 @@ ym(97676462, "init", {
     trackLinks: true,
     accurateTrackBounce: true
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const style = document.createElement("style");
+    style.textContent = `
+        .yandex-ad-block {
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+        .yandex-ad-block.visible {
+            opacity: 1;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // ------------------------------
+    // 1. Рекламные блоки R-A-10604802-1 после абзацев
+    // ------------------------------
+    if (window.location.pathname.startsWith("/html-")) {
+        const paragraphs = document.querySelectorAll("p");
+        if (paragraphs.length > 0) {
+            let adIndex = 1;
+            let insertAfter = 2;
+
+            for (let i = insertAfter - 1; i < paragraphs.length; i += 5) {
+                const adDiv = document.createElement("div");
+                adDiv.id = `yandex_rtb_R-A-10604802-1-${adIndex}`;
+                adDiv.classList.add("yandex-ad-block");
+                paragraphs[i].insertAdjacentElement("afterend", adDiv);
+
+                if (window.yaContextCb && typeof window.yaContextCb.push === "function") {
+                    window.yaContextCb.push(() => {
+                        Ya.Context.AdvManager.render({
+                            blockId: "R-A-10604802-1",
+                            renderTo: adDiv.id
+                        });
+                        // Показываем блок с плавным переходом
+                        setTimeout(() => adDiv.classList.add("visible"), 50);
+                    });
+                }
+
+                adIndex++;
+            }
+        }
+    }
+
+    // ------------------------------
+    // 2. Рекламный блок R-A-10604802-3 после </article>
+    // ------------------------------
+    const article = document.querySelector("article");
+    if (article) {
+        const adDivFeed = document.createElement("div");
+        adDivFeed.id = "yandex_rtb_R-A-10604802-3";
+        adDivFeed.classList.add("yandex-ad-block");
+        article.insertAdjacentElement("afterend", adDivFeed);
+
+        if (window.yaContextCb && typeof window.yaContextCb.push === "function") {
+            window.yaContextCb.push(() => {
+                Ya.Context.AdvManager.render({
+                    blockId: "R-A-10604802-3",
+                    renderTo: adDivFeed.id,
+                    type: "feed"
+                });
+                setTimeout(() => adDivFeed.classList.add("visible"), 50);
+            });
+        }
+    }
+});
