@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-теги tags - ХТМЛ справочник</title>
+<meta name="description" content="Теги HTML: справочник по основным HTML-тегам, их структуре и применению." />
+<meta name="keywords" content="базовый синтаксис html-тегов, категории html-тегов, пустые теги против парных тегов, таблица тегов html" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-tags/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-теги tags - ХТМЛ справочник" />
+<meta property="og:description" content="Теги HTML: справочник по основным HTML-тегам, их структуре и применению." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-tags/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-теги
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-теги — это строительные блоки веб-страниц. Они определяют структуру, содержание и функциональность веб-страницы.
+      </p>
+<p class="text-gray-700 mb-4">
+       HTML-теги состоят из ключевых слов, заключённых в угловые скобки(
+       <code>
+        &lt; &gt;
+       </code>
+       ), и большинство тегов имеют открывающий и закрывающий теги. Например,
+       <code>
+        &lt;p&gt;
+       </code>
+       — открывающий тег абзаца, а
+       <code>
+        &lt;/p&gt;
+       </code>
+       — закрывающий тег.
+      </p>
+<p class="text-gray-700 mb-4">
+       HTML-теги используются для определения таких элементов, как заголовки, абзацы, ссылки, изображения, таблицы, формы и многое другое.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tegov">
+          Базовый синтаксис HTML-тегов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#kategorii-html-tegov">
+          Категории HTML-тегов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#pustye-tegi-protiv-parnyh-tegov">
+          Пустые теги против парных тегов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#tablitsa-tegov-html">
+          Таблица тегов HTML
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tegov">
+       Базовый синтаксис HTML-тегов
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-теги имеют единый синтаксис. Большинство тегов имеют следующую структуру:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;tagname attribute="value"&gt;Content&lt;/tagname&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Ключевые компоненты HTML-тегов включают в себя:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Имя тега:
+        </strong>
+        определяет тип элемента(например,
+        <code>
+         &lt;p&gt;
+        </code>
+        для абзацев,
+        <code>
+         &lt;h1&gt;
+        </code>
+        для заголовков).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Атрибуты:
+        </strong>
+        Необязательные параметры, которые предоставляют дополнительную информацию или изменяют поведение тега(например,
+        <code>
+         class
+        </code>
+        ,
+        <code>
+         id
+        </code>
+        ,
+        <code>
+         style
+        </code>
+        ).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Содержимое:
+        </strong>
+        текст или элементы, заключенные в открывающие и закрывающие теги.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="kategorii-html-tegov">
+       Категории HTML-тегов
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-теги можно в целом классифицировать по их функциональности:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Структурные теги:
+        </strong>
+        определяют структуру веб-страницы.
+&lt;ul class="wp-block-list"&gt;
+        <li class="ml-4">
+<code>
+          &lt;html&gt;
+         </code>
+         : Корневой элемент HTML-документа.
+        </li>
+<li class="ml-4">
+<code>
+          &lt;head&gt;
+         </code>
+         : Содержит метаданные и ссылки на таблицы стилей или скрипты.
+        </li>
+<li class="ml-4">
+<code>
+          &lt;body&gt;
+         </code>
+         : Содержит видимое содержимое страницы.
+        </li>
+</li>
+</ul>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+        Теги форматирования текста:
+       </strong>
+       стиль и форматирование текста.
+&lt;ul class="wp-block-list"&gt;
+&lt;li&gt;
+       <code>
+        &lt;p&gt;
+       </code>
+       : Определяет абзац.
+      </li>
+<li class="ml-4">
+<code>
+        &lt;h1&gt; to &lt;h6&gt;
+       </code>
+       : Определение заголовков разных уровней.
+      </li>
+<li class="ml-4">
+<code>
+        &lt;strong&gt;
+       </code>
+       ,
+       <code>
+        &lt;em&gt;
+       </code>
+       ,
+       <code>
+        &lt;mark&gt;
+       </code>
+       : применение жирного, курсивного или выделенного стиля текста.
+      </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+        Теги ссылок и медиа:
+       </strong>
+       встраивайте ссылки и медиа-элементы.
+&lt;ul class="wp-block-list"&gt;
+&lt;li&gt;
+       <code>
+        &lt;a&gt;
+       </code>
+       : Определяет гиперссылки.
+      </li>
+<li class="ml-4">
+<code>
+        &lt;img&gt;
+       </code>
+       : Встраивает изображения.
+      </li>
+<li class="ml-4">
+<code>
+        &lt;video&gt;
+       </code>
+       ,
+       <code>
+        &lt;audio&gt;
+       </code>
+       : Встраивание мультимедийного контента.
+      </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+        Теги форм и ввода:
+       </strong>
+       создание интерактивных форм.
+&lt;ul class="wp-block-list"&gt;
+&lt;li&gt;
+       <code>
+        &lt;form&gt;
+       </code>
+       : Определяет форму для пользовательского ввода.
+      </li>
+<li class="ml-4">
+<code>
+        &lt;input&gt;
+       </code>
+       : Определяет поля ввода.
+      </li>
+<li class="ml-4">
+<code>
+        &lt;button&gt;
+       </code>
+       ,
+       <code>
+        &lt;select&gt;
+       </code>
+       ,
+       <code>
+        &lt;textarea&gt;
+       </code>
+       : Добавить кнопки, раскрывающиеся списки и текстовые области.
+      </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+        Теги таблиц:
+       </strong>
+       организация данных в табличном формате.
+&lt;ul class="wp-block-list"&gt;
+&lt;li&gt;
+       <code>
+        &lt;table&gt;
+       </code>
+       : Определяет таблицу.
+      </li>
+<li class="ml-4">
+<code>
+        &lt;tr&gt;
+       </code>
+       ,
+       <code>
+        &lt;td&gt;
+       </code>
+       ,
+       <code>
+        &lt;th&gt;
+       </code>
+       : Определение строк и ячеек.
+      </li>
+<li class="ml-4">
+<code>
+        &lt;thead&gt;
+       </code>
+       ,
+       <code>
+        &lt;tbody&gt;
+       </code>
+       ,
+       <code>
+        &lt;tfoot&gt;
+       </code>
+       : Определение разделов таблицы.
+      </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+        Семантические теги:
+       </strong>
+       обеспечивают осмысленную структуру.
+&lt;ul class="wp-block-list"&gt;
+&lt;li&gt;
+       <code>
+        &lt;header&gt;
+       </code>
+       ,
+       <code>
+        &lt;footer&gt;
+       </code>
+       : Определение разделов верхнего и нижнего колонтитула.
+      </li>
+<li class="ml-4">
+<code>
+        &lt;article&gt;
+       </code>
+       ,
+       <code>
+        &lt;section&gt;
+       </code>
+       ,
+       <code>
+        &lt;aside&gt;
+       </code>
+       : Семантическая организация контента.
+      </li>
+<li class="ml-4">
+<code>
+        &lt;nav&gt;
+       </code>
+       : Представляет навигационные ссылки.
+      </li>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="pustye-tegi-protiv-parnyh-tegov">
+       Пустые теги против парных тегов
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-теги делятся на два типа:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Пустые теги:
+        </strong>
+        эти теги не имеют закрывающего тега и являются самозакрывающимися. Примеры:
+&lt;ul class="wp-block-list"&gt;
+        <li class="ml-4">
+<code>
+          &lt;img&gt;
+         </code>
+         : Встраивает изображение.
+        </li>
+<li class="ml-4">
+<code>
+          &lt;br&gt;
+         </code>
+         : Вставляет перенос строки.
+        </li>
+<li class="ml-4">
+<code>
+          &lt;hr&gt;
+         </code>
+         : Вставляет горизонтальную линию.
+        </li>
+</li>
+</ul>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+        Парные теги:
+       </strong>
+       эти теги содержат как открывающий, так и закрывающий теги. Примеры:
+&lt;ul class="wp-block-list"&gt;
+&lt;li&gt;
+       <code>
+        &lt;p&gt;...&lt;/p&gt;
+       </code>
+       : Определяет абзац.
+      </li>
+<li class="ml-4">
+<code>
+        &lt;div&gt;...&lt;/div&gt;
+       </code>
+       : Определяет контейнер.
+      </li>
+<li class="ml-4">
+<code>
+        &lt;span&gt;...&lt;/span&gt;
+       </code>
+       : Определяет встроенный текст.
+      </li>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="tablitsa-tegov-html">
+       Таблица тегов HTML
+      </h2>
+<p class="text-gray-700 mb-4">
+       В следующей таблице мы рассмотрели все теги HTML, где каждый тег ведет к отдельному руководству по соответствующему тегу, а также для каждого тега дано краткое описание.
+      </p>
+<table class="has-fixed-layout">
+<tr>
+<th>
+         Ярлык
+        </th>
+<th>
+         Описание
+        </th>
+</tr>
+<tbody>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-a/">
+           &lt;а&gt;
+          </a>
+</td>
+<td>
+          Определяет гиперссылку.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-abbr/">
+           &lt;аббр&gt;
+          </a>
+</td>
+<td>
+          Определяет аббревиатуру или акроним.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-address/">
+           &lt;адрес&gt;
+          </a>
+</td>
+<td>
+          Определяет контактную информацию автора/владельца документа.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-area-tag/">
+           &lt;область&gt;
+          </a>
+</td>
+<td>
+          Определяет область внутри карты изображения.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-article/">
+           &lt;статья&gt;
+          </a>
+</td>
+<td>
+          Определяет статью.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-aside-tag/">
+           &lt;в сторону&gt;
+          </a>
+</td>
+<td>
+          Определяет контент отдельно от содержимого страницы.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-audio-tag/">
+           &lt;аудио&gt;
+          </a>
+</td>
+<td>
+          Определяет встроенный звуковой контент.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-b/">
+           &lt;б&gt;
+          </a>
+</td>
+<td>
+          Определяет жирный текст.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-base-tag/">
+           &lt;база&gt;
+          </a>
+</td>
+<td>
+          Указывает базовый URL/целевой адрес для всех относительных URL в документе.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-bdi-tag/">
+           &lt;bdi&gt;
+          </a>
+</td>
+<td>
+          Изолирует часть текста, которая может быть отформатирована в другом направлении.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-bdo-tag/">
+           &lt;бдо&gt;
+          </a>
+</td>
+<td>
+          Переопределяет текущее направление текста.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-blockquote-tag/">
+           &lt;блокцитата&gt;
+          </a>
+</td>
+<td>
+          Определяет раздел, цитируемый из другого источника.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-body-tag/">
+           &lt;тело&gt;
+          </a>
+</td>
+<td>
+          Определяет тело документа.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-br/">
+</a>
+</td>
+<td>
+          Определяет одинарный перенос строки.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-button-tag/">
+           &lt;кнопка&gt;
+          </a>
+</td>
+<td>
+          Определяет кнопку, на которую можно нажать.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-canvas-tag/">
+           &lt;холст&gt;
+          </a>
+</td>
+<td>
+          Используется для рисования графики с помощью скриптов(обычно JavaScript).
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-caption-tag/">
+           &lt;подпись&gt;
+          </a>
+</td>
+<td>
+          Определяет заголовок таблицы.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-cite-tag/">
+           &lt;цитировать&gt;
+          </a>
+</td>
+<td>
+          Определяет название произведения.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-code/">
+           &lt;код&gt;
+          </a>
+</td>
+<td>
+          Определяет фрагмент компьютерного кода.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-col-tag/">
+           &lt;col&gt;
+          </a>
+</td>
+<td>
+          Задает свойства столбца для каждого столбца в элементе &lt;colgroup&gt;.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-colgroup-tag/">
+           &lt;colgroup&gt;
+          </a>
+</td>
+<td>
+          Задает группу из одного или нескольких столбцов в таблице для форматирования.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-data-tag/">
+           &lt;данные&gt;
+          </a>
+</td>
+<td>
+          Связывает контент с машиночитаемым значением.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-datalist-tag/">
+           &lt;datalist&gt;
+          </a>
+</td>
+<td>
+          Задает список предопределенных параметров для элемента ввода.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-dd-tag/">
+           &lt;дд&gt;
+          </a>
+</td>
+<td>
+          Определяет описание/значение термина в списке описаний.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-del-tag/">
+           &lt;del&gt;
+          </a>
+</td>
+<td>
+          Определяет текст, который был удален.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-details-tag/">
+           &lt;подробности&gt;
+          </a>
+</td>
+<td>
+          Определяет дополнительные сведения, которые пользователь может просматривать или скрывать.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-dfn-tag/">
+           &lt;дфн&gt;
+          </a>
+</td>
+<td>
+          Представляет собой определяющий пример термина.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-dialog-tag/">
+           &lt;диалог&gt;
+          </a>
+</td>
+<td>
+          Определяет диалоговое окно или интерактивный компонент.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-div-tag/">
+           &lt;div&gt;
+          </a>
+</td>
+<td>
+          Определяет раздел или секцию в документе.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-dl-tag/">
+           &lt;дл&gt;
+          </a>
+</td>
+<td>
+          Определяет список описаний.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-dt-tag/">
+           &lt;дт&gt;
+          </a>
+</td>
+<td>
+          Определяет термин/имя в списке описаний.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-em/">
+           &lt;эм&gt;
+          </a>
+</td>
+<td>
+          Определяет выделенный текст.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-embed-tag/">
+           &lt;встроить&gt;
+          </a>
+</td>
+<td>
+          Определяет контейнер для внешнего(не HTML) приложения.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-fieldset-tag/">
+           &lt;набор_полей&gt;
+          </a>
+</td>
+<td>
+          Группирует связанные элементы в форме.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-figcaption-tag/">
+           &lt;figcaption&gt;
+          </a>
+</td>
+<td>
+          Определяет подпись для элемента &lt;figure&gt;.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-figure-tag/">
+           &lt;рисунок&gt;
+          </a>
+</td>
+<td>
+          Указывает на самодостаточный контент.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-footer-tag/">
+           &lt;нижний колонтитул&gt;
+          </a>
+</td>
+<td>
+          Определяет нижний колонтитул документа или раздела.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-form-tag/">
+           &lt;форма&gt;
+          </a>
+</td>
+<td>
+          Определяет HTML-форму для ввода данных пользователем.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-h1/">
+           &lt;h1&gt;
+          </a>
+</td>
+<td>
+          Определяет заголовок HTML: Заголовок 1.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-h2/">
+           &lt;h2&gt;
+          </a>
+</td>
+<td>
+          Определяет заголовок HTML: Заголовок 2.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-h3/">
+           &lt;h3&gt;
+          </a>
+</td>
+<td>
+          Определяет заголовок HTML: Заголовок 3.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-h4/">
+           &lt;h4&gt;
+          </a>
+</td>
+<td>
+          Определяет заголовок HTML: Заголовок 4.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-h5/">
+           &lt;h5&gt;
+          </a>
+</td>
+<td>
+          Определяет заголовок HTML: Заголовок 5.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-h6/">
+           &lt;h6&gt;
+          </a>
+</td>
+<td>
+          Определяет заголовок HTML: Заголовок 6.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-head-tag/">
+           &lt;голова&gt;
+          </a>
+</td>
+<td>
+          Содержит метаданные/информацию о документе.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-header-tag/">
+           &lt;заголовок&gt;
+          </a>
+</td>
+<td>
+          Определяет заголовок документа или раздела.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-hr-tag/">
+           &lt;ч&gt;
+          </a>
+</td>
+<td>
+          Определяет тематическое изменение содержания.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-html-tag/">
+           &lt;html&gt;
+          </a>
+</td>
+<td>
+          Определяет корень HTML-документа.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-i-tag/">
+           &lt;я&gt;
+          </a>
+</td>
+<td>
+          Определяет часть текста, произнесенную другим голосом или в другом настроении.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-iframe-tag/">
+           &lt;iframe&gt;
+          </a>
+</td>
+<td>
+          Определяет встроенный фрейм.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-img/">
+           &lt;img&gt;
+          </a>
+</td>
+<td>
+          Определяет изображение.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-input-tag/">
+           &lt;вход&gt;
+          </a>
+</td>
+<td>
+          Определяет элемент управления вводом.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-ins-tag/">
+           &lt;ins&gt;
+          </a>
+</td>
+<td>
+          Определяет вставленный текст.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-kbd-tag/">
+           &lt;кбд&gt;
+          </a>
+</td>
+<td>
+          Определяет ввод с клавиатуры.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-label-tag/">
+           &lt;метка&gt;
+          </a>
+</td>
+<td>
+          Определяет метку для элемента ввода.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-legend-tag/">
+           &lt;легенда&gt;
+          </a>
+</td>
+<td>
+          Определяет заголовок для элемента &lt;fieldset&gt;.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-li-tag/">
+           &lt;ли&gt;
+          </a>
+</td>
+<td>
+          Определяет элемент списка.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-link-tag/">
+           &lt;ссылка&gt;
+          </a>
+</td>
+<td>
+          Определяет связь между документом и внешним ресурсом.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-main-tag/">
+           &lt;главная&gt;
+          </a>
+</td>
+<td>
+          Определяет основное содержание документа.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-map-tag/">
+           &lt;карта&gt;
+          </a>
+</td>
+<td>
+          Определяет карту изображений на стороне клиента.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-mark-tag/">
+           &lt;отметка&gt;
+          </a>
+</td>
+<td>
+          Определяет выделенный/выделенный текст.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-meta-tag/">
+           &lt;мета&gt;
+          </a>
+</td>
+<td>
+          Определяет метаданные HTML-документа.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-meter-tag/">
+           &lt;метр&gt;
+          </a>
+</td>
+<td>
+          Определяет скалярное измерение в известном диапазоне.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-nav-tag/">
+           &lt;нав&gt;
+          </a>
+</td>
+<td>
+          Определяет навигационные ссылки.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-noscript-tag/">
+           &lt;noscript&gt;
+          </a>
+</td>
+<td>
+          Определяет альтернативный контент для пользователей, которые не поддерживают клиентские скрипты.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-object-tag/">
+           &lt;объект&gt;
+          </a>
+</td>
+<td>
+          Определяет контейнер для внешнего ресурса.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-ol-tag/">
+           &lt;ол&gt;
+          </a>
+</td>
+<td>
+          Определяет упорядоченный список.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-optgroup-tag/">
+           &lt;optgroup&gt;
+          </a>
+</td>
+<td>
+          Определяет группу связанных параметров в раскрывающемся списке.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-option-tag/">
+           &lt;опция&gt;
+          </a>
+</td>
+<td>
+          Определяет опцию в раскрывающемся списке.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-output-tag/">
+           &lt;выход&gt;
+          </a>
+</td>
+<td>
+          Определяет результат расчета.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-p/">
+           &lt;п&gt;
+          </a>
+</td>
+<td>
+          Определяет абзац.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-picture-tag/">
+           &lt;картинка&gt;
+          </a>
+</td>
+<td>
+          Определяет контейнер для нескольких ресурсов изображений.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-pre/">
+           &lt;пред&gt;
+          </a>
+</td>
+<td>
+          Определяет предварительно отформатированный текст.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-progress-tag/">
+           &lt;прогресс&gt;
+          </a>
+</td>
+<td>
+          Показывает ход выполнения задачи.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-q-tag/">
+           &lt;q&gt;
+          </a>
+</td>
+<td>
+          Определяет короткую цитату.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-rp-tag/">
+           &lt;rp&gt;
+          </a>
+</td>
+<td>
+          Определяет, что отображать в браузерах, не поддерживающих аннотации Ruby.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-rt-tag/">
+           &lt;рт&gt;
+          </a>
+</td>
+<td>
+          Определяет объяснение/произношение символов.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-ruby-tag/">
+           &lt;рубин&gt;
+          </a>
+</td>
+<td>
+          Определяет аннотацию Ruby.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-s-tag/">
+           &lt;с&gt;
+          </a>
+</td>
+<td>
+          Определяет текст, который больше не является правильным.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-samp-tag/">
+           &lt;самп&gt;
+          </a>
+</td>
+<td>
+          Определяет пример выходных данных компьютерной программы.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-script-tag/">
+           &lt;скрипт&gt;
+          </a>
+</td>
+<td>
+          Определяет клиентский скрипт.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-section-tag/">
+           &lt;раздел&gt;
+          </a>
+</td>
+<td>
+          Определяет раздел в документе.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-select-tag/">
+           &lt;выбрать&gt;
+          </a>
+</td>
+<td>
+          Определяет раскрывающийся список.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-small-tag/">
+           &lt;маленький&gt;
+          </a>
+</td>
+<td>
+          Определяет более мелкий текст.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-source-tag/">
+           &lt;источник&gt;
+          </a>
+</td>
+<td>
+          Определяет несколько медиаресурсов для медиаэлементов.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-span-tag/">
+           &lt;пространство&gt;
+          </a>
+</td>
+<td>
+          Определяет встроенный раздел в документе.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-strong/">
+           &lt;strong&gt;
+          </a>
+</td>
+<td>
+          Определяет важный текст.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-style-tag/">
+           &lt;стиль&gt;
+          </a>
+</td>
+<td>
+          Определяет информацию о стиле для документа.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-sub-tag/">
+           &lt;sub&gt;
+          </a>
+</td>
+<td>
+          Определяет подстрочный текст.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-summary-tag/">
+           &lt;резюме&gt;
+          </a>
+</td>
+<td>
+          Определяет видимый заголовок для элемента &lt;details&gt;.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-sup-tag/">
+           &lt;sup&gt;
+          </a>
+</td>
+<td>
+          Определяет надстрочный текст.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-svg-tag/">
+           &lt;svg&gt;
+          </a>
+</td>
+<td>
+          Определяет контейнер для графики SVG.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-table-tag/">
+           &lt;таблица&gt;
+          </a>
+</td>
+<td>
+          Определяет таблицу.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-tbody-tag/">
+           &lt;тело&gt;
+          </a>
+</td>
+<td>
+          Группирует содержимое тела в таблицу.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-td-tag/">
+           &lt;тд&gt;
+          </a>
+</td>
+<td>
+          Определяет ячейку в таблице.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-template-tag/">
+           &lt;шаблон&gt;
+          </a>
+</td>
+<td>
+          Определяет контейнер для содержимого, которое должно быть скрыто при загрузке страницы.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-textarea-tag/">
+           &lt;текстовая область&gt;
+          </a>
+</td>
+<td>
+          Определяет многострочный элемент управления вводом(текстовую область).
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-tfoot-tag/">
+           &lt;tfoot&gt;
+          </a>
+</td>
+<td>
+          Группирует содержимое нижнего колонтитула в таблицу.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-th-tag/">
+<th>
+</th>
+</a>
+</td>
+<td>
+          Определяет ячейку заголовка в таблице.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-thead-tag/">
+           &lt;заголовок&gt;
+          </a>
+</td>
+<td>
+          Группирует содержимое заголовка в таблицу.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-time-tag/">
+           &lt;время&gt;
+          </a>
+</td>
+<td>
+          Определяет конкретный момент времени.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-title-tag/">
+           &lt;название&gt;
+          </a>
+</td>
+<td>
+          Определяет название документа.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-tr-tag/">
+<tr>
+</tr>
+</a>
+</td>
+<td>
+          Определяет строку в таблице.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-track-tag/">
+           &lt;трек&gt;
+          </a>
+</td>
+<td>
+          Определяет текстовые дорожки для элементов мультимедиа.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-u-tag/">
+           &lt;u&gt;
+          </a>
+</td>
+<td>
+          Определяет текст, который должен стилистически отличаться от обычного текста.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-ul-tag/">
+           &lt;ул&gt;
+          </a>
+</td>
+<td>
+          Определяет неупорядоченный список.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-var-tag/">
+           &lt;var&gt;
+          </a>
+</td>
+<td>
+          Определяет переменную.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-video-tag/">
+           &lt;видео&gt;
+          </a>
+</td>
+<td>
+          Определяет встроенный видеоконтент.
+         </td>
+</tr>
+<tr>
+<td>
+<a href="https://htmlformatter.github.io/html-wbr-tag/">
+           &lt;wbr&gt;
+          </a>
+</td>
+<td>
+          Определяет возможный разрыв строки.
+         </td>
+</tr>
+</tbody>
+</table>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

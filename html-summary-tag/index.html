@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;summary&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;summary&gt; в HTML: заголовок для &lt;details&gt;, который раскрывает или скрывает дополнительный контент по клику." />
+<meta name="keywords" content="базовый синтаксис html-тега summary, пример использования тега summary, стилизация тега summary с помощью css, атрибуты html-тега summary, практическое применение тега summary" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-summary-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;summary&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;summary&gt; в HTML: заголовок для &lt;details&gt;, который раскрывает или скрывает дополнительный контент по клику." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-summary-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;summary&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;summary&gt;
+       </code>
+       используется для создания видимого заголовка элемента
+       <code>
+        &lt;details&gt;
+       </code>
+       . Элемент
+       <code>
+        &lt;details&gt;
+       </code>
+       используется для отображения сворачиваемого содержимого, а тег
+       <code>
+        &lt;summary&gt;
+       </code>
+       предоставляет кликабельную метку, которая переключает видимость содержимого.
+      </p>
+<p class="text-gray-700 mb-4">
+       По умолчанию текст
+       <code>
+        &lt;summary&gt;
+       </code>
+       видим, и щелчок по нему разворачивает или сворачивает скрытое содержимое внутри элемента
+       <code>
+        &lt;details&gt;
+       </code>
+       .
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-ltsummarygt">
+          Базовый синтаксис HTML-тега &lt;summary&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-ispolzovaniya-tega-ltsummarygt">
+          Пример использования тега &lt;summary&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-tega-ltsummarygt-s-pomoschyu-css">
+          Стилизация тега &lt;summary&gt; с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-ltsummarygt">
+          Атрибуты HTML-тега &lt;summary&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-ltsummarygt">
+          Практическое применение тега &lt;summary&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-ltsummarygt">
+       Базовый синтаксис HTML-тега &lt;summary&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;summary&gt;
+       </code>
+       должен быть вложен в элемент
+       <code>
+        &lt;details&gt;
+       </code>
+       . Его базовая структура:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;details&gt;
+    &lt;summary&gt;Summary Text&lt;/summary&gt;
+    Hidden content goes here.
+&lt;/details&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Нажатие на текст
+       <code>
+        &lt;summary&gt;
+       </code>
+       переключает видимость содержимого внутри тега
+       <code>
+        &lt;details&gt;
+       </code>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-ispolzovaniya-tega-ltsummarygt">
+       Пример использования тега &lt;summary&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример использования тега
+       <code>
+        &lt;summary&gt;
+       </code>
+       для создания сворачиваемого содержимого раздела часто задаваемых вопросов:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Frequently Asked Questions&lt;/h2&gt;
+
+        &lt;details&gt;
+            &lt;summary&gt;What is HTML?&lt;/summary&gt;
+            HTML(HyperText Markup Language) is the standard language for creating webpages.
+        &lt;/details&gt;
+
+        &lt;details&gt;
+            &lt;summary&gt;What is the &lt;summary&gt; tag?&lt;/summary&gt;
+            The &lt;summary&gt; tag is used to provide a clickable label for the &lt;details&gt; element.
+        &lt;/details&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Щелчок по вопросу в каждом теге
+       <code>
+        &lt;summary&gt;
+       </code>
+       разворачивает или сворачивает ответ внутри соответствующего элемента
+       <code>
+        &lt;details&gt;
+       </code>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-tega-ltsummarygt-s-pomoschyu-css">
+       Стилизация тега &lt;summary&gt; с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете настроить внешний вид тега
+       <code>
+        &lt;summary&gt;
+       </code>
+       с помощью CSS:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            summary {
+                cursor: pointer;
+                font-size: 18px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+            details[open] summary {
+                color: #FF5722;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Styled Summary Example&lt;/h2&gt;
+
+        &lt;details&gt;
+            &lt;summary&gt;Click to reveal content&lt;/summary&gt;
+            This is the hidden content that becomes visible when you click the summary.
+        &lt;/details&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       текст резюме меняет цвет при развертывании элемента
+       <code>
+        &lt;details&gt;
+       </code>
+       , обеспечивая визуальную обратную связь для пользователя.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-ltsummarygt">
+       Атрибуты HTML-тега &lt;summary&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Глобальные атрибуты:
+        </strong>
+        тег
+        <code>
+         &lt;summary&gt;
+        </code>
+        поддерживает все глобальные атрибуты, такие как
+        <code>
+         id
+        </code>
+        ,
+        <code>
+         class
+        </code>
+        и
+        <code>
+         style
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Атрибуты событий:
+        </strong>
+        к тегу
+        <code>
+         &lt;summary&gt;
+        </code>
+        можно прикрепить обработчики событий, такие как
+        <code>
+         onclick
+        </code>
+        ,
+        <code>
+         onmouseover
+        </code>
+        и т. д.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Эти атрибуты позволяют динамически стилизовать и взаимодействовать с элементом
+       <code>
+        &lt;summary&gt;
+       </code>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-ltsummarygt">
+       Практическое применение тега &lt;summary&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Часто задаваемые вопросы:
+        </strong>
+        используйте тег
+        <code>
+         &lt;summary&gt;
+        </code>
+        для создания расширяемых вопросов со скрытыми ответами.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Сворачиваемые разделы:
+        </strong>
+        организуйте длинные документы или статьи в разделы, которые можно разворачивать или сворачивать.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Интерактивные руководства:
+        </strong>
+        предоставляют пошаговые инструкции со сворачиваемыми этапами для лучшего пользовательского опыта.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Меню:
+        </strong>
+        создайте сворачиваемые навигационные меню с помощью элементов
+        <code>
+         &lt;details&gt;
+        </code>
+        и
+        <code>
+         &lt;summary&gt;
+        </code>
+        .
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;summary&gt;
+       </code>
+       при использовании с элементом
+       <code>
+        &lt;details&gt;
+       </code>
+       создает доступный, удобный и интерактивный контент для веб-страниц.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

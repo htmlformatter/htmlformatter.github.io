@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;table&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;table&gt; в HTML: создание таблиц, структурирование данных в строки и столбцы." />
+<meta name="keywords" content="базовый синтаксис html-тега table, пример простой html-таблицы, добавление заголовков таблиц, объединение ячеек в таблице с помощью colspan и rowspan, стилизация таблиц с помощью css, практическое применение тега table" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-table-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;table&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;table&gt; в HTML: создание таблиц, структурирование данных в строки и столбцы." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-table-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;table&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;table&gt;
+       </code>
+       используется для создания таблиц на веб-странице. Таблицы используются для организации данных в строки и столбцы, обеспечивая структурированную структуру отображения информации. Элемент
+       <code>
+        &lt;table&gt;
+       </code>
+       содержит дочерние элементы, такие как
+       <code>
+        &lt;tr&gt;
+       </code>
+       (строки таблицы),
+       <code>
+        &lt;th&gt;
+       </code>
+       (заголовки таблицы) и
+       <code>
+        &lt;td&gt;
+       </code>
+       (ячейки данных таблицы).
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-lttablegt">
+          Базовый синтаксис HTML-тега &lt;table&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-prostoy-html-tablitsy">
+          Пример простой HTML-таблицы
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#dobavlenie-zagolovkov-tablits">
+          Добавление заголовков таблиц
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#obedinenie-yacheek-v-tablitse-s-pomoschyu-colspan-i-rowspan">
+          Объединение ячеек в таблице с помощью colspan и rowspan
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-tablits-s-pomoschyu-css">
+          Стилизация таблиц с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-lttablegt">
+          Практическое применение тега &lt;table&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-lttablegt">
+       Базовый синтаксис HTML-тега &lt;table&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура HTML-таблицы:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Header 1&lt;/th&gt;
+        &lt;th&gt;Header 2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Data 1&lt;/td&gt;
+        &lt;td&gt;Data 2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Элемент
+       <code>
+        &lt;tr&gt;
+       </code>
+       определяет строку таблицы,
+       <code>
+        &lt;th&gt;
+       </code>
+       определяет заголовок таблицы, а
+       <code>
+        &lt;td&gt;
+       </code>
+       определяет ячейку данных таблицы.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-prostoy-html-tablitsy">
+       Пример простой HTML-таблицы
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример простой таблицы, отображающей баллы учащихся:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Student Scores&lt;/h2&gt;
+        &lt;table border="1"&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Subject&lt;/th&gt;
+                &lt;th&gt;Score&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Alice&lt;/td&gt;
+                &lt;td&gt;Math&lt;/td&gt;
+                &lt;td&gt;85&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Bob&lt;/td&gt;
+                &lt;td&gt;Science&lt;/td&gt;
+                &lt;td&gt;90&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Пример простой HTML-таблицы" height="254" src="https://htmlformatter.github.io/images2/html-tag-f2eb9b7.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       Атрибут
+       <code>
+        border="1"
+       </code>
+       добавляет простую границу вокруг таблицы для лучшей видимости.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="dobavlenie-zagolovkov-tablits">
+       Добавление заголовков таблиц
+      </h2>
+<p class="text-gray-700 mb-4">
+       Элемент
+       <code>
+        &lt;caption&gt;
+       </code>
+       обеспечивает заголовок таблицы:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;table border="1"&gt;
+            &lt;caption&gt;Monthly Sales Report&lt;/caption&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Product&lt;/th&gt;
+                &lt;th&gt;Quantity&lt;/th&gt;
+                &lt;th&gt;Price&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Laptops&lt;/td&gt;
+                &lt;td&gt;50&lt;/td&gt;
+                &lt;td&gt;$500&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Добавление заголовков таблиц" height="254" src="https://htmlformatter.github.io/images2/html-tag-2f56724.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Тег
+       <code>
+        &lt;caption&gt;
+       </code>
+       предоставляет заголовок или резюме для таблицы, что улучшает доступность и удобство использования.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="obedinenie-yacheek-v-tablitse-s-pomoschyu-colspan-i-rowspan">
+       Объединение ячеек в таблице с помощью colspan и rowspan
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете объединить ячейки по горизонтали, используя
+       <code>
+        colspan
+       </code>
+       и по вертикали, используя
+       <code>
+        rowspan
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Class Schedule&lt;/h2&gt;
+        &lt;table border="1"&gt;
+            &lt;tr&gt;
+                &lt;th colspan="2"&gt;Monday&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Math&lt;/td&gt;
+                &lt;td&gt;9:00 - 10:00 AM&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th rowspan="2"&gt;Tuesday&lt;/th&gt;
+                &lt;td&gt;Science&lt;/td&gt;
+                &lt;td&gt;10:00 - 11:00 AM&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;History&lt;/td&gt;
+                &lt;td&gt;11:00 - 12:00 PM&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Объединение ячеек в таблице с помощью colspan и rowspan" height="328" src="https://htmlformatter.github.io/images2/html-tag-4eb7f7f.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       Атрибут
+       <code>
+        colspan
+       </code>
+       объединяет столбцы, а атрибут
+       <code>
+        rowspan
+       </code>
+       объединяет строки для создания более сложных макетов таблиц.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-tablits-s-pomoschyu-css">
+       Стилизация таблиц с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Таблицы можно стилизовать для улучшения их внешнего вида с помощью CSS:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: center;
+            }
+            th {
+                background-color: #f4f4f4;
+                font-weight: bold;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Styled Table&lt;/h2&gt;
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Age&lt;/th&gt;
+                &lt;th&gt;City&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;John&lt;/td&gt;
+                &lt;td&gt;25&lt;/td&gt;
+                &lt;td&gt;New York&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="328" loading="lazy" src="https://htmlformatter.github.io/images2/html-tag-1f4170e.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       стили CSS улучшают внешний вид таблицы, стирая границы, добавляя отступы и по-разному оформляя заголовки.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-lttablegt">
+       Практическое применение тега &lt;table&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Представление данных:
+        </strong>
+        отображение структурированных данных, таких как отчеты, расписания или оценки.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Финансовые таблицы:
+        </strong>
+        создание таблиц для бюджетов, счетов-фактур или отслеживания расходов.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Сравнительные таблицы:
+        </strong>
+        отображайте сравнительные характеристики продуктов или услуг.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Календари:
+        </strong>
+        создавайте простые макеты календарей или расписания на конкретные даты.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

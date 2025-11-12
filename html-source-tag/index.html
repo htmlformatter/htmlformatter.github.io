@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;source&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;source&gt; в HTML: указание источников мультимедиа в &lt;audio&gt; и &lt;video&gt;, поддержка разных форматов и разрешений." />
+<meta name="keywords" content="базовый синтаксис тега html source, атрибуты html-тега source, пример видео с несколькими форматами, пример изображения для адаптивных изображений, стилизация медиа с помощью css, практическое применение тега source" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-source-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;source&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;source&gt; в HTML: указание источников мультимедиа в &lt;audio&gt; и &lt;video&gt;, поддержка разных форматов и разрешений." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-source-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;source&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;source&gt;
+       </code>
+       используется для определения нескольких медиаресурсов для таких элементов, как
+       <code>
+        &lt;video&gt;
+       </code>
+       ,
+       <code>
+        &lt;audio&gt;
+       </code>
+       и
+       <code>
+        &lt;picture&gt;
+       </code>
+       . Он обеспечивает гибкость при указании различных форматов, разрешений и условий воспроизведения медиаконтента, обеспечивая адаптивную и оптимизированную доставку в зависимости от пользовательских устройств и возможностей браузера.
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;source&gt;
+       </code>
+       должен быть вложен в родительский элемент, к которому он применяется, и не имеет закрывающего тега(самозакрывающийся). В одном родительском элементе можно использовать несколько тегов
+       <code>
+        &lt;source&gt;
+       </code>
+       .
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-tega-html-ltsourcegt">
+          Базовый синтаксис тега HTML &lt;source&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-ltsourcegt">
+          Атрибуты HTML-тега &lt;source&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-video-s-neskolkimi-formatami">
+          Пример видео с несколькими форматами
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-izobrazheniya-dlya-adaptivnyh-izobrazheniy">
+          Пример изображения для адаптивных изображений
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-media-s-pomoschyu-css">
+          Стилизация медиа с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-ltsourcegt">
+          Практическое применение тега &lt;source&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-tega-html-ltsourcegt">
+       Базовый синтаксис тега HTML &lt;source&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура тега
+       <code>
+        &lt;source&gt;
+       </code>
+       внутри различных родительских элементов:
+      </p>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Для видео:
+       </strong>
+</p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;video controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.ogg" type="video/ogg"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Для аудио:
+       </strong>
+</p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    Your browser does not support the audio tag.
+&lt;/audio&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Для изображения:
+       </strong>
+</p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;picture&gt;
+    &lt;source srcset="image-large.jpg" media="(min-width: 800px)"&gt;
+    &lt;source srcset="image-small.jpg" media="(max-width: 799px)"&gt;
+    &lt;img src="image-default.jpg" alt="A responsive image"&gt;
+&lt;/picture&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В каждом случае браузер выбирает первый совместимый источник для использования на основе его атрибутов и устройства пользователя.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-ltsourcegt">
+       Атрибуты HTML-тега &lt;source&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         src:
+        </strong>
+        Указывает URL-адрес медиаресурса.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         тип:
+        </strong>
+        определяет тип MIME медиаресурса(например,
+        <code>
+         video/mp4
+        </code>
+        ,
+        <code>
+         audio/ogg
+        </code>
+        ).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         media:
+        </strong>
+        определяет медиа-запрос для выбора ресурса, обычно используемый в теге
+        <code>
+         &lt;picture&gt;
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         srcset:
+        </strong>
+        Предоставляет список источников изображений и дескрипторов для адаптивных изображений, применимых в теге
+        <code>
+         &lt;picture&gt;
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         sizes:
+        </strong>
+        Задает атрибут размеров для изображений, используемый вместе с
+        <code>
+         srcset
+        </code>
+        в адаптивных изображениях.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Эти атрибуты позволяют тегу
+       <code>
+        &lt;source&gt;
+       </code>
+       обрабатывать разнообразные сценарии доставки видео, аудио и изображений.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-video-s-neskolkimi-formatami">
+       Пример видео с несколькими форматами
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример использования тега
+       <code>
+        &lt;source&gt;
+       </code>
+       с элементом
+       <code>
+        &lt;video&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Video Example&lt;/h2&gt;
+        &lt;video controls width="600"&gt;
+            &lt;source src="movie.mp4" type="video/mp4"&gt;
+            &lt;source src="movie.ogg" type="video/ogg"&gt;
+            Your browser does not support the video tag.
+        &lt;/video&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       Браузер проверяет форматы в указанном порядке, используя первый совместимый ресурс. Если ни один из них не поддерживается, отображается аварийное сообщение.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-izobrazheniya-dlya-adaptivnyh-izobrazheniy">
+       Пример изображения для адаптивных изображений
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;source&gt;
+       </code>
+       также можно использовать для адаптивных изображений с тегом
+       <code>
+        &lt;picture&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Responsive Image Example&lt;/h2&gt;
+        &lt;picture&gt;
+            &lt;source srcset="image-large.jpg" media="(min-width: 800px)"&gt;
+            &lt;source srcset="image-small.jpg" media="(max-width: 799px)"&gt;
+            &lt;img src="image-default.jpg" alt="A responsive image"&gt;
+        &lt;/picture&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Браузер выбирает наиболее подходящий источник изображения в зависимости от размера экрана. Для устройств с шириной экрана более 800 пикселей загружается «image-large.jpg», а для устройств с меньшим размером экрана — «image-small.jpg».
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-media-s-pomoschyu-css">
+       Стилизация медиа с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете стилизовать родительские элементы тега
+       <code>
+        &lt;source&gt;
+       </code>
+       , например
+       <code>
+        &lt;video&gt;
+       </code>
+       ,
+       <code>
+        &lt;audio&gt;
+       </code>
+       или
+       <code>
+        &lt;img&gt;
+       </code>
+       , чтобы улучшить их внешний вид:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+    video, img {
+        border: 2px solid #007BFF;
+        border-radius: 8px;
+    }
+&lt;/style&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       Видеоролики, изображения и другие элементы мультимедиа можно стилизовать с помощью специальных рамок и закругленных углов для придания им изысканного вида.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-ltsourcegt">
+       Практическое применение тега &lt;source&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Адаптивные изображения:
+        </strong>
+        создавайте оптимизированные изображения для экранов разных размеров с помощью элемента
+        <code>
+         &lt;picture&gt;
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Совместимость с видео:
+        </strong>
+        поддержка нескольких форматов видео(например, MP4, WebM, OGG) для обеспечения совместимости со всеми браузерами.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Параметры звука:
+        </strong>
+        поддержка различных аудиоформатов(например, MP3, OGG) для различных браузеров.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Оптимизация производительности:
+        </strong>
+        загрузка соответствующих медиафайлов в зависимости от устройства пользователя или скорости соединения.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;source&gt;
+       </code>
+       является ключевым компонентом для создания адаптивного, эффективного и удобного для пользователя мультимедийного опыта в Интернете.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

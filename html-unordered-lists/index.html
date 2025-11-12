@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Неупорядоченные списки HTML - ХТМЛ справочник</title>
+<meta name="description" content="Неупорядоченные списки в HTML: создание &lt;ul&gt;, стилизация маркеров и управление вложенностью списков." />
+<meta name="keywords" content="что такое неупорядоченный список?, атрибуты элемента ul, стилизация неупорядоченных списков с помощью css, 1. изменение стилей маркеров, 2. удаление пуль, 3. настройка отступов, 4. добавление пользовательских маркеров, вложенные неупорядоченные списки, вопросы доступности, реальные примеры использования" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-unordered-lists/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Неупорядоченные списки HTML - ХТМЛ справочник" />
+<meta property="og:description" content="Неупорядоченные списки в HTML: создание &lt;ul&gt;, стилизация маркеров и управление вложенностью списков." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-unordered-lists/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      Неупорядоченные списки HTML
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       Неупорядоченные списки HTML(
+       <code>
+        &lt;ul&gt;
+       </code>
+       ) — это фундаментальный способ отображения коллекции элементов без акцентирования их порядка. Каждый элемент списка представлен элементом
+       <code>
+        &lt;li&gt;
+       </code>
+       (элемент списка), и по умолчанию элементы обычно отображаются с маркерами.
+      </p>
+<p class="text-gray-700 mb-4">
+       В этом уроке по HTML мы рассмотрим основы неупорядоченных списков, их атрибуты, параметры стилей и практические варианты использования, а также примеры, которые помогут вам понять, как эффективно реализовать их в ваших веб-проектах.
+      </p>
+<p class="text-gray-700 mb-4">
+       Обзор списков можно найти в статье
+       <a href="https://htmlformatter.github.io/html-lists/" rel="noreferrer noopener" target="_blank">
+        Списки HTML
+       </a>
+       .
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#chto-takoe-neuporyadochennyy-spisok">
+          Что такое неупорядоченный список?
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-elementa-ltulgt">
+          Атрибуты элемента &lt;ul&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-neuporyadochennyh-spiskov-s-pomoschyu-css">
+          Стилизация неупорядоченных списков с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-izmenenie-stiley-markerov">
+          1. Изменение стилей маркеров
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-udalenie-pul">
+          2. Удаление пуль
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#3-nastroyka-otstupov">
+          3. Настройка отступов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#4-dobavlenie-polzovatelskih-markerov">
+          4. Добавление пользовательских маркеров
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#vlozhennye-neuporyadochennye-spiski">
+          Вложенные неупорядоченные списки
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#voprosy-dostupnosti">
+          Вопросы доступности
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#realnye-primery-ispolzovaniya">
+          Реальные примеры использования
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#luchshie-praktiki-ispolzovaniya-neuporyadochennyh-spiskov">
+          Лучшие практики использования неупорядоченных списков
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zaklyuchenie">
+          Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="chto-takoe-neuporyadochennyy-spisok">
+       Что такое неупорядоченный список?
+      </h2>
+<p class="text-gray-700 mb-4">
+       Неупорядоченный список — это набор элементов, порядок которых не имеет значения. Такие списки идеально подходят для отображения таких данных, как списки покупок, описания функций или навигационные ссылки.
+      </p>
+<p class="text-gray-700 mb-4">
+       Структура неупорядоченного списка состоит из элемента
+       <code>
+        &lt;ul&gt;
+       </code>
+       и вложенных элементов
+       <code>
+        &lt;li&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       По умолчанию браузеры отображают каждый элемент списка с маркером, как показано на следующем снимке экрана.
+      </p>
+<img alt="" height="297" src="https://htmlformatter.github.io/images/html-unordered-lists-1a45ad5.png" width="647" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-elementa-ltulgt">
+       Атрибуты элемента
+       <code>
+        &lt;ul&gt;
+       </code>
+</h2>
+<p class="text-gray-700 mb-4">
+       Элемент
+       <code>
+        &lt;ul&gt;
+       </code>
+       поддерживает атрибуты, которые могут улучшить или изменить его поведение:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Глобальные атрибуты:
+        </strong>
+        для настройки списка доступны такие атрибуты, как
+        <code>
+         id
+        </code>
+        ,
+        <code>
+         class
+        </code>
+        и
+        <code>
+         style
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Атрибуты ARIA:
+        </strong>
+        такие атрибуты, как
+        <code>
+         aria-label
+        </code>
+        или
+        <code>
+         aria-labelledby
+        </code>
+        могут сделать неупорядоченные списки более доступными.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Пользовательские атрибуты данных:
+        </strong>
+        используйте атрибуты
+        <code>
+         data-*
+        </code>
+        для хранения пользовательской информации, связанной со списком.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-neuporyadochennyh-spiskov-s-pomoschyu-css">
+       Стилизация неупорядоченных списков с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Неупорядоченные списки можно оформить в соответствии с вашими требованиями к дизайну. Вы можете изменить стиль маркеров, удалить маркеры или настроить интервалы. Вот несколько распространённых приёмов:
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-izmenenie-stiley-markerov">
+<span class="hn">
+        1.
+       </span>
+       Изменение стилей маркеров
+      </h2>
+<p class="text-gray-700 mb-4">
+       Свойство
+       <code>
+        list-style-type
+       </code>
+       позволяет изменить стиль маркера:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+  ul {
+    list-style-type: square; /* Options: disc, circle, square, none */
+  }
+&lt;/style&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<img alt="" height="286" src="https://htmlformatter.github.io/images/html-unordered-lists-e376c55.png" width="647" />
+<p class="text-gray-700 mb-4">
+       Обычные значения для
+       <code>
+        list-style-type
+       </code>
+       включают
+       <code>
+        disc
+       </code>
+       (по умолчанию),
+       <code>
+        circle
+       </code>
+       ,
+       <code>
+        square
+       </code>
+       и
+       <code>
+        none
+       </code>
+       (удаляет маркеры).
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-udalenie-pul">
+<span class="hn">
+        2.
+       </span>
+       Удаление пуль
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы удалить пули, установите
+       <code>
+        list-style-type
+       </code>
+       в
+       <code>
+        none
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+&lt;/style&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<img alt="" height="286" src="https://htmlformatter.github.io/images/html-unordered-lists-6a56c61.png" width="647" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="3-nastroyka-otstupov">
+<span class="hn">
+        3.
+       </span>
+       Настройка отступов
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете настроить отступ элементов списка с помощью
+       <code>
+        padding
+       </code>
+       и
+       <code>
+        margin
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+  ul {
+    padding-left: 20px; /* Increase or decrease indentation */
+  }
+&lt;/style&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Это свойство позволяет вам контролировать отступ содержимого списка от левого поля.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="4-dobavlenie-polzovatelskih-markerov">
+<span class="hn">
+        4.
+       </span>
+       Добавление пользовательских маркеров
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы использовать пользовательские изображения или значки в качестве маркеров, используйте свойство
+       <code>
+        list-style-image
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;style&gt;
+  ul {
+    list-style-image: url('custom-bullet.png');
+  }
+&lt;/style&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<img alt="" height="261" loading="lazy" src="https://htmlformatter.github.io/images/html-unordered-lists-b424cb6.png" width="647" />
+<p class="text-gray-700 mb-4">
+       Такой подход позволяет создавать более креативные проекты.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="vlozhennye-neuporyadochennye-spiski">
+       Вложенные неупорядоченные списки
+      </h2>
+<p class="text-gray-700 mb-4">
+       Неупорядоченные списки можно вкладывать друг в друга, создавая иерархические структуры. Например:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;ul&gt;
+  &lt;li&gt;Parent Item 1
+    &lt;ul&gt;
+      &lt;li&gt;Child Item 1.1&lt;/li&gt;
+      &lt;li&gt;Child Item 1.2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Parent Item 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<img alt="" height="319" loading="lazy" src="https://htmlformatter.github.io/images/html-unordered-lists-7195d29.png" width="647" />
+<p class="text-gray-700 mb-4">
+       Вложенные элементы
+       <code>
+        &lt;ul&gt;
+       </code>
+       создают многоуровневую структуру, каждый из которых по умолчанию имеет отступ.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="voprosy-dostupnosti">
+       Вопросы доступности
+      </h2>
+<p class="text-gray-700 mb-4">
+       Обеспечьте доступность неупорядоченных списков для всех пользователей, следуя этим рекомендациям:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Используйте семантический HTML:
+        </strong>
+        всегда используйте
+        <code>
+         &lt;ul&gt;
+        </code>
+        для неупорядоченных списков, а не div или span.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Предоставьте контекст:
+        </strong>
+        используйте описательный текст или заголовки для представления списков.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Поддержка программ чтения с экрана:
+        </strong>
+        добавьте
+        <code>
+         aria-label
+        </code>
+        или
+        <code>
+         aria-labelledby
+        </code>
+        чтобы описать назначение списка.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="realnye-primery-ispolzovaniya">
+       Реальные примеры использования
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Навигационные меню:
+        </strong>
+        создание навигационных ссылок для веб-сайтов.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Списки характеристик:
+        </strong>
+        выделите особенности продукта или сведения об услуге.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Часто задаваемые вопросы:
+        </strong>
+        представьте список часто задаваемых вопросов.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Списки задач:
+        </strong>
+        отображение списков дел или пунктов действий.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="luchshie-praktiki-ispolzovaniya-neuporyadochennyh-spiskov">
+       Лучшие практики использования неупорядоченных списков
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Делайте списки короткими:
+        </strong>
+        длинные списки могут утомить пользователей; рассмотрите возможность группировки элементов.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Используйте единообразное форматирование:
+        </strong>
+        убедитесь, что все элементы списка соответствуют одному и тому же грамматическому стилю.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Сделайте списки читабельными:
+        </strong>
+        используйте маркеры, пробелы и выравнивание для улучшения читаемости.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Используйте CSS для стилизации:
+        </strong>
+        избегайте встроенных стилей и используйте внешний или внутренний CSS для настройки.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zaklyuchenie">
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       Неупорядоченные списки HTML используются для отображения наборов элементов. Неупорядоченные списки обеспечивают простую, но эффективную структуру, будь то разработка навигационного меню, демонстрация функций или организация контента. Понимая их атрибуты, методы стилизации и особенности доступности, вы сможете эффективно использовать неупорядоченные списки для улучшения своих веб-страниц.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-таблицы - ХТМЛ справочник</title>
+<meta name="description" content="HTML-таблицы: использование &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;th&gt; и других тегов для организации табличной информации." />
+<meta name="keywords" content="1 понимание html-таблиц, 1.1 базовая структура таблицы, 2 заголовка таблицы, 2.1 заголовки столбцов, 2.2 заголовки строк, 3 объединяющих строки и столбцы, 3.1. охват столбцов с помощью colspan, 3.2 объединение строк с помощью rowspan, 4. группировка содержимого таблицы, 4.1 головка, корпус и ножка стола" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-tables/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-таблицы - ХТМЛ справочник" />
+<meta property="og:description" content="HTML-таблицы: использование &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;th&gt; и других тегов для организации табличной информации." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-tables/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-таблицы
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-таблицы необходимы для отображения данных в структурированном табличном формате, что упрощает представление такой информации, как графики, статистика и сравнительные данные.
+      </p>
+<p class="text-gray-700 mb-4">
+       На следующем рисунке показаны компоненты таблицы в HTML.
+      </p>
+<img alt="" height="474" src="https://htmlformatter.github.io/images/html-tables-1c261a8.jpg" width="481" />
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+        Таблица содержит строки и столбцы.
+       </li>
+<li class="ml-4">
+        Каждый столбец может иметь заголовок(ячейку заголовка), которые группируются в заголовке таблицы.
+       </li>
+<li class="ml-4">
+        Каждая строка содержит несколько ячеек.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       В этом уроке мы рассмотрим создание, стилизацию и лучшие практики эффективного использования HTML-таблиц.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#1-ponimanie-html-tablits">
+          1 Понимание HTML-таблиц
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#11-bazovaya-struktura-tablitsy">
+          1.1 Базовая структура таблицы
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#2-zagolovka-tablitsy">
+          2 заголовка таблицы
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#21-zagolovki-stolbtsov">
+          2.1 Заголовки столбцов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#22-zagolovki-strok">
+          2.2 Заголовки строк
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#3-obedinyayuschih-stroki-i-stolbtsy">
+          3 объединяющих строки и столбцы
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#31-ohvat-stolbtsov-s-pomoschyu-colspan">
+          3.1. Охват столбцов с помощью colspan
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#32-obedinenie-strok-s-pomoschyu-rowspan">
+          3.2 Объединение строк с помощью rowspan
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#4-gruppirovka-soderzhimogo-tablitsy">
+          4. Группировка содержимого таблицы
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#41-golovka-korpus-i-nozhka-stola">
+          4.1 Головка, корпус и ножка стола
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#5-tablits-ukladki">
+          5 таблиц укладки
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#51-dobavlenie-granits">
+          5.1 Добавление границ
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#52-nastroyka-zapolneniya-i-vyravnivaniya">
+          5.2 Настройка заполнения и выравнивания
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#53-dobavlenie-tsvetov-strok">
+          5.3 Добавление цветов строк
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#6-adaptivnyh-tablits">
+          6 адаптивных таблиц
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#7-dostupnyh-stolov">
+          7 доступных столов
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#uchebnye-posobiya-po-html-tablitsam">
+          Учебные пособия по HTML-таблицам
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#zaklyuchenie">
+          Заключение
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="1-ponimanie-html-tablits">
+<span class="hn">
+        1
+       </span>
+       Понимание HTML-таблиц
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-таблица определяется с помощью элемента
+       <code>
+        &lt;table&gt;
+       </code>
+       , который содержит строки(
+       <code>
+        &lt;tr&gt;
+       </code>
+       ) и ячейки(
+       <code>
+        &lt;td&gt;
+       </code>
+       для ячеек данных и
+       <code>
+        &lt;th&gt;
+       </code>
+       для ячеек заголовков). Такая структура позволяет упорядоченно представлять данные в строках и столбцах.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="11-bazovaya-struktura-tablitsy">
+       1.1 Базовая структура таблицы
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример простой HTML-таблицы:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+    &lt;th&gt;City&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alice&lt;/td&gt;
+    &lt;td&gt;30&lt;/td&gt;
+    &lt;td&gt;New York&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Bob&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+    &lt;td&gt;Los Angeles&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       В этом примере:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         &lt;table&gt;
+        </code>
+        определяет таблицу.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;tr&gt;
+        </code>
+        определяет строку таблицы.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;th&gt;
+        </code>
+        определяет ячейку заголовка.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;td&gt;
+        </code>
+        определяет стандартную ячейку данных.
+       </li>
+</ul>
+<img alt="" height="703" src="https://htmlformatter.github.io/images/html-tables-7dd3d54.png" width="599" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="2-zagolovka-tablitsy">
+<span class="hn">
+        2
+       </span>
+       заголовка таблицы
+      </h2>
+<p class="text-gray-700 mb-4">
+       Заголовки таблиц создаются с помощью элемента
+       <code>
+        &lt;th&gt;
+       </code>
+       и обычно используются для маркировки столбцов или строк, предоставляя контекст для данных.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="21-zagolovki-stolbtsov">
+       2.1 Заголовки столбцов
+      </h2>
+<p class="text-gray-700 mb-4">
+       Заголовки столбцов размещаются в первой строке таблицы:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;tr&gt;
+  &lt;th&gt;Name&lt;/th&gt;
+  &lt;th&gt;Age&lt;/th&gt;
+  &lt;th&gt;City&lt;/th&gt;
+&lt;/tr&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Вот полный пример использования элементов
+       <code>
+        &lt;tr&gt;
+       </code>
+       ,
+       <code>
+        &lt;th&gt;
+       </code>
+       и
+       <code>
+        &lt;td&gt;
+       </code>
+       для создания простой таблицы со строкой заголовка и строкой данных, где первая ячейка в строке данных использует
+       <code>
+        &lt;th&gt;
+       </code>
+       в качестве заголовка строки:
+      </p>
+<img alt="" height="757" src="https://htmlformatter.github.io/images/html-tables-b3df704.png" width="599" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="22-zagolovki-strok">
+       2.2 Заголовки строк
+      </h2>
+<p class="text-gray-700 mb-4">
+       Заголовки строк можно разместить в первой ячейке каждой строки:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;tr&gt;
+  &lt;th&gt;Alice&lt;/th&gt;
+  &lt;td&gt;30&lt;/td&gt;
+  &lt;td&gt;New York&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Вот полный пример использования элементов
+       <code>
+        &lt;tr&gt;
+       </code>
+       ,
+       <code>
+        &lt;th&gt;
+       </code>
+       и
+       <code>
+        &lt;td&gt;
+       </code>
+       для создания простой таблицы со строкой заголовка и строкой данных, где первая ячейка в строке данных использует
+       <code>
+        &lt;th&gt;
+       </code>
+       в качестве заголовка строки:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code> &lt;style&gt;
+    table {
+      width: 50%;
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+  &lt;/style&gt;
+
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Person&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+        &lt;th&gt;City&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Alice&lt;/th&gt;
+        &lt;td&gt;30&lt;/td&gt;
+        &lt;td&gt;New York&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Bob&lt;/th&gt;
+        &lt;td&gt;25&lt;/td&gt;
+        &lt;td&gt;Los Angeles&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Charlie&lt;/th&gt;
+        &lt;td&gt;35&lt;/td&gt;
+        &lt;td&gt;Chicago&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;</code></pre>
+<img alt="" height="757" loading="lazy" src="https://htmlformatter.github.io/images/html-tables-2471a34.png" width="599" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="3-obedinyayuschih-stroki-i-stolbtsy">
+<span class="hn">
+        3
+       </span>
+       объединяющих строки и столбцы
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы объединить ячейки в нескольких строках или столбцах, используйте атрибуты
+       <code>
+        rowspan
+       </code>
+       и
+       <code>
+        colspan
+       </code>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="31-ohvat-stolbtsov-s-pomoschyu-colspan">
+       3.1. Охват столбцов с помощью
+       <code>
+        colspan
+       </code>
+</h2>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        colspan
+       </code>
+       позволяет ячейке охватывать несколько столбцов:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;tr&gt;
+  &lt;td colspan="2"&gt;Merged Cell&lt;/td&gt;
+  &lt;td&gt;Regular Cell&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Вот полный пример, демонстрирующий использование
+       <code>
+        &lt;td colspan="2"&gt;
+       </code>
+       для объединения двух столбцов в строке:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code> &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Column 1&lt;/th&gt;
+        &lt;th&gt;Column 2&lt;/th&gt;
+        &lt;th&gt;Column 3&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td colspan="2"&gt;Merged Cell&lt;/td&gt;
+        &lt;td&gt;Regular Cell&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Data 1&lt;/td&gt;
+        &lt;td&gt;Data 2&lt;/td&gt;
+        &lt;td&gt;Data 3&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;</code></pre>
+<img alt="" height="774" loading="lazy" src="https://htmlformatter.github.io/images/html-tables-f90151f.png" width="599" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="32-obedinenie-strok-s-pomoschyu-rowspan">
+       3.2 Объединение строк с помощью
+       <code>
+        rowspan
+       </code>
+</h2>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        rowspan
+       </code>
+       позволяет ячейке охватывать несколько строк:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;tr&gt;
+  &lt;td rowspan="2"&gt;Merged Cell&lt;/td&gt;
+  &lt;td&gt;Regular Cell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Regular Cell&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+<img alt="" height="774" loading="lazy" src="https://htmlformatter.github.io/images/html-tables-663860f.png" width="599" />
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="4-gruppirovka-soderzhimogo-tablitsy">
+<span class="hn">
+        4.
+       </span>
+       Группировка содержимого таблицы
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML предоставляет элементы для группировки содержимого таблицы, что повышает читаемость и доступность.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="41-golovka-korpus-i-nozhka-stola">
+       4.1 Головка, корпус и ножка стола
+      </h2>
+<p class="text-gray-700 mb-4">
+       Для группировки разделов таблицы используйте следующие элементы:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<code>
+         &lt;thead&gt;
+        </code>
+        : Группирует содержимое заголовка.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;tbody&gt;
+        </code>
+        : Группирует содержимое тела.
+       </li>
+<li class="ml-4">
+<code>
+         &lt;tfoot&gt;
+        </code>
+        : Группирует содержимое нижнего колонтитула.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Пример:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;City&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alice&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
+      &lt;td&gt;New York&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bob&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;Los Angeles&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td colspan="3"&gt;End of Table&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+<img alt="" height="486" loading="lazy" src="https://htmlformatter.github.io/images/html-tables-1ee1a00.png" width="599" />
+<p class="text-gray-700 mb-4">
+       Использование
+       <code>
+        &lt;thead&gt;
+       </code>
+       ,
+       <code>
+        &lt;tbody&gt;
+       </code>
+       и
+       <code>
+        &lt;tfoot&gt;
+       </code>
+       помогает организовать структуру таблицы, упрощая ее стилизацию и управление.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="5-tablits-ukladki">
+<span class="hn">
+        5
+       </span>
+       таблиц укладки
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-таблицы можно стилизовать с помощью CSS для улучшения их внешнего вида и удобства использования. Ниже приведены некоторые распространённые свойства CSS для стилизации таблиц.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="51-dobavlenie-granits">
+       5.1 Добавление границ
+      </h2>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}</code></pre>
+<p class="text-gray-700 mb-4">
+       Это добавит сплошную границу к таблице, строкам и ячейкам и предотвратит перекрытие границ путем их схлопывания.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="52-nastroyka-zapolneniya-i-vyravnivaniya">
+       5.2 Настройка заполнения и выравнивания
+      </h2>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>th, td {
+  padding: 10px;
+  text-align: center;
+}</code></pre>
+<p class="text-gray-700 mb-4">
+       Отступ добавляет пространство внутри ячеек, а
+       <code>
+        text-align
+       </code>
+       центрирует содержимое.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="53-dobavlenie-tsvetov-strok">
+       5.3 Добавление цветов строк
+      </h2>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}</code></pre>
+<p class="text-gray-700 mb-4">
+       Этот CSS-код применяет чередующиеся цвета строк для лучшей читаемости и подсвечивает строку при наведении на нее курсора.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="6-adaptivnyh-tablits">
+<span class="hn">
+        6
+       </span>
+       адаптивных таблиц
+      </h2>
+<p class="text-gray-700 mb-4">
+       Адаптивные таблицы адаптируются к экранам разных размеров. Вы можете сделать таблицы прокручиваемыми на экранах меньшего размера, поместив их в контейнер:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;div style="overflow-x: auto;"&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;City&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alice&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
+      &lt;td&gt;New York&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Для более развитой адаптивности используйте CSS-фреймворки, такие как Bootstrap, которые предоставляют адаптивные классы таблиц.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="7-dostupnyh-stolov">
+<span class="hn">
+        7
+       </span>
+       доступных столов
+      </h2>
+<p class="text-gray-700 mb-4">
+       Чтобы сделать таблицы доступными для программ чтения с экрана, используйте следующие методы:
+      </p>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Атрибут области действия:
+        </strong>
+        используйте атрибут
+        <code>
+         scope
+        </code>
+        в
+        <code>
+         &lt;th&gt;
+        </code>
+        , чтобы указать, применяется ли он к строке или столбцу.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Подпись:
+        </strong>
+        Добавьте
+        <code>
+         &lt;caption&gt;
+        </code>
+        чтобы описать назначение таблицы.
+       </li>
+</ul>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;table&gt;
+  &lt;caption&gt;Employee Data&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Name&lt;/th&gt;
+      &lt;th scope="col"&gt;Age&lt;/th&gt;
+      &lt;th scope="col"&gt;City&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+&lt;/table&gt;</code></pre>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="uchebnye-posobiya-po-html-tablitsam">
+       Учебные пособия по HTML-таблицам
+      </h2>
+<p class="text-gray-700 mb-4">
+       Следующий список руководств охватывает различные варианты использования, специфичные для HTML-таблиц.
+      </p>
+<ul class="wp-block-list tl">
+<li class="ml-4">
+<a href="https://htmlformatter.github.io/html-table-borders/">
+         Границы HTML-таблиц
+        </a>
+</li>
+<li class="ml-4">
+<a href="https://htmlformatter.github.io/html-table-caption/">
+         Заголовок HTML-таблицы
+        </a>
+</li>
+<li class="ml-4">
+<a href="https://htmlformatter.github.io/html-table-colgroup/">
+         Группа столбцов HTML-таблицы
+        </a>
+</li>
+<li class="ml-4">
+<a href="https://htmlformatter.github.io/html-table-col-span/">
+         Диапазон столбцов HTML-таблицы
+        </a>
+</li>
+<li class="ml-4">
+        Заголовок HTML-таблицы для нескольких столбцов
+       </li>
+<li class="ml-4">
+        Диапазон строк HTML-таблицы
+       </li>
+<li class="ml-4">
+<a href="https://htmlformatter.github.io/html-table-column-width/">
+         Ширина столбца HTML-таблицы
+        </a>
+</li>
+<li class="ml-4">
+<a href="https://htmlformatter.github.io/html-table-border-space/">
+         Расстояние между ячейками HTML-таблицы
+        </a>
+</li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="zaklyuchenie">
+       Заключение
+      </h2>
+<p class="text-gray-700 mb-4">
+       HTML-таблицы — мощный инструмент для эффективного представления данных. Используя атрибуты, стили и адаптивность, вы можете создавать визуально привлекательные, доступные и функциональные таблицы. Понимание основ и применение расширенных функций поможет вам создавать более качественные представления данных для ваших веб-проектов.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

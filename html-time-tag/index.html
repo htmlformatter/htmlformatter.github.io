@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;time&gt; или время - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;time&gt; в HTML: отображение даты или времени с возможностью стандартизированного формата для машинного считывания." />
+<meta name="keywords" content="базовый синтаксис html-тега time, пример конкретного момента времени, пример продолжительности, пример повторяющегося времени, стилизация тега time с помощью css, атрибуты html-тега time, практическое применение тега time" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-time-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;time&gt; или время - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;time&gt; в HTML: отображение даты или времени с возможностью стандартизированного формата для машинного считывания." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-time-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;время&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;time&gt;
+       </code>
+       представляет собой определённый момент времени, промежуток времени или повторяющийся момент времени в документе. Он используется для придания семантического значения данным, связанным со временем, делая их пригодными для машинного чтения и улучшая доступность для таких приложений, как календари, планировщики мероприятий и поисковые системы.
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;time&gt;
+       </code>
+       может включать необязательный атрибут
+       <code>
+        datetime
+       </code>
+       , который определяет машиночитаемый формат времени или даты.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-lttimegt">
+          Базовый синтаксис HTML-тега &lt;time&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-konkretnogo-momenta-vremeni">
+          Пример конкретного момента времени
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-prodolzhitelnosti">
+          Пример продолжительности
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-povtoryayuschegosya-vremeni">
+          Пример повторяющегося времени
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-tega-lttimegt-s-pomoschyu-css">
+          Стилизация тега &lt;time&gt; с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-lttimegt">
+          Атрибуты HTML-тега &lt;time&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-lttimegt">
+          Практическое применение тега &lt;time&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-lttimegt">
+       Базовый синтаксис HTML-тега &lt;time&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура тега
+       <code>
+        &lt;time&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;time datetime="YYYY-MM-DDThh:mm:ssTZD"&gt;Human-readable time&lt;/time&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Здесь атрибут
+       <code>
+        datetime
+       </code>
+       используется для указания машиночитаемого формата времени.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-konkretnogo-momenta-vremeni">
+       Пример конкретного момента времени
+      </h2>
+<p class="text-gray-700 mb-4">
+       В следующем примере тег
+       <code>
+        &lt;time&gt;
+       </code>
+       используется для указания даты события:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;The event will take place on &lt;time datetime="2024-12-25"&gt;December 25, 2024&lt;/time&gt;.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="254" src="https://htmlformatter.github.io/images2/html-tag-758864b.png" width="608" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       Атрибут
+       <code>
+        datetime
+       </code>
+       указывает дату в машиночитаемом формате(
+       <code>
+        2024-12-25
+       </code>
+       ), тогда как текст внутри тега
+       <code>
+        &lt;time&gt;
+       </code>
+       предоставляет версию, удобную для чтения человеком.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-prodolzhitelnosti">
+       Пример продолжительности
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;time&gt;
+       </code>
+       также может представлять длительность с помощью атрибута
+       <code>
+        datetime
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;The estimated travel time is &lt;time datetime="PT2H30M"&gt;2 hours and 30 minutes&lt;/time&gt;.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="254" src="https://htmlformatter.github.io/images2/html-tag-0e38e33.png" width="608" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       Атрибут
+       <code>
+        datetime
+       </code>
+       использует формат ISO 8601(
+       <code>
+        PT2H30M
+       </code>
+       ) для представления длительности 2 часа 30 минут.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-povtoryayuschegosya-vremeni">
+       Пример повторяющегося времени
+      </h2>
+<p class="text-gray-700 mb-4">
+       Повторяющиеся события также можно разметить с помощью тега
+       <code>
+        &lt;time&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;The team meeting is held every &lt;time datetime="2024-12-12T10:00:00"&gt;Thursday at 10:00 AM&lt;/time&gt;.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="254" src="https://htmlformatter.github.io/images2/html-tag-2afe74e.png" width="608" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       Атрибут
+       <code>
+        datetime
+       </code>
+       указывает повторяющееся время с использованием определенного формата даты и времени.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-tega-lttimegt-s-pomoschyu-css">
+       Стилизация тега &lt;time&gt; с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете стилизовать тег
+       <code>
+        &lt;time&gt;
+       </code>
+       чтобы визуально подчеркнуть время или дату:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            time {
+                font-weight: bold;
+                color: #007BFF;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;The deadline is &lt;time datetime="2024-12-31"&gt;December 31, 2024&lt;/time&gt;.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="" height="254" loading="lazy" src="https://htmlformatter.github.io/images2/html-tag-3da7054.png" width="608" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       время или дата, отображаемые тегом
+       <code>
+        &lt;time&gt;
+       </code>
+       выделены жирным шрифтом и синим цветом для выделения.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-lttimegt">
+       Атрибуты HTML-тега &lt;time&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         datetime:
+        </strong>
+        Задаёт машиночитаемый формат времени или даты. Поддерживает форматы ISO 8601 для дат(
+        <code>
+         YYYY-MM-DD
+        </code>
+        ), времени(
+        <code>
+         hh:mm:ss
+        </code>
+        ), продолжительности(
+        <code>
+         PT1H30M
+        </code>
+        ) и других.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Глобальные атрибуты:
+        </strong>
+        поддерживает все глобальные атрибуты, такие как
+        <code>
+         id
+        </code>
+        ,
+        <code>
+         class
+        </code>
+        и
+        <code>
+         style
+        </code>
+        .
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-lttimegt">
+       Практическое применение тега &lt;time&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Планирование мероприятий:
+        </strong>
+        отметьте даты и время мероприятий для ясности и поисковой оптимизации.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Доступность:
+        </strong>
+        предоставьте машиночитаемые форматы времени для программ чтения с экрана и вспомогательных технологий.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Динамические приложения:
+        </strong>
+        используйте атрибут
+        <code>
+         datetime
+        </code>
+        для систем календаря, напоминаний или программного обеспечения для планирования.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         SEO:
+        </strong>
+        Улучшите видимость в поисковых системах, отметив важные даты и время в структурированных форматах.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

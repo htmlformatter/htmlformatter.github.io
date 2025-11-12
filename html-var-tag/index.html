@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;var&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;var&gt; в HTML: выделение переменных в тексте, часто используется в формулах или коде." />
+<meta name="keywords" content="базовый синтаксис html-тега var, пример переменной в математической формуле, пример использования тега var в контексте программирования, стилизация тега var с помощью css, преимущества доступности тега var, практическое применение тега var" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-var-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;var&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;var&gt; в HTML: выделение переменных в тексте, часто используется в формулах или коде." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-var-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;var&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;var&gt;
+       </code>
+       используется для определения переменной в математическом выражении или контексте программирования. Обычно по умолчанию он отображается курсивом, что указывает на его семантическое значение как переменной. Тег
+       <code>
+        &lt;var&gt;
+       </code>
+       часто используется в образовательных материалах, документации и примерах кода, где необходимо чётко различать переменные.
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;var&gt;
+       </code>
+       предоставляет семантическое значение, которое улучшает доступность и помогает программам чтения с экрана идентифицировать его как переменную.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-ltvargt">
+          Базовый синтаксис HTML-тега &lt;var&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-peremennoy-v-matematicheskoy-formule">
+          Пример переменной в математической формуле
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-ispolzovaniya-tega-ltvargt-v-kontekste-programmirovaniya">
+          Пример использования тега &lt;var&gt; в контексте программирования
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-tega-ltvargt-s-pomoschyu-css">
+          Стилизация тега &lt;var&gt; с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#preimuschestva-dostupnosti-tega-ltvargt">
+          Преимущества доступности тега &lt;var&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-ltvargt">
+          Практическое применение тега &lt;var&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-ltvargt">
+       Базовый синтаксис HTML-тега &lt;var&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура тега
+       <code>
+        &lt;var&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;var&gt;variable-name&lt;/var&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Текст, заключенный в тег
+       <code>
+        &lt;var&gt;
+       </code>
+       , помечается как переменная и отображается курсивом по умолчанию.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-peremennoy-v-matematicheskoy-formule">
+       Пример переменной в математической формуле
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример использования тега
+       <code>
+        &lt;var&gt;
+       </code>
+       для отображения переменной в математической формуле:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;The formula for the area of a circle is &lt;var&gt;r&lt;/var&gt;²π, where &lt;var&gt;r&lt;/var&gt; represents the radius of the circle.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Пример переменной в математической формуле с использованием тега var в HTML" height="283" src="https://htmlformatter.github.io/images2/html-tag-93c8edd.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Тег
+       <code>
+        &lt;var&gt;
+       </code>
+       выделяет переменную
+       <code>
+        r
+       </code>
+       , делая ее заметной в математическом контексте.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-ispolzovaniya-tega-ltvargt-v-kontekste-programmirovaniya">
+       Пример использования тега &lt;var&gt; в контексте программирования
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;var&gt;
+       </code>
+       также может использоваться для представления переменных в программном коде:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;In the code snippet, &lt;var&gt;x&lt;/var&gt; is the variable storing the value of the sum:&lt;/p&gt;
+        &lt;code&gt;
+            let &lt;var&gt;x&lt;/var&gt; = a + b;
+        &lt;/code&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Пример использования тега var в контексте программирования" height="283" src="https://htmlformatter.github.io/images2/html-tag-86f3431.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Переменная
+       <code>
+        x
+       </code>
+       отмечена тегом
+       <code>
+        &lt;var&gt;
+       </code>
+       для семантического акцента, в то время как блок кода использует тег
+       <code>
+        &lt;code&gt;
+       </code>
+       .
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-tega-ltvargt-s-pomoschyu-css">
+       Стилизация тега &lt;var&gt; с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;var&gt;
+       </code>
+       можно стилизовать в соответствии с дизайном вашей веб-страницы. Например:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            var {
+                font-style: italic;
+                color: #007BFF;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;The value of &lt;var&gt;x&lt;/var&gt; changes dynamically based on the inputs.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Оформление тега var с помощью CSS" height="283" src="https://htmlformatter.github.io/images2/html-tag-4426fe3.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       переменная
+       <code>
+        x
+       </code>
+       отображается курсивом с пользовательским цветом.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="preimuschestva-dostupnosti-tega-ltvargt">
+       Преимущества доступности тега &lt;var&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;var&gt;
+       </code>
+       имеет семантическое значение, помогающее программам экранного доступа распознавать переменные, особенно в образовательном или техническом контенте. Это улучшает доступность контента для пользователей с нарушениями зрения.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-ltvargt">
+       Практическое применение тега &lt;var&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Математические выражения:
+        </strong>
+        выделение переменных в формулах и уравнениях.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Учебные пособия по программированию:
+        </strong>
+        для ясности выделяйте имена переменных в примерах кода.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Образовательный контент:
+        </strong>
+        используйте тег
+        <code>
+         &lt;var&gt;
+        </code>
+        в документации или учебниках для лучшей читаемости.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Семантическая разметка:
+        </strong>
+        добавление семантического значения к переменным для улучшения доступности и поисковой оптимизации.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

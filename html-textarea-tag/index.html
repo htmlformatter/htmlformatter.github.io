@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;textarea&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;textarea&gt; в HTML: создание многострочного текстового поля для ввода пользователем." />
+<meta name="keywords" content="базовый синтаксис тега html textarea, пример простого textarea, атрибуты html-тега textarea, пример с дополнительными атрибутами, стилизация тега textarea с помощью css, практическое применение тега textarea" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-textarea-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;textarea&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;textarea&gt; в HTML: создание многострочного текстового поля для ввода пользователем." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-textarea-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;textarea&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;textarea&gt;
+       </code>
+       используется для определения многострочного поля ввода, в которое пользователи могут вводить большой объём текста. Он обычно используется в формах для комментариев, отзывов и в любых ситуациях, требующих расширенного ввода данных. В отличие от тега
+       <code>
+        &lt;input&gt;
+       </code>
+       с
+       <code>
+        type="text"
+       </code>
+       , тег
+       <code>
+        &lt;textarea&gt;
+       </code>
+       допускает перенос текста и предоставляет больше места для контента.
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;textarea&gt;
+       </code>
+       требует открывающего и закрывающего тега, а любой текст между ними служит содержимым по умолчанию.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-tega-html-lttextareagt">
+          Базовый синтаксис тега HTML &lt;textarea&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-prostogo-lttextareagt">
+          Пример простого &lt;textarea&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-lttextareagt">
+          Атрибуты HTML-тега &lt;textarea&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-s-dopolnitelnymi-atributami">
+          Пример с дополнительными атрибутами
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-tega-lttextareagt-s-pomoschyu-css">
+          Стилизация тега &lt;textarea&gt; с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-lttextareagt">
+          Практическое применение тега &lt;textarea&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-tega-html-lttextareagt">
+       Базовый синтаксис тега HTML &lt;textarea&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура элемента
+       <code>
+        &lt;textarea&gt;
+       </code>
+       следующая:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;textarea name="name" rows="rows" cols="cols"&gt;
+    Default text goes here.
+&lt;/textarea&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Атрибут
+       <code>
+        name
+       </code>
+       указывает имя поля, а
+       <code>
+        rows
+       </code>
+       и
+       <code>
+        cols
+       </code>
+       определяют видимый размер текстовой области.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-prostogo-lttextareagt">
+       Пример простого &lt;textarea&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример простого
+       <code>
+        &lt;textarea&gt;
+       </code>
+       для отзывов пользователей:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Feedback Form&lt;/h2&gt;
+        &lt;form&gt;
+            &lt;label for="feedback"&gt;Your Feedback:&lt;/label&gt;
+
+            &lt;textarea id="feedback" name="feedback" rows="4" cols="50"&gt;
+Enter your feedback here...
+            &lt;/textarea&gt;
+
+
+            &lt;button type="submit"&gt;Submit&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Пример простой текстовой области" height="407" src="https://htmlformatter.github.io/images2/html-tag-102f954.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+<code>
+        &lt;textarea&gt;
+       </code>
+       предоставляет многострочное поле ввода с 4 строками и 50 столбцами, содержащее по умолчанию текст-заполнитель.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-lttextareagt">
+       Атрибуты HTML-тега &lt;textarea&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Имя:
+        </strong>
+        Указывает имя текстовой области, используемой для отправки формы.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         строки:
+        </strong>
+        определяет количество видимых строк текста.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         cols:
+        </strong>
+        Определяет ширину текстовой области в символах.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Заполнитель:
+        </strong>
+        отображает текст-заполнитель, если текстовая область пуста.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         maxlength:
+        </strong>
+        Указывает максимально допустимое количество символов.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         обязательно:
+        </strong>
+        обеспечивает заполнение текстовой области перед отправкой формы.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         только для чтения:
+        </strong>
+        делает текстовую область нередактируемой.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         отключено:
+        </strong>
+        отключает текстовую область.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Глобальные атрибуты:
+        </strong>
+        поддерживает все глобальные атрибуты, такие как
+        <code>
+         id
+        </code>
+        ,
+        <code>
+         class
+        </code>
+        и
+        <code>
+         style
+        </code>
+        .
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-s-dopolnitelnymi-atributami">
+       Пример с дополнительными атрибутами
+      </h2>
+<p class="text-gray-700 mb-4">
+       Следующий пример включает различные атрибуты для лучшего контроля:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Contact Us&lt;/h2&gt;
+        &lt;form&gt;
+            &lt;label for="message"&gt;Message:&lt;/label&gt;
+
+            &lt;textarea id="message" name="message" rows="6" cols="40" placeholder="Enter your message here..." maxlength="500" required&gt;&lt;/textarea&gt;
+
+
+            &lt;button type="submit"&gt;Send&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Пример с дополнительными атрибутами" height="407" src="https://htmlformatter.github.io/images2/html-tag-dde4d07.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       В этом примере используются атрибуты
+       <code>
+        placeholder
+       </code>
+       ,
+       <code>
+        maxlength
+       </code>
+       и
+       <code>
+        required
+       </code>
+       для расширения функциональности.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-tega-lttextareagt-s-pomoschyu-css">
+       Стилизация тега &lt;textarea&gt; с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Элемент
+       <code>
+        &lt;textarea&gt;
+       </code>
+       можно стилизовать с помощью CSS для улучшения его внешнего вида:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            textarea {
+                width: calc(100% - 20px);
+                height: 150px;
+                padding: 10px;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                resize: vertical;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Styled Textarea&lt;/h2&gt;
+        &lt;textarea placeholder="Type your text here..."&gt;&lt;/textarea&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Стилизация текстовой области Тег с помощью CSS" height="407" src="https://htmlformatter.github.io/images2/html-tag-b8b6866.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       Текстовая область оформлена скругленными углами, отступами и изменяемыми размерами высоты для удобства использования.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-lttextareagt">
+       Практическое применение тега &lt;textarea&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Формы обратной связи:
+        </strong>
+        позволяют пользователям отправлять подробные отзывы или комментарии.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Системы обмена сообщениями:
+        </strong>
+        создайте поля ввода для написания сообщений или электронных писем.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Редакторы кода:
+        </strong>
+        используйте
+        <code>
+         &lt;textarea&gt;
+        </code>
+        для написания и редактирования фрагментов кода.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Динамический контент:
+        </strong>
+        динамическое заполнение и управление текстовыми областями с помощью JavaScript для интерактивных веб-приложений.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

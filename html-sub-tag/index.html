@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;sub&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;sub&gt; в HTML: создание нижнего индекса для текста, часто используется в формулах или химических обозначениях." />
+<meta name="keywords" content="базовый синтаксис html-тега sub, пример использования тега sub, стилизация тега sub с помощью css, атрибуты html-тега sub, практическое применение тега sub" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-sub-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;sub&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;sub&gt; в HTML: создание нижнего индекса для текста, часто используется в формулах или химических обозначениях." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-sub-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;sub&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;sub&gt;
+       </code>
+       используется для определения подстрочного текста. Подстрочный текст отображается меньше и располагается немного ниже основной строки текста. Этот тег обычно используется в математических выражениях, химических формулах и аннотациях, где требуется подстрочный текст.
+      </p>
+<p class="text-gray-700 mb-4">
+       Подстрочный текст можно дополнительно стилизовать с помощью CSS, но тег
+       <code>
+        &lt;sub&gt;
+       </code>
+       придает семантическое значение заключенному в нем тексту, делая его более доступным и понятным для вспомогательных технологий.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-ltsubgt">
+          Базовый синтаксис HTML-тега &lt;sub&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-ispolzovaniya-tega-ltsubgt">
+          Пример использования тега &lt;sub&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-tega-ltsubgt-s-pomoschyu-css">
+          Стилизация тега &lt;sub&gt; с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-ltsubgt">
+          Атрибуты HTML-тега &lt;sub&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-ltsubgt">
+          Практическое применение тега &lt;sub&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-ltsubgt">
+       Базовый синтаксис HTML-тега &lt;sub&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура тега
+       <code>
+        &lt;sub&gt;
+       </code>
+       :
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;p&gt;This is normal text with a &lt;sub&gt;subscript&lt;/sub&gt;.&lt;/p&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;sub&gt;
+       </code>
+       изменяет только визуальное расположение текста, сохраняя его семантическое значение.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-ispolzovaniya-tega-ltsubgt">
+       Пример использования тега &lt;sub&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример использования тега
+       <code>
+        &lt;sub&gt;
+       </code>
+       в химической формуле:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Chemical Formula Example&lt;/h2&gt;
+        &lt;p&gt;The chemical formula for water is H&lt;sub&gt;2&lt;/sub&gt;O.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Пример использования тега sub" height="290" src="https://htmlformatter.github.io/images2/html-tag-4527b55.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       «2» в слове H2O отображается как нижний индекс, следуя стандартной записи химических формул.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-tega-ltsubgt-s-pomoschyu-css">
+       Стилизация тега &lt;sub&gt; с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Для дальнейшей настройки внешнего вида подстрочного текста можно использовать CSS:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            sub {
+                font-size: 0.8em;
+                color: #007BFF;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Styled Subscript Example&lt;/h2&gt;
+        &lt;p&gt;The chemical formula for water is H&lt;sub&gt;2&lt;/sub&gt;O.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Оформление тега sub с помощью CSS" height="290" src="https://htmlformatter.github.io/images2/html-tag-ff7f0d0.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       нижний индекс «2» в слове H2O имеет меньший размер шрифта и синий цвет для лучшей видимости.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-ltsubgt">
+       Атрибуты HTML-тега &lt;sub&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Глобальные атрибуты:
+        </strong>
+        тег
+        <code>
+         &lt;sub&gt;
+        </code>
+        поддерживает все глобальные атрибуты, такие как
+        <code>
+         id
+        </code>
+        ,
+        <code>
+         class
+        </code>
+        и
+        <code>
+         style
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Атрибуты событий:
+        </strong>
+        вы можете прикрепить обработчики событий, такие как
+        <code>
+         onclick
+        </code>
+        или
+        <code>
+         onmouseover
+        </code>
+        к тегу
+        <code>
+         &lt;sub&gt;
+        </code>
+        .
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Эти атрибуты позволяют стилизовать или добавить интерактивность подстрочному тексту.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-ltsubgt">
+       Практическое применение тега &lt;sub&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Химические формулы:
+        </strong>
+        представляют нижние индексы в формулах, например H2O или CO2.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Математические обозначения:
+        </strong>
+        отображение переменных или индексов, таких как x1, x2 и т. д.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Аннотации:
+        </strong>
+        добавьте ссылки или сноски в текст(например, «Ссылка1»).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Научные обозначения:
+        </strong>
+        используйте нижний индекс для единиц измерения или переменных в физике и других науках.
+       </li>
+</ul>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;sub&gt;
+       </code>
+       — это простой, но эффективный способ форматирования подстрочного текста научного, математического или технического содержания с сохранением семантического значения.
+      </p>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;td&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;td&gt; в HTML: создание ячейки таблицы с данными внутри строки &lt;tr&gt;." />
+<meta name="keywords" content="базовый синтаксис тега html td, пример простой таблицы с ячейками td, атрибуты html-тега td, объединение ячеек с использованием colspan и rowspan, стилизация ячеек td с помощью css, практическое применение тега td" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-td-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;td&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;td&gt; в HTML: создание ячейки таблицы с данными внутри строки &lt;tr&gt;." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-td-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;td&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;td&gt;
+       </code>
+       определяет стандартную ячейку данных в HTML-таблице. Он является дочерним элементом элемента
+       <code>
+        &lt;tr&gt;
+       </code>
+       (строка таблицы) и используется для отображения данных в строках и столбцах внутри тега
+       <code>
+        &lt;table&gt;
+       </code>
+       . По умолчанию элементы
+       <code>
+        &lt;td&gt;
+       </code>
+       содержат неформатированный текст, выровненный по левому краю, если не указано иное.
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;td&gt;
+       </code>
+       является основным компонентом HTML-таблиц, наряду с
+       <code>
+        &lt;th&gt;
+       </code>
+       (ячейки заголовков) и
+       <code>
+        &lt;tr&gt;
+       </code>
+       .
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-tega-html-lttdgt">
+          Базовый синтаксис тега HTML &lt;td&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-prostoy-tablitsy-s-yacheykami-lttdgt">
+          Пример простой таблицы с ячейками &lt;td&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-lttdgt">
+          Атрибуты HTML-тега &lt;td&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#obedinenie-yacheek-s-ispolzovaniem-colspan-i-rowspan">
+          Объединение ячеек с использованием colspan и rowspan
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-yacheek-lttdgt-s-pomoschyu-css">
+          Стилизация ячеек &lt;td&gt; с помощью CSS
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-lttdgt">
+          Практическое применение тега &lt;td&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-tega-html-lttdgt">
+       Базовый синтаксис тега HTML &lt;td&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура таблицы с ячейками
+       <code>
+        &lt;td&gt;
+       </code>
+       следующая:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Data 1&lt;/td&gt;
+        &lt;td&gt;Data 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Data 3&lt;/td&gt;
+        &lt;td&gt;Data 4&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Каждый
+       <code>
+        &lt;td&gt;
+       </code>
+       представляет одну ячейку данных в таблице.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-prostoy-tablitsy-s-yacheykami-lttdgt">
+       Пример простой таблицы с ячейками &lt;td&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример таблицы, отображающей информацию о студентах:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Student Information&lt;/h2&gt;
+        &lt;table border="1"&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Age&lt;/th&gt;
+                &lt;th&gt;Grade&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Alice&lt;/td&gt;
+                &lt;td&gt;14&lt;/td&gt;
+                &lt;td&gt;A&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Bob&lt;/td&gt;
+                &lt;td&gt;15&lt;/td&gt;
+                &lt;td&gt;B&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Пример простой таблицы с ячейками td" height="407" src="https://htmlformatter.github.io/images2/html-tag-334bc91.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Каждая ячейка
+       <code>
+        &lt;td&gt;
+       </code>
+       содержит отдельные фрагменты данных, организованные в строки внутри таблицы.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-lttdgt">
+       Атрибуты HTML-тега &lt;td&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         colspan:
+        </strong>
+        определяет количество столбцов, которые должна охватывать ячейка.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         rowspan:
+        </strong>
+        указывает количество строк, которые должна охватывать ячейка.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         заголовки:
+        </strong>
+        связывают ячейку с одним или несколькими элементами
+        <code>
+         &lt;th&gt;
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Глобальные атрибуты:
+        </strong>
+        поддерживает все глобальные атрибуты, такие как
+        <code>
+         id
+        </code>
+        ,
+        <code>
+         class
+        </code>
+        и
+        <code>
+         style
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Атрибуты событий:
+        </strong>
+        поддерживает такие атрибуты событий, как
+        <code>
+         onclick
+        </code>
+        ,
+        <code>
+         onmouseover
+        </code>
+        и
+        <code>
+         onfocus
+        </code>
+        .
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="obedinenie-yacheek-s-ispolzovaniem-colspan-i-rowspan">
+       Объединение ячеек с использованием colspan и rowspan
+      </h2>
+<p class="text-gray-700 mb-4">
+       Атрибуты
+       <code>
+        colspan
+       </code>
+       и
+       <code>
+        rowspan
+       </code>
+       позволяют объединять ячейки:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Merged Cells Example&lt;/h2&gt;
+        &lt;table border="1"&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Details&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Alice&lt;/td&gt;
+                &lt;td rowspan="2"&gt;Excellent student&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Bob&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Объединение ячеек с использованием colspan и rowspan" height="407" src="https://htmlformatter.github.io/images2/html-tag-84578b6.png" style="width:705px;height:auto" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Объяснение:
+       </strong>
+       Атрибут
+       <code>
+        rowspan
+       </code>
+       объединяет две строки, а столбец «Подробности» охватывает несколько ячеек по вертикали.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-yacheek-lttdgt-s-pomoschyu-css">
+       Стилизация ячеек &lt;td&gt; с помощью CSS
+      </h2>
+<p class="text-gray-700 mb-4">
+       Настройте внешний вид ячеек
+       <code>
+        &lt;td&gt;
+       </code>
+       с помощью CSS:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: center;
+            }
+            td {
+                background-color: #f9f9f9;
+            }
+            td:hover {
+                background-color: #f1f1f1;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Styled Table&lt;/h2&gt;
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Age&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Alice&lt;/td&gt;
+                &lt;td&gt;25&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Bob&lt;/td&gt;
+                &lt;td&gt;30&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       ячейки данных имеют светлый фоновый цвет, отступы и эффекты наведения для улучшения читаемости и интерактивности.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-lttdgt">
+       Практическое применение тега &lt;td&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Представление данных:
+        </strong>
+        используйте ячейки
+        <code>
+         &lt;td&gt;
+        </code>
+        для представления структурированных данных в строках и столбцах.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Динамические таблицы:
+        </strong>
+        динамическое заполнение ячеек
+        <code>
+         &lt;td&gt;
+        </code>
+        с помощью JavaScript или данных на стороне сервера.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Пользовательские макеты:
+        </strong>
+        создайте визуально привлекательные таблицы, объединив ячейки с
+        <code>
+         colspan
+        </code>
+        и
+        <code>
+         rowspan
+        </code>
+        .
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Адаптивные таблицы:
+        </strong>
+        объединяйте элементы CSS и
+        <code>
+         &lt;td&gt;
+        </code>
+        для создания адаптивных макетов таблиц, удобных для мобильных устройств.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;title&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;title&gt; в HTML: определение заголовка страницы для браузера и SEO." />
+<meta name="keywords" content="базовый синтаксис html-тега title, пример четко определенного заголовка, важность тега title, рекомендации по использованию тега title, пример заголовка с брендингом, стилизация или изменение заголовков с помощью javascript, практическое применение тега title" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-title-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;title&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;title&gt; в HTML: определение заголовка страницы для браузера и SEO." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-title-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;title&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;title&gt;
+       </code>
+       определяет заголовок веб-страницы. Этот заголовок отображается в строке заголовка браузера, на вкладках и в закладках. Поисковые системы также используют его в качестве кликабельного заголовка в результатах поиска, что делает его критически важным компонентом SEO(поисковой оптимизации) и пользовательского опыта.
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;title&gt;
+       </code>
+       должен быть помещен в раздел
+       <code>
+        &lt;head&gt;
+       </code>
+       HTML-документа и является обязательным для каждой веб-страницы.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-lttitlegt">
+          Базовый синтаксис HTML-тега &lt;title&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-chetko-opredelennogo-zagolovka">
+          Пример четко определенного заголовка
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#vazhnost-tega-lttitlegt">
+          Важность тега &lt;title&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#rekomendatsii-po-ispolzovaniyu-tega-lttitlegt">
+          Рекомендации по использованию тега &lt;title&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-zagolovka-s-brendingom">
+          Пример заголовка с брендингом
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stilizatsiya-ili-izmenenie-zagolovkov-s-pomoschyu-javascript">
+          Стилизация или изменение заголовков с помощью JavaScript
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-lttitlegt">
+          Практическое применение тега &lt;title&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-lttitlegt">
+       Базовый синтаксис HTML-тега &lt;title&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Базовая структура тега
+       <code>
+        &lt;title&gt;
+       </code>
+       следующая:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Your Webpage Title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="HTML-заголовок Пример тега" height="219" src="https://htmlformatter.github.io/images2/html-tag-6a56a06.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Текст внутри тега
+       <code>
+        &lt;title&gt;
+       </code>
+       («Заголовок вашей веб-страницы») отображается на вкладке браузера и в результатах поисковой системы.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-chetko-opredelennogo-zagolovka">
+       Пример четко определенного заголовка
+      </h2>
+<p class="text-gray-700 mb-4">
+       В следующем примере показан понятный и лаконичный заголовок веб-страницы:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Best Recipes for Healthy Living&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Healthy Recipes for Every Meal&lt;/h1&gt;
+        &lt;p&gt;Explore our collection of nutritious recipes.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Пример четко определенного заголовка" height="257" src="https://htmlformatter.github.io/images2/html-tag-d263bc5.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       заголовок является конкретным и описательным, улучшает как удобство использования, так и SEO, четко передавая цель веб-страницы.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="vazhnost-tega-lttitlegt">
+       Важность тега &lt;title&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Поисковая оптимизация(SEO):
+        </strong>
+        Поисковые системы используют заголовок для определения релевантности веб-страницы запросам пользователей. Правильно составленный заголовок улучшает видимость.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Пользовательский интерфейс:
+        </strong>
+        Заголовки отображаются на вкладках браузера, помогая пользователям легко находить открытые страницы и переключаться между ними.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Закладки:
+        </strong>
+        когда страница добавлена в закладки, ее заголовок отображается как имя закладки, что облегчает ее распознавание в дальнейшем.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="rekomendatsii-po-ispolzovaniyu-tega-lttitlegt">
+       Рекомендации по использованию тега &lt;title&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Будьте описательными:
+        </strong>
+        четко опишите содержание страницы в заголовке.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Соблюдайте краткость:
+        </strong>
+        ограничьте заголовок 50–60 символами, чтобы он полностью отображался в результатах поиска.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Включайте ключевые слова:
+        </strong>
+        включайте основные ключевые слова, релевантные содержанию страницы, для улучшения рейтинга в поисковых системах.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Сделайте его уникальным:
+        </strong>
+        используйте уникальные заголовки для каждой страницы, чтобы избежать дублирования и путаницы.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Отразите брендинг:
+        </strong>
+        добавьте название своего бренда или веб-сайта для большей узнаваемости, особенно на домашних и целевых страницах.
+       </li>
+</ul>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-zagolovka-s-brendingom">
+       Пример заголовка с брендингом
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вот пример заголовка, включающего брендинг:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Contact Us - Healthy Living Recipes&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Get in Touch&lt;/h1&gt;
+        &lt;p&gt;We’d love to hear from you. Contact us today!&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Заголовок четко указывает на цель страницы(«Связаться с нами»), одновременно отражая бренд(«Рецепты здорового образа жизни»).
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stilizatsiya-ili-izmenenie-zagolovkov-s-pomoschyu-javascript">
+       Стилизация или изменение заголовков с помощью JavaScript
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете динамически изменять тег
+       <code>
+        &lt;title&gt;
+       </code>
+       с помощью JavaScript:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Welcome&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Welcome to Our Website&lt;/h1&gt;
+        &lt;script&gt;
+            document.title = "Updated Title - Our Website";
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<img alt="Стилизация или изменение заголовков с помощью JavaScript" height="257" src="https://htmlformatter.github.io/images2/html-tag-20becc7.png" width="643" />
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Результат:
+       </strong>
+       Первоначально заголовок отображается как «Добро пожаловать», но при выполнении скрипта динамически меняется на «Обновленный заголовок – Наш веб-сайт».
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-lttitlegt">
+       Практическое применение тега &lt;title&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         SEO-оптимизация:
+        </strong>
+        используйте релевантные ключевые слова для улучшения рейтинга и показателя кликабельности.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Дифференциация страниц:
+        </strong>
+        присваивайте пользователям уникальные заголовки, чтобы помочь им идентифицировать определенные страницы веб-сайта.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Динамические заголовки:
+        </strong>
+        используйте JavaScript для обновления заголовков на основе действий пользователя или динамических изменений контента.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Улучшенный пользовательский интерфейс:
+        </strong>
+        предоставляйте понятные и лаконичные заголовки для лучшей навигации в браузере и закладок.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>

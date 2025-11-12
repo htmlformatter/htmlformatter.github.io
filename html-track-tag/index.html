@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>HTML-тег &lt;track&gt; - ХТМЛ справочник</title>
+<meta name="description" content="Тег &lt;track&gt; в HTML: добавление субтитров или других текстовых дорожек к видео и аудио." />
+<meta name="keywords" content="базовый синтаксис html-тега track, атрибуты html-тега track, пример субтитров для видео, пример с несколькими дорожками, стиль и использование подписей, практическое применение тега track" />
+<meta name="author" content="htmlformatter github" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://htmlformatter.github.io/html-track-tag/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HTML-тег &lt;track&gt; - ХТМЛ справочник" />
+<meta property="og:description" content="Тег &lt;track&gt; в HTML: добавление субтитров или других текстовых дорожек к видео и аудио." />
+<meta property="og:url" content="https://htmlformatter.github.io/html-track-tag/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="icon" type="image/png" href="https://htmlformatter.github.io/image/favicon.png" />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com">
+</script>
+<style>
+   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        pre { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .toc { background: #f8fafc; border-left: 3px solid #3b82f6; }
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #3b82f6; }
+        #menu-toggle:checked ~ #mobile-menu { display: block; }
+        code {font-weight: 600;}
+		pre code {font-weight: 100;}
+  </style>
+<script>
+   window.yaContextCb=window.yaContextCb||[]
+  </script>
+<script async="" src="https://yandex.ru/ads/system/context.js">
+</script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm top-0 z-50">
+<nav class="content-wrapper px-4 py-3 flex items-center justify-between">
+<a class="flex items-center space-x-2 text-xl font-bold text-gray-800" href="/">
+<span>
+      HTML
+      <span class="text-orange-500">
+       github
+      </span>
+</span>
+</a>
+<div class="hidden md:flex space-x-6">
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/blog/">
+      Справочник
+     </a>
+<a class="text-gray-700 hover:text-orange-500 font-medium" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+<input class="hidden" id="menu-toggle" type="checkbox" />
+<label class="md:hidden cursor-pointer" for="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</label>
+<div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg md:hidden" id="mobile-menu">
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/blog/">
+      Справочник
+     </a>
+<a class="block px-4 py-3 text-gray-700 hover:bg-gray-50" href="/online-editor/">
+      Онлайн редактор
+     </a>
+</div>
+</nav>
+</header>
+<main class="content-wrapper px-4 py-4">
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="hidden lg:block lg:w-[300px] flex-shrink-0">
+<div class="sticky top-20 flex items-center justify-center">
+</div>
+</aside>
+<article class="article-content bg-white rounded-lg shadow-sm p-8 w-full lg:max-w-[800px]">
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      HTML-тег &lt;track&gt;
+     </h1>
+<section class="prose prose-slate max-w-none">
+<p class="text-gray-700 mb-4">
+       HTML-тег
+       <code>
+        &lt;track&gt;
+       </code>
+       используется для указания текстовых дорожек для элементов
+       <code>
+        &lt;video&gt;
+       </code>
+       и
+       <code>
+        &lt;audio&gt;
+       </code>
+       . Он предоставляет подписи, субтитры, описания и метаданные для улучшения доступности и удобства использования мультимедийного контента. Тег
+       <code>
+        &lt;track&gt;
+       </code>
+       не имеет закрывающего тега и является самозакрывающимся элементом.
+      </p>
+<p class="text-gray-700 mb-4">
+       Тег
+       <code>
+        &lt;track&gt;
+       </code>
+       обычно используется для предоставления субтитров к видео, делая их доступными для глухих или слабослышащих пользователей, а также для поддержки переводов на другие языки.
+      </p>
+<nav class="toc p-4 rounded-lg mb-8">
+<div class="font-bold text-lg mb-3 text-gray-900">
+        Содержание
+       </div>
+<ul class="space-y-2 text-sm">
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#bazovyy-sintaksis-html-tega-lttrackgt">
+          Базовый синтаксис HTML-тега &lt;track&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#atributy-html-tega-lttrackgt">
+          Атрибуты HTML-тега &lt;track&gt;
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-subtitrov-dlya-video">
+          Пример субтитров для видео
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#primer-s-neskolkimi-dorozhkami">
+          Пример с несколькими дорожками
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#stil-i-ispolzovanie-podpisey">
+          Стиль и использование подписей
+         </a>
+</li>
+<li>
+<a class="text-gray-600 hover:text-blue-600" href="#prakticheskoe-primenenie-tega-lttrackgt">
+          Практическое применение тега &lt;track&gt;
+         </a>
+</li>
+</ul>
+</nav>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="bazovyy-sintaksis-html-tega-lttrackgt">
+       Базовый синтаксис HTML-тега &lt;track&gt;
+      </h2>
+<p class="text-gray-700 mb-4">
+       Основной синтаксис тега
+       <code>
+        &lt;track&gt;
+       </code>
+       следующий:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;track src="file.vtt" kind="subtitles" srclang="en" label="English Subtitles"&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+       Атрибуты тега
+       <code>
+        &lt;track&gt;
+       </code>
+       определяют тип текстовой дорожки и способ ее отображения для пользователя.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="atributy-html-tega-lttrackgt">
+       Атрибуты HTML-тега &lt;track&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         src:
+        </strong>
+        Указывает URL-адрес файла трека(например, формат
+        <code>
+         .vtt
+        </code>
+        ).
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         kind:
+        </strong>
+        Указывает тип трека. Возможные значения:
+&lt;ul class="wp-block-list"&gt;
+        <li class="ml-4">
+<code>
+          subtitles
+         </code>
+         : Субтитры для видео.
+        </li>
+<li class="ml-4">
+<code>
+          captions
+         </code>
+         : Субтитры для слабослышащих.
+        </li>
+<li class="ml-4">
+<code>
+          descriptions
+         </code>
+         : Описания содержимого.
+        </li>
+<li class="ml-4">
+<code>
+          chapters
+         </code>
+         : Точки навигации в медиа.
+        </li>
+<li class="ml-4">
+<code>
+          metadata
+         </code>
+         : Метаданные трека.
+        </li>
+</li>
+</ul>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+        srclang:
+       </strong>
+       Указывает язык трека(например,
+       <code>
+        en
+       </code>
+       для английского).
+      </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+        label:
+       </strong>
+       дает удобное для пользователя название треку.
+      </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+        по умолчанию:
+       </strong>
+       указывает, что трек является треком по умолчанию, если доступно несколько треков.
+      </li>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-subtitrov-dlya-video">
+       Пример субтитров для видео
+      </h2>
+<p class="text-gray-700 mb-4">
+       В следующем примере показано, как использовать тег
+       <code>
+        &lt;track&gt;
+       </code>
+       для добавления английских субтитров к видео:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Video with Subtitles&lt;/h2&gt;
+        &lt;video controls width="600"&gt;
+            &lt;source src="example.mp4" type="video/mp4"&gt;
+            &lt;track src="subtitles-en.vtt" kind="subtitles" srclang="en" label="English Subtitles" default&gt;
+            Your browser does not support the video tag.
+        &lt;/video&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       Элемент
+       <code>
+        &lt;track&gt;
+       </code>
+       добавляет английские субтитры из файла
+       <code>
+        subtitles-en.vtt
+       </code>
+       и устанавливается в качестве дорожки по умолчанию.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="primer-s-neskolkimi-dorozhkami">
+       Пример с несколькими дорожками
+      </h2>
+<p class="text-gray-700 mb-4">
+       Вы можете включить несколько элементов
+       <code>
+        &lt;track&gt;
+       </code>
+       для разных языков или типов треков:
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Video with Multiple Tracks&lt;/h2&gt;
+        &lt;video controls width="600"&gt;
+            &lt;source src="example.mp4" type="video/mp4"&gt;
+            &lt;track src="subtitles-en.vtt" kind="subtitles" srclang="en" label="English Subtitles" default&gt;
+            &lt;track src="subtitles-es.vtt" kind="subtitles" srclang="es" label="Spanish Subtitles"&gt;
+            Your browser does not support the video tag.
+        &lt;/video&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       В этом примере субтитры присутствуют на английском и испанском языках. Английская дорожка установлена по умолчанию.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="stil-i-ispolzovanie-podpisey">
+       Стиль и использование подписей
+      </h2>
+<p class="text-gray-700 mb-4">
+       По умолчанию элементы управления браузера отображают субтитры. Однако вы также можете стилизовать и управлять дорожками с помощью JavaScript.
+      </p>
+<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 whitespace-pre-wrap break-words"><button class="copy-btn" onclick="copyCode(this)">Копировать</button><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            video::-webkit-media-text-track-display {
+                background: rgba(0, 0, 0, 0.7);
+                color: #fff;
+                font-size: 16px;
+                padding: 4px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Styled Captions&lt;/h2&gt;
+        &lt;video controls width="600"&gt;
+            &lt;source src="example.mp4" type="video/mp4"&gt;
+            &lt;track src="subtitles-en.vtt" kind="subtitles" srclang="en" label="English Subtitles" default&gt;
+            Your browser does not support the video tag.
+        &lt;/video&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="text-gray-700 mb-4">
+<strong class="font-bold text-gray-900">
+        Пояснение:
+       </strong>
+       стили CSS настраивают внешний вид подписей, добавляя полупрозрачный фон и белый текст.
+      </p>
+<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4" id="prakticheskoe-primenenie-tega-lttrackgt">
+       Практическое применение тега &lt;track&gt;
+      </h2>
+<ul class="space-y-2 text-gray-700 mb-6 list-disc list-inside">
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Субтитры:
+        </strong>
+        Предоставьте субтитры на разных языках для видео.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Субтитры:
+        </strong>
+        Для удобства, особенно для людей с нарушениями слуха, используйте субтитры.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Описания:
+        </strong>
+        добавьте описательные дорожки для пользователей с нарушениями зрения, чтобы они могли лучше понять видеоконтент.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Метаданные:
+        </strong>
+        используйте дорожки метаданных для включения дополнительной информации или контекста о видео.
+       </li>
+<li class="ml-4">
+<strong class="font-bold text-gray-900">
+         Навигация по главам:
+        </strong>
+        используйте маркеры глав для удобной навигации по длинным видео.
+       </li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-300 mt-12">
+<div class="content-wrapper px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm">
+       © 2025 htmlformatter.github.io.
+      </p>
+</div>
+<nav class="flex space-x-6">
+<a class="text-sm hover:text-white transition" href="/contacts/">
+       Контакты
+      </a>
+<a class="text-sm hover:text-white transition" href="/about/">
+       О нас
+      </a>
+<a class="text-sm hover:text-white transition" href="/privacy/">
+       Политика конфиденциальности
+      </a>
+</nav>
+</div>
+</div>
+</footer>
+<script src="https://htmlformatter.github.io/script.js">
+</script>
+</body>
+</html>
