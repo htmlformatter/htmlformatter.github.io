@@ -71,14 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ------------------------------
-    // 2. Рекламный блок R-A-10604802-3 после </article>
+    // 2. Рекламный блок R-A-10604802-3 после </main>
     // ------------------------------
-    const article = document.querySelector("article");
-    if (article) {
+    const main = document.querySelector("main");
+    if (main) {
         const adDivFeed = document.createElement("div");
         adDivFeed.id = "yandex_rtb_R-A-10604802-3";
         adDivFeed.classList.add("yandex-ad-block");
-        article.insertAdjacentElement("afterend", adDivFeed);
+        main.insertAdjacentElement("afterend", adDivFeed);
 
         if (window.yaContextCb && typeof window.yaContextCb.push === "function") {
             window.yaContextCb.push(() => {
