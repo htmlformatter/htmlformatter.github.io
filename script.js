@@ -42,7 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.head.appendChild(style);
 
-    // Проверяем, начинается ли путь с /html-
+    // ------------------------------
+    // Выполняем только на страницах, начинающихся с /html-
+    // ------------------------------
     if (!window.location.pathname.startsWith("/html-")) return;
 
     // ------------------------------
@@ -67,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             blockId: "R-A-10604802-1",
                             renderTo: adDiv.id
                         });
-                        // Плавное появление блока
                         setTimeout(() => adDiv.classList.add("visible"), 50);
                     });
                 }
@@ -78,14 +79,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ------------------------------
-    // 2. Рекламный блок R-A-10604802-3 (feed) после </main>
+    // 2. Рекламный блок R-A-10604802-3 (feed) после </main> с Tailwind-обёрткой
     // ------------------------------
     const main = document.querySelector("main");
     if (main) {
+        // Создаём контейнер с Tailwind-классами для полной ширины
+        const wrapper = document.createElement("div");
+        wrapper.className = "w-full flex justify-center my-8"; // полная ширина, центрирование, отступы сверху/снизу
+
         const adDivFeed = document.createElement("div");
         adDivFeed.id = "yandex_rtb_R-A-10604802-3";
         adDivFeed.classList.add("yandex-ad-block");
-        main.insertAdjacentElement("afterend", adDivFeed);
+        wrapper.appendChild(adDivFeed);
+
+        main.insertAdjacentElement("afterend", wrapper);
 
         if (window.yaContextCb && typeof window.yaContextCb.push === "function") {
             window.yaContextCb.push(() => {
@@ -94,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     renderTo: adDivFeed.id,
                     type: "feed"
                 });
-                // Плавное появление блока
                 setTimeout(() => adDivFeed.classList.add("visible"), 50);
             });
         }
