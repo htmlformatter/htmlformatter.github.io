@@ -83,9 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // ------------------------------
     const main = document.querySelector("main");
     if (main) {
-        // Создаём контейнер с Tailwind-классами для полной ширины
         const wrapper = document.createElement("div");
-        wrapper.className = "w-full flex justify-center my-8"; // полная ширина, центрирование, отступы сверху/снизу
+        wrapper.className = "w-full flex justify-center my-8";
 
         const adDivFeed = document.createElement("div");
         adDivFeed.id = "yandex_rtb_R-A-10604802-3";
@@ -102,6 +101,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     type: "feed"
                 });
                 setTimeout(() => adDivFeed.classList.add("visible"), 50);
+            });
+            window.yaContextCb.push(() => {
+                Ya.Context.AdvManager.render({
+                    blockId: "R-A-10604802-4",
+                    type: "fullscreen",
+                    platform: "touch"
+                });
+            });
+            window.yaContextCb.push(() => {
+                Ya.Context.AdvManager.render({
+                    blockId: "R-A-10604802-5",
+                    type: "fullscreen",
+                    platform: "desktop"
+                });
             });
         }
     }
