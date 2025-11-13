@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://htmlformatter.github.io/sitemap.xml
